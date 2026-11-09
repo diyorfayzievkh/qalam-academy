@@ -1,4 +1,4 @@
-# Iman Academy
+# Qalam Academy
 
 A gamified way for families to learn Islam: a step-by-step Hanafi prayer guide,
 prayer times, a qibla finder, topic quizzes, and ten badges on the Path of Light.

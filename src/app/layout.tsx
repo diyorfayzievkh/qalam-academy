@@ -15,10 +15,10 @@ import { ProgressProvider } from "@/components/progress";
 import { themeInitScript } from "@/components/theme";
 
 export const metadata: Metadata = {
-  title: "Iman Academy — learn prayer, faith and good character",
+  title: "Qalam Academy — learn prayer, faith and good character",
   description: "A gamified way for families to learn Islam: step-by-step Hanafi prayer guide, prayer times, qibla, quizzes and badges.",
-  applicationName: "Iman Academy",
-  appleWebApp: { capable: true, title: "Iman Academy", statusBarStyle: "black-translucent" },
+  applicationName: "Qalam Academy",
+  appleWebApp: { capable: true, title: "Qalam Academy", statusBarStyle: "black-translucent" },
 };
 
 // viewport-fit=cover lets the tab bar sit above the iPhone home indicator.

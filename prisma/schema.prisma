@@ -1,4 +1,4 @@
-// Iman Academy — data model.
+// Qalam Academy — data model.
 //
 // Runs on PostgreSQL (Supabase), like Digital Workspace. DATABASE_URL is the
 // pooled connection used by the app; DIRECT_URL is the direct connection

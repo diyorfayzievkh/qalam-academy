@@ -25,8 +25,8 @@ export function AppShell({ children }: { children: ReactNode }) {
     <div className="min-h-full lg:grid lg:grid-cols-[232px_1fr]">
       {/* Sidebar: tablets in landscape and desktop */}
       <aside className="girih sticky top-0 hidden h-screen flex-col gap-1 px-3.5 py-6 text-band-fg lg:flex" aria-label="Main navigation">
-        <div className="px-3 font-display text-[1.4rem] font-bold text-gold-bright">Iman Academy</div>
-        <div lang="ar" className="px-3 pb-5 font-arabic text-[1.1rem] opacity-75">أكاديمية الإيمان</div>
+        <div className="px-3 font-display text-[1.4rem] font-bold text-gold-bright">Qalam Academy</div>
+        <div lang="ar" className="px-3 pb-5 font-arabic text-[1.1rem] opacity-75">أكاديمية القلم</div>
         <nav className="flex flex-col gap-1">
           {NAV.map((n) => {
             const on = isActive(path, n.href);
@@ -75,7 +75,7 @@ export function PageHeader({ eyebrow, title, sub }: { eyebrow: string; title: st
     <header className="girih relative overflow-hidden text-band-fg">
       <div className="gutter mx-auto flex max-w-[980px] flex-col gap-1.5 pb-[26px] pt-[calc(22px+env(safe-area-inset-top,0px))]">
         <div className="flex items-center justify-between gap-3">
-          <span className="font-display text-[1.05rem] font-bold text-gold-bright lg:invisible">Iman Academy</span>
+          <span className="font-display text-[1.05rem] font-bold text-gold-bright lg:invisible">Qalam Academy</span>
           <ThemeToggle />
         </div>
         <span className="eyebrow !text-gold-bright">{eyebrow}</span>

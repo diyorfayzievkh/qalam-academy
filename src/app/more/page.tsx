@@ -6,7 +6,7 @@ import { Icon } from "@/components/icons";
 export default function MorePage() {
   return (
     <>
-      <PageHeader eyebrow="Iman Academy" title="Everything" sub="All sections of the app in one place." />
+      <PageHeader eyebrow="Qalam Academy" title="Everything" sub="All sections of the app in one place." />
       <Page>
         <div className="grid gap-3 sm:grid-cols-2">
           {NAV.filter((n) => n.href !== "/").map((n) => (

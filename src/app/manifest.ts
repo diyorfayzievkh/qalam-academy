@@ -3,8 +3,8 @@ import type { MetadataRoute } from "next";
 // Installable on phones and tablets as a home-screen app.
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Iman Academy",
-    short_name: "Iman Academy",
+    name: "Qalam Academy",
+    short_name: "Qalam Academy",
     description: "Learn prayer, faith and good character.",
     start_url: "/",
     display: "standalone",

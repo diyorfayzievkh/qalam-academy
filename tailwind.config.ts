@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Iman Academy design tokens. Colors come from CSS variables (see globals.css)
+ * Qalam Academy design tokens. Colors come from CSS variables (see globals.css)
  * so light/dark is a single class swap on <html>, as in Digital Workspace.
  * Palette: deep emerald + gold on a sage-tinted ground.
  */

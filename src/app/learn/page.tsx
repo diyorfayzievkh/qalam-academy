@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Page, PageHeader } from "@/components/app-shell";
 import { useProgress } from "@/components/progress";
-import { T } from "@/components/lang";
+import { T, useT } from "@/components/lang";
 import { TopicCard } from "@/components/topic-card";
 import { lookFor, WorldCover } from "@/components/world-art";
 import { lessonCount, WORLDS } from "@/content/library";
@@ -17,11 +17,12 @@ const SECTIONS = [
 
 export default function KnowledgeBasePage() {
   const { studied } = useProgress();
+  const { t } = useT();
 
   return (
     <>
-      <PageHeader eyebrow="Knowledge Base" title="Ilm Quest"
-        sub="Worlds of knowledge, Spiritual Tarbiyah and Social Tarbiyah. Read a lesson for 10 points, then test yourself in the quizzes." />
+      <PageHeader eyebrow={t("Knowledge Base")} title={t("Ilm Quest")}
+        sub={t("Worlds of knowledge, Spiritual Tarbiyah and Social Tarbiyah. Read a lesson for 10 points, then test yourself in the quizzes.")} />
       <Page>
         {SECTIONS.map((sec) => {
           const list = WORLDS.filter((w) => (w.section ?? "core") === sec.key);
@@ -29,7 +30,7 @@ export default function KnowledgeBasePage() {
             <section key={sec.key} className="flex flex-col gap-3" {...(sec.key !== "core" ? { "data-adult": "" } : {})}>
               <div className="flex flex-col gap-0.5">
                 <h2 className="text-[1.3rem]"><T>{sec.title}</T></h2>
-                {sec.sub && <p className="max-w-[65ch] text-[0.92rem] text-fg-muted">{sec.sub}</p>}
+                {sec.sub && <p className="max-w-[65ch] text-[0.92rem] text-fg-muted">{t(sec.sub)}</p>}
               </div>
               <div className="grid gap-3.5 [grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))]">
             {list.map((w) => {
@@ -45,10 +46,10 @@ export default function KnowledgeBasePage() {
                     </div>
                   </WorldCover>
                   <div className="flex flex-1 flex-col gap-2 p-[16px]">
-                    <h3 className="text-[1.15rem]">{w.title}</h3>
-                    <span className="text-[0.92rem] text-fg-muted">{w.sub}</span>
+                    <h3 className="text-[1.15rem]">{t(w.title)}</h3>
+                    <span className="text-[0.92rem] text-fg-muted">{t(w.sub)}</span>
                     <div className="progress mt-auto"><i style={{ width: `${(read / total) * 100}%` }} /></div>
-                    <span className="text-[0.82rem] font-bold text-fg-muted">{read} of {total} lessons read{w.quizIds.length ? ` · ${w.quizIds.length} quiz${w.quizIds.length > 1 ? "zes" : ""}` : ""}</span>
+                    <span className="text-[0.82rem] font-bold text-fg-muted">{t("{read} of {total} lessons read", { read, total })}{w.quizIds.length ? t(w.quizIds.length > 1 ? " · {n} quizzes" : " · {n} quiz", { n: w.quizIds.length }) : ""}</span>
                   </div>
                 </Link>
               );

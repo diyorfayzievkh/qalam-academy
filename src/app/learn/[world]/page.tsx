@@ -6,13 +6,16 @@ import { Page, PageHeader } from "@/components/app-shell";
 import { useProgress } from "@/components/progress";
 import { TopicCard } from "@/components/topic-card";
 import { lookFor, WorldCover } from "@/components/world-art";
-import { T } from "@/components/lang";
+import { T, useT } from "@/components/lang";
+import { translateLesson, useLessonTranslations } from "@/content/i18n/lessons";
 import { findWorld } from "@/content/library";
 import { TOPICS } from "@/content/topics";
 
 export default function WorldPage() {
   const { world: id } = useParams<{ world: string }>();
   const { studied } = useProgress();
+  const { lang, t } = useT();
+  const trMap = useLessonTranslations(lang, id);
   const w = findWorld(id);
   if (!w) notFound();
 
@@ -21,9 +24,10 @@ export default function WorldPage() {
   for (const l of w.adab ?? []) {
     let sec = sections[sections.length - 1];
     if (!sec || sec.title !== l.category) { sec = { title: l.category, items: [] }; sections.push(sec); }
-    sec.items.push({ id: l.id, title: l.title, summary: l.summary, tag: "Quiz inside" });
+    sec.items.push({ id: l.id, title: l.title, summary: l.summary, tag: t("Quiz inside") });
   }
-  for (const l of w.lessons) {
+  for (const l0 of w.lessons) {
+    const l = translateLesson(l0, trMap?.[l0.id]);
     const g = l.group ?? null;
     let sec = sections[sections.length - 1];
     if (!sec || sec.title !== g) { sec = { title: g, items: [] }; sections.push(sec); }
@@ -34,7 +38,7 @@ export default function WorldPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Knowledge Base" title={w.title} sub={w.sub} />
+      <PageHeader eyebrow={t("Knowledge Base")} title={t(w.title)} sub={t(w.sub)} />
       <Page>
         <Link href="/learn" className="font-bold text-fg-muted">← <T>All worlds</T></Link>
         {(() => {
@@ -59,7 +63,7 @@ export default function WorldPage() {
           <section key={si} className="reveal flex flex-col gap-2.5">
             {sec.title && (
               <h2 className="text-[1.2rem]">
-                {sec.title}
+                {t(sec.title)}
               </h2>
             )}
             <ol className="flex flex-col gap-2.5">
@@ -87,7 +91,7 @@ export default function WorldPage() {
         ))}
         {quizzes.length > 0 && (
           <section className="flex flex-col gap-3">
-            <h2 className="text-[1.3rem]">{w.adab?.length ? "Final quiz" : "Test yourself"}</h2>
+            <h2 className="text-[1.3rem]">{t(w.adab?.length ? "Final quiz" : "Test yourself")}</h2>
             <div className="grid gap-3.5 [grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))]">
               {quizzes.map((t) => <TopicCard key={t.id} topic={t} />)}
             </div>

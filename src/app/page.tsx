@@ -76,9 +76,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid gap-3.5 sm:grid-cols-3">
+        <section className="grid gap-3.5 sm:grid-cols-2">
           {[
             { href: "/learn", eyebrow: "Knowledge Base", title: "Ilm Quest", text: "7 worlds: Iman, Islam, Salah, Akhlaq & Adab, Duas, Quran and Seerah." },
+            { href: "/hifz", eyebrow: "Hifz", title: "Memorise the Quran", text: "46 sūrahs and passages, ayah by ayah, with audio and spaced review." },
             { href: "/ramadan", eyebrow: "Seasonal", title: "Ramadan Quest", text: "Daily tracker, 30-day plan, duas, surahs and history." },
             { href: "/mizan", eyebrow: "Collection", title: "Mizan", text: "Deeds heaviest on the scale, from authentic hadith." },
           ].map((c) => (

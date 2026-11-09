@@ -1,4 +1,4 @@
-export type IconName = "home" | "learn" | "salah" | "times" | "qibla" | "badges" | "sun" | "moon" | "auto" | "pin" | "scale" | "more";
+export type IconName = "home" | "learn" | "salah" | "times" | "qibla" | "badges" | "sun" | "moon" | "auto" | "pin" | "scale" | "more" | "hifz";
 
 const PATHS: Record<IconName, JSX.Element> = {
   home: <path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z" />,
@@ -11,6 +11,7 @@ const PATHS: Record<IconName, JSX.Element> = {
   moon: <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" />,
   auto: <><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" /></>,
   scale: <><path d="M12 4v16M8 20h8M5 7h14" /><path d="M5 7l-3 6a3 1.5 0 0 0 6 0zM19 7l-3 6a3 1.5 0 0 0 6 0z" /></>,
+  hifz: <><path d="M4 19 12 8l8 11M4 19h16M7 9.5c2-1.5 3.5-2 5-1.5 1.5-.5 3 0 5 1.5" /><path d="M12 8V5" /></>,
   more: <><circle cx="5" cy="12" r="1.6" fill="currentColor" /><circle cx="12" cy="12" r="1.6" fill="currentColor" /><circle cx="19" cy="12" r="1.6" fill="currentColor" /></>,
   pin: <><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></>,
 };

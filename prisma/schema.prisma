@@ -43,6 +43,7 @@ model User {
   topics      TopicProgress[]
   guides      GuideStudied[]
   points      PointEvent[]
+  hifz        HifzProgress[]
 }
 
 model Session {
@@ -119,4 +120,21 @@ model PointEvent {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, createdAt])
+}
+
+// Memorisation progress per surah or passage, with spaced-repetition review.
+model HifzProgress {
+  id          String    @id @default(cuid())
+  userId      String
+  itemId      String // "112", "ayat-al-kursi", "kahf-1-10"
+  status      String    @default("learning") // "learning" | "memorized"
+  knownAyahs  Int[]
+  memorizedAt DateTime?
+  interval    Int       @default(0)
+  nextReview  DateTime?
+  reviews     Int       @default(0)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, itemId])
+  @@index([userId, nextReview])
 }

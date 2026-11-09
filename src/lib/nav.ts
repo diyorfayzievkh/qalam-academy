@@ -2,7 +2,6 @@ import type { IconName } from "@/components/icons";
 
 export const NAV: { href: string; label: string; icon: IconName; desc: string }[] = [
   { href: "/", label: "Home", icon: "home", desc: "Next prayer and your progress" },
-  { href: "/search", label: "Search", icon: "search", desc: "Find any lesson, story, quiz, duʿāʾ or sūrah" },
   { href: "/learn", label: "Ilm Quest", icon: "learn", desc: "Knowledge Base worlds and quizzes" },
   { href: "/salah", label: "Salah", icon: "salah", desc: "Hanafi prayer guide, step by step" },
   { href: "/hifz", label: "Hifz", icon: "hifz", desc: "Memorise sūrahs with audio and spaced review" },
@@ -23,5 +22,5 @@ export const TABS: { href: string; label: string; icon: IconName }[] = [
   { href: "/times", label: "Times", icon: "times" },
   { href: "/more", label: "More", icon: "more" },
 ];
-export const MORE_PATHS = ["/more", "/search", "/account", "/stories", "/hifz", "/qibla", "/ramadan", "/mizan", "/badges"];
+export const MORE_PATHS = ["/more", "/account", "/stories", "/hifz", "/qibla", "/ramadan", "/mizan", "/badges"];
 

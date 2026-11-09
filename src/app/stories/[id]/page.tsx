@@ -9,6 +9,7 @@ import { RecitationBlock } from "@/components/recitation";
 import { BEDTIME, BEDTIME_CATS, bedtimeMinutes, findBedtime, type Bedtime } from "@/content/bedtime";
 import { StoryCover } from "@/components/story-art";
 import { useT } from "@/components/lang";
+import { StoryThemeToggle, useStoryTheme } from "@/components/story-theme";
 
 const SLEEP_DUA = { ar: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا", tr: "Bismika-llāhumma amūtu wa aḥyā.", en: "In Your name, O Allah, I die and I live." };
 
@@ -18,6 +19,7 @@ export default function StoryPage() {
   const { studied, markStudied } = useProgress();
   const { t } = useT();
   const [dim, setDim] = useState(false);
+  const [mode, setMode] = useStoryTheme();
   const [prog, setProg] = useState(0);
   const art = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function StoryPage() {
   const done = !!studied[`story:${s.id}`];
 
   return (
-    <div className={`night ${dim ? "lights-down" : ""}`}>
+    <div className={`${mode} ${dim ? "lights-down" : ""}`}>
       <div className="fixed inset-x-0 top-0 z-40 h-[3px] bg-transparent" aria-hidden>
         <i className="block h-full bg-gradient-to-r from-[#B5832A] to-[#FFE39A] transition-[width] duration-150" style={{ width: `${prog * 100}%` }} />
       </div>
@@ -45,12 +47,15 @@ export default function StoryPage() {
       <Page>
         <div data-dim className="flex flex-wrap items-center justify-between gap-3">
           <Link href="/stories" className="font-bold text-fg-muted">← {t("All stories")}</Link>
+          <div className="flex flex-wrap items-center gap-2">
+          <StoryThemeToggle mode={mode} setMode={setMode} />
           <button type="button" onClick={() => setDim((d) => !d)} aria-pressed={dim}
             className="inline-flex items-center gap-2 rounded-full border border-border px-3.5 py-1.5 text-[0.88rem] font-bold text-fg-muted hover:border-gold-bright">
-            <span aria-hidden>{dim ? "☀" : "☾"}</span>{dim ? t("Lights up") : t("Lights down")}
+            <span aria-hidden>{dim ? "◐" : "◑"}</span>{dim ? t("Show everything") : t("Focus on text")}
           </button>
+          </div>
         </div>
-        <StoryCover s={s} className="h-[180px] rounded-card sm:h-[220px]" />
+        <StoryCover s={s} day={mode === "paper"} className="h-[180px] rounded-card sm:h-[220px]" />
         <div data-dim><ReadAloud s={s} /></div>
         <article ref={art} className="flex flex-col gap-5 rounded-card border border-border bg-bg-surface/70 px-5 py-6 sm:px-9 sm:py-8">
           <span className="eyebrow">{t("{n}-minute story", { n: bedtimeMinutes(s) })}</span>

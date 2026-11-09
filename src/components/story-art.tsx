@@ -16,6 +16,16 @@ const SKIES: Record<BedtimeCat, [string, string]> = {
   cities: ["#1B1430", "#5A3A4A"],
 };
 
+// Daytime skies for the paper reading theme.
+const DAY_SKIES: Record<BedtimeCat, [string, string]> = {
+  prophet: ["#BFD9EC", "#F4E2C2"],
+  companions: ["#D7CCEB", "#F5E4CB"],
+  prophets: ["#B6DCE3", "#EAF2E3"],
+  life: ["#CFE6CF", "#F3EBD2"],
+  imams: ["#E7D3DC", "#F6E9D2"],
+  cities: ["#F2CFAE", "#F8E7C9"],
+};
+
 type Motif = "moon" | "ark" | "flame" | "stars11" | "sea" | "ant" | "tree" | "whale" | "ladder" | "dome" | "book" | "lantern" | "palm" | "scale" | "camel";
 
 const BY_ID: Record<string, Motif> = {
@@ -103,17 +113,17 @@ function MotifArt({ m, gold, ink }: { m: Motif; gold: string; ink: string }) {
   }
 }
 
-export function StoryCover({ s, className = "" }: { s: Pick<Bedtime, "id" | "cat">; className?: string }) {
-  const [a, b] = SKIES[s.cat];
+export function StoryCover({ s, className = "", day = false }: { s: Pick<Bedtime, "id" | "cat">; className?: string; day?: boolean }) {
+  const [a, b] = (day ? DAY_SKIES : SKIES)[s.cat];
   const m = BY_ID[s.id] ?? BY_CAT[s.cat];
   const g = useId().replace(/:/g, "");
   return (
     <div className={`relative overflow-hidden ${className}`} style={{ background: `linear-gradient(180deg, ${a}, ${b})` }} aria-hidden>
       <svg viewBox="0 0 320 140" preserveAspectRatio="xMidYMax slice" className="absolute inset-0 h-full w-full">
         <defs><radialGradient id={g}><stop offset="0" stopColor="#FFD873" stopOpacity=".35" /><stop offset="1" stopColor="#FFD873" stopOpacity="0" /></radialGradient></defs>
-        <g fill="#F5EEDC">{STAR_FIELD.map(([x, y, r], i) => <circle key={i} cx={x} cy={y} r={r} className={i % 3 ? undefined : "twinkle"} style={{ animationDelay: `${i * 0.4}s` }} />)}</g>
+        {!day && <g fill="#F5EEDC">{STAR_FIELD.map(([x, y, r], i) => <circle key={i} cx={x} cy={y} r={r} className={i % 3 ? undefined : "twinkle"} style={{ animationDelay: `${i * 0.4}s` }} />)}</g>}
         <circle cx="160" cy="80" r="70" fill={`url(#${g})`} />
-        <MotifArt m={m} gold="#E9C46A" ink="#F5EEDC" />
+        <MotifArt m={m} gold={day ? "#C8902C" : "#E9C46A"} ink={day ? "#4A3A28" : "#F5EEDC"} />
       </svg>
     </div>
   );

@@ -96,7 +96,7 @@ export function PageHeader({ eyebrow, title, sub }: { eyebrow: string; title: st
         <div className="flex items-center justify-between gap-3">
           <span className="font-display text-[1.05rem] font-bold text-gold-bright max-sm:hidden lg:invisible">{t("Qalam Academy")}</span>
           <div className="ml-auto flex items-center gap-2">
-            <Link href="/search" className="inline-flex items-center gap-1.5 rounded-full border border-gold-bright/45 bg-white/10 px-3 py-1.5 text-[0.85rem] font-bold text-band-fg hover:bg-white/20"><Icon name="search" size={18} /><span className="max-sm:sr-only">{t("Search")}</span></Link>
+            <Link href="/search" aria-label={t("Search")} className="inline-flex items-center gap-2 rounded-full border border-gold-bright/45 bg-white/10 px-3 py-1.5 text-[0.85rem] text-band-fg/80 hover:bg-white/20 sm:w-[220px]"><Icon name="search" size={17} /><span className="max-sm:sr-only">{t("Search…")}</span></Link>
             <SettingsMenu />
           </div>
         </div>

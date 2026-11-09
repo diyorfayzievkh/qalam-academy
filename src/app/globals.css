@@ -161,3 +161,17 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; a
 .lights-down [data-dim] { opacity: .12; transition: opacity .6s ease; }
 .lights-down [data-dim]:hover { opacity: .6; }
 [data-dim] { transition: opacity .6s ease; }
+
+/* Bedtime Stories, day reading: warm paper, dark ink. */
+.paper {
+  --bg: 247 241 227; --surface: 255 252 244; --surface-2: 240 231 210; --ink: 44 34 22; --ink-soft: 104 88 66;
+  --line: 225 211 183; --emerald: 15 90 71; --emerald-soft: 229 237 223; --gold: 146 100 20; --gold-bright: 184 134 44;
+  --gold-soft: 246 232 199;
+  color-scheme: light;
+  color: rgb(var(--ink));
+  background-color: rgb(var(--bg));
+  background-image: radial-gradient(ellipse at 50% 0%, rgb(255 255 255 / .7), transparent 60%),
+    radial-gradient(circle at 20% 80%, rgb(214 190 140 / .12), transparent 40%);
+  min-height: 100vh;
+}
+.paper .btn-gold { color: #FFFDF6; }

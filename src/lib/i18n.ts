@@ -15,6 +15,7 @@ const uz: Dict = {
   // Navigation
   "Home": "Bosh sahifa",
   "Search": "Qidiruv",
+  "Search…": "Qidirish…",
   "Ilm Quest": "Ilm sari",
   "Salah": "Namoz",
   "Hifz": "Hifz",
@@ -126,7 +127,7 @@ const uz: Dict = {
 
   // Stories
   "{read} of {total} stories read": "{total} ta hikoyadan {read} tasi o‘qildi", "{n}-min story": "{n} daqiqalik hikoya", "{n}-minute story": "{n} daqiqalik hikoya", "Read": "O‘qildi",
-  "Lights down": "Chiroqni pasaytirish", "Lights up": "Chiroqni yoqish", "The lesson": "Saboq", "Talk before sleep": "Uyqudan oldin suhbat", "Bedtime duʿāʾ": "Uyqu oldi duosi",
+  "Reading theme": "O‘qish mavzusi", "Paper": "Qog‘oz", "Night": "Tun", "Focus on text": "Faqat matn", "Show everything": "Hammasini ko‘rsatish", "The lesson": "Saboq", "Talk before sleep": "Uyqudan oldin suhbat", "Bedtime duʿāʾ": "Uyqu oldi duosi",
   "then recite Āyat al-Kursī and the three Quls": "so‘ng Oyatal Kursi va uch Qulni o‘qing", "Source": "Manba", "Finished": "Tugatdim", "Next": "Keyingisi", "Pause": "Pauza", "Resume": "Davom ettirish",
   "Uses your device’s voice. Arabic names may sound unusual.": "Qurilmangiz ovozidan foydalaniladi. Arabcha ismlar g‘alati eshitilishi mumkin.",
   "The Prophet ﷺ and his family": "Payg‘ambarimiz ﷺ va ahli baytlari", "The Companions": "Sahobalar", "Prophets of old": "O‘tgan payg‘ambarlar", "Living as a Muslim": "Musulmoncha hayot", "The great imams": "Buyuk imomlar", "Cities of the Quran": "Qur’ondagi shaharlar",
@@ -217,6 +218,7 @@ const uz: Dict = {
 const ru: Dict = {
   "Home": "Главная",
   "Search": "Поиск",
+  "Search…": "Поиск…",
   "Ilm Quest": "Путь знаний",
   "Salah": "Намаз",
   "Hifz": "Хифз",
@@ -321,7 +323,7 @@ const ru: Dict = {
   "Search results are in English while lessons are being translated.": "Пока уроки переводятся, результаты поиска на английском.",
 
   "{read} of {total} stories read": "Прочитано историй: {read} из {total}", "{n}-min story": "История на {n} мин", "{n}-minute story": "История на {n} минут", "Read": "Прочитано",
-  "Lights down": "Приглушить свет", "Lights up": "Включить свет", "The lesson": "Урок", "Talk before sleep": "Поговорите перед сном", "Bedtime duʿāʾ": "Дуа перед сном",
+  "Reading theme": "Тема чтения", "Paper": "Бумага", "Night": "Ночь", "Focus on text": "Только текст", "Show everything": "Показать всё", "The lesson": "Урок", "Talk before sleep": "Поговорите перед сном", "Bedtime duʿāʾ": "Дуа перед сном",
   "then recite Āyat al-Kursī and the three Quls": "затем прочитайте аят аль-Курси и три суры «Куль»", "Source": "Источник", "Finished": "Прочитал(а)", "Next": "Далее", "Pause": "Пауза", "Resume": "Продолжить",
   "Uses your device’s voice. Arabic names may sound unusual.": "Используется голос вашего устройства. Арабские имена могут звучать непривычно.",
   "The Prophet ﷺ and his family": "Пророк ﷺ и его семья", "The Companions": "Сподвижники", "Prophets of old": "Древние пророки", "Living as a Muslim": "Жизнь мусульманина", "The great imams": "Великие имамы", "Cities of the Quran": "Города Корана",

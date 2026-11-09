@@ -7,19 +7,22 @@ import { useProgress } from "@/components/progress";
 import { BEDTIME, BEDTIME_CATS, bedtimeMinutes, type BedtimeCat } from "@/content/bedtime";
 import { StoryCover } from "@/components/story-art";
 import { useT } from "@/components/lang";
+import { StoryThemeToggle, useStoryTheme } from "@/components/story-theme";
 
 export default function StoriesPage() {
   const { studied } = useProgress();
   const { t } = useT();
+  const [mode, setMode] = useStoryTheme();
   const [cat, setCat] = useState<BedtimeCat | "all">("all");
   const read = BEDTIME.filter((s) => studied[`story:${s.id}`]).length;
   const cats = BEDTIME_CATS.filter((c) => cat === "all" || c.id === cat);
 
   return (
-    <div className="night">
+    <div className={mode}>
       <PageHeader eyebrow="Before sleep" title="Bedtime Stories"
         sub="True stories from the life of the Prophet ﷺ and his family, the Companions, the prophets of old, the great imams and the cities of the Quran. A few minutes each, to read together or listen to." />
       <Page>
+        <div className="flex justify-end"><StoryThemeToggle mode={mode} setMode={setMode} /></div>
         <section className="card flex flex-wrap items-center justify-between gap-3">
           <span className="font-bold">{t("{read} of {total} stories read", { read, total: BEDTIME.length })}</span>
           <div className="progress min-w-[160px] flex-1"><i style={{ width: `${(read / BEDTIME.length) * 100}%` }} /></div>
@@ -46,7 +49,7 @@ export default function StoriesPage() {
                 return (
                   <Link key={s.id} href={`/stories/${s.id}`}
                     className="lift flex flex-col overflow-hidden rounded-card border border-border bg-bg-surface hover:border-gold-bright">
-                    <StoryCover s={s} className="h-[104px]" />
+                    <StoryCover s={s} day={mode === "paper"} className="h-[104px]" />
                     <div className="flex flex-1 flex-col gap-1.5 p-[16px]">
                       <span className="flex items-center justify-between gap-2 text-[0.8rem] font-bold text-fg-muted">
                         <span>{t("{n}-min story", { n: bedtimeMinutes(s) })}</span>

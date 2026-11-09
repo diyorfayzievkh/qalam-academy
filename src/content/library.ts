@@ -1,6 +1,7 @@
 import { QURAN_EXTRA, QURAN_LESSONS } from "./quran-lessons";
 import { CLEAN_LESSONS } from "./cleanliness";
 import { FAMILY_LESSONS } from "./family";
+import { PUBLIC_LESSONS } from "./public";
 import type { Recitation } from "./recitations";
 import { RECITATIONS } from "./recitations";
 import type { AdabLesson } from "./adab";
@@ -278,6 +279,12 @@ export function lessonCount(w: World) {
     id: "family", title: "Family & Community", arabic: "الأسرة والجيران",
     sub: "Brothers and sisters, devotion to parents, the right of the neighbour, and earning only what is ḥalāl. Every lesson has its own quiz.",
     quizIds: [], lessons: FAMILY_LESSONS,
+  });
+  // Manners in Public world, right after Family & Community.
+  WORLDS.splice(WORLDS.findIndex((w) => w.id === "family") + 1, 0, {
+    id: "public", title: "Manners in Public", arabic: "آداب الأماكن العامة",
+    sub: "The masjid, the bazaar, school, streets and parks: what to do, what not to do and why. And why we never waste food, money or time.",
+    quizIds: [], lessons: PUBLIC_LESSONS,
   });
   const full: Record<string, Lesson[]> = { iman: IMAN_LESSONS, islam: ISLAM_LESSONS, seerah: SEERAH_LESSONS };
   const quran = WORLDS.find((w) => w.id === "quran");

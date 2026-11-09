@@ -22,6 +22,7 @@ export const WORLD_LOOKS: Record<string, WorldLook> = {
   quran: { from: "#08352A", to: "#17664F", accent: "#E9C46A", ink: "#EEF8F1" },
   clean: { from: "#0F4C6E", to: "#3FA7C9", accent: "#FFFFFF", ink: "#F0FAFF" },
   family: { from: "#1E3A2F", to: "#C2703D", accent: "#FFD98A", ink: "#FFF4E4" },
+  public: { from: "#173B57", to: "#B9774A", accent: "#FFD27A", ink: "#FFF3E2" },
   seerah: { from: "#7A3E1D", to: "#E6B373", accent: "#FFF0C9", ink: "#FFF8EC" },
 };
 const FALLBACK: WorldLook = { from: "#0D4A3B", to: "#1D7A60", accent: "#E9C46A", ink: "#F5EFDC" };
@@ -181,6 +182,33 @@ function Scene({ id, L, g }: { id: string; L: WorldLook; g: string }) {
         ))}
         <path d="M0 124h320v16H0z" fill={L.from} opacity={0.55} />
         <path d="M130 132q90-10 180 0" stroke={a} strokeOpacity={0.6} strokeWidth={2} strokeDasharray="4 6" fill="none" />
+      </>);
+    case "public":
+      return (<>
+        <circle cx="220" cy="58" r="56" fill={`url(#${g}-glow)`} />
+        {/* A street: masjid dome and minaret, a market awning, a lamp and a tree */}
+        <g transform="translate(68 22) scale(0.82)">
+        <g fill={L.ink}>
+          <path d="M176 124V88h64v36z" opacity={0.92} />
+          <path d="M184 88a24 24 0 0 1 48 0z" />
+          <path d="M208 58v6" stroke={a} strokeWidth={2} />
+          <rect x="248" y="54" width="10" height="70" opacity={0.92} />
+          <path d="M246 54l7-12 7 12z" />
+          <rect x="200" y="104" width="16" height="20" rx="8" fill={L.from} />
+        </g>
+        <path d="M253 36a5 5 0 1 0 3 8a4 4 0 1 1 -3 -8z" fill={a} />
+        <g>
+          <rect x="118" y="96" width="44" height="28" fill={L.ink} opacity={0.85} />
+          {[0, 1, 2, 3].map((i) => <path key={i} d={`M${118 + i * 11} 88h11v8q-5.5 6 -11 0z`} fill={i % 2 ? a : "#C4533D"} />)}
+          {[124, 136, 148].map((x) => <circle key={x} cx={x} cy={110} r={3.5} fill={x === 136 ? "#1E8257" : a} />)}
+        </g>
+        <path d="M282 124V74" stroke={L.ink} strokeWidth={2.5} />
+        <circle cx="282" cy="70" r="5" fill={a} className="glow-pulse" />
+        <path d="M298 124v-22" stroke="#3A2A1A" strokeWidth={4} />
+        <circle cx="298" cy="94" r="14" fill="#2F6B47" />
+        </g>
+        <path d="M0 124h320v16H0z" fill={L.from} opacity={0.6} />
+        <path d="M110 132h200" stroke={L.ink} strokeOpacity={0.5} strokeWidth={2} strokeDasharray="8 8" />
       </>);
     case "seerah":
       return (<>

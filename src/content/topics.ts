@@ -759,3 +759,14 @@ for (const w of WORLDS) for (const l of w.lessons) {
     family.quizIds = ["family-community"];
   }
 }
+
+// Manners in Public final quiz: two questions from each lesson.
+{
+  const pub = WORLDS.find((w) => w.id === "public");
+  if (pub) {
+    const qs = pub.lessons.flatMap((l) => (l.quiz ?? []).slice(0, 2));
+    TOPICS.push({ id: "public-manners", title: "Manners in Public", sub: `Final quiz: ${qs.length} questions across the Manners in Public world`, icon: "learn",
+      learn: ["Questions from every Manners in Public lesson: the masjid, the bazaar, school, streets, and not wasting food, money or time."], questions: qs });
+    pub.quizIds = ["public-manners"];
+  }
+}

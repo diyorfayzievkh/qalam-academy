@@ -501,6 +501,12 @@ const uz: Dict = {
   "End now": "Hozir tugatish",
   "Live quiz games and challenges with family and friends": "Oila va do‘stlar bilan jonli viktorinalar va musobaqalar",
   "1 player": "1 ta o‘yinchi",
+  "Manners in Public": "Jamoat joylari odobi",
+  "The masjid, the bazaar, school, streets and parks: what to do, what not to do and why. And why we never waste food, money or time.": "Masjid, bozor, maktab, ko‘chalar va bog‘lar: nima qilish, nima qilmaslik va nega. Va nega biz ovqat, pul va vaqtni hech qachon isrof qilmaymiz.",
+  "Public places": "Jamoat joylari",
+  "Don’t waste": "Isrof qilmang",
+  "Final quiz: 14 questions across the Manners in Public world": "Yakuniy test: Jamoat joylari odobi olami bo‘yicha 14 ta savol",
+  "Questions from every Manners in Public lesson: the masjid, the bazaar, school, streets, and not wasting food, money or time.": "Jamoat joylari odobi olamining har bir darsidan savollar: masjid, bozor, maktab, ko‘chalar, ovqat, pul va vaqtni isrof qilmaslik.",
 };
 
 const ru: Dict = {
@@ -984,6 +990,12 @@ const ru: Dict = {
   "End now": "Завершить сейчас",
   "Live quiz games and challenges with family and friends": "Живые викторины и вызовы с семьёй и друзьями",
   "1 player": "1 игрок",
+  "Manners in Public": "Поведение в общественных местах",
+  "The masjid, the bazaar, school, streets and parks: what to do, what not to do and why. And why we never waste food, money or time.": "Мечеть, базар, школа, улицы и парки: что делать, чего не делать и почему. И почему мы никогда не тратим впустую еду, деньги и время.",
+  "Public places": "Общественные места",
+  "Don’t waste": "Не расточай",
+  "Final quiz: 14 questions across the Manners in Public world": "Итоговый тест: 14 вопросов по миру «Поведение в общественных местах»",
+  "Questions from every Manners in Public lesson: the masjid, the bazaar, school, streets, and not wasting food, money or time.": "Вопросы из каждого урока: мечеть, базар, школа, улицы, и как не тратить впустую еду, деньги и время.",
 };
 
 export const DICT: Record<Exclude<Lang, "en">, Dict> = { uz, ru };

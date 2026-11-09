@@ -13,7 +13,7 @@ export default function KnowledgeBasePage() {
   return (
     <>
       <PageHeader eyebrow="Knowledge Base" title="Ilm Quest"
-        sub="Eight worlds of knowledge. Read a lesson for 10 points, then test yourself in the quizzes." />
+        sub="Nine worlds of knowledge. Read a lesson for 10 points, then test yourself in the quizzes." />
       <Page>
         <section className="flex flex-col gap-3">
           <h2 className="text-[1.3rem]">Worlds</h2>

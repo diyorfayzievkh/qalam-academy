@@ -190,7 +190,7 @@ export const RUHIY_LESSONS: Lesson[] = [
 ];
 
 export const RUHIY_QUIZ = {
-  id: "ruhiy", title: "Spiritual Education", sub: "Ruhiy tarbiya, volume 1", icon: "learn" as const,
+  id: "ruhiy", title: "Spiritual Education 1", sub: "Ruhiy tarbiya, volume 1", icon: "learn" as const,
   learn: ["Questions are based on the lessons summarised from Ruhiy tarbiya, 1-juz by Shaykh Muhammad Sodik Muhammad Yusuf."],
   questions: [
     { q: "What does “tazkiyah” mean?", options: ["Only cleaning the body", "Purifying and also growing the soul", "Memorising the Quran", "Giving charity"], answer: 1, why: "The word means both to purify and to grow: freeing the soul from its diseases and adorning it with good qualities.", src: credit("1–14") },

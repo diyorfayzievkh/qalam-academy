@@ -2,6 +2,7 @@ import type { Recitation } from "./recitations";
 import { RECITATIONS } from "./recitations";
 import { ADAB_LESSONS, type AdabLesson } from "./adab";
 import { RUHIY_LESSONS } from "./ruhiy";
+import { RUHIY2_LESSONS } from "./ruhiy2";
 
 // The Knowledge Base: worlds → lessons. Akhlaq & Adab lessons use the
 // five-part template in adab.ts; all others are built from blocks.
@@ -125,8 +126,12 @@ export const WORLDS: World[] = [
     lessons: [], adab: ADAB_LESSONS,
   },
   {
-    id: "ruhiy", title: "Spiritual Education", arabic: "التربية الروحية", sub: "Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf: purifying the soul and refining character", quizIds: ["ruhiy"],
+    id: "ruhiy", title: "Spiritual Education · Vol. 1", arabic: "التربية الروحية", sub: "Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf: the means of purification and the diseases of the heart", quizIds: ["ruhiy"],
     lessons: RUHIY_LESSONS,
+  },
+  {
+    id: "ruhiy-2", title: "Spiritual Education · Vol. 2", arabic: "التربية الروحية", sub: "Ruhiy tarbiya, volume 2: tawḥīd, sincerity, trust, love, fear and hope, patience, repentance and modesty", quizIds: ["ruhiy-2"],
+    lessons: RUHIY2_LESSONS,
   },
   {
     id: "duas", title: "Daily Duas", arabic: "الأدعية", sub: "Short duas for every part of the day", quizIds: [],

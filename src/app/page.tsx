@@ -78,7 +78,7 @@ export default function HomePage() {
 
         <section className="grid gap-3.5 sm:grid-cols-2">
           {[
-            { href: "/learn", eyebrow: "Knowledge Base", title: "Ilm Quest", text: "8 worlds: Iman, Islam, Salah, Spiritual Education, Akhlaq & Adab, Duas, Quran and Seerah." },
+            { href: "/learn", eyebrow: "Knowledge Base", title: "Ilm Quest", text: "9 worlds: Iman, Islam, Salah, Spiritual Education (2 volumes), Akhlaq & Adab, Duas, Quran and Seerah." },
             { href: "/hifz", eyebrow: "Hifz", title: "Memorise the Quran", text: "46 sūrahs and passages, ayah by ayah, with audio and spaced review." },
             { href: "/ramadan", eyebrow: "Seasonal", title: "Ramadan Quest", text: "Daily tracker, 30-day plan, duas, surahs and history." },
             { href: "/mizan", eyebrow: "Collection", title: "Mizan", text: "Deeds heaviest on the scale, from authentic hadith." },

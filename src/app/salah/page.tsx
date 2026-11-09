@@ -176,7 +176,7 @@ function WuduGuide() {
           <button type="button" className="btn btn-gold" disabled={!!studied.wudu} onClick={() => markStudied("wudu", "wuḍūʾ studied")}>
             {studied.wudu ? "Studied ✓" : "Mark as studied · +20"}
           </button>
-          <Link className="btn btn-ghost" href="/learn/wudu">Take the Wuḍūʾ quiz</Link>
+          <Link className="btn btn-ghost" href="/quiz/wudu">Take the Wuḍūʾ quiz</Link>
         </div>
       </section>
     </>

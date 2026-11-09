@@ -23,13 +23,13 @@ const INITIAL: State = {
   prefs: { cityKey: "tashkent", methodKey: "MWL", gender: "m", custom: null },
 };
 
-export const POINTS = { firstCorrect: 10, repeatCorrect: 2, perfectRound: 30, guideStudied: 20 } as const;
+export const POINTS = { firstCorrect: 10, repeatCorrect: 2, perfectRound: 30, guideStudied: 20, lessonRead: 10, questDay: 15 } as const;
 
 type Ctx = State & {
   ready: boolean;
   answerCorrect: (questionId: string) => number;
   markPerfect: (topicId: string) => number;
-  markStudied: (guideId: string, label: string) => void;
+  markStudied: (id: string, label: string, amount?: number) => void;
   setPrefs: (p: Partial<Prefs>) => void;
   reset: () => void;
   toast: string | null;
@@ -91,9 +91,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     return POINTS.perfectRound;
   }, [state.perfect, award]);
 
-  const markStudied = useCallback((id: string, label: string) => {
+  const markStudied = useCallback((id: string, label: string, amount: number = POINTS.guideStudied) => {
     if (state.studied[id]) return;
-    award(POINTS.guideStudied, label, (s) => ({ studied: { ...s.studied, [id]: true } }));
+    award(amount, label, (s) => ({ studied: { ...s.studied, [id]: true } }));
   }, [state.studied, award]);
 
   const setPrefs = useCallback((p: Partial<Prefs>) => setState((s) => ({ ...s, prefs: { ...s.prefs, ...p } })), []);

@@ -17,7 +17,15 @@ Works on phones, tablets and desktop, with light, dark and system themes.
 - **Times** — calculated prayer times (Hanafi Asr), city list or "Use my location",
   five Fajr/Isha methods, Hijri date, rakʿah summary per prayer.
 - **Qibla** — bearing and distance to the Kaʿbah, with a live compass on phones.
-- **Learn** — 5 topics × 10 questions, each with an explanation and a source.
+- **Ilm Quest (Knowledge Base)** — 7 worlds and 31 lessons: Iman, Islam (5 pillars),
+  Salah Academy, Akhlaq & Adab (five-part lessons: why it matters, how to do it right,
+  benefits, what we lose, practice), Daily Duas, Quran Basics and Seerah.
+- **Quizzes** — 5 topics × 10 questions, each with an explanation and a source.
+- **Ramadan Quest** — Hijri countdown, private daily tracker (fast, prayers, taraweeh,
+  Quran pages, dhikr, sadaqah, reflection), khatm planner, make-up fast tracker,
+  30-day Quest, labelled Ramadan duas, surahs and history.
+- **Mizan** — dhikr, character, duas and surahs heaviest on the scale, with source and
+  grade, filters, a private routine and counter, and a Myth Check section.
 - **Badges** — 10 badges, one per 1,000 points. Points come from learning only;
   worship is never scored.
 
@@ -38,9 +46,11 @@ to `.env`, fill in the Supabase URLs, and run `npm run db:push`.
 
 ```
 src/
-  app/            pages: / learn learn/[topic] salah times qibla badges
+  app/            pages: / learn learn/[world] learn/[world]/[lesson] quiz/[topic]
+                  salah times qibla ramadan mizan badges more
   components/     app shell, theme toggle, progress store, figures, pickers
-  content/        recitations, prayers + step builder, quiz topics, cities, badges
+  content/        library (worlds), adab lessons, mizan, ramadan, recitations,
+                  prayers + step builder, quiz topics, cities, badges
   lib/            prayer-time and qibla math, hooks
 prisma/           database schema (Phase 2)
 ```
@@ -56,5 +66,4 @@ prisma/           database schema (Phase 2)
 
 - Phase 2: accounts (email + child profiles with family codes), family circle,
   progress synced to Postgres, Uzbek and Russian translations.
-- Phase 3: Ramadan Quest, Mizan (heaviest on the scale), Akhlaq & Adab lessons,
-  duas and Quran basics, audio recitation.
+- Phase 3: audio recitation, Kids Mode, more worlds and quizzes, seasonal events.

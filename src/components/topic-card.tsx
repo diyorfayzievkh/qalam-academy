@@ -9,7 +9,7 @@ export function TopicCard({ topic }: { topic: Topic }) {
   const { answered, perfect } = useProgress();
   const done = topic.questions.filter((_, i) => answered[`${topic.id}-${i}`]).length;
   return (
-    <Link href={`/learn/${topic.id}`}
+    <Link href={`/quiz/${topic.id}`}
       className="flex flex-col gap-2.5 rounded-card border border-border bg-bg-surface p-[18px] transition hover:-translate-y-0.5 hover:border-emerald">
       <span className="grid h-11 w-11 place-items-center rounded-xl bg-emerald-soft text-emerald"><Icon name={topic.icon} /></span>
       <h3 className="text-[1.12rem]">{topic.title}</h3>

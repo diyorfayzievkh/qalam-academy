@@ -76,6 +76,20 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="grid gap-3.5 sm:grid-cols-3">
+          {[
+            { href: "/learn", eyebrow: "Knowledge Base", title: "Ilm Quest", text: "7 worlds: Iman, Islam, Salah, Akhlaq & Adab, Duas, Quran and Seerah." },
+            { href: "/ramadan", eyebrow: "Seasonal", title: "Ramadan Quest", text: "Daily tracker, 30-day plan, duas, surahs and history." },
+            { href: "/mizan", eyebrow: "Collection", title: "Mizan", text: "Deeds heaviest on the scale, from authentic hadith." },
+          ].map((c) => (
+            <Link key={c.href} href={c.href} className="card flex flex-col gap-1 transition hover:border-emerald">
+              <span className="eyebrow">{c.eyebrow}</span>
+              <h3 className="text-[1.12rem]">{c.title}</h3>
+              <span className="text-[0.9rem] text-fg-muted">{c.text}</span>
+            </Link>
+          ))}
+        </section>
+
         <section className="card border-l-[3px] border-l-gold-bright">
           <span className="eyebrow">Hadith of the day</span>
           <p className="mt-1.5 text-[1.1rem]">Whoever takes a path seeking knowledge, Allah makes easy for them a path to Paradise.</p>

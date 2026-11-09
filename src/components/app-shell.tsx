@@ -4,21 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { BADGES, badgeLevel } from "@/content/badges";
-import { Icon, type IconName } from "./icons";
+import { MORE_PATHS, NAV, TABS } from "@/lib/nav";
+import { Icon } from "./icons";
 import { useProgress } from "./progress";
 import { ThemeToggle } from "./theme";
 
-const NAV: { href: string; label: string; icon: IconName }[] = [
-  { href: "/", label: "Home", icon: "home" },
-  { href: "/learn", label: "Learn", icon: "learn" },
-  { href: "/salah", label: "Salah", icon: "salah" },
-  { href: "/times", label: "Times", icon: "times" },
-  { href: "/qibla", label: "Qibla", icon: "qibla" },
-  { href: "/badges", label: "Badges", icon: "badges" },
-];
-
 function isActive(path: string, href: string) {
-  return href === "/" ? path === "/" : path.startsWith(href);
+  if (href === "/") return path === "/";
+  if (href === "/learn") return path.startsWith("/learn") || path.startsWith("/quiz");
+  if (href === "/more") return MORE_PATHS.some((p) => path.startsWith(p));
+  return path.startsWith(href);
 }
 
 export function AppShell({ children }: { children: ReactNode }) {
@@ -54,8 +49,8 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       {/* Bottom tab bar: phones and portrait tablets */}
       <nav aria-label="Main navigation"
-        className="fixed inset-x-0 bottom-0 z-20 grid grid-cols-6 border-t border-border bg-bg-surface px-[max(6px,env(safe-area-inset-left,0px))] pb-[calc(6px+env(safe-area-inset-bottom,0px))] pt-1.5 lg:hidden">
-        {NAV.map((n) => {
+        className="fixed inset-x-0 bottom-0 z-20 grid grid-cols-5 border-t border-border bg-bg-surface px-[max(6px,env(safe-area-inset-left,0px))] pb-[calc(6px+env(safe-area-inset-bottom,0px))] pt-1.5 lg:hidden">
+        {TABS.map((n) => {
           const on = isActive(path, n.href);
           return (
             <Link key={n.href} href={n.href} aria-current={on ? "page" : undefined}

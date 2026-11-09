@@ -16,7 +16,7 @@ export default function TopicPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Lesson" title={topic.title} sub={topic.sub} />
+      <PageHeader eyebrow="Quiz" title={topic.title} sub={topic.sub} />
       <Page>
         {!started ? (
           <section className="card flex flex-col gap-3">
@@ -26,7 +26,7 @@ export default function TopicPage() {
             </ul>
             <div className="flex flex-wrap gap-3">
               <button type="button" className="btn" onClick={() => setStarted(true)}>Start quiz</button>
-              <Link className="btn btn-ghost" href="/learn">Back to topics</Link>
+              <Link className="btn btn-ghost" href="/learn">Back to the library</Link>
             </div>
           </section>
         ) : (
@@ -56,7 +56,7 @@ function Quiz({ topic, onAgain }: { topic: Topic; onAgain: () => void }) {
         </p>
         <div className="flex flex-wrap gap-3">
           <button type="button" className="btn" onClick={onAgain}>Try again</button>
-          <Link className="btn btn-ghost" href="/learn">All topics</Link>
+          <Link className="btn btn-ghost" href="/learn">Library</Link>
           <Link className="btn btn-ghost" href="/badges">My badges</Link>
         </div>
       </section>

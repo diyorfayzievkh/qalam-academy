@@ -25,14 +25,21 @@ function cmp(en: any, tr: any, path: string) {
 
 async function main() {
   const dir = new URL("../src/content/i18n/", import.meta.url);
-  const files = readdirSync(dir).filter((f) => /^lessons-(uz|ru)-.+\.ts$/.test(f) && f !== "lessons-uz-quiz.ts");
+  const files = readdirSync(dir).filter((f) => /^lessons-(uz|ru)-.+\.ts$/.test(f) && f !== "lessons-uz-quiz.ts" && !/-\d\.ts$/.test(f));
   for (const f of files) {
     const [, lang, world] = f.match(/^lessons-(uz|ru)-(.+)\.ts$/)!;
     const w = WORLDS.find((x) => x.id === world);
     console.log(`${lang}/${world}`);
     if (!w) { bad(`unknown world ${world}`); continue; }
     const map = (await import(new URL(f, dir).href)).default as Record<string, any>;
-    for (const id of Object.keys(map)) if (!w.lessons.some((l) => l.id === id)) bad(`unknown lesson ${id}`);
+    for (const id of Object.keys(map)) if (!w.lessons.some((l) => l.id === id) && !w.adab?.some((l) => l.id === id)) bad(`unknown lesson ${id}`);
+    for (const a of w.adab ?? []) {
+      const tr = map[a.id];
+      if (!tr) { console.log(`  · ${a.id}: not translated yet`); continue; }
+      const { STORY_BLOCKS } = await import("../src/content/stories");
+      const { REWARD_BLOCKS } = await import("../src/content/rewards");
+      cmp({ ...a, stories: STORY_BLOCKS[`${world}/${a.id}`] ?? [], rewards: REWARD_BLOCKS[`${world}/${a.id}`] ?? [] }, tr, a.id);
+    }
     for (const l of w.lessons) {
       const tr = map[l.id];
       if (!tr) { console.log(`  · ${l.id}: not translated yet`); continue; }

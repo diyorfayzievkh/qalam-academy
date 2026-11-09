@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 import type { Lang } from "@/lib/i18n";
-import type { Lesson } from "../library";
+import type { Block, Lesson } from "../library";
 
 // Lesson translations are overlays: each lesson lists its title, summary and
 // blocks in the same order as the English, with only the readable text filled
 // in. Anything missing (a null block, a missing field) falls back to English,
 // so a world can be translated gradually without breaking.
 
-export type LessonTr = { title?: string; summary?: string; blocks?: unknown[]; quiz?: unknown[] };
+export type LessonTr = { title?: string; summary?: string; blocks?: unknown[]; quiz?: unknown[]; [field: string]: unknown };
 export type LessonTrMap = Record<string, LessonTr>;
 
 // Fields that are identifiers, links, Arabic or references: never overwritten.
@@ -44,6 +44,17 @@ export function translateLesson(l: Lesson, tr: LessonTr | undefined): Lesson {
   };
 }
 
+/** An Akhlaq & Adab lesson (a different shape) with its story and reward cards. */
+export function translateAdab<A extends object>(l: A, stories: Block[] | undefined, rewards: Block[] | undefined, tr: LessonTr | undefined) {
+  if (!tr) return { l, stories, rewards };
+  const { stories: ts, rewards: tw, ...rest } = tr;
+  return {
+    l: merge(l, rest),
+    stories: stories && Array.isArray(ts) ? stories.map((b, i) => merge(b, ts[i])) : stories,
+    rewards: rewards && Array.isArray(tw) ? rewards.map((b, i) => merge(b, tw[i])) : rewards,
+  };
+}
+
 /** Lesson quiz questions in the reader's language; answers and sources stay as they are. */
 export function translateQuiz<Q extends { q: string; options: string[]; why: string }>(qs: Q[], tr: unknown[] | undefined): Q[] {
   return tr ? qs.map((q, i) => merge(q, tr[i])) : qs;
@@ -63,6 +74,7 @@ const loaders: Record<string, Loader> = {
   "uz/clean": () => import("./lessons-uz-clean").then((m) => m.default),
   "uz/seerah": () => import("./lessons-uz-seerah").then((m) => m.default),
   "uz/duas": () => import("./lessons-uz-duas").then((m) => m.default),
+  "uz/akhlaq": () => import("./lessons-uz-akhlaq").then((m) => m.default),
 };
 const cache: Record<string, LessonTrMap> = {};
 

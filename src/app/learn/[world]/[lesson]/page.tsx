@@ -13,7 +13,7 @@ import { REWARD_BLOCKS } from "@/content/rewards";
 import { STORY_BLOCKS } from "@/content/stories";
 import { lessonQuizId } from "@/content/topics";
 import { useT } from "@/components/lang";
-import { translateLesson, useLessonTranslations } from "@/content/i18n/lessons";
+import { translateAdab, translateLesson, useLessonTranslations } from "@/content/i18n/lessons";
 
 export default function LessonPage() {
   const { world: wid, lesson: lid } = useParams<{ world: string; lesson: string }>();
@@ -22,7 +22,9 @@ export default function LessonPage() {
   const w = findWorld(wid);
   const orig = w?.lessons.find((l) => l.id === lid);
   const lesson = orig && translateLesson(orig, trMap?.[orig.id]);
-  const adab = w?.adab?.find((l) => l.id === lid);
+  const adab0 = w?.adab?.find((l) => l.id === lid);
+  const ad = adab0 ? translateAdab(adab0, STORY_BLOCKS[`${wid}/${lid}`], REWARD_BLOCKS[`${wid}/${lid}`], trMap?.[adab0.id]) : undefined;
+  const adab = ad?.l;
   if (!w || (!lesson && !adab)) notFound();
 
   const all = [...(w.adab ?? []).map((l) => l.id), ...w.lessons.map((l) => l.id)];
@@ -35,7 +37,7 @@ export default function LessonPage() {
       <PageHeader eyebrow={lesson?.group ? `${t(w.title)} · ${t(lesson.group)}` : t(w.title)} title={title} sub={lesson?.summary ?? adab!.summary} />
       <Page>
         <Link href={`/learn/${w.id}`} className="font-bold text-fg-muted">← {t(w.title)}</Link>
-        {lesson ? <BlockLesson lesson={lesson} orig={orig!} worldId={w.id} /> : <AdabView l={adab!} rewards={REWARD_BLOCKS[`${w.id}/${lid}`]} stories={STORY_BLOCKS[`${w.id}/${lid}`]} />}
+        {lesson ? <BlockLesson lesson={lesson} orig={orig!} worldId={w.id} /> : <AdabView l={adab!} rewards={ad?.rewards} stories={ad?.stories} />}
         <FinishBar id={`lesson:${w.id}/${lid}`} next={nextId ? `/learn/${w.id}/${nextId}` : null} back={`/learn/${w.id}`} />
       </Page>
     </>

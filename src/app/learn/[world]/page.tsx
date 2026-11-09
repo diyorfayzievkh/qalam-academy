@@ -21,7 +21,8 @@ export default function WorldPage() {
 
   type Item = { id: string; title: string; summary: string; tag: string };
   const sections: { title: string | null; items: Item[] }[] = [];
-  for (const l of w.adab ?? []) {
+  for (const l0 of w.adab ?? []) {
+    const l = { ...l0, ...(trMap?.[l0.id]?.title ? { title: trMap[l0.id].title as string } : {}), ...(trMap?.[l0.id]?.summary ? { summary: trMap[l0.id].summary as string } : {}) };
     let sec = sections[sections.length - 1];
     if (!sec || sec.title !== l.category) { sec = { title: l.category, items: [] }; sections.push(sec); }
     sec.items.push({ id: l.id, title: l.title, summary: l.summary, tag: t("Quiz inside") });

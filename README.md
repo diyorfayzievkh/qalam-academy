@@ -29,8 +29,22 @@ Works on phones, tablets and desktop, with light, dark and system themes.
 - **Badges** — 10 badges, one per 1,000 points. Points come from learning only;
   worship is never scored.
 
-Progress is saved in the browser for now (guest mode). The Prisma schema for
-accounts, family circles and synced progress is in `prisma/schema.prisma`.
+Progress is saved in the browser (guest mode). Signing in syncs it to Postgres.
+
+## Phase 2 (built)
+
+- **Search** across lessons, Akhlaq & Adab, prayers, bedtime stories, quizzes,
+  Mizan, Hifz and Ramadan duʿāʾs (`src/lib/search.ts`, server-side).
+- **Accounts**: parents sign in with email and password; children sign in with the
+  family code, their name and a 4-digit PIN set by the parent.
+- **Family circle** (`/account`): create or join a family, add children, see each
+  child’s points, badges, lessons, quizzes and memorised sūrahs. Worship is never
+  tracked.
+- **Sync**: learning progress and Hifz are merged across devices (`src/lib/sync-merge.ts`).
+- **Languages**: interface in English, Uzbek and Russian (`src/lib/i18n.ts`);
+  lesson and story content is translated section by section.
+
+Database: Supabase project `qalam-academy`; schema in `db/schema.sql`.
 
 ## Run it
 
@@ -39,8 +53,8 @@ npm install
 npm run dev        # http://localhost:3000
 ```
 
-The app runs without a database in Phase 1. For Phase 2, copy `.env.example`
-to `.env`, fill in the Supabase URLs, and run `npm run db:push`.
+The app runs without a database (guest mode). For accounts, copy `.env.example`
+to `.env` and set `DATABASE_URL`; the schema is in `db/schema.sql`.
 
 ## Project layout
 
@@ -52,7 +66,7 @@ src/
   content/        library (worlds), adab lessons, mizan, ramadan, recitations,
                   prayers + step builder, quiz topics, cities, badges
   lib/            prayer-time and qibla math, hooks
-prisma/           database schema (Phase 2)
+db/               database schema (Supabase Postgres)
 ```
 
 ## Before public release
@@ -64,6 +78,5 @@ prisma/           database schema (Phase 2)
 
 ## Roadmap
 
-- Phase 2: accounts (email + child profiles with family codes), family circle,
-  progress synced to Postgres, Uzbek and Russian translations.
+- Phase 2: done, except translating lesson and story content into Uzbek and Russian.
 - Phase 3: audio recitation, Kids Mode, more worlds and quizzes, seasonal events.

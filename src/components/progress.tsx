@@ -4,9 +4,8 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import { BADGES, badgeLevel } from "@/content/badges";
 import type { GenderKey } from "@/content/prayers";
 
-// Phase 1: guest progress stored in this browser. Phase 2 swaps the persistence
-// for server actions backed by the Prisma models (QuestionAnswer, PointEvent…)
-// without changing this hook's interface.
+// Progress is kept in this browser; when signed in, <AccountProvider> syncs it
+// to the server (see components/account.tsx) without changing this hook.
 
 export type Prefs = { cityKey: string; methodKey: string; gender: GenderKey; custom: { lat: number; lng: number; tz: string } | null };
 type State = {
@@ -32,6 +31,10 @@ type Ctx = State & {
   markStudied: (id: string, label: string, amount?: number) => void;
   setPrefs: (p: Partial<Prefs>) => void;
   reset: () => void;
+  /** Replace learning progress with a synced copy (no toast, prefs kept). */
+  applySynced: (d: { points: number; answered: Record<string, true>; perfect: Record<string, true>; studied: Record<string, true> }) => void;
+  /** Wipe learning progress on this device (used on sign-out). */
+  clearLocal: () => void;
   toast: string | null;
 };
 
@@ -99,8 +102,19 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const setPrefs = useCallback((p: Partial<Prefs>) => setState((s) => ({ ...s, prefs: { ...s.prefs, ...p } })), []);
   const reset = useCallback(() => { setState((s) => ({ ...INITIAL, prefs: s.prefs })); show("Progress reset"); }, [show]);
 
+  const applySynced = useCallback((d: Parameters<Ctx["applySynced"]>[0]) => {
+    const next = { ...stateRef.current, points: d.points, answered: d.answered, perfect: d.perfect, studied: d.studied };
+    stateRef.current = next;
+    setState(next);
+  }, []);
+  const clearLocal = useCallback(() => {
+    const next = { ...INITIAL, prefs: stateRef.current.prefs };
+    stateRef.current = next;
+    setState(next);
+  }, []);
+
   return (
-    <ProgressContext.Provider value={{ ...state, ready, answerCorrect, markPerfect, markStudied, setPrefs, reset, toast }}>
+    <ProgressContext.Provider value={{ ...state, ready, answerCorrect, markPerfect, markStudied, setPrefs, reset, applySynced, clearLocal, toast }}>
       {children}
     </ProgressContext.Provider>
   );

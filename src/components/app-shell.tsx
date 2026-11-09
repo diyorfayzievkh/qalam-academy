@@ -8,6 +8,8 @@ import { MORE_PATHS, NAV, TABS } from "@/lib/nav";
 import { Icon } from "./icons";
 import { useProgress } from "./progress";
 import { ThemeToggle } from "./theme";
+import { useAccount } from "./account";
+import { LangSwitch, useT } from "./lang";
 
 function isActive(path: string, href: string) {
   if (href === "/") return path === "/";
@@ -19,13 +21,15 @@ function isActive(path: string, href: string) {
 export function AppShell({ children }: { children: ReactNode }) {
   const path = usePathname();
   const { points, toast } = useProgress();
+  const { user, available } = useAccount();
+  const { t } = useT();
   const lvl = badgeLevel(points);
 
   return (
     <div className="min-h-full lg:grid lg:grid-cols-[232px_1fr]">
       {/* Sidebar: tablets in landscape and desktop */}
       <aside className="girih sticky top-0 hidden h-screen flex-col gap-1 px-3.5 py-6 text-band-fg lg:flex" aria-label="Main navigation">
-        <div className="px-3 font-display text-[1.4rem] font-bold text-gold-bright">Qalam Academy</div>
+        <div className="px-3 font-display text-[1.4rem] font-bold text-gold-bright">{t("Qalam Academy")}</div>
         <div lang="ar" className="px-3 pb-5 font-arabic text-[1.1rem] opacity-75">أكاديمية القلم</div>
         <nav className="flex flex-col gap-1">
           {NAV.map((n) => {
@@ -33,15 +37,20 @@ export function AppShell({ children }: { children: ReactNode }) {
             return (
               <Link key={n.href} href={n.href} aria-current={on ? "page" : undefined}
                 className={`flex items-center gap-3 rounded-[10px] px-3 py-2.5 font-bold ${on ? "bg-gold-bright/20 text-gold-bright" : "opacity-80 hover:bg-white/5 hover:opacity-100"}`}>
-                <Icon name={n.icon} />{n.label}
+                <Icon name={n.icon} />{t(n.label)}
               </Link>
             );
           })}
         </nav>
         <div className="mt-auto border-t border-gold-bright/30 px-3 pt-3 text-[0.85rem]">
-          <span className="opacity-70">Your points</span>
+          <span className="opacity-70">{t("Your points")}</span>
           <b className="block font-display text-2xl tabular-nums text-gold-bright">{points.toLocaleString()}</b>
-          <span>{lvl ? `Badge: ${BADGES[lvl - 1].name}` : "First badge at 1,000"}</span>
+          <span>{lvl ? t("Badge: {name}", { name: t(BADGES[lvl - 1].name) }) : t("First badge at 1,000")}</span>
+          {available && (
+            <Link href="/account" className="mt-2.5 flex items-center gap-2 font-bold text-gold-bright hover:underline">
+              <Icon name="user" size={18} />{user ? user.name : t("Sign in")}
+            </Link>
+          )}
         </div>
       </aside>
 
@@ -55,7 +64,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           return (
             <Link key={n.href} href={n.href} aria-current={on ? "page" : undefined}
               className={`flex flex-col items-center gap-0.5 rounded-[10px] py-1.5 text-[0.68rem] font-bold ${on ? "bg-emerald-soft text-emerald" : "text-fg-muted"}`}>
-              <Icon name={n.icon} />{n.label}
+              <Icon name={n.icon} />{t(n.label)}
             </Link>
           );
         })}
@@ -71,19 +80,21 @@ export function AppShell({ children }: { children: ReactNode }) {
 }
 
 export function PageHeader({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?: string }) {
+  const { t } = useT();
   return (
     <header className="girih relative overflow-hidden text-band-fg">
       <div className="gutter mx-auto flex max-w-[980px] flex-col gap-1.5 pb-[26px] pt-[calc(22px+env(safe-area-inset-top,0px))]">
         <div className="flex items-center justify-between gap-3">
-          <span className="font-display text-[1.05rem] font-bold text-gold-bright lg:invisible">Qalam Academy</span>
-          <div className="flex items-center gap-2">
-            <Link href="/search" className="inline-flex items-center gap-1.5 rounded-full border border-gold-bright/45 bg-white/10 px-3 py-1.5 text-[0.85rem] font-bold text-band-fg hover:bg-white/20"><Icon name="search" size={18} />Search</Link>
+          <span className="font-display text-[1.05rem] font-bold text-gold-bright max-sm:hidden lg:invisible">{t("Qalam Academy")}</span>
+          <div className="ml-auto flex items-center gap-2">
+            <Link href="/search" className="inline-flex items-center gap-1.5 rounded-full border border-gold-bright/45 bg-white/10 px-3 py-1.5 text-[0.85rem] font-bold text-band-fg hover:bg-white/20"><Icon name="search" size={18} /><span className="max-sm:sr-only">{t("Search")}</span></Link>
+            <LangSwitch />
             <ThemeToggle />
           </div>
         </div>
-        <span className="eyebrow !text-gold-bright">{eyebrow}</span>
-        <h1 className="text-[clamp(1.6rem,4.4vw,2.3rem)]">{title}</h1>
-        {sub && <p className="max-w-[60ch] opacity-85">{sub}</p>}
+        <span className="eyebrow !text-gold-bright">{t(eyebrow)}</span>
+        <h1 className="text-[clamp(1.6rem,4.4vw,2.3rem)]">{t(title)}</h1>
+        {sub && <p className="max-w-[60ch] opacity-85">{t(sub)}</p>}
       </div>
     </header>
   );

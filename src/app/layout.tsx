@@ -12,6 +12,8 @@ import "@fontsource/amiri/700.css";
 import "./globals.css";
 import { AppShell } from "@/components/app-shell";
 import { ProgressProvider } from "@/components/progress";
+import { AccountProvider } from "@/components/account";
+import { LangProvider } from "@/components/lang";
 import { themeInitScript } from "@/components/theme";
 
 export const metadata: Metadata = {
@@ -40,7 +42,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ProgressProvider>
-          <AppShell>{children}</AppShell>
+          <AccountProvider>
+            <LangProvider>
+              <AppShell>{children}</AppShell>
+            </LangProvider>
+          </AccountProvider>
         </ProgressProvider>
       </body>
     </html>

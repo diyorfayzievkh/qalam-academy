@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Icon } from "./icons";
+import { useT } from "./lang";
 
 export type ThemePref = "light" | "dark" | "system";
 const KEY = "iman-theme";
@@ -16,6 +17,7 @@ function apply(pref: ThemePref) {
 
 export function ThemeToggle({ className = "" }: { className?: string }) {
   const [pref, setPref] = useState<ThemePref>("system");
+  const { t } = useT();
 
   useEffect(() => {
     try { setPref((localStorage.getItem(KEY) as ThemePref) || "system"); } catch {}
@@ -46,7 +48,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       }}
     >
       <Icon name={icon[pref]} size={15} />
-      {label[pref]}
+      <span className="max-[380px]:sr-only">{t(label[pref])}</span>
     </button>
   );
 }

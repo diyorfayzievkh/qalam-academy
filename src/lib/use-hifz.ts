@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-// Memorisation progress, stored on this device for now (phase 2: synced via
-// the HifzProgress table). Reviews use simple spaced repetition: each strong
+// Memorisation progress, stored on this device and synced to the account
+// when signed in. Reviews use simple spaced repetition: each strong
 // review roughly doubles the gap (1 → 3 → 7 → 16 → 35 days…).
 
 export type HifzState = {
@@ -16,7 +16,8 @@ export type HifzState = {
 };
 type Store = Record<string, HifzState>;
 
-const KEY = "qalam-hifz-v1";
+export const HIFZ_KEY = "qalam-hifz-v1";
+const KEY = HIFZ_KEY;
 const DAY = 864e5;
 export const today = () => new Date().toISOString().slice(0, 10);
 const addDays = (n: number) => new Date(Date.now() + n * DAY).toISOString().slice(0, 10);
@@ -26,14 +27,18 @@ export function useHifz() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    try { setStore(JSON.parse(localStorage.getItem(KEY) || "{}")); } catch {}
+    const load = () => { try { setStore(JSON.parse(localStorage.getItem(KEY) || "{}")); } catch {} };
+    load();
     setReady(true);
+    window.addEventListener("qalam:hifz-synced", load);
+    return () => window.removeEventListener("qalam:hifz-synced", load);
   }, []);
 
   const save = useCallback((fn: (s: Store) => Store) => {
     setStore((prev) => {
       const next = fn(prev);
       try { localStorage.setItem(KEY, JSON.stringify(next)); } catch {}
+      setTimeout(() => window.dispatchEvent(new Event("qalam:local-change")), 0);
       return next;
     });
   }, []);

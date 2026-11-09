@@ -4,5 +4,6 @@ import { UZ_COMPANIONS } from "./bedtime-uz-2";
 import { UZ_PROPHETS } from "./bedtime-uz-3";
 import { UZ_LIFE_1 } from "./bedtime-uz-4";
 import { UZ_LIFE_2 } from "./bedtime-uz-5";
+import { UZ_IMAMS } from "./bedtime-uz-6";
 
-export const BEDTIME_UZ: StoryTrMap = { ...UZ_PROPHET, ...UZ_COMPANIONS, ...UZ_PROPHETS, ...UZ_LIFE_1, ...UZ_LIFE_2 };
+export const BEDTIME_UZ: StoryTrMap = { ...UZ_PROPHET, ...UZ_COMPANIONS, ...UZ_PROPHETS, ...UZ_LIFE_1, ...UZ_LIFE_2, ...UZ_IMAMS };

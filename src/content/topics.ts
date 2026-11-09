@@ -1,3 +1,4 @@
+import { RUHIY_QUIZ } from "./ruhiy";
 // Quiz topics. Each topic: a short lesson, then 10 questions with a source.
 
 export type Question = { q: string; options: string[]; answer: number; why: string; src: string };
@@ -669,5 +670,6 @@ export const TOPICS: Topic[] = [
         "src": "Bukhari 6224"
       }
     ]
-  }
+  },
+  RUHIY_QUIZ,
 ];

@@ -1,6 +1,7 @@
 import type { Recitation } from "./recitations";
 import { RECITATIONS } from "./recitations";
 import { ADAB_LESSONS, type AdabLesson } from "./adab";
+import { RUHIY_LESSONS } from "./ruhiy";
 
 // The Knowledge Base: worlds → lessons. Akhlaq & Adab lessons use the
 // five-part template in adab.ts; all others are built from blocks.
@@ -122,6 +123,10 @@ export const WORLDS: World[] = [
   {
     id: "akhlaq", title: "Akhlaq & Adab", arabic: "الأخلاق والآداب", sub: "Character and manners, the heaviest on the scale", quizIds: ["akhlaq"],
     lessons: [], adab: ADAB_LESSONS,
+  },
+  {
+    id: "ruhiy", title: "Spiritual Education", arabic: "التربية الروحية", sub: "Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf: purifying the soul and refining character", quizIds: ["ruhiy"],
+    lessons: RUHIY_LESSONS,
   },
   {
     id: "duas", title: "Daily Duas", arabic: "الأدعية", sub: "Short duas for every part of the day", quizIds: [],

@@ -53,6 +53,8 @@ const loaders: Record<string, Loader> = {
   "ru/islam": () => import("./lessons-ru-islam").then((m) => m.default),
   "uz/salah": () => import("./lessons-uz-salah").then((m) => m.default),
   "ru/salah": () => import("./lessons-ru-salah").then((m) => m.default),
+  "uz/quran": () => import("./lessons-uz-quran").then((m) => m.default),
+  "ru/quran": () => import("./lessons-ru-quran").then((m) => m.default),
 };
 const cache: Record<string, LessonTrMap> = {};
 

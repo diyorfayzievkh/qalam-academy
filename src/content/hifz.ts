@@ -2,7 +2,7 @@
 // (shortest and most-used first). Text, audio and translations load from
 // /api/quran/[id], which reads the Tanzil-based alquran.cloud API.
 
-export type HifzGroup = "Start here" | "Juz ʿAmma" | "Weekly and nightly";
+export type HifzGroup = "Start here" | "Juz ʿAmma" | "Juz Tabārak" | "Weekly and nightly" | "Special passages";
 
 export type HifzItem = {
   id: string; // URL slug
@@ -66,16 +66,37 @@ export const HIFZ: HifzItem[] = [
   s(79, "An-Nāziʿāt", "النازعات", "Those Who Pull Out", 46, "Juz ʿAmma"),
   s(78, "An-Nabaʾ", "النبأ", "The Great News", 40, "Juz ʿAmma"),
 
+  // ---- Juz Tabārak (juzʾ 29) ----
+  s(67, "Al-Mulk", "الملك", "The Sovereignty", 30, "Juz Tabārak", "It intercedes for its reciter until they are forgiven (Tirmidhi 2891). Recite it every night."),
+  s(68, "Al-Qalam", "القلم", "The Pen", 52, "Juz Tabārak", "“And indeed, you are of a great moral character” (68:4)."),
+  s(69, "Al-Ḥāqqah", "الحاقة", "The Inevitable Reality", 52, "Juz Tabārak"),
+  s(70, "Al-Maʿārij", "المعارج", "The Ascending Stairways", 44, "Juz Tabārak"),
+  s(71, "Nūḥ", "نوح", "Noah", 28, "Juz Tabārak", "Nūḥ’s call to his people, and “Ask forgiveness of your Lord…” (71:10–12)."),
+  s(72, "Al-Jinn", "الجن", "The Jinn", 28, "Juz Tabārak"),
+  s(73, "Al-Muzzammil", "المزمل", "The Enwrapped One", 20, "Juz Tabārak", "“Stand in prayer at night… and recite the Quran with tartīl” (73:2–4)."),
+  s(74, "Al-Muddaththir", "المدثر", "The Cloaked One", 56, "Juz Tabārak", "Among the earliest revelations, after the first pause (Bukhari 4925)."),
+  s(75, "Al-Qiyāmah", "القيامة", "The Resurrection", 40, "Juz Tabārak"),
+  s(76, "Al-Insān", "الإنسان", "Man", 31, "Juz Tabārak", "Recited by the Prophet ﷺ in Fajr on Fridays, with As-Sajdah (Muslim 879)."),
+  s(77, "Al-Mursalāt", "المرسلات", "Those Sent Forth", 50, "Juz Tabārak"),
+
   // ---- Weekly and nightly surahs ----
-  { id: "kahf-1-10", surah: 18, from: 1, count: 10, name: "Al-Kahf 1–10", arabic: "الكهف", meaning: "The Cave, first ten verses", ayahs: 10, group: "Weekly and nightly", virtue: "Whoever memorises the first ten verses is protected from the Dajjāl (Muslim 809)." },
-  s(67, "Al-Mulk", "الملك", "The Sovereignty", 30, "Weekly and nightly", "It intercedes for its reciter until they are forgiven (Tirmidhi 2891)."),
+  { id: "kahf-1-10", surah: 18, from: 1, count: 10, name: "Al-Kahf 1–10", arabic: "الكهف", meaning: "The Cave, first ten verses", ayahs: 10, group: "Special passages", virtue: "Whoever memorises the first ten verses is protected from the Dajjāl (Muslim 809)." },
   s(32, "As-Sajdah", "السجدة", "The Prostration", 30, "Weekly and nightly", "The Prophet ﷺ would not sleep until he recited As-Sajdah and Al-Mulk (Tirmidhi 2892)."),
   s(36, "Yā Sīn", "يس", "Yā Sīn", 83, "Weekly and nightly"),
   s(55, "Ar-Raḥmān", "الرحمن", "The Most Merciful", 78, "Weekly and nightly"),
   s(56, "Al-Wāqiʿah", "الواقعة", "The Inevitable Event", 96, "Weekly and nightly"),
+  s(18, "Al-Kahf", "الكهف", "The Cave", 110, "Weekly and nightly", "Whoever recites it on Friday, a light shines for him between the two Fridays (al-Ḥākim, al-Bayhaqī)."),
+  s(62, "Al-Jumuʿah", "الجمعة", "Friday", 11, "Weekly and nightly", "Recited by the Prophet ﷺ in the Jumuʿah prayer, with Al-Munāfiqūn (Muslim 877)."),
+  s(63, "Al-Munāfiqūn", "المنافقون", "The Hypocrites", 11, "Weekly and nightly", "Recited in the second rakʿah of Jumuʿah (Muslim 877)."),
+
+  // ---- Special passages ----
+  { id: "kahf-101-110", surah: 18, from: 101, count: 10, name: "Al-Kahf 101–110", arabic: "خواتيم الكهف", meaning: "The Cave, last ten verses", ayahs: 10, group: "Special passages", virtue: "In one narration of Muslim 809, protection from the Dajjāl is from the last ten verses of Al-Kahf." },
+  { id: "imran-190-200", surah: 3, from: 190, count: 11, name: "Āl ʿImrān 190–200", arabic: "خواتيم آل عمران", meaning: "The Family of ʿImrān, last eleven verses", ayahs: 11, group: "Special passages", virtue: "The Prophet ﷺ recited them when he woke for the night prayer, looking at the sky (Bukhari 4569)." },
+  { id: "hashr-22-24", surah: 59, from: 22, count: 3, name: "Al-Ḥashr 22–24", arabic: "خواتيم الحشر", meaning: "The Gathering, last three verses", ayahs: 3, group: "Special passages", virtue: "Some of Allah’s most beautiful names, one after another." },
+  { id: "baqarah-1-5", surah: 2, from: 1, count: 5, name: "Al-Baqarah 1–5", arabic: "فاتحة البقرة", meaning: "The Cow, first five verses", ayahs: 5, group: "Special passages", virtue: "The qualities of the God-conscious who are guided by the Book." },
 ];
 
-export const HIFZ_GROUPS: HifzGroup[] = ["Start here", "Juz ʿAmma", "Weekly and nightly"];
+export const HIFZ_GROUPS: HifzGroup[] = ["Start here", "Juz ʿAmma", "Juz Tabārak", "Weekly and nightly", "Special passages"];
 
 export function findHifz(id: string) {
   return HIFZ.find((h) => h.id === id);

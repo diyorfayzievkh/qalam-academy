@@ -241,7 +241,7 @@ export function HomeClient({ picks }: { picks: DailyPicks }) {
           {[
             { href: "/learn", eyebrow: "Knowledge Base", title: "Ilm Quest", text: "Iman, Islam, Salah, Akhlaq & Adab, Duas, Quran and Seerah, plus Spiritual Tarbiyah (3 volumes) and Social Tarbiyah.", art: "quran" },
             { href: "/stories", eyebrow: "Before sleep", title: "Bedtime Stories", text: "The Prophet ﷺ and his family, the Companions, the prophets, the great imams and the cities of the Quran.", art: "iman" },
-            { href: "/hifz", eyebrow: "Hifz", title: "Memorise the Quran", text: "46 sūrahs and passages, ayah by ayah, with audio and spaced review.", art: "duas" },
+            { href: "/hifz", eyebrow: "Hifz", title: "Memorise the Quran", text: "63 sūrahs and passages, ayah by ayah, with audio and spaced review.", art: "duas" },
             { href: "/mizan", eyebrow: "Collection", title: "Mizan", text: "Deeds heaviest on the scale, from authentic hadith.", art: "akhlaq" },
           ].map((c) => (
             <Link key={c.href} href={c.href} className="lift flex overflow-hidden rounded-card border border-border bg-bg-surface hover:border-emerald">

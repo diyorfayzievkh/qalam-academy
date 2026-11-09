@@ -1,3 +1,4 @@
+import { QURAN_EXTRA, QURAN_LESSONS } from "./quran-lessons";
 import type { Recitation } from "./recitations";
 import { RECITATIONS } from "./recitations";
 import type { AdabLesson } from "./adab";
@@ -208,7 +209,7 @@ export const WORLDS: World[] = [
     ],
   },
   {
-    id: "quran", title: "Quran Basics", arabic: "القرآن", sub: "Short surahs for prayer, with meaning", quizIds: [],
+    id: "quran", title: "Quran Basics", arabic: "القرآن", sub: "What the Quran is, how it came down and was preserved, its manners, tajwīd, the prostration of recitation, key sūrahs, memorising and reflecting. Every lesson has its own quiz.", quizIds: [],
     lessons: [
       { id: "fatiha", title: "Al-Fātiḥah (1)", summary: "The greatest sūrah, recited in every rakʿah.", sources: ["Bukhari 4474", "Bukhari 756"],
         blocks: [
@@ -265,6 +266,14 @@ export function lessonCount(w: World) {
   const salah = WORLDS.find((w) => w.id === "salah");
   if (salah) salah.lessons = [...salah.lessons, ...SALAH_EXTRA];
   const full: Record<string, Lesson[]> = { iman: IMAN_LESSONS, islam: ISLAM_LESSONS, seerah: SEERAH_LESSONS };
+  const quran = WORLDS.find((w) => w.id === "quran");
+  if (quran) {
+    const old = Object.fromEntries(quran.lessons.map((l) => [l.id, { ...l, group: "Key sūrahs",
+      blocks: [...l.blocks, ...(QURAN_EXTRA[l.id]?.blocks ?? [])], quiz: QURAN_EXTRA[l.id]?.quiz ?? l.quiz }]));
+    const by = Object.fromEntries(QURAN_LESSONS.map((l) => [l.id, l]));
+    quran.lessons = [by["what-is-quran"], by["revelation"], by["preserved"], by["fatiha"], old["kursi"], old["short-surahs"],
+      by["quran-adab"], by["quran-reward"], by["tajwid"], by["sajdah-tilawah"], by["asbab"], by["memorise"], by["tadabbur"]].filter(Boolean);
+  }
   for (const w of WORLDS) if (full[w.id]) w.lessons = full[w.id];
   for (const w of WORLDS) {
     w.lessons = w.lessons.map((l) => {

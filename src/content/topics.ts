@@ -726,3 +726,14 @@ for (const w of WORLDS) for (const l of w.lessons) {
     seerah.quizIds = ["seerah"];
   }
 }
+
+// Quran Basics final quiz: two questions from each lesson that has a quiz.
+{
+  const quran = WORLDS.find((w) => w.id === "quran");
+  if (quran) {
+    const qs = quran.lessons.flatMap((l) => (l.quiz ?? []).slice(0, 2)).slice(0, 30);
+    TOPICS.push({ id: "quran-basics", title: "Quran Basics", sub: `Final quiz: ${qs.length} questions across the Quran world`, icon: "learn",
+      learn: ["Questions from every lesson in Quran Basics: the revelation, preservation, manners, tajwīd, sajdah, stories and more."], questions: qs });
+    quran.quizIds = ["quran-basics"];
+  }
+}

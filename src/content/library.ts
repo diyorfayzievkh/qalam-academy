@@ -12,6 +12,8 @@ import { ISLAM_LESSONS } from "./islam";
 import { SEERAH_LESSONS } from "./seerah";
 import { REWARD_BLOCKS } from "./rewards";
 import { STORY_BLOCKS } from "./stories";
+import { ENRICH_RUHIY } from "./enrich-ruhiy";
+import { ENRICH_SOCIAL } from "./enrich-social";
 
 // The Knowledge Base: worlds → lessons. Akhlaq & Adab lessons use the
 // five-part template in adab.ts; all others are built from blocks.
@@ -273,6 +275,11 @@ export function lessonCount(w: World) {
         const first = blocks.findIndex((b) => b.type === "points");
         const at = first < 0 ? Math.min(1, blocks.length) : first + 1;
         blocks = [...blocks.slice(0, at), ...stories, ...blocks.slice(at)];
+      }
+      const enrich = ENRICH_RUHIY[`${w.id}/${l.id}`] ?? ENRICH_SOCIAL[`${w.id}/${l.id}`];
+      if (enrich) {
+        const k = blocks.findIndex((b) => b.type === "points" && b.title === "Key takeaways");
+        blocks = k < 0 ? [...blocks, ...enrich] : [...blocks.slice(0, k), ...enrich, ...blocks.slice(k)];
       }
       const extra = REWARD_BLOCKS[`${w.id}/${l.id}`];
       if (extra) {

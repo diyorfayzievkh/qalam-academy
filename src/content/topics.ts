@@ -1,5 +1,6 @@
 import { RUHIY_QUIZ } from "./ruhiy";
 import { RUHIY2_QUIZ } from "./ruhiy2";
+import { RUHIY3_QUIZ } from "./ruhiy3";
 // Quiz topics. Each topic: a short lesson, then 10 questions with a source.
 
 export type Question = { q: string; options: string[]; answer: number; why: string; src: string };
@@ -674,4 +675,5 @@ export const TOPICS: Topic[] = [
   },
   RUHIY_QUIZ,
   RUHIY2_QUIZ,
+  RUHIY3_QUIZ,
 ];

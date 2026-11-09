@@ -76,7 +76,10 @@ export function PageHeader({ eyebrow, title, sub }: { eyebrow: string; title: st
       <div className="gutter mx-auto flex max-w-[980px] flex-col gap-1.5 pb-[26px] pt-[calc(22px+env(safe-area-inset-top,0px))]">
         <div className="flex items-center justify-between gap-3">
           <span className="font-display text-[1.05rem] font-bold text-gold-bright lg:invisible">Qalam Academy</span>
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <Link href="/search" className="inline-flex items-center gap-1.5 rounded-full border border-gold-bright/45 bg-white/10 px-3 py-1.5 text-[0.85rem] font-bold text-band-fg hover:bg-white/20"><Icon name="search" size={18} />Search</Link>
+            <ThemeToggle />
+          </div>
         </div>
         <span className="eyebrow !text-gold-bright">{eyebrow}</span>
         <h1 className="text-[clamp(1.6rem,4.4vw,2.3rem)]">{title}</h1>

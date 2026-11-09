@@ -114,7 +114,7 @@ export const BEDTIME_1: Bedtime[] = [
     talk: "How can we take care of animals around us: pets, birds, or stray cats in winter?",
     src: "Abu Dawud 2549 (the camel); Abu Dawud 2675 (the bird and the ants); Tirmidhi 3840 (Abū Hurayrah’s kitten); Bukhari 2365 (the cat); Bukhari 2363 (the dog)" },
 
-  { id: "miraj", cat: "prophet", title: "The Night Journey to the heavens", teaser: "Al-Burāq, al-Aqṣā, seven heavens, and a gift of prayer.",
+  { id: "miraj", cat: "prophet", title: "The Night Journey and the Miʿrāj", teaser: "Al-Burāq, al-Aqṣā, seven heavens, and a gift of prayer.",
     paras: [
       "It was the hardest time of the Prophet’s ﷺ life. His beloved wife Khadījah had died. His uncle Abū Ṭālib, who had protected him, had died. The people of Ṭāʾif had thrown stones at him. People called it the Year of Sorrow.",
       "Then, one night, as the Prophet ﷺ lay resting near the Kaʿbah, the angel Jibrīl came. He opened the Prophet’s ﷺ chest, washed his heart with the water of Zamzam, and filled it with wisdom and faith.",

@@ -12,6 +12,9 @@ import { RECITATIONS } from "@/content/recitations";
 export default function SalahPage() {
   const { prefs, setPrefs } = useProgress();
   const [mode, setMode] = useState<"wudu" | "prayer">("prayer");
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("mode") === "wudu") setMode("wudu");
+  }, []);
 
   return (
     <>
@@ -38,6 +41,11 @@ function PrayerGuide() {
   const { prefs, studied, markStudied } = useProgress();
   const [pid, setPid] = useState("fajr");
   const [ui, setUi] = useState(1);
+  useEffect(() => {
+    const want = new URLSearchParams(window.location.search).get("p");
+    const target = PRAYERS.find((x) => x.id === want);
+    if (target) { setPid(target.id); setUi(target.units.findIndex((v) => v.kind === "fard")); }
+  }, []);
   const [step, setStep] = useState(0);
   const listRef = useRef<HTMLDivElement>(null);
 

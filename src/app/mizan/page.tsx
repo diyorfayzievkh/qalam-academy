@@ -54,7 +54,7 @@ function Card({ c, store }: { c: MizanCard; store: ReturnType<typeof useMizanSto
   const inRoutine = store.routine.includes(c.id);
   const n = store.counts[c.id] ?? 0;
   return (
-    <article className="flex min-w-0 flex-col gap-3 rounded-card border border-border bg-bg-surface p-[18px]">
+    <article id={`m-${c.id}`} className="flex min-w-0 scroll-mt-6 flex-col gap-3 rounded-card border border-border bg-bg-surface p-[18px] target:border-gold target:ring-2 target:ring-gold/40">
       <div className="flex items-start gap-3">
         <ScaleIcon weight={c.weight} />
         <div className="min-w-0 flex-1">

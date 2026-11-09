@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { Page, PageHeader } from "@/components/app-shell";
+import { ProfileEditor } from "@/components/profile-editor";
 import { useAccount } from "@/components/account";
 import { useT } from "@/components/lang";
 import { BADGES, badgeLevel } from "@/content/badges";
@@ -10,13 +11,13 @@ import { LANGS } from "@/lib/i18n";
 type Member = { id: string; name: string; kind: string; role: string; me: boolean; points?: number; studied?: number; answered?: number; perfect?: number; memorized?: number; lastActive?: string | null };
 type FamilyData = { family: { name: string; code: string | null } | null; role?: string; members?: Member[] };
 
-const input = "w-full rounded-[10px] border border-border bg-bg-surface px-3 py-2.5 text-[1rem] outline-none focus:border-emerald";
+const input = "w-full rounded-btn border border-border bg-bg-surface px-3 py-2.5 text-[1rem] outline-none focus:border-emerald";
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return <label className="flex flex-col gap-1.5 text-[0.92rem] font-bold">{label}{children}</label>;
 }
 function Err({ msg }: { msg: string | null }) {
-  return msg ? <p role="alert" className="rounded-[10px] bg-danger/10 px-3 py-2 text-[0.92rem] font-bold text-danger">{msg}</p> : null;
+  return msg ? <p role="alert" className="rounded-btn bg-danger/10 px-3 py-2 text-[0.92rem] font-bold text-danger">{msg}</p> : null;
 }
 
 /** Small form helper: submit → call API → on success run `done`. */
@@ -81,7 +82,7 @@ function SignedOut() {
 
 // ------------------------------------------------------------------ family
 function Stat({ n, label }: { n: number | string; label: string }) {
-  return <div className="flex flex-col rounded-[10px] bg-bg-inset px-2.5 py-2"><b className="font-display text-[1.15rem] tabular-nums">{n}</b><span className="text-[0.78rem] text-fg-muted">{label}</span></div>;
+  return <div className="flex flex-col rounded-btn bg-bg-inset px-2.5 py-2"><b className="font-display text-[1.15rem] tabular-nums">{n}</b><span className="text-[0.78rem] text-fg-muted">{label}</span></div>;
 }
 
 function MemberCard({ m, parent, reload }: { m: Member; parent: boolean; reload: () => void }) {
@@ -129,7 +130,7 @@ function MemberCard({ m, parent, reload }: { m: Member; parent: boolean; reload:
             </form>
           )}
           {mode === "remove" && (
-            <div className="flex flex-col gap-2 rounded-[10px] border border-gold p-3">
+            <div className="flex flex-col gap-2 rounded-btn border border-gold p-3">
               <p className="text-[0.92rem]">{t("Remove {name} and all of their progress? This cannot be undone.", { name: m.name })}</p>
               <div className="flex flex-wrap gap-2">
                 <button type="button" className="btn" disabled={remove.busy} onClick={() => remove.submit()}>{t("Yes, remove")}</button>
@@ -281,6 +282,7 @@ export default function AccountPage() {
       <PageHeader eyebrow="Account" title={user ? "Family & account" : "Sign in"}
         sub="Sync progress across devices, and follow your children’s learning in a private family circle." />
       <Page>
+        <ProfileEditor />
         {!ready ? <p className="text-fg-muted">{t("Loading…")}</p>
           : !available ? <p className="card text-fg-muted">{t("Accounts are not available yet. Your progress is saved on this device.")}</p>
           : user ? <SignedIn /> : <SignedOut />}

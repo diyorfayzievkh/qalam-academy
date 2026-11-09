@@ -27,6 +27,7 @@ create table qalam.users (
   family_id uuid references qalam.families(id) on delete set null,
   role text check (role in ('PARENT','CHILD')),
   lang text not null default 'en' check (lang in ('en','uz','ru')),
+  avatar text check (avatar is null or char_length(avatar) <= 24),
   created_at timestamptz not null default now(),
   check (kind = 'CHILD' or email is not null)
 );

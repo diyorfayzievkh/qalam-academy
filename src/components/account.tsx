@@ -6,7 +6,7 @@ import type { SyncDoc } from "@/lib/sync-merge";
 import { useProgress } from "./progress";
 
 export type AccountUser = {
-  id: string; name: string; email: string | null; kind: "ADULT" | "CHILD";
+  id: string; name: string; email: string | null; kind: "ADULT" | "CHILD"; avatar: string | null;
   role: "PARENT" | "CHILD" | null; familyId: string | null; lang: "en" | "uz" | "ru";
 };
 type Family = { name: string; code: string | null } | null;

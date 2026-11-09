@@ -2,6 +2,7 @@ import { z } from "zod";
 import { body, fail, handle, ok, requireUser } from "@/lib/api";
 import { currentUser } from "@/lib/auth";
 import { db, dbConfigured } from "@/lib/db";
+import { AVATAR_IDS } from "@/components/avatar-ids";
 
 export const dynamic = "force-dynamic";
 
@@ -19,13 +20,14 @@ export async function GET() {
   });
 }
 
-const P = z.object({ lang: z.enum(["en", "uz", "ru"]).optional(), name: z.string().trim().min(1).max(60).optional() });
+const P = z.object({ lang: z.enum(["en", "uz", "ru"]).optional(), name: z.string().trim().min(1).max(60).optional(), avatar: z.enum(AVATAR_IDS).optional() });
 export async function PATCH(req: Request) {
   return handle(async () => {
     const me = await requireUser(); if (me instanceof Response) return me;
     const b = await body(req, P); if (!b) return fail(400, "Invalid request.");
     if (b.lang) await db()`update users set lang = ${b.lang} where id = ${me.id}`;
     if (b.name && me.kind === "ADULT") await db()`update users set name = ${b.name} where id = ${me.id}`;
+    if (b.avatar) await db()`update users set avatar = ${b.avatar} where id = ${me.id}`;
     return ok();
   });
 }

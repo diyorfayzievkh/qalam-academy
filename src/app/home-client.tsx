@@ -6,6 +6,8 @@ import { BadgeIcon, starPath } from "@/components/figures";
 import { Icon } from "@/components/icons";
 import { localDay, streakOf, useProgress } from "@/components/progress";
 import { useAccount } from "@/components/account";
+import { useProfile } from "@/components/profile";
+import { Avatar } from "@/components/avatars";
 import { useT } from "@/components/lang";
 import { TopicCard } from "@/components/topic-card";
 import { WorldCover } from "@/components/world-art";
@@ -135,8 +137,9 @@ function Flame({ on }: { on: boolean }) {
 
 function KidsHome({ picks }: { picks: DailyPicks }) {
   const { points, days } = useProgress();
-  const { user } = useAccount();
   const { t } = useT();
+  const profile = useProfile();
+  const greet = `${t("As-salāmu ʿalaykum")}${profile.name ? `, ${profile.name}` : ""}`;
   const lvl = badgeLevel(points);
   const streak = streakOf(days);
   const hour = new Date().getHours();
@@ -151,12 +154,19 @@ function KidsHome({ picks }: { picks: DailyPicks }) {
   ];
   return (
     <>
-      <PageHeader eyebrow="Bismillāh" title="As-salāmu ʿalaykum" />
+      <PageHeader eyebrow="Bismillāh" title={greet} />
       <Page>
         <NuriSays mood="cheer" size={104}>
-          <span className="block text-[1.15rem]">{hello}{user ? `, ${user.name}` : ""}!</span>
+          <span className="block text-[1.15rem]">{hello}{profile.name ? `, ${profile.name}` : ""}!</span>
           <span className="font-semibold text-fg-muted">{t("I’m Nuri. What shall we learn today?")}</span>
         </NuriSays>
+        {!profile.name && (
+          <Link href="/account#profile" className="lift card flex items-center gap-3.5 hover:border-emerald">
+            <Avatar id={profile.avatar} size={52} />
+            <b className="min-w-0 flex-1 font-display text-[1.1rem]">{t("Tell Nuri your name and pick an avatar!")}</b>
+            <span className="btn">{t("Start")}</span>
+          </Link>
+        )}
 
         <section className="grid grid-cols-3 items-stretch gap-3 [&>*]:justify-center">
           <div className="card flex flex-col items-center gap-1 text-center">
@@ -209,6 +219,8 @@ function GrownUpHome({ picks }: { picks: DailyPicks }) {
   const { points, answered, days } = useProgress();
   const { t } = useT();
   const { available, user, ready } = useAccount();
+  const profile = useProfile();
+  const greet = `${t("As-salāmu ʿalaykum")}${profile.name ? `, ${profile.name}` : ""}`;
   const lvl = badgeLevel(points);
   const into = points % POINTS_PER_BADGE;
   const shown = TOPICS.filter((x) => !x.hidden);
@@ -218,9 +230,19 @@ function GrownUpHome({ picks }: { picks: DailyPicks }) {
 
   return (
     <>
-      <PageHeader eyebrow="Bismillāh" title="As-salāmu ʿalaykum"
+      <PageHeader eyebrow="Bismillāh" title={greet}
         sub="Learn your faith a few minutes a day: prayer, belief, and good character, all according to the Hanafi madhhab." />
       <Page>
+        {!profile.name && (
+          <Link href="/account#profile" className="lift card flex items-center gap-3.5 border-gold-bright/60 hover:border-emerald">
+            <Avatar id={profile.avatar} size={52} />
+            <span className="flex min-w-0 flex-1 flex-col">
+              <b className="font-display text-[1.1rem]">{t("Set up your profile")}</b>
+              <span className="text-[0.92rem] text-fg-muted">{t("Choose your name and avatar, and we’ll greet you by name.")}</span>
+            </span>
+            <span className="btn">{t("Start")}</span>
+          </Link>
+        )}
         <SkyHero />
 
         <section className="grid gap-3.5 md:grid-cols-[1.6fr_1fr]">
@@ -270,7 +292,7 @@ function GrownUpHome({ picks }: { picks: DailyPicks }) {
             <Link href={picks.lesson.href} className="lift flex flex-col overflow-hidden rounded-card border border-border bg-bg-surface hover:border-emerald">
               <WorldCover id={picks.lesson.world} className="h-[92px]" />
               <div className="flex flex-col gap-1 p-4">
-                <span className="eyebrow">{t("Lesson")} · {picks.lesson.sub}</span>
+                <span className="eyebrow">{t("Lesson")} · {t(picks.lesson.sub)}</span>
                 <b className="font-display text-[1.08rem] leading-snug">{picks.lesson.title}</b>
                 <span className="text-[0.85rem] font-bold text-emerald">{t("Read the lesson")} · +10</span>
               </div>

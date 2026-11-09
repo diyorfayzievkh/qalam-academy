@@ -42,7 +42,8 @@ const config: Config = {
         display: ['"Reem Kufi"', '"Nunito Sans"', "Amiri", "system-ui", "sans-serif"],
         arabic: ["Amiri", '"Traditional Arabic"', "serif"],
       },
-      borderRadius: { card: "14px" },
+      // Soft corners everywhere: nothing in the interface is a sharp right angle.
+      borderRadius: { DEFAULT: "8px", sm: "6px", md: "10px", lg: "12px", xl: "14px", "2xl": "18px", card: "16px", btn: "12px" },
     },
   },
   plugins: [],

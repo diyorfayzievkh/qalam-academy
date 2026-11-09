@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { Avatar } from "./avatars";
+import { useProfile } from "./profile";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { BADGES, badgeLevel } from "@/content/badges";
@@ -37,7 +39,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             const on = isActive(path, n.href);
             return (
               <Link key={n.href} href={n.href} aria-current={on ? "page" : undefined}
-                className={`flex items-center gap-3 rounded-[10px] px-3 py-2.5 font-bold ${on ? "bg-gold-bright/20 text-gold-bright" : "opacity-80 hover:bg-white/5 hover:opacity-100"}`}>
+                className={`flex items-center gap-3 rounded-btn px-3 py-2.5 font-bold ${on ? "bg-gold-bright/20 text-gold-bright" : "opacity-80 hover:bg-white/5 hover:opacity-100"}`}>
                 <Icon name={n.icon} />{t(n.label)}
               </Link>
             );
@@ -59,12 +61,12 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       {/* Bottom tab bar: phones and portrait tablets */}
       <nav aria-label="Main navigation"
-        className="fixed inset-x-0 bottom-0 z-20 grid grid-cols-5 border-t border-border bg-bg-surface px-[max(6px,env(safe-area-inset-left,0px))] pb-[calc(6px+env(safe-area-inset-bottom,0px))] pt-1.5 lg:hidden">
+        className="fixed inset-x-0 bottom-0 z-20 grid grid-cols-5 rounded-t-[22px] border-t border-border bg-bg-surface shadow-[0_-8px_24px_-16px_rgb(0_0_0/0.35)] px-[max(6px,env(safe-area-inset-left,0px))] pb-[calc(6px+env(safe-area-inset-bottom,0px))] pt-1.5 lg:hidden">
         {TABS.map((n) => {
           const on = isActive(path, n.href);
           return (
             <Link key={n.href} href={n.href} aria-current={on ? "page" : undefined}
-              className={`flex flex-col items-center gap-0.5 rounded-[10px] py-1.5 text-[0.68rem] font-bold ${on ? "bg-emerald-soft text-emerald" : "text-fg-muted"}`}>
+              className={`flex flex-col items-center gap-0.5 rounded-btn py-1.5 text-[0.68rem] font-bold ${on ? "bg-emerald-soft text-emerald" : "text-fg-muted"}`}>
               <Icon name={n.icon} />{t(n.label)}
             </Link>
           );
@@ -91,13 +93,14 @@ export function AppShell({ children }: { children: ReactNode }) {
 export function PageHeader({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?: string }) {
   const { t } = useT();
   return (
-    <header className="girih relative z-30 text-band-fg">
+    <header className="girih relative z-30 overflow-visible rounded-b-[28px] text-band-fg lg:rounded-bl-[28px] lg:rounded-br-none">
       <div className="gutter mx-auto flex max-w-[980px] flex-col gap-1.5 pb-[26px] pt-[calc(22px+env(safe-area-inset-top,0px))]">
         <div className="flex items-center justify-between gap-3">
           <span className="font-display text-[1.05rem] font-bold text-gold-bright max-sm:hidden lg:invisible">{t("Qalam Academy")}</span>
           <div className="ml-auto flex items-center gap-2">
             <Link href="/search" aria-label={t("Search")} className="inline-flex items-center gap-2 rounded-full border border-gold-bright/45 bg-white/10 px-3 py-1.5 text-[0.85rem] text-band-fg/80 hover:bg-white/20 sm:w-[220px]"><Icon name="search" size={17} /><span className="max-sm:sr-only">{t("Search…")}</span></Link>
             <SettingsMenu />
+            <ProfileButton />
           </div>
         </div>
         <span className="eyebrow !text-gold-bright">{t(eyebrow)}</span>
@@ -110,4 +113,15 @@ export function PageHeader({ eyebrow, title, sub }: { eyebrow: string; title: st
 
 export function Page({ children }: { children: ReactNode }) {
   return <div className="page-enter gutter mx-auto flex max-w-[980px] flex-col gap-5 pb-2 pt-5">{children}</div>;
+}
+
+function ProfileButton() {
+  const { t } = useT();
+  const { name, avatar } = useProfile();
+  return (
+    <Link href="/account#profile" aria-label={name ? `${t("Your profile")}: ${name}` : t("Set up your profile")}
+      className="grid place-items-center rounded-[14px] border border-gold-bright/45 bg-white/10 p-[3px] hover:bg-white/20">
+      <Avatar id={avatar} name={name} size={30} />
+    </Link>
+  );
 }

@@ -91,7 +91,7 @@ function BlockView({ b, k = b }: { b: Block; k?: Block }) {
       return (
         <div className="flex flex-col gap-2">
           <h3 className="text-[1.1rem]">{b.title}</h3>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto rounded-xl border border-border">
             <table className="w-full min-w-[420px] border-collapse text-left text-[0.95rem]">
               <thead><tr><th className="border-b-2 border-emerald px-2.5 py-2 text-emerald">{b.left}</th><th className="border-b-2 border-gold-bright px-2.5 py-2 text-gold">{b.right}</th></tr></thead>
               <tbody>{b.rows.map(([l, r]) => <tr key={l} className="align-top"><td className="border-b border-border px-2.5 py-2">{l}</td><td className="border-b border-border px-2.5 py-2">{r}</td></tr>)}</tbody>

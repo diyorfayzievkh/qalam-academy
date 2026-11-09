@@ -17,6 +17,7 @@ import { ProgressProvider } from "@/components/progress";
 import { AccountProvider } from "@/components/account";
 import { LangProvider } from "@/components/lang";
 import { KidsProvider } from "@/components/kids";
+import { ProfileProvider } from "@/components/profile";
 import { themeInitScript } from "@/components/theme";
 
 export const metadata: Metadata = {
@@ -46,11 +47,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ProgressProvider>
           <AccountProvider>
+          <ProfileProvider>
             <LangProvider>
               <KidsProvider>
                 <AppShell>{children}</AppShell>
               </KidsProvider>
             </LangProvider>
+          </ProfileProvider>
           </AccountProvider>
         </ProgressProvider>
       </body>

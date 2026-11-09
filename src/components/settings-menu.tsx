@@ -31,7 +31,7 @@ export function SettingsMenu() {
   }, [open]);
 
   const theme = THEMES.find((x) => x.id === pref)!;
-  const row = "flex w-full items-center gap-2.5 rounded-[10px] px-3 py-2 text-left font-bold hover:bg-bg-inset";
+  const row = "flex w-full items-center gap-2.5 rounded-btn px-3 py-2 text-left font-bold hover:bg-bg-inset";
 
   return (
     <div ref={box} className="relative">

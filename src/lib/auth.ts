@@ -12,7 +12,7 @@ export const COOKIE = "qa_session";
 const SESSION_DAYS = 60;
 
 export type Me = {
-  id: string; name: string; email: string | null; kind: "ADULT" | "CHILD";
+  id: string; name: string; email: string | null; kind: "ADULT" | "CHILD"; avatar: string | null;
   role: "PARENT" | "CHILD" | null; familyId: string | null; lang: "en" | "uz" | "ru";
 };
 
@@ -50,7 +50,7 @@ export async function currentUser(): Promise<Me | null> {
   const t = cookies().get(COOKIE)?.value;
   if (!t) return null;
   const rows = await db()<Me[]>`
-    select u.id, u.name, u.email, u.kind, u.role, u.family_id as "familyId", u.lang
+    select u.id, u.name, u.email, u.kind, u.role, u.family_id as "familyId", u.lang, u.avatar
     from sessions s join users u on u.id = s.user_id
     where s.token_hash = ${sha(t)} and s.expires_at > now()`;
   return rows[0] ?? null;

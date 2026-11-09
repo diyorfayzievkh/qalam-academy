@@ -49,6 +49,8 @@ type Loader = () => Promise<LessonTrMap>;
 const loaders: Record<string, Loader> = {
   "uz/iman": () => import("./lessons-uz-iman").then((m) => m.default),
   "ru/iman": () => import("./lessons-ru-iman").then((m) => m.default),
+  "uz/islam": () => import("./lessons-uz-islam").then((m) => m.default),
+  "ru/islam": () => import("./lessons-ru-islam").then((m) => m.default),
 };
 const cache: Record<string, LessonTrMap> = {};
 

@@ -86,6 +86,7 @@ export default function HomePage() {
             { href: "/hifz", eyebrow: "Hifz", title: "Memorise the Quran", text: "46 sūrahs and passages, ayah by ayah, with audio and spaced review." },
             { href: "/ramadan", eyebrow: "Seasonal", title: "Ramadan Quest", text: "Daily tracker, 30-day plan, duas, surahs and history." },
             { href: "/mizan", eyebrow: "Collection", title: "Mizan", text: "Deeds heaviest on the scale, from authentic hadith." },
+            { href: "/stories", eyebrow: "Before sleep", title: "Bedtime Stories", text: "The Prophet ﷺ and his family, the Companions, the prophets, the great imams and the cities of the Quran." },
           ].map((c) => (
             <Link key={c.href} href={c.href} className="card flex flex-col gap-1 transition hover:border-emerald">
               <span className="eyebrow">{c.eyebrow}</span>

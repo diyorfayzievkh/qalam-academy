@@ -1,0 +1,172 @@
+import type { Bedtime } from "./bedtime1";
+
+// Bedtime stories, part 2: prophets before Muhammad ﷺ, and cities of the
+// Quran. Retold from the Quran, ṣaḥīḥ ḥadīth and classical tafsīr; nothing is
+// added that the sources do not support. A scholar should review before release.
+
+export const BEDTIME_2: Bedtime[] = [
+  // ---------- Prophets of old ----------
+  { id: "nuh-ark", cat: "prophets", title: "Nūḥ and the great ship", teaser: "A ship built on dry land, and a flood that covered the earth.",
+    paras: [
+      "Long, long ago, the people had forgotten Allah and worshipped idols they had carved with their own hands. Allah sent them a prophet called Nūḥ (as).",
+      "Nūḥ called them to Allah by day and by night, in public and in private, for nine hundred and fifty years (29:14). But most of them put their fingers in their ears and pulled their clothes over their heads so they would not hear him.",
+      "Then Allah told Nūḥ: build a ship, under Our eyes. So Nūḥ began to build a huge ship, far from any sea. Every time the chiefs walked past, they laughed at him: “Nūḥ, have you become a carpenter? Where is the water?”",
+      "Nūḥ said calmly: “If you laugh at us, we will laugh at you in the same way. You will soon know” (11:38).",
+      "When the command came, water burst up from the earth like springs, and rain poured from the sky. Nūḥ brought into the ship the believers and a pair of every kind of animal.",
+      "The ship sailed on waves like mountains. Nūḥ saw his own son standing apart and called out: “My son, come aboard with us!” But his son said: “I will climb a mountain to save me from the water.” Nūḥ said: “Today there is no protector from Allah’s command except for those He has mercy on.” And a wave came between them (11:42–43).",
+      "Then Allah said: “Earth, swallow your water. Sky, hold back.” The water went down, and the ship came to rest on Mount al-Jūdī. Nūḥ and the believers stepped out onto a clean new world, with peace and blessings from Allah (11:44–48).",
+    ],
+    moral: "Keep doing what is right even when people laugh at you. Only Allah’s mercy saves, and faith, not family ties, is what joins us to it.",
+    talk: "How do you feel when people laugh at something good you are doing? What did Nūḥ do?",
+    src: "Quran 11:25–48, 29:14, 71:1–28" },
+
+  { id: "ibrahim-fire", cat: "prophets", title: "Ibrāhīm and the cool fire", teaser: "The young man who broke the idols, and the fire that could not burn him.",
+    paras: [
+      "Ibrāhīm (as) grew up among a people who bowed down to statues. Even his own father made idols. Young Ibrāhīm asked: “What are these statues you worship?” They said: “We found our fathers worshipping them.”",
+      "One festival day, when the whole town went out of the city, Ibrāhīm went into the temple. He looked at the idols and the food people had left in front of them. “Won’t you eat?” he asked. “Why don’t you speak?” Then he took an axe and broke them all, except the biggest one, and hung the axe on its neck.",
+      "When the people came back, they cried: “Who did this to our gods?” They brought Ibrāhīm. “Did you do this?” He said: “Ask the biggest one, if they can speak!”",
+      "For a moment, they knew he was right. They hung their heads and said: “You know they cannot speak.” Ibrāhīm said: “Then why do you worship besides Allah what cannot help or harm you?” (21:62–67)",
+      "But instead of believing, they became angry. They built an enormous fire, so large that birds flying overhead were scorched, and threw Ibrāhīm into it with a catapult.",
+      "As he was thrown, Ibrāhīm said: “Ḥasbiya-llāhu wa niʿma-l-wakīl”: Allah is enough for me, and He is the best to rely on (Bukhari 4563).",
+      "And Allah said: “O fire, be coolness and safety for Ibrāhīm” (21:69). The fire burned only the ropes that tied him. Ibrāhīm sat in the middle of the flames, cool and safe, while his people watched in amazement.",
+    ],
+    moral: "Allah is enough for whoever relies on Him. Even fire obeys His command.",
+    talk: "Learn Ibrāhīm’s words together: “Ḥasbunallāhu wa niʿma-l-wakīl.” When could we say them?",
+    src: "Quran 21:51–70, Bukhari 4563" },
+
+  { id: "yusuf", cat: "prophets", title: "Yūsuf: from the well to the palace", teaser: "A boy thrown into a well becomes the minister of Egypt.",
+    paras: [
+      "Yūsuf (as) was a boy with a beautiful face and a beautiful heart. One night he dreamed that eleven stars, the sun and the moon were bowing to him. His father, the prophet Yaʿqūb, said: “Don’t tell your brothers, my son.”",
+      "But his brothers were already jealous of how much their father loved him. They took him out to play, and threw him into a deep, dark well. They came home crying at night with his shirt stained with fake blood: “A wolf ate him!” Yaʿqūb said: “Beautiful patience. Allah is the One whose help is sought” (12:18).",
+      "Travellers found Yūsuf in the well and sold him as a slave in Egypt. He grew up in the house of a minister. When the minister’s wife tried to make him do wrong, Yūsuf said: “I seek refuge in Allah!” and ran to the door. Though innocent, he was put in prison for years.",
+      "In prison, Yūsuf taught the other prisoners about Allah and explained their dreams. One day the king dreamed of seven fat cows eaten by seven thin cows. No one could explain it, until a former prisoner remembered Yūsuf.",
+      "Yūsuf explained: seven years of good harvests are coming, then seven years of famine. Store the grain. The king was amazed and made Yūsuf in charge of the storehouses of Egypt.",
+      "During the famine, Yūsuf’s brothers came to Egypt to buy food. They did not recognise him, but he recognised them. In the end, he said: “I am Yūsuf.” They were terrified. But Yūsuf said: “No blame on you today. May Allah forgive you” (12:92).",
+      "His parents came to Egypt, and all of them bowed in respect before him. Yūsuf said: “Father, this is the meaning of my dream from long ago” (12:100).",
+    ],
+    moral: "Patience in hardship, purity when tempted, and forgiveness when strong: Yūsuf’s story is called “the most beautiful of stories” (12:3).",
+    talk: "Yūsuf forgave his brothers after everything. Is there someone you need to forgive?",
+    src: "Quran, Sūrat Yūsuf (12)" },
+
+  { id: "musa-sea", cat: "prophets", title: "Mūsā and the parting of the sea", teaser: "An army behind, the sea in front, and one word: “Never!”",
+    paras: [
+      "Firʿawn, the king of Egypt, was a cruel tyrant who called himself a god. He made the Children of Israel his slaves.",
+      "Allah sent Mūsā (as) and his brother Hārūn to Firʿawn with clear signs: Mūsā’s staff became a real snake, and his hand shone white. But Firʿawn refused to let the people go.",
+      "So one night, by Allah’s command, Mūsā led the Children of Israel out of Egypt. When Firʿawn found out, he chased them with his whole army.",
+      "At sunrise, the Children of Israel reached the shore of the sea. Behind them, they could see the dust of Firʿawn’s army. They cried: “We are going to be caught!”",
+      "Mūsā said: “Never! My Lord is with me; He will guide me” (26:62).",
+      "Allah told him: “Strike the sea with your staff.” Mūsā struck it, and the sea split in two, each side standing like a great mountain, with a dry path in between (26:63). The Children of Israel walked across safely.",
+      "Firʿawn and his army followed them into the path. When they were in the middle, the walls of water came crashing down. As he drowned, Firʿawn finally said: “I believe!” But it was too late (10:90–92).",
+      "The Prophet ﷺ found the Jews of Madinah fasting on the day of ʿĀshūrāʾ, because on that day Allah saved Mūsā. He said: “We are closer to Mūsā than you,” and he fasted it and told the Muslims to fast it (Bukhari 2004).",
+    ],
+    moral: "When there seems to be no way out, Allah can open a way through the sea. Say like Mūsā: “My Lord is with me.”",
+    talk: "Have you ever felt stuck? What did Mūsā say that we can say too?",
+    src: "Quran 26:52–67, 10:90–92, Bukhari 2004" },
+
+  { id: "yunus", cat: "prophets", title: "Yūnus in the belly of the whale", teaser: "Three darknesses, and one duʿāʾ that reached the heavens.",
+    paras: [
+      "Allah sent Yūnus (as) to the people of a city called Nineveh. He called them to Allah, but they would not listen. Yūnus grew angry and left the city before Allah had permitted him to.",
+      "He boarded a crowded ship. Out at sea a great storm rose, and the sailors said: the ship is too heavy; someone must be thrown overboard. They drew lots three times, and each time the lot fell on Yūnus.",
+      "Yūnus was cast into the sea, and Allah sent a huge whale to swallow him. The whale did not chew him or break a single bone; Allah had commanded it to keep him safe.",
+      "Inside the whale, Yūnus was in three darknesses: the darkness of the night, the darkness of the sea, and the darkness of the whale’s belly. There, he called out to Allah:",
+      "“Lā ilāha illā anta, subḥānaka, innī kuntu mina-ẓ-ẓālimīn”: There is no god but You, glory be to You, I have been among the wrongdoers (21:87).",
+      "Allah heard him and saved him. The whale threw him out onto the shore, weak and ill, and Allah made a gourd plant grow over him to shade him and give him food (37:145–146).",
+      "And the people of his city? After he left, they saw signs of punishment coming, and they all believed and repented together. Allah lifted the punishment from them (10:98). When Yūnus returned, a whole city of believers was waiting for him.",
+    ],
+    moral: "No darkness is too deep for duʿāʾ. The Prophet ﷺ said: no Muslim makes the duʿāʾ of Yūnus for anything except that Allah answers him (Tirmidhi 3505).",
+    talk: "Let’s learn the duʿāʾ of Yūnus together and say it before sleeping.",
+    src: "Quran 21:87–88, 37:139–148, 10:98, Tirmidhi 3505" },
+
+  { id: "sulayman-ant", cat: "prophets", title: "Sulaymān and the little ant", teaser: "A mighty army stops for one tiny voice.",
+    paras: [
+      "Sulaymān (as) was a prophet and a king. Allah gave him a kingdom like no one before or after: he understood the speech of birds and animals, the wind carried him, and his army was made of men, jinn and birds.",
+      "One day, this enormous army was marching through a valley full of ants.",
+      "A tiny ant saw them coming and called out to the others: “Ants! Go into your homes, so that Sulaymān and his army don’t crush you without noticing!” (27:18).",
+      "Sulaymān heard the little ant. He did not get angry or proud. He smiled, and then laughed at her words.",
+      "Then he raised his hands and said: “My Lord, inspire me to be thankful for Your blessing on me and on my parents, and to do good deeds that please You, and admit me by Your mercy among Your righteous servants” (27:19).",
+      "And the great army waited, so that not one little ant would be harmed.",
+    ],
+    moral: "A truly great person notices even the smallest creatures, and thanks Allah instead of becoming proud.",
+    talk: "The ant cared for her whole community. How can we care for others, even when we are small?",
+    src: "Quran 27:15–19" },
+
+  // ---------- Cities of the Quran ----------
+  { id: "makkah-city", cat: "cities", title: "Makkah: the valley with no water", teaser: "A mother, a baby, an empty valley, and a city that never sleeps.",
+    paras: [
+      "Thousands of years ago, Makkah was an empty valley between dry, rocky mountains. No trees, no water, no people.",
+      "Ibrāhīm (as) brought his wife Hājar and their baby Ismāʿīl there, by Allah’s command, and left them with a bag of dates and a skin of water. As he walked away, he raised his hands: “Our Lord, I have settled some of my family in a valley without crops, near Your Sacred House… so make the hearts of people turn towards them, and provide them with fruits” (14:37).",
+      "When the water ran out, Hājar ran between the hills of Ṣafā and Marwah looking for help, seven times. Then the angel struck the earth, and the spring of Zamzam gushed out (Bukhari 3364). Birds began to circle over the water, and a tribe called Jurhum saw them and asked to settle there.",
+      "When Ismāʿīl grew up, Ibrāhīm returned, and father and son built the Kaʿbah together. Ismāʿīl carried the stones and Ibrāhīm laid them, both saying: “Our Lord, accept this from us” (2:127). The stone Ibrāhīm stood on, Maqām Ibrāhīm, still shows his footprints.",
+      "Allah answered Ibrāhīm’s duʿāʾ. The Quran calls Makkah the Mother of Cities (6:92), and Bakkah, the place of the first House built for people (3:96). Today, millions of people from every country come every year, and fruits from all over the world fill its markets, in a valley where nothing grows.",
+      "It was in Makkah that the Prophet ﷺ was born, and the first revelation came on a mountain above it. And five times a day, from every corner of the earth, Muslims turn their faces towards it.",
+    ],
+    moral: "A mother’s trust, a father’s duʿāʾ and a family’s hard work built a city that will be visited until the end of time.",
+    talk: "Every prayer we face Makkah. Can you point towards the qiblah from your bed?",
+    src: "Quran 14:35–41, 2:125–129, 3:96, Bukhari 3364" },
+
+  { id: "madinah-city", cat: "cities", title: "Madinah: the city that opened its arms", teaser: "Yathrib becomes al-Madīnah, the City of the Prophet ﷺ.",
+    paras: [
+      "Before Islam, Madinah was called Yathrib: a green oasis of palm trees, between two fields of black volcanic rock. Its two Arab tribes, the Aws and the Khazraj, had fought each other for generations.",
+      "A few men from Yathrib met the Prophet ﷺ at the Ḥajj and accepted Islam. Their hearts were changed, and they went home and spread the message. Soon there was hardly a home in Yathrib without a Muslim in it.",
+      "When the Prophet ﷺ arrived after the Hijrah, the whole city came out. Children climbed the roofs, and girls beat drums and sang. Every family begged him to stay with them. He said: “Let the camel go; it is under command.” Where it knelt, he built the masjid.",
+      "Yathrib was renamed al-Madīnah, the City. The Aws and the Khazraj, enemies for generations, became brothers, called the Anṣār, the helpers. And they shared their homes with the Muslims who had left everything behind in Makkah.",
+      "The Prophet ﷺ loved Madinah. He prayed: “O Allah, make us love Madinah as we love Makkah, or even more,” and asked Allah to bless its food (Bukhari 1889). He said: between my house and my pulpit is a garden from the gardens of Paradise (Bukhari 1196), and that the Dajjāl will never be able to enter it (Bukhari 1879).",
+      "The Prophet ﷺ is buried in Madinah, and a prayer in his masjid is better than a thousand prayers elsewhere.",
+    ],
+    moral: "A city of enemies became a city of brothers because of faith and generosity. When we welcome others, Allah blesses us.",
+    talk: "How can we be like the Anṣār to a new family at school or at the masjid?",
+    src: "Bukhari 3906, Bukhari 1889, Bukhari 1196, Bukhari 1879" },
+
+  { id: "aqsa-city", cat: "cities", title: "Jerusalem: the blessed land", teaser: "The city of many prophets, and a journey in a single night.",
+    paras: [
+      "Jerusalem, called Bayt al-Maqdis, the Holy House, sits in the land Allah calls blessed (17:1, 21:71).",
+      "The Prophet ﷺ was asked which masjid was built first on earth. He said: al-Masjid al-Ḥarām. Then which? He said: al-Masjid al-Aqṣā, forty years later (Bukhari 3366).",
+      "Many prophets lived and taught in and around this land: Ibrāhīm, Isḥāq, Yaʿqūb, Dāwūd, Sulaymān, Zakariyyā, Yaḥyā and ʿĪsā (as). Dāwūd ruled there; Sulaymān rebuilt its great house of worship.",
+      "For years, the first Muslims prayed facing Jerusalem, until Allah turned the qiblah towards the Kaʿbah (2:144).",
+      "And one night, Allah took His Messenger ﷺ from Makkah to al-Aqṣā on the Burāq, a white animal whose every step reached as far as its eye could see. There, all the prophets gathered, and Muhammad ﷺ led them in prayer. Then he rose from there through the heavens (17:1, Muslim 162).",
+      "Years later, under the khalīfah ʿUmar, the city was opened peacefully. ʿUmar travelled there himself and arrived humbly, sharing one camel with his servant, taking turns to ride, and promised the people safety for their lives and places of worship.",
+      "The Prophet ﷺ said: do not set out on a special journey except to three masjids: al-Masjid al-Ḥarām, my masjid, and al-Masjid al-Aqṣā (Bukhari 1189).",
+    ],
+    moral: "Al-Aqṣā belongs to the story of all the prophets, and every Muslim carries it in their heart and in their duʿāʾ.",
+    talk: "Name three prophets connected to Jerusalem. Let’s make duʿāʾ for its people tonight.",
+    src: "Quran 17:1, Bukhari 3366, Bukhari 1189, Muslim 162; al-Ṭabarī, Tārīkh (ʿUmar’s journey)" },
+
+  { id: "misr-city", cat: "cities", title: "Egypt: two prophets, two kings", teaser: "A just king who honoured Yūsuf, and a tyrant who fought Mūsā.",
+    paras: [
+      "Egypt, Miṣr in Arabic, is mentioned in the Quran several times. It was a land of the River Nile, great farms, and mighty kings.",
+      "In the time of Yūsuf (as), Egypt had a king who listened to wisdom. When Yūsuf explained his dream of the seven fat and seven thin cows, the king trusted him with the storehouses of the land. Yūsuf saved Egypt and the lands around it from famine, and said: “Enter Egypt, in shāʾ Allāh, in safety” (12:99).",
+      "Hundreds of years later, another king ruled Egypt: Firʿawn. He was proud and cruel. He said: “I am your lord, the most high” (79:24), and boasted: “Do not these rivers flow beneath me?” (43:51).",
+      "Firʿawn enslaved the Children of Israel and killed their baby boys. Yet Allah let baby Mūsā be raised in Firʿawn’s own palace, after his mother placed him in a basket on the Nile and Firʿawn’s kind wife, Āsiyah, took him in (28:7–9).",
+      "Āsiyah believed in Allah, even while married to the cruellest man on earth. She prayed: “My Lord, build for me a house near You in Paradise” (66:11). The Prophet ﷺ named her among the most perfect women.",
+      "In the end, Firʿawn drowned in the sea. Allah preserved his body as a sign for those who come after (10:92).",
+    ],
+    moral: "Power can be used for justice, like Yūsuf, or for oppression, like Firʿawn. And even in the darkest palace, a believing heart like Āsiyah’s can shine.",
+    talk: "Āsiyah stayed faithful even when everyone around her was wrong. What helps us stay faithful?",
+    src: "Quran 12:54–56, 12:99, 28:7–9, 66:11, 10:92, Bukhari 3411" },
+
+  { id: "saba-city", cat: "cities", title: "Sabaʾ: the gardens and the broken dam", teaser: "Two gardens, a great dam, and a people who forgot to say thank you.",
+    paras: [
+      "In the south of Arabia, in the land we now call Yemen, lived the people of Sabaʾ. Their queen once visited Sulaymān (as) and became a believer (27:44).",
+      "Allah blessed Sabaʾ with a wonderful land. A great dam held back the rainwater, and with it they watered two vast gardens, on the right and on the left of their valley. Fruit grew so thickly that it was said a woman could walk under the trees with a basket on her head, and it would fill with falling fruit.",
+      "Allah told them: “Eat from the provision of your Lord and be grateful to Him: a good land, and a forgiving Lord” (34:15).",
+      "Their towns were so close to one another, and their roads so safe, that travellers could journey day and night without fear (34:18).",
+      "But the people turned away. They forgot who gave them their gardens. They became ungrateful.",
+      "So Allah sent the flood. The great dam burst, and the water swept away their gardens. In their place grew only bitter fruit, thorny bushes and a few lote trees (34:16). The people were scattered across the lands, and their name became a proverb for being split apart.",
+    ],
+    moral: "Blessings stay with gratitude. Allah says: “If you are grateful, I will give you more” (14:7).",
+    talk: "Let’s each name three blessings from today and say “Alḥamdulillāh” for each one.",
+    src: "Quran 34:15–19, 27:20–44" },
+
+  { id: "ad-thamud", cat: "cities", title: "Iram and al-Ḥijr: cities carved in rock", teaser: "Tall towers, houses cut into mountains, and the camel of Allah.",
+    paras: [
+      "The Quran tells of two mighty peoples of Arabia. The first was ʿĀd, who built Iram, a city of lofty pillars, “the like of which had never been created in the land” (89:7–8). They were tall and strong and said: “Who is stronger than us?” (41:15).",
+      "Allah sent them the prophet Hūd (as). He told them: worship Allah alone, and ask His forgiveness. But they mocked him. So Allah sent a furious, freezing wind for seven nights and eight days, and it swept them away like hollow palm trunks (69:6–7). Hūd and the believers were saved.",
+      "After them came Thamūd, who lived in al-Ḥijr in the north of Arabia. They were so skilled that they carved their homes into the sides of mountains (15:82). You can still see their carved buildings today.",
+      "Allah sent them the prophet Ṣāliḥ (as). They demanded a sign: bring a camel out of this rock! By Allah’s permission, a great she-camel came out of the mountain. Ṣāliḥ said: this is the camel of Allah. Let her drink one day, and you drink the next, and do not harm her (26:155–156).",
+      "But a wicked group among them killed the camel. Three days later, a mighty blast and an earthquake struck, and in the morning they lay lifeless in their homes (11:65–67). Ṣāliḥ and the believers were saved.",
+      "When the Prophet ﷺ passed by al-Ḥijr on the way to Tabūk, he covered his head, hurried his camel and told the companions: do not enter the homes of those who wronged themselves except weeping, lest what struck them strikes you (Bukhari 4419).",
+    ],
+    moral: "Strength, skill and tall buildings cannot save a people who turn away from Allah. Only faith and humility do.",
+    talk: "ʿĀd said “who is stronger than us?” What is wrong with that question?",
+    src: "Quran 89:6–9, 69:4–8, 11:61–68, 26:141–159, Bukhari 4419" },
+];

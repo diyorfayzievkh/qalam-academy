@@ -8,6 +8,7 @@ import { RUHIY3_LESSONS } from "./ruhiy3";
 import { SOCIAL_LESSONS } from "./social";
 import { SALAH_EXTRA } from "./salah-extra";
 import { REWARD_BLOCKS } from "./rewards";
+import { STORY_BLOCKS } from "./stories";
 
 // The Knowledge Base: worlds → lessons. Akhlaq & Adab lessons use the
 // five-part template in adab.ts; all others are built from blocks.
@@ -19,7 +20,9 @@ export type Block =
   | { type: "rec"; label: string; r: Recitation; src?: string; note?: string }
   | { type: "timeline"; items: { when: string; what: string }[] }
   | { type: "link"; href: string; label: string; text: string }
-  | { type: "reward"; title: string; measure: string; picture: string; src: string };
+  | { type: "reward"; title: string; measure: string; picture: string; src: string }
+  | { type: "story"; id: string; kind: string; title: string; scene: string; story: string[]; lesson: string; src: string;
+      check?: { q: string; options: string[]; answer: number; why: string } };
 
 export type Lesson = { id: string; title: string; summary: string; sources: string[]; blocks: Block[]; group?: string };
 export type World = {
@@ -253,11 +256,20 @@ export function lessonCount(w: World) {
   if (salah) salah.lessons = [...salah.lessons, ...SALAH_EXTRA];
   for (const w of WORLDS) {
     w.lessons = w.lessons.map((l) => {
+      let blocks = l.blocks;
+      const stories = STORY_BLOCKS[`${w.id}/${l.id}`];
+      if (stories) {
+        // A story goes right after the first section, where it best illustrates the topic.
+        const first = blocks.findIndex((b) => b.type === "points");
+        const at = first < 0 ? Math.min(1, blocks.length) : first + 1;
+        blocks = [...blocks.slice(0, at), ...stories, ...blocks.slice(at)];
+      }
       const extra = REWARD_BLOCKS[`${w.id}/${l.id}`];
-      if (!extra) return l;
-      const k = l.blocks.findIndex((b) => b.type === "points" && b.title === "Key takeaways");
-      const blocks = k < 0 ? [...l.blocks, ...extra] : [...l.blocks.slice(0, k), ...extra, ...l.blocks.slice(k)];
-      return { ...l, blocks };
+      if (extra) {
+        const k = blocks.findIndex((b) => b.type === "points" && b.title === "Key takeaways");
+        blocks = k < 0 ? [...blocks, ...extra] : [...blocks.slice(0, k), ...extra, ...blocks.slice(k)];
+      }
+      return blocks === l.blocks ? l : { ...l, blocks };
     });
   }
 }

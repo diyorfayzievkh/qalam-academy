@@ -8,6 +8,9 @@ import { useProgress } from "@/components/progress";
 import { TopicCard } from "@/components/topic-card";
 import { BADGES, badgeLevel, POINTS_PER_BADGE } from "@/content/badges";
 import { TOPICS } from "@/content/topics";
+import { STORY_BLOCKS } from "@/content/stories";
+
+const ALL_STORIES = Object.entries(STORY_BLOCKS).flatMap(([key, list]) => list.flatMap((b) => (b.type === "story" ? [{ key, b }] : [])));
 import { countdown, formatTime, PRAYER_ORDER, todayWithNext } from "@/lib/prayer-times";
 import { useLocation, useNow } from "@/lib/use-location";
 
@@ -91,6 +94,19 @@ export default function HomePage() {
             </Link>
           ))}
         </section>
+
+        {now && (() => {
+          const day = Math.floor(now.getTime() / 86400000);
+          const { key, b } = ALL_STORIES[day % ALL_STORIES.length];
+          return (
+            <Link href={`/learn/${key}`} className="card flex flex-col gap-1.5 border-l-[3px] border-l-emerald transition hover:border-emerald">
+              <span className="eyebrow">Story of the day · {b.kind}</span>
+              <h3 className="font-display text-[1.2rem]">{b.title}</h3>
+              <span className="text-[0.95rem] text-fg-muted">{b.scene}</span>
+              <span className="font-bold text-emerald">Read the story →</span>
+            </Link>
+          );
+        })()}
 
         <section className="card border-l-[3px] border-l-gold-bright">
           <span className="eyebrow">Hadith of the day</span>

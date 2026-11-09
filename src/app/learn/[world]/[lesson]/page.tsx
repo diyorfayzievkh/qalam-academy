@@ -11,6 +11,7 @@ import type { AdabLesson } from "@/content/adab";
 import { findWorld, type Block, type Lesson } from "@/content/library";
 import { REWARD_BLOCKS } from "@/content/rewards";
 import { STORY_BLOCKS } from "@/content/stories";
+import { lessonQuizId } from "@/content/topics";
 
 export default function LessonPage() {
   const { world: wid, lesson: lid } = useParams<{ world: string; lesson: string }>();
@@ -29,14 +30,14 @@ export default function LessonPage() {
       <PageHeader eyebrow={lesson?.group ? `${w.title} · ${lesson.group}` : w.title} title={title} sub={lesson?.summary ?? adab!.summary} />
       <Page>
         <Link href={`/learn/${w.id}`} className="font-bold text-fg-muted">← {w.title}</Link>
-        {lesson ? <BlockLesson lesson={lesson} /> : <AdabView l={adab!} rewards={REWARD_BLOCKS[`${w.id}/${lid}`]} stories={STORY_BLOCKS[`${w.id}/${lid}`]} />}
+        {lesson ? <BlockLesson lesson={lesson} worldId={w.id} /> : <AdabView l={adab!} rewards={REWARD_BLOCKS[`${w.id}/${lid}`]} stories={STORY_BLOCKS[`${w.id}/${lid}`]} />}
         <FinishBar id={`lesson:${w.id}/${lid}`} next={nextId ? `/learn/${w.id}/${nextId}` : null} back={`/learn/${w.id}`} />
       </Page>
     </>
   );
 }
 
-function BlockLesson({ lesson }: { lesson: Lesson }) {
+function BlockLesson({ lesson, worldId }: { lesson: Lesson; worldId: string }) {
   return (
     <>
     <LessonMeta blocks={lesson.blocks} />
@@ -44,6 +45,7 @@ function BlockLesson({ lesson }: { lesson: Lesson }) {
       {lesson.blocks.map((b, i) => <BlockView key={i} b={b} />)}
       <p className="border-t border-border pt-3 text-[0.85rem] text-fg-muted">Sources: {lesson.sources.join(" · ")}</p>
     </section>
+    {lesson.quiz && lesson.quiz.length > 0 && <QuizCard n={lesson.quiz.length} href={`/quiz/${lessonQuizId(worldId, lesson.id)}`} />}
     </>
   );
 }
@@ -57,10 +59,52 @@ function BlockView({ b }: { b: Block }) {
     case "story":
       return <StoryCard b={b} />;
     case "points":
+      if (b.title === "Key takeaways") return <Remember items={b.items} />;
+      if (b.title && /^(how to|how |steps|step by step)/i.test(b.title)) return <Steps title={b.title} items={b.items} />;
       return (
         <div className="flex flex-col gap-2">
           {b.title && <h3 className="text-[1.1rem]">{b.title}</h3>}
           <ul className="flex max-w-[65ch] list-disc flex-col gap-1.5 pl-5">{b.items.map((t) => <li key={t}>{t}</li>)}</ul>
+        </div>
+      );
+    case "steps":
+      return <Steps title={b.title} items={b.items} />;
+    case "quote":
+      return (
+        <figure className="flex flex-col gap-1.5 border-l-[3px] border-l-gold-bright pl-4">
+          {b.ar && <p lang="ar" dir="rtl" className="font-arabic text-[1.45rem] leading-[2.1]">{b.ar}</p>}
+          {b.tr && <p className="text-[0.95rem] italic text-fg-muted">{b.tr}</p>}
+          <blockquote className="max-w-[65ch] font-display text-[1.12rem] leading-snug">“{b.en}”</blockquote>
+          <figcaption className="text-[0.82rem] font-bold text-gold">{b.src}{b.note ? ` · ${b.note}` : ""}</figcaption>
+        </figure>
+      );
+    case "compare":
+      return (
+        <div className="flex flex-col gap-2">
+          <h3 className="text-[1.1rem]">{b.title}</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[420px] border-collapse text-left text-[0.95rem]">
+              <thead><tr><th className="border-b-2 border-emerald px-2.5 py-2 text-emerald">{b.left}</th><th className="border-b-2 border-gold-bright px-2.5 py-2 text-gold">{b.right}</th></tr></thead>
+              <tbody>{b.rows.map(([l, r]) => <tr key={l} className="align-top"><td className="border-b border-border px-2.5 py-2">{l}</td><td className="border-b border-border px-2.5 py-2">{r}</td></tr>)}</tbody>
+            </table>
+          </div>
+        </div>
+      );
+    case "scenario":
+      return <Scenario b={b} />;
+    case "reflect":
+      return (
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="rounded-xl bg-bg-inset px-4 py-3">
+            <span className="eyebrow">Think about it</span>
+            <ul className="mt-1.5 flex list-disc flex-col gap-1.5 pl-5">{b.think.map((t) => <li key={t}>{t}</li>)}</ul>
+          </div>
+          {b.home && (
+            <div className="rounded-xl bg-emerald-soft px-4 py-3">
+              <span className="eyebrow !text-emerald">Talk about it at home</span>
+              <ul className="mt-1.5 flex list-disc flex-col gap-1.5 pl-5">{b.home.map((t) => <li key={t}>{t}</li>)}</ul>
+            </div>
+          )}
         </div>
       );
     case "rec":
@@ -116,6 +160,79 @@ function Triple({ rows }: { rows: { label: string; text?: string }[] }) {
         </div>
       ))}
     </dl>
+  );
+}
+
+function QuizCard({ n, href }: { n: number; href: string }) {
+  return (
+    <section className="card flex flex-wrap items-center justify-between gap-3 border-l-[3px] border-l-gold-bright">
+      <div className="flex flex-col gap-0.5">
+        <span className="eyebrow">Lesson quiz</span>
+        <b className="font-display text-[1.1rem]">{n} questions on this lesson</b>
+        <span className="text-[0.9rem] text-fg-muted">10 points for each first correct answer, 30 for a perfect round.</span>
+      </div>
+      <Link className="btn" href={href}>Take the quiz</Link>
+    </section>
+  );
+}
+
+function Steps({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className="text-[1.1rem]">{title}</h3>
+      <ol className="flex flex-col gap-2">
+        {items.map((t, i) => (
+          <li key={t} className="flex max-w-[68ch] gap-3">
+            <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-emerald text-[0.85rem] font-extrabold text-bg-surface">{i + 1}</span>
+            <span className="pt-0.5">{t}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+function Remember({ items }: { items: string[] }) {
+  return (
+    <div className="rounded-xl border-2 border-gold-bright/60 px-4 py-3">
+      <span className="eyebrow !text-gold">Remember</span>
+      <ul className="mt-1.5 flex flex-col gap-1.5">
+        {items.map((t) => <li key={t} className="flex gap-2"><span className="font-extrabold text-gold" aria-hidden="true">✓</span><span>{t}</span></li>)}
+      </ul>
+    </div>
+  );
+}
+
+function Scenario({ b }: { b: Extract<Block, { type: "scenario" }> }) {
+  const { answerCorrect } = useProgress();
+  const [picked, setPicked] = useState<number | null>(null);
+  const [pts, setPts] = useState(0);
+  return (
+    <div className="flex flex-col gap-2.5 rounded-xl border border-border bg-bg-inset px-4 py-3.5">
+      <span className="eyebrow">What would you do?</span>
+      <p className="max-w-[65ch] font-semibold">{b.situation}</p>
+      <div className="grid gap-2">
+        {b.options.map((o, k) => {
+          const state = picked === null ? "" : o.best ? "right" : k === picked ? "wrong" : "";
+          return (
+            <button key={o.text} type="button" disabled={picked !== null}
+              onClick={() => { setPicked(k); if (o.best) setPts(answerCorrect(`scenario-${b.id}`)); }}
+              className={`rounded-lg border-[1.5px] px-3 py-2 text-left text-[0.95rem] font-semibold disabled:cursor-default ${
+                state === "right" ? "border-success bg-success-soft text-success"
+                : state === "wrong" ? "border-danger bg-danger-soft text-danger"
+                : "border-border bg-bg-surface enabled:hover:border-emerald"}`}>
+              {o.text}
+            </button>
+          );
+        })}
+      </div>
+      {picked !== null && (
+        <p className="max-w-[65ch] text-[0.95rem]">
+          <b>{b.options[picked].best ? (pts ? `Best choice · +${pts}` : "Best choice.") : "Think again."}</b> {b.options[picked].feedback}
+          {!b.options[picked].best && <> <b>Better:</b> {b.options.find((o) => o.best)?.feedback}</>}
+        </p>
+      )}
+    </div>
   );
 }
 
@@ -231,16 +348,7 @@ function AdabView({ l, rewards, stories }: { l: AdabLesson; rewards?: Block[]; s
         <div className="rounded-xl bg-bg-inset px-4 py-3"><b>Reflect privately:</b> {l.practice.reflection}</div>
         <p className="text-[0.85rem] text-fg-muted">Challenges are between you and Allah, so they earn no points.</p>
       </Part>
-      {l.quiz && l.quiz.length > 0 && (
-        <section className="card flex flex-wrap items-center justify-between gap-3 border-l-[3px] border-l-gold-bright">
-          <div className="flex flex-col gap-0.5">
-            <span className="eyebrow">Lesson quiz</span>
-            <b className="font-display text-[1.1rem]">{l.quiz.length} questions on this lesson</b>
-            <span className="text-[0.9rem] text-fg-muted">10 points for each first correct answer, 30 for a perfect round.</span>
-          </div>
-          <Link className="btn" href={`/quiz/adab-${l.id}`}>Take the quiz</Link>
-        </section>
-      )}
+      {l.quiz && l.quiz.length > 0 && <QuizCard n={l.quiz.length} href={`/quiz/adab-${l.id}`} />}
     </>
   );
 }

@@ -7,6 +7,9 @@ import { RUHIY2_LESSONS } from "./ruhiy2";
 import { RUHIY3_LESSONS } from "./ruhiy3";
 import { SOCIAL_LESSONS } from "./social";
 import { SALAH_EXTRA } from "./salah-extra";
+import { IMAN_LESSONS } from "./iman";
+import { ISLAM_LESSONS } from "./islam";
+import { SEERAH_LESSONS } from "./seerah";
 import { REWARD_BLOCKS } from "./rewards";
 import { STORY_BLOCKS } from "./stories";
 
@@ -22,9 +25,14 @@ export type Block =
   | { type: "link"; href: string; label: string; text: string }
   | { type: "reward"; title: string; measure: string; picture: string; src: string }
   | { type: "story"; id: string; kind: string; title: string; scene: string; story: string[]; lesson: string; src: string;
-      check?: { q: string; options: string[]; answer: number; why: string } };
+      check?: { q: string; options: string[]; answer: number; why: string } }
+  | { type: "quote"; ar?: string; tr?: string; en: string; src: string; note?: string }
+  | { type: "compare"; title: string; left: string; right: string; rows: [string, string][] }
+  | { type: "steps"; title: string; items: string[] }
+  | { type: "scenario"; id: string; situation: string; options: { text: string; best?: boolean; feedback: string }[] }
+  | { type: "reflect"; think: string[]; home?: string[] };
 
-export type Lesson = { id: string; title: string; summary: string; sources: string[]; blocks: Block[]; group?: string };
+export type Lesson = { id: string; title: string; summary: string; sources: string[]; blocks: Block[]; group?: string; quiz?: import("./topics").Question[] };
 export type World = {
   id: string;
   title: string;
@@ -40,7 +48,7 @@ const r = (ar: string, tr: string, en: string): Recitation => ({ ar, tr, en });
 
 export const WORLDS: World[] = [
   {
-    id: "iman", title: "Iman (Faith)", arabic: "الإيمان", sub: "The six pillars of faith a believer holds in the heart", quizIds: ["iman"],
+    id: "iman", title: "Iman (Faith)", arabic: "الإيمان", sub: "The six pillars of faith a believer holds in the heart. Every lesson has its own quiz.", quizIds: ["iman"],
     lessons: [
       { id: "tawhid", title: "Tawḥīd: Allah is One", summary: "The foundation of everything a Muslim believes.", sources: ["Quran 112", "Quran 2:255", "Muslim 8"],
         blocks: [
@@ -76,7 +84,7 @@ export const WORLDS: World[] = [
     ],
   },
   {
-    id: "islam", title: "Islam (5 Pillars)", arabic: "الإسلام", sub: "The five pillars every Muslim stands on", quizIds: ["pillars"],
+    id: "islam", title: "Islam (5 Pillars)", arabic: "الإسلام", sub: "The five pillars every Muslim stands on. Every lesson has its own quiz.", quizIds: ["pillars"],
     lessons: [
       { id: "shahadah", title: "The Shahādah", summary: "The testimony that brings a person into Islam.", sources: ["Bukhari 8", "Muslim 16"],
         blocks: [
@@ -220,7 +228,7 @@ export const WORLDS: World[] = [
     ],
   },
   {
-    id: "seerah", title: "Seerah", arabic: "السيرة", sub: "The life of the Prophet ﷺ", quizIds: [],
+    id: "seerah", title: "Seerah", arabic: "السيرة", sub: "The life of the Prophet ﷺ in ten chapters, from birth to his passing, each with stories and a quiz", quizIds: [],
     lessons: [
       { id: "timeline", title: "The life of the Prophet ﷺ", summary: "Key moments from his birth to his passing.", sources: ["Ibn Hishām, al-Sīrah", "Bukhari 3", "Bukhari 3902"],
         blocks: [
@@ -254,6 +262,8 @@ export function lessonCount(w: World) {
 {
   const salah = WORLDS.find((w) => w.id === "salah");
   if (salah) salah.lessons = [...salah.lessons, ...SALAH_EXTRA];
+  const full: Record<string, Lesson[]> = { iman: IMAN_LESSONS, islam: ISLAM_LESSONS, seerah: SEERAH_LESSONS };
+  for (const w of WORLDS) if (full[w.id]) w.lessons = full[w.id];
   for (const w of WORLDS) {
     w.lessons = w.lessons.map((l) => {
       let blocks = l.blocks;

@@ -5,6 +5,7 @@ import { ADAB_LESSONS } from "./adab-all";
 import { SOCIAL_QUIZ } from "./social-quiz";
 import { RUHIY_EXTRA } from "./ruhiy-quiz-extra";
 import { SALAH_EXTRA_QUIZ } from "./salah-extra";
+import { WORLDS } from "./library";
 // Quiz topics. Each topic: a short lesson, then up to 30 questions with a source.
 // Hidden topics are lesson quizzes, reached from inside their lesson.
 
@@ -705,4 +706,23 @@ export const TOPICS: Topic[] = [
 for (const [id, extra] of Object.entries(RUHIY_EXTRA)) {
   const t = TOPICS.find((x) => x.id === id);
   if (t && t.questions.length < 20) t.questions = [...t.questions, ...extra];
+}
+
+// Lesson quizzes for block lessons that carry their own questions.
+export const lessonQuizId = (world: string, lesson: string) => `lq-${world}-${lesson}`;
+for (const w of WORLDS) for (const l of w.lessons) {
+  if (!l.quiz?.length) continue;
+  TOPICS.push({ id: lessonQuizId(w.id, l.id), title: l.title, sub: `Lesson quiz · ${w.title}`, icon: "learn", hidden: true, back: `/learn/${w.id}/${l.id}`,
+    learn: [`Questions on the lesson “${l.title}”. Read the lesson first, then test yourself.`], questions: l.quiz });
+}
+
+// Seerah final quiz: three questions from each chapter.
+{
+  const seerah = WORLDS.find((w) => w.id === "seerah");
+  if (seerah) {
+    const qs = seerah.lessons.flatMap((l) => (l.quiz ?? []).slice(0, 3)).slice(0, 30);
+    TOPICS.push({ id: "seerah", title: "The Seerah", sub: `Final quiz: ${qs.length} questions across the life of the Prophet ﷺ`, icon: "learn",
+      learn: ["Questions from every chapter of the Seerah world, from his birth to his passing."], questions: qs });
+    seerah.quizIds = ["seerah"];
+  }
 }

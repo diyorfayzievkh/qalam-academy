@@ -11,7 +11,7 @@ export const BEDTIME_CATS: { id: BedtimeCat; title: string; sub: string }[] = [
   { id: "prophet", title: "The Prophet ﷺ and his family", sub: "His childhood, Khadījah, Fāṭimah, his grandchildren, and the Night Journey" },
   { id: "companions", title: "The Companions", sub: "Abū Bakr, ʿUmar, Bilāl, Abū Hurayrah, Salmān and Muṣʿab" },
   { id: "prophets", title: "Prophets of old", sub: "Ādam, Nūḥ, Ibrāhīm, Yūsuf, Mūsā, Yūnus and Sulaymān" },
-  { id: "life", title: "Living as a Muslim", sub: "Ḥalāl and ḥarām, Luqmān’s advice, a day like the Prophet ﷺ, and the ḥadīth of Jibrīl" },
+  { id: "life", title: "Living as a Muslim", sub: "Ḥalāl and ḥarām, Luqmān’s advice, a day like the Prophet ﷺ, and growing up as a strong, confident Muslim" },
   { id: "imams", title: "The great imams", sub: "Al-Bukhārī, al-Tirmidhī and the imams of the four madhhabs" },
   { id: "cities", title: "Cities of the Quran", sub: "Makkah, Madinah, Jerusalem, Egypt, Sabaʾ, Iram and al-Ḥijr" },
 ];

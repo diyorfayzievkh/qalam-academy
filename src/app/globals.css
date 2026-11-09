@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens are RGB triplets so Tailwind can apply alpha (see tailwind.config.ts).
+   Light is the default; the "dark" class on <html> switches the palette. */
+:root {
+  --bg: 241 244 238;
+  --surface: 252 253 249;
+  --surface-2: 230 236 227;
+  --ink: 18 35 30;
+  --ink-soft: 75 95 87;
+  --line: 211 220 209;
+  --emerald: 15 90 71;
+  --emerald-soft: 220 235 227;
+  --gold: 156 109 23;
+  --gold-bright: 199 154 62;
+  --gold-soft: 244 231 201;
+  --band: 13 74 59;
+  --band-ink: 245 239 220;
+  --ok: 28 122 76;
+  --ok-soft: 221 241 229;
+  --bad: 176 58 46;
+  --bad-soft: 248 225 221;
+  color-scheme: light;
+}
+.dark {
+  --bg: 9 19 15;
+  --surface: 15 30 25;
+  --surface-2: 22 42 35;
+  --ink: 232 239 233;
+  --ink-soft: 157 178 169;
+  --line: 34 56 47;
+  --emerald: 70 180 141;
+  --emerald-soft: 19 51 42;
+  --gold: 226 186 98;
+  --gold-bright: 233 198 119;
+  --gold-soft: 44 36 18;
+  --band: 11 51 41;
+  --band-ink: 242 233 207;
+  --ok: 82 198 143;
+  --ok-soft: 18 52 37;
+  --bad: 234 122 108;
+  --bad-soft: 58 25 21;
+  color-scheme: dark;
+}
+
+@layer base {
+  html, body { height: 100%; }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  h1, h2, h3 { @apply font-display font-semibold; line-height: 1.2; text-wrap: balance; }
+  :focus-visible { outline: 2px solid rgb(var(--gold-bright)); outline-offset: 2px; border-radius: 6px; }
+}
+
+@layer components {
+  /* Gold girih pattern on the emerald band. */
+  .girih {
+    background-color: rgb(var(--band));
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23C79A3E' stroke-opacity='.28' stroke-width='1'%3E%3Cpath d='M24 7 41 24 24 41 7 24Z'/%3E%3Cpath d='M12 12h24v24H12Z'/%3E%3Ccircle cx='24' cy='24' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .card { @apply bg-bg-surface border border-border rounded-card p-[18px]; }
+  .eyebrow { @apply text-[0.74rem] uppercase font-extrabold text-gold; letter-spacing: .12em; }
+  .btn { @apply inline-flex items-center gap-2 rounded-full px-[18px] py-2.5 font-extrabold bg-emerald text-bg-surface transition-opacity disabled:opacity-45 disabled:cursor-not-allowed; }
+  .btn-gold { @apply bg-gold text-bg-surface; }
+  .btn-ghost { @apply bg-transparent border border-border text-fg; }
+  .chip { @apply inline-flex items-center gap-1.5 text-[0.78rem] font-extrabold rounded-full px-2.5 py-0.5 bg-bg-inset text-fg-muted; }
+  .chip-fard { @apply bg-emerald-soft text-emerald; }
+  .chip-wajib { @apply bg-gold-soft text-gold; }
+  .seg { @apply inline-flex bg-bg-inset rounded-full p-[3px]; }
+  .seg > button { @apply rounded-full px-3.5 py-1.5 font-bold text-[0.88rem] text-fg-muted; }
+  .seg > button[aria-pressed="true"] { @apply bg-bg-surface text-fg shadow-sm; }
+  .field { @apply flex flex-col gap-1 text-[0.82rem] font-bold text-fg-muted; }
+  .input { @apply bg-bg-surface text-fg border border-border rounded-[10px] px-2.5 py-2 max-w-full font-sans text-base font-normal; }
+  .progress { @apply h-2.5 bg-bg-inset rounded-full overflow-hidden; }
+  .progress > i { @apply block h-full rounded-full; background: linear-gradient(90deg, rgb(var(--emerald)), rgb(var(--gold-bright))); transition: width .5s; }
+  .arabic { @apply font-arabic text-fg; direction: rtl; text-align: right; font-size: 1.65rem; line-height: 2.1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

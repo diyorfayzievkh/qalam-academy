@@ -68,13 +68,13 @@ export function AccountProvider({ children }: { children: ReactNode }) {
     pushing.current = true;
     setSync("syncing");
     const p = progressRef.current;
-    const doc: SyncDoc = { points: p.points, answered: p.answered, perfect: p.perfect, studied: p.studied, hifz: readHifz() };
+    const doc: SyncDoc = { points: p.points, answered: p.answered, perfect: p.perfect, studied: p.studied, days: p.days, hifz: readHifz() };
     const r = await call<{ doc: SyncDoc }>("/api/progress", "PUT", doc);
     if (r.ok && r.data.doc) {
       const d = r.data.doc;
       const cur = progressRef.current;
       const changed = d.points !== cur.points || Object.keys(d.answered).length !== Object.keys(cur.answered).length
-        || Object.keys(d.studied).length !== Object.keys(cur.studied).length || Object.keys(d.perfect).length !== Object.keys(cur.perfect).length;
+        || Object.keys(d.studied).length !== Object.keys(cur.studied).length || Object.keys(d.days).length !== Object.keys(cur.days).length || Object.keys(d.perfect).length !== Object.keys(cur.perfect).length;
       if (changed) cur.applySynced(d);
       if (JSON.stringify(d.hifz) !== JSON.stringify(readHifz())) {
         try { localStorage.setItem(HIFZ_KEY, JSON.stringify(d.hifz)); } catch {}

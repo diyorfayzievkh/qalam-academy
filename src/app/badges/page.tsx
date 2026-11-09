@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Page, PageHeader } from "@/components/app-shell";
-import { BadgeIcon } from "@/components/figures";
+import { PathOfLight } from "@/components/path-of-light";
 import { POINTS, useProgress } from "@/components/progress";
 import { BADGES, badgeLevel } from "@/content/badges";
 
@@ -24,19 +24,7 @@ export default function BadgesPage() {
           <div className="progress"><i style={{ width: `${Math.min(100, points / 100)}%` }} /></div>
         </section>
 
-        <div className="grid gap-3 [grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr))]">
-          {BADGES.map((b, i) => {
-            const earned = i < lvl;
-            return (
-              <div key={b.name} className="flex flex-col items-center gap-1.5 rounded-card border border-border bg-bg-surface px-3 py-4 text-center">
-                <BadgeIcon index={i} locked={!earned} />
-                <b className={`font-display text-[1.05rem] font-semibold ${earned ? "" : "text-fg-muted"}`}>{b.name}</b>
-                <small className="text-[0.78rem] font-bold text-fg-muted">{b.meaning}</small>
-                <small className="text-[0.78rem] font-bold tabular-nums text-fg-muted">{b.points.toLocaleString()} pts{earned ? " · Earned" : ""}</small>
-              </div>
-            );
-          })}
-        </div>
+        <PathOfLight points={points} />
 
         <section className="card flex flex-col gap-2.5">
           <h2 className="text-[1.2rem]">How points work</h2>

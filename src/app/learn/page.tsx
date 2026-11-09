@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { Page, PageHeader } from "@/components/app-shell";
 import { useProgress } from "@/components/progress";
+import { T } from "@/components/lang";
 import { TopicCard } from "@/components/topic-card";
+import { lookFor, WorldCover } from "@/components/world-art";
 import { lessonCount, WORLDS } from "@/content/library";
 import { TOPICS } from "@/content/topics";
 
@@ -26,7 +28,7 @@ export default function KnowledgeBasePage() {
           return (
             <section key={sec.key} className="flex flex-col gap-3">
               <div className="flex flex-col gap-0.5">
-                <h2 className="text-[1.3rem]">{sec.title}</h2>
+                <h2 className="text-[1.3rem]"><T>{sec.title}</T></h2>
                 {sec.sub && <p className="max-w-[65ch] text-[0.92rem] text-fg-muted">{sec.sub}</p>}
               </div>
               <div className="grid gap-3.5 [grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))]">
@@ -36,14 +38,18 @@ export default function KnowledgeBasePage() {
               const total = lessonCount(w);
               return (
                 <Link key={w.id} href={`/learn/${w.id}`}
-                  className="flex flex-col gap-2 rounded-card border border-border bg-bg-surface p-[18px] transition hover:-translate-y-0.5 hover:border-emerald">
-                  <div className="flex items-start justify-between gap-3">
+                  className="lift reveal flex flex-col overflow-hidden rounded-card border border-border bg-bg-surface hover:border-emerald">
+                  <WorldCover id={w.id} className="h-[118px]">
+                    <div className="flex h-[118px] items-end justify-end p-3">
+                      <span lang="ar" className="font-arabic text-[1.45rem] leading-none drop-shadow" style={{ color: lookFor(w.id).ink }}>{w.arabic}</span>
+                    </div>
+                  </WorldCover>
+                  <div className="flex flex-1 flex-col gap-2 p-[16px]">
                     <h3 className="text-[1.15rem]">{w.title}</h3>
-                    <span lang="ar" className="font-arabic text-[1.35rem] leading-none text-gold">{w.arabic}</span>
+                    <span className="text-[0.92rem] text-fg-muted">{w.sub}</span>
+                    <div className="progress mt-auto"><i style={{ width: `${(read / total) * 100}%` }} /></div>
+                    <span className="text-[0.82rem] font-bold text-fg-muted">{read} of {total} lessons read{w.quizIds.length ? ` · ${w.quizIds.length} quiz${w.quizIds.length > 1 ? "zes" : ""}` : ""}</span>
                   </div>
-                  <span className="text-[0.92rem] text-fg-muted">{w.sub}</span>
-                  <div className="progress mt-auto"><i style={{ width: `${(read / total) * 100}%` }} /></div>
-                  <span className="text-[0.82rem] font-bold text-fg-muted">{read} of {total} lessons read{w.quizIds.length ? ` · ${w.quizIds.length} quiz${w.quizIds.length > 1 ? "zes" : ""}` : ""}</span>
                 </Link>
               );
             })}

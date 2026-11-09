@@ -8,10 +8,11 @@ export type SyncDoc = {
   answered: Record<string, true>;
   perfect: Record<string, true>;
   studied: Record<string, true>;
+  days: Record<string, true>;
   hifz: Record<string, HifzRec>;
 };
 
-export const EMPTY_DOC: SyncDoc = { points: 0, answered: {}, perfect: {}, studied: {}, hifz: {} };
+export const EMPTY_DOC: SyncDoc = { points: 0, answered: {}, perfect: {}, studied: {}, days: {}, hifz: {} };
 
 const flags = (v: unknown): Record<string, true> => {
   const out: Record<string, true> = {};
@@ -40,6 +41,7 @@ export function cleanDoc(v: unknown): SyncDoc {
   return {
     points: Number.isFinite(pts) ? Math.max(0, Math.min(10_000_000, Math.round(pts))) : 0,
     answered: flags(o.answered), perfect: flags(o.perfect), studied: flags(o.studied), hifz,
+    days: Object.fromEntries(Object.keys(flags(o.days)).filter((k) => /^\d{4}-\d{2}-\d{2}$/.test(k)).map((k) => [k, true as const])),
   };
 }
 
@@ -53,6 +55,7 @@ export function mergeDocs(a: SyncDoc, b: SyncDoc): SyncDoc {
     answered: { ...a.answered, ...b.answered },
     perfect: { ...a.perfect, ...b.perfect },
     studied: { ...a.studied, ...b.studied },
+    days: { ...a.days, ...b.days },
     hifz,
   };
 }

@@ -7,9 +7,10 @@ import { BADGES, badgeLevel } from "@/content/badges";
 import { MORE_PATHS, NAV, TABS } from "@/lib/nav";
 import { Icon } from "./icons";
 import { useProgress } from "./progress";
-import { ThemeToggle } from "./theme";
+import { SettingsMenu } from "./settings-menu";
+import { CelebrationLayer, Sparks } from "./celebrate";
 import { useAccount } from "./account";
-import { LangSwitch, useT } from "./lang";
+import { useT } from "./lang";
 
 function isActive(path: string, href: string) {
   if (href === "/") return path === "/";
@@ -20,7 +21,7 @@ function isActive(path: string, href: string) {
 
 export function AppShell({ children }: { children: ReactNode }) {
   const path = usePathname();
-  const { points, toast } = useProgress();
+  const { points, toast, toastKey } = useProgress();
   const { user, available } = useAccount();
   const { t } = useT();
   const lvl = badgeLevel(points);
@@ -70,11 +71,19 @@ export function AppShell({ children }: { children: ReactNode }) {
         })}
       </nav>
 
-      {toast && (
-        <div role="status" className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-30 -translate-x-1/2 rounded-full bg-gold px-[18px] py-2.5 font-extrabold text-bg-surface shadow-lg lg:bottom-8">
-          {toast}
-        </div>
-      )}
+      {toast && (() => {
+        const m = toast.match(/^\+(\d+) points(?: · (.*))?$/);
+        const badge = toast.match(/^New badge earned: (.*)!$/);
+        return (
+          <div key={toastKey} role="status"
+            className="points-pop fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-30 flex items-center gap-2 rounded-full bg-gradient-to-r from-[#B5832A] via-[#E2B552] to-[#B5832A] px-5 py-2.5 font-extrabold text-[#1F1405] shadow-[0_10px_30px_-8px_rgba(181,131,42,.7)] lg:bottom-8">
+            <Sparks count={8} />
+            {m ? (<><b className="font-display text-[1.25rem]">+{m[1]}</b><span>{t("points")}</span>{m[2] && <span className="opacity-75">· {t(m[2])}</span>}</>)
+              : badge ? t("New badge earned: {name}!", { name: t(badge[1]) }) : t(toast)}
+          </div>
+        );
+      })()}
+      <CelebrationLayer />
     </div>
   );
 }
@@ -82,14 +91,13 @@ export function AppShell({ children }: { children: ReactNode }) {
 export function PageHeader({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?: string }) {
   const { t } = useT();
   return (
-    <header className="girih relative overflow-hidden text-band-fg">
+    <header className="girih relative z-30 text-band-fg">
       <div className="gutter mx-auto flex max-w-[980px] flex-col gap-1.5 pb-[26px] pt-[calc(22px+env(safe-area-inset-top,0px))]">
         <div className="flex items-center justify-between gap-3">
           <span className="font-display text-[1.05rem] font-bold text-gold-bright max-sm:hidden lg:invisible">{t("Qalam Academy")}</span>
           <div className="ml-auto flex items-center gap-2">
             <Link href="/search" className="inline-flex items-center gap-1.5 rounded-full border border-gold-bright/45 bg-white/10 px-3 py-1.5 text-[0.85rem] font-bold text-band-fg hover:bg-white/20"><Icon name="search" size={18} /><span className="max-sm:sr-only">{t("Search")}</span></Link>
-            <LangSwitch />
-            <ThemeToggle />
+            <SettingsMenu />
           </div>
         </div>
         <span className="eyebrow !text-gold-bright">{t(eyebrow)}</span>
@@ -101,5 +109,5 @@ export function PageHeader({ eyebrow, title, sub }: { eyebrow: string; title: st
 }
 
 export function Page({ children }: { children: ReactNode }) {
-  return <div className="gutter mx-auto flex max-w-[980px] flex-col gap-5 pb-2 pt-5">{children}</div>;
+  return <div className="page-enter gutter mx-auto flex max-w-[980px] flex-col gap-5 pb-2 pt-5">{children}</div>;
 }

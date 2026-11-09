@@ -9,6 +9,8 @@ import "@fontsource/reem-kufi/600.css";
 import "@fontsource/reem-kufi/700.css";
 import "@fontsource/amiri/400.css";
 import "@fontsource/amiri/700.css";
+import "@fontsource/literata/400.css";
+import "@fontsource/literata/600.css";
 import "./globals.css";
 import { AppShell } from "@/components/app-shell";
 import { ProgressProvider } from "@/components/progress";

@@ -46,17 +46,3 @@ export function T({ children, vars }: { children: string; vars?: Record<string, 
   const { t } = useT();
   return <>{t(children, vars)}</>;
 }
-
-export function LangSwitch({ className = "" }: { className?: string }) {
-  const { lang, setLang } = useT();
-  return (
-    <div className={`inline-flex rounded-full border border-gold-bright/45 bg-white/10 p-0.5 text-[0.8rem] font-bold text-band-fg ${className}`} role="group" aria-label="Language">
-      {LANGS.map((l) => (
-        <button key={l.id} type="button" aria-pressed={lang === l.id} title={l.name} onClick={() => setLang(l.id)}
-          className={`rounded-full px-2 py-1 ${lang === l.id ? "bg-gold-bright text-[#0B3329]" : "opacity-80 hover:opacity-100"}`}>
-          {l.short}
-        </button>
-      ))}
-    </div>
-  );
-}

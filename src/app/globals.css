@@ -86,3 +86,78 @@
 }
 
 input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+
+/* ---------- Motion: gentle, and off for people who ask for reduced motion. ---------- */
+@keyframes twinkle { 0%, 100% { opacity: 1 } 50% { opacity: .25 } }
+@keyframes glow-pulse { 0%, 100% { opacity: .75; transform: scale(1) } 50% { opacity: 1; transform: scale(1.08) } }
+@keyframes float-up { 0% { transform: translateY(0); opacity: 0 } 20% { opacity: 1 } 100% { transform: translateY(-28px); opacity: 0 } }
+@keyframes pop-in { from { opacity: 0; transform: translateY(-4px) scale(.97) } to { opacity: 1; transform: none } }
+@keyframes page-enter { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
+@keyframes reveal { from { opacity: 0; transform: translateY(18px) } to { opacity: 1; transform: none } }
+@keyframes points-rise { 0% { opacity: 0; transform: translate(-50%, 12px) scale(.9) } 15% { opacity: 1; transform: translate(-50%, 0) scale(1.04) } 80% { opacity: 1; transform: translate(-50%, -6px) } 100% { opacity: 0; transform: translate(-50%, -22px) } }
+@keyframes spark { 0% { transform: translate(0, 0) scale(.4); opacity: 0 } 25% { opacity: 1 } 100% { transform: translate(var(--dx), var(--dy)) scale(1); opacity: 0 } }
+@keyframes rays { to { transform: rotate(360deg) } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(24px) scale(.92) } to { opacity: 1; transform: none } }
+@keyframes station-glow { 0%, 100% { filter: drop-shadow(0 0 6px rgb(var(--gold-bright) / .55)) } 50% { filter: drop-shadow(0 0 16px rgb(var(--gold-bright) / .95)) } }
+@keyframes shimmer { from { background-position: -200% 0 } to { background-position: 200% 0 } }
+
+.twinkle { animation: twinkle 3.2s ease-in-out infinite; }
+.glow-pulse { transform-box: fill-box; transform-origin: center; animation: glow-pulse 3.6s ease-in-out infinite; }
+.float-up { animation: float-up 3.6s ease-out infinite; }
+.pop-in { animation: pop-in .16s ease-out; }
+.page-enter { animation: page-enter .35s ease-out both; }
+.points-pop { animation: points-rise 2.4s cubic-bezier(.2,.7,.2,1) both; }
+.spark { animation: spark .9s ease-out both; }
+.rays { animation: rays 24s linear infinite; transform-origin: center; }
+.rise-in { animation: rise-in .5s cubic-bezier(.2,.8,.2,1.1) both; }
+.station-now { animation: station-glow 2.4s ease-in-out infinite; }
+.shimmer-gold {
+  background: linear-gradient(90deg, rgb(var(--gold)) 0%, rgb(var(--gold-bright)) 40%, #fff3c4 50%, rgb(var(--gold-bright)) 60%, rgb(var(--gold)) 100%);
+  background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+.lift { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.lift:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgb(0 0 0 / .45); }
+
+/* Sections fade up as they scroll into view, where the browser supports it. */
+@supports (animation-timeline: view()) {
+  .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  .reveal { animation: none !important; }
+  .twinkle, .glow-pulse, .float-up, .rays, .station-now, .shimmer-gold, .points-pop, .rise-in, .page-enter, .pop-in { animation: none !important; }
+  .spark, .float-up { display: none; }
+  .shimmer-gold { color: rgb(var(--gold)); background: none; }
+}
+
+/* ---------- Bedtime Stories: a night sky of their own ---------- */
+.night {
+  --bg: 7 13 28; --surface: 13 22 42; --surface-2: 21 32 58; --ink: 238 233 220; --ink-soft: 170 176 198;
+  --line: 34 48 80; --emerald: 236 200 120; --emerald-soft: 38 42 62; --gold: 236 200 120; --gold-bright: 244 212 142;
+  --gold-soft: 44 38 24; --band: 8 16 36; --band-ink: 242 236 220;
+  color-scheme: dark;
+  color: rgb(var(--ink));
+  background-color: rgb(var(--bg));
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #fff8 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 8%, #fff7 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 38% 42%, #fff6 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 36%, #fff8 50%, transparent 51%),
+    radial-gradient(1px 1px at 22% 72%, #fff5 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 60% 66%, #fff6 50%, transparent 51%),
+    radial-gradient(1px 1px at 94% 82%, #fff5 50%, transparent 51%),
+    radial-gradient(ellipse at 50% -10%, rgb(52 72 130 / .45), transparent 60%);
+  background-size: 420px 420px, 420px 420px, 420px 420px, 420px 420px, 420px 420px, 420px 420px, 420px 420px, 100% 100%;
+  min-height: 100vh;
+}
+.night .girih {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23E9C46A' stroke-opacity='.16' stroke-width='1'%3E%3Cpath d='M24 7 41 24 24 41 7 24Z'/%3E%3Ccircle cx='24' cy='24' r='5'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(180deg, #060C1E, #0F1D3C);
+}
+.night .btn { color: #1A1405; }
+.font-story { font-family: "Literata", Georgia, "Times New Roman", serif; }
+.lights-down [data-dim] { opacity: .12; transition: opacity .6s ease; }
+.lights-down [data-dim]:hover { opacity: .6; }
+[data-dim] { transition: opacity .6s ease; }

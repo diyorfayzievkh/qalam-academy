@@ -7,6 +7,8 @@ import { Page, PageHeader } from "@/components/app-shell";
 import { POINTS, useProgress } from "@/components/progress";
 import { RecitationBlock } from "@/components/recitation";
 import { BEDTIME, BEDTIME_CATS, bedtimeMinutes, findBedtime, type Bedtime } from "@/content/bedtime";
+import { StoryCover } from "@/components/story-art";
+import { useT } from "@/components/lang";
 
 const SLEEP_DUA = { ar: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا", tr: "Bismika-llāhumma amūtu wa aḥyā.", en: "In Your name, O Allah, I die and I live." };
 
@@ -14,6 +16,19 @@ export default function StoryPage() {
   const { id } = useParams<{ id: string }>();
   const s = findBedtime(id);
   const { studied, markStudied } = useProgress();
+  const { t } = useT();
+  const [dim, setDim] = useState(false);
+  const [prog, setProg] = useState(0);
+  const art = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const on = () => {
+      const el = art.current; if (!el) return;
+      const r = el.getBoundingClientRect();
+      setProg(Math.min(1, Math.max(0, (window.innerHeight * 0.6 - r.top) / r.height)));
+    };
+    on(); window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, [id]);
   if (!s) notFound();
   const cat = BEDTIME_CATS.find((c) => c.id === s.cat)!;
   const list = BEDTIME.filter((x) => x.cat === s.cat);
@@ -22,38 +37,51 @@ export default function StoryPage() {
   const done = !!studied[`story:${s.id}`];
 
   return (
-    <>
-      <PageHeader eyebrow={`Bedtime Stories · ${cat.title}`} title={s.title} sub={s.teaser} />
+    <div className={`night ${dim ? "lights-down" : ""}`}>
+      <div className="fixed inset-x-0 top-0 z-40 h-[3px] bg-transparent" aria-hidden>
+        <i className="block h-full bg-gradient-to-r from-[#B5832A] to-[#FFE39A] transition-[width] duration-150" style={{ width: `${prog * 100}%` }} />
+      </div>
+      <div data-dim><PageHeader eyebrow={`${t("Bedtime Stories")} · ${t(cat.title)}`} title={s.title} sub={s.teaser} /></div>
       <Page>
-        <Link href="/stories" className="font-bold text-fg-muted">← All stories</Link>
-        <ReadAloud s={s} />
-        <article className="card flex flex-col gap-4">
-          <span className="eyebrow">{bedtimeMinutes(s)}-minute story</span>
-          {s.paras.map((p) => <p key={p} className="max-w-[62ch] text-[1.12rem] leading-[1.9]">{p}</p>)}
+        <div data-dim className="flex flex-wrap items-center justify-between gap-3">
+          <Link href="/stories" className="font-bold text-fg-muted">← {t("All stories")}</Link>
+          <button type="button" onClick={() => setDim((d) => !d)} aria-pressed={dim}
+            className="inline-flex items-center gap-2 rounded-full border border-border px-3.5 py-1.5 text-[0.88rem] font-bold text-fg-muted hover:border-gold-bright">
+            <span aria-hidden>{dim ? "☀" : "☾"}</span>{dim ? t("Lights up") : t("Lights down")}
+          </button>
+        </div>
+        <StoryCover s={s} className="h-[180px] rounded-card sm:h-[220px]" />
+        <div data-dim><ReadAloud s={s} /></div>
+        <article ref={art} className="flex flex-col gap-5 rounded-card border border-border bg-bg-surface/70 px-5 py-6 sm:px-9 sm:py-8">
+          <span className="eyebrow">{t("{n}-minute story", { n: bedtimeMinutes(s) })}</span>
+          {s.paras.map((p, k) => (
+            <p key={p} className={`font-story max-w-[62ch] text-[1.16rem] leading-[1.95] ${k === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:font-display first-letter:text-[3.4rem] first-letter:leading-[0.9] first-letter:text-gold-bright" : ""}`}>{p}</p>
+          ))}
         </article>
-        <section className="flex flex-col gap-3 rounded-card border-2 border-gold-bright/60 px-5 py-4">
-          <span className="eyebrow !text-gold">The lesson</span>
-          <p className="max-w-[62ch] font-display text-[1.15rem] leading-snug">{s.moral}</p>
-          <div className="rounded-xl bg-emerald-soft px-4 py-3"><b className="text-emerald">Talk before sleep:</b> {s.talk}</div>
+        <section className="flex flex-col gap-3 rounded-card border-2 border-gold-bright/60 bg-bg-surface/60 px-5 py-4">
+          <span className="eyebrow !text-gold">{t("The lesson")}</span>
+          <p className="font-story max-w-[62ch] text-[1.15rem] leading-snug">{s.moral}</p>
+          <div className="rounded-xl bg-emerald-soft px-4 py-3"><b className="text-gold-bright">{t("Talk before sleep")}:</b> {s.talk}</div>
         </section>
         <section className="card flex flex-col gap-2">
-          <span className="eyebrow">Bedtime duʿāʾ</span>
+          <span className="eyebrow">{t("Bedtime duʿāʾ")}</span>
           <RecitationBlock r={SLEEP_DUA} />
-          <p className="text-[0.82rem] font-bold text-gold">Bukhari 6324 · then recite Āyat al-Kursī and the three Quls</p>
+          <p className="text-[0.82rem] font-bold text-gold">Bukhari 6324 · {t("then recite Āyat al-Kursī and the three Quls")}</p>
         </section>
-        <p className="text-[0.85rem] text-fg-muted">Source: {s.src}</p>
-        <div className="flex flex-wrap items-center justify-between gap-3">
+        <p data-dim className="text-[0.85rem] text-fg-muted">{t("Source")}: {s.src}</p>
+        <div data-dim className="flex flex-wrap items-center justify-between gap-3">
           <button type="button" className="btn btn-gold" disabled={done} onClick={() => markStudied(`story:${s.id}`, "bedtime story", POINTS.lessonRead)}>
-            {done ? "Read ✓" : `Finished · +${POINTS.lessonRead}`}
+            {done ? `${t("Read")} ✓` : `${t("Finished")} · +${POINTS.lessonRead}`}
           </button>
-          <Link className="btn btn-ghost" href={`/stories/${next.id}`}>Next: {next.title}</Link>
+          <Link className="btn btn-ghost" href={`/stories/${next.id}`}>{t("Next")}: {next.title}</Link>
         </div>
       </Page>
-    </>
+    </div>
   );
 }
 
 function ReadAloud({ s }: { s: Bedtime }) {
+  const { t } = useT();
   const [state, setState] = useState<"idle" | "playing" | "paused">("idle");
   const [ok, setOk] = useState(false);
   const queue = useRef<SpeechSynthesisUtterance[]>([]);
@@ -71,8 +99,8 @@ function ReadAloud({ s }: { s: Bedtime }) {
     synth.cancel();
     const parts = [s.title, ...s.paras, `The lesson. ${s.moral}`];
     const voice = synth.getVoices().find((v) => v.lang.startsWith("en"));
-    queue.current = parts.map((t, k) => {
-      const u = new SpeechSynthesisUtterance(t);
+    queue.current = parts.map((text, k) => {
+      const u = new SpeechSynthesisUtterance(text);
       u.rate = 0.9; u.pitch = 1;
       if (voice) u.voice = voice;
       if (k === parts.length - 1) u.onend = () => setState("idle");
@@ -85,10 +113,10 @@ function ReadAloud({ s }: { s: Bedtime }) {
   return (
     <div className="flex flex-wrap items-center gap-2.5">
       <button type="button" className="btn" onClick={() => (state === "playing" ? (window.speechSynthesis.pause(), setState("paused")) : play())}>
-        {state === "playing" ? "Pause" : state === "paused" ? "Resume" : "Read aloud"}
+        {state === "playing" ? t("Pause") : state === "paused" ? t("Resume") : t("Read aloud")}
       </button>
-      {state !== "idle" && <button type="button" className="btn btn-ghost" onClick={() => { window.speechSynthesis.cancel(); setState("idle"); }}>Stop</button>}
-      <span className="text-[0.85rem] text-fg-muted">Uses your device’s voice. Arabic names may sound unusual.</span>
+      {state !== "idle" && <button type="button" className="btn btn-ghost" onClick={() => { window.speechSynthesis.cancel(); setState("idle"); }}>{t("Stop")}</button>}
+      <span className="text-[0.85rem] text-fg-muted">{t("Uses your device’s voice. Arabic names may sound unusual.")}</span>
     </div>
   );
 }

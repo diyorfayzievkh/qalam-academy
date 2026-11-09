@@ -37,7 +37,7 @@ export const IMAN_LESSONS: Lesson[] = [
       L("Does īmān go up and down?", [
         "The Quran says the believers’ faith increases when Allah’s verses are recited to them (8:2).",
         "Scholars of the Ḥanafī-Māturīdī school say the core of belief, its certainty, is one thing, and what increases is its strength, light and fruit. Other scholars say īmān itself increases with obedience and decreases with sin. Both agree that the believer’s faith becomes stronger or weaker in practice.",
-        "Faith has more than seventy branches; the highest is “lā ilāha illa-llāh” and the lowest is removing harm from the road, and modesty is a branch of faith (Bukhari 9, Muslim 35).",
+        "Faith has more than seventy branches; the highest is “lā ilāha illa-llāh” and the lowest is removing harm from the road, and modesty is a branch of faith (Muslim 35).",
       ]),
       L("How to strengthen your īmān", [
         "Learn about Allah through His names and the Quran.",
@@ -303,14 +303,14 @@ export const IMAN_LESSONS: Lesson[] = [
       P("This life is not the end. Every person will die, be questioned in the grave, be raised again, and stand before Allah to be judged. Belief in the Last Day gives life its meaning: nothing good is wasted and no injustice goes unanswered. “Whoever does an atom’s weight of good will see it, and whoever does an atom’s weight of evil will see it” (99:7–8)."),
       St("The journey after death, in order", [
         "Death: the soul is taken by the Angel of Death at its appointed time.",
-        "The grave (barzakh): two angels ask: Who is your Lord? What is your religion? Who is this man sent to you? For the believer the grave becomes a garden; for others, a pit (Tirmidhi 2460).",
+        "The grave (barzakh): two angels ask: Who is your Lord? What is your religion? Who is this man sent to you? For the believer the grave is widened and filled with light; for others it closes in on them (Bukhari 1338; Abu Dawud 4753).",
         "The Trumpet: Isrāfīl blows, everything dies; then a second blow and all are raised.",
         "The Gathering: people stand barefoot and uncovered, on a Day lasting fifty thousand years (70:4), the sun brought close, each in sweat by his deeds (Muslim 2864).",
         "The Intercession: people go from prophet to prophet until they come to Muhammad ﷺ, who prostrates and intercedes for the judgment to begin.",
         "The Books: each receives his record, in the right hand or the left (69:19–26).",
         "The Scale (Mīzān): deeds are weighed; “We will set up the scales of justice” (21:47).",
         "The Bridge (Ṣirāṭ): set over Hell; people cross at speeds according to their deeds, some like lightning, some crawling (Bukhari 7439).",
-        "The Pool (Ḥawḍ) of the Prophet ﷺ: whiter than milk, sweeter than honey; whoever drinks from it will never thirst again (Bukhari 6579).",
+        "The Pool (Ḥawḍ) of the Prophet ﷺ: whiter than milk, sweeter than honey (Muslim 2300); whoever drinks from it will never thirst again (Bukhari 6579).",
         "Paradise or Hell: the final, eternal home.",
       ]),
       Cmp("Paradise and Hell", "Paradise (Jannah)", "Hell (Jahannam)", [
@@ -356,7 +356,7 @@ export const IMAN_LESSONS: Lesson[] = [
 
   { id: "qadar", title: "Belief in the divine decree (qadar)", summary: "Allah knows, writes, wills and creates all things, and we are responsible for our choices.", sources: ["Muslim 8", "Quran 54:49", "Quran 57:22", "Muslim 2653", "Tirmidhi 2516", "Muslim 2999", "Muslim 2664", "Bukhari 4949"],
     blocks: [
-      P("Belief in qadar means believing that everything that happens, good or bad, happens by Allah’s knowledge, writing, will and creation. “Indeed, We created everything by measure” (54:49). It gives a believer peace: nothing that reached you could have missed you, and nothing that missed you could have reached you (Tirmidhi 2516)."),
+      P("Belief in qadar means believing that everything that happens, good or bad, happens by Allah’s knowledge, writing, will and creation. “Indeed, We created everything by measure” (54:49). It gives a believer peace: nothing that reached you could have missed you, and nothing that missed you could have reached you (Abu Dawud 4699)."),
       St("The four levels of qadar", [
         "Knowledge: Allah knows everything, past, present and future, in full detail.",
         "Writing: Allah wrote the measures of everything fifty thousand years before creating the heavens and the earth (Muslim 2653).",
@@ -405,7 +405,7 @@ export const IMAN_LESSONS: Lesson[] = [
       q("What did the Prophet ﷺ say when asked “should we stop working and rely on what is written”?", ["“Yes”", "“Work, for each will find easy what he was created for”", "“Only pray”", "“Nobody knows”"], 1, "Bukhari 4949.", "Bukhari 4949"),
       q("What should we say instead of “if only” after a misfortune?", ["Nothing", "“Allah decreed, and what He willed He did”", "“It’s unfair”", "“Next time”"], 1, "“If only” opens the door to Shayṭān.", "Muslim 2664"),
       q("Can qadar be used as an excuse to sin?", ["Yes", "No", "Only small sins", "Only when tired"], 1, "We are responsible for our choices.", "Quran 18:29"),
-      q("“What reached you…”", ["“…was a mistake”", "“…could never have missed you”", "“…was luck”", "“…can be undone”"], 1, "Tirmidhi 2516.", "Tirmidhi 2516"),
+      q("“What reached you…”", ["“…was a mistake”", "“…could never have missed you”", "“…was luck”", "“…can be undone”"], 1, "Abu Dawud 4699.", "Abu Dawud 4699"),
       q("Who won the argument between Ādam and Mūsā?", ["Mūsā", "Ādam", "Neither", "Both"], 1, "Bukhari 3409.", "Bukhari 3409"),
       q("Is duʿāʾ useless because everything is decreed?", ["Yes", "No, duʿāʾ is itself among the decreed means", "Only in Ramadan", "Only for prophets"], 1, "Allah decrees outcomes through their means, including duʿāʾ.", "Tirmidhi 2139"),
     ] },

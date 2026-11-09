@@ -82,7 +82,7 @@ const T: LessonTrMap = {
       { title: "Bir qarashda: bitta namoz nechaga teng…", items: [
         "Yolg‘iz: 1 namoz.",
         "Jamoat bilan (masjidda): 27 namoz, ya’ni yolg‘iz o‘qilgan 5 kundan ko‘proq namoz (Buxoriy 645).",
-        "Madinadagi Qubo masjidida ikki rakat: bir umra savobi (Ibn Moja 1412).",
+        "Uyda tahorat olib, keyin Madinadagi Qubo masjidida namoz o‘qish: bir umra savobi (Ibn Moja 1412).",
         "Masjidul Aqsoda: taxminan 250 dan 500 gacha namoz, ya’ni taxminan 2–3 oylik kundalik namoz (quyidagi izohga qarang).",
         "Madinadagi Payg‘ambar ﷺ masjidida: 1000 namoz, taxminan 200 kunlik (6,5 oylik) namoz (Buxoriy 1190).",
         "Makkadagi Masjidul Haromda: 100 000 namoz, taxminan 20 000 kunlik, ya’ni 55 yillik kundalik namoz (Ibn Moja 1406).",
@@ -98,14 +98,14 @@ const T: LessonTrMap = {
       { title: "1. Uyda yolg‘iz namoz o‘qish", items: [
         "Uyda yolg‘iz o‘qilgan farz namoz to‘g‘ri va savobli, ayniqsa kasallik, yomg‘ir yoki xavf kabi uzr bo‘lganda.",
         "Nafl namozlar uchun uy eng yaxshi joy: “Uylaringizda namoz o‘qinglar; kishining eng afzal namozi uyidagi namozidir, farz namozdan tashqari” (Buxoriy 731).",
-        "“Uylaringizni qabrga aylantirmang” (Buxoriy 432). Sunnatlar va Qur’on o‘qiladigan uy nurga to‘ladi va shaytonni uzoqlashtiradi.",
+        "“Uylaringizni qabrga aylantirmang” (Buxoriy 432). Baqara surasi o‘qiladigan uydan shayton qochadi (Muslim 780).",
         "Hanafiy mazhabida erkaklar uchun farzni jamoat bilan o‘qish vojibga yaqin sunnati muakkadadir. Uni uzrsiz odatiy tark etish qoralanadi.",
       ] },
       { title: "2. Uyda, oila yoki do‘stlar bilan jamoat bo‘lib", items: [
         "Jamoat imom va kamida bitta iqtido qiluvchidan iborat bo‘ladi. Uyda ayolingiz, farzandlaringiz yoki do‘stlaringiz bilan birga o‘qisangiz, jamoat fazilatini olasiz va oilangizga namozni o‘rgatasiz.",
         "Payg‘ambar ﷺ bir uyda ortida Anas va bir yetim, ularning ortida esa bir keksa ayol bilan namoz o‘qigan (Buxoriy 380).",
         "Masjiddagi jamoat to‘liqroq: unga har bir qadam, namozni kutish va Allohning uyini to‘ldirish savobi qo‘shiladi. Shuning uchun erkaklar sababsiz masjid o‘rniga uydagi jamoatni odat qilmasliklari kerak.",
-        "Ayollar uchun uyda namoz o‘qish yaxshiroq (Abu Dovud 570) va ular to‘liq savob oladi. Ular baribir masjidga borishlari mumkin; “Allohning cho‘rilarini Allohning masjidlaridan to‘smang” (Buxoriy 900).",
+        "Ayollar uchun: Payg‘ambar ﷺ ayollarni masjidga borishdan to‘smaslikni o‘rgatgan, shu bilan birga ayolning uyda o‘qigan namozi alohida va go‘zal savobga ega ekanini ham aytgan. Zamon o‘zgarib, xavfsizlik kamaygani sababli keyingi hanafiy olimlari ayollarga uyda namoz o‘qishni afzal deb maslahat berishgan. Biroq bugungi ko‘plab olimlar safar yoki Islom haqida dars kabi yaxshi sabab bo‘lganda ayollarning masjidga borishi mutlaqo joiz va savobli ekaniga qo‘shiladi (Buxoriy 900; Abu Dovud 570).",
       ] },
       { title: "3. Masjidda", items: [
         "Yolg‘iz o‘qilgan namozdan 27 barobar ko‘p savob (Buxoriy 645). Boshqa rivoyatda 25 (Buxoriy 646); olimlar qo‘shimcha darajalar piyoda borish va erta kelish kabi to‘liqroq odoblar bilan keladi, deb tushuntiradi.",
@@ -119,7 +119,7 @@ const T: LessonTrMap = {
       { title: "4. Qubo masjidi", items: [
         "Islomda qurilgan birinchi masjid, taqvo asosiga qurilgan (9:108). Payg‘ambar ﷺ har shanba ulovda yoki piyoda unga borardi (Buxoriy 1193).",
       ] },
-      { title: "Qubo masjidida ikki rakat", measure: "= bir umra savobi" },
+      { title: "Qubo masjidida namoz", measure: "= bir umra savobi" },
       { title: "5. Quddusdagi Masjidul Aqso", items: [
         "Birinchi qibla, Isro joyi (17:1) va safar qilishga arziydigan uchta masjiddan biri (Buxoriy 1189).",
         "Uning savobi haqidagi rivoyatlar turlicha. Abu Dardodan kelgan rivoyat (al-Bazzor, al-Bazzor hasan degan) 500 namoz deydi. Abu Zardan kelgan rivoyat (al-Hokim) Payg‘ambar ﷺ masjididagi bir namoz Aqsodagi to‘rt namozdan afzal, deydi, bu taxminan 250 ga ishora qiladi. 50 000 degan rivoyat (Ibn Moja) zaif.",
@@ -169,7 +169,7 @@ const T: LessonTrMap = {
         "Marhum musulmon, yuvilgan (yuvish imkonsiz bo‘lsa, tayammum qilingan) va namoz o‘qiyotganlarning oldiga qo‘yilgan bo‘lishi.",
         "Tananing hammasi yoki ko‘p qismi hozir bo‘lishi. Hanafiy mazhabida g‘oyibona janoza namozi o‘qilmaydi.",
         "Imom marhum erkak bo‘lsin, ayol bo‘lsin, uning ko‘kragi to‘g‘risida turadi.",
-        "Saflarni toq, afzali uchta qilish mustahab (Abu Dovud 3166).",
+        "Uch saf qilish mustahab (Abu Dovud 3166).",
       ] },
       { title: "Bosqichma-bosqich (hanafiy)", items: [
         "Niyat: qalbda Alloh uchun, shu marhumga duo sifatida, imomga iqtido qilib janoza namozini o‘qishni niyat qil.",

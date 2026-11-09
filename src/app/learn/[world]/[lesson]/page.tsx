@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { mixOptions } from "@/lib/mix";
 import { useState } from "react";
 import { notFound, useParams } from "next/navigation";
 import type { ReactNode } from "react";
@@ -256,7 +257,7 @@ function StoryCard({ b }: { b: Extract<Block, { type: "story" }> }) {
   const [open, setOpen] = useState(false);
   const [picked, setPicked] = useState<number | null>(null);
   const [pts, setPts] = useState(0);
-  const c = b.check;
+  const c = b.check ? mixOptions({ ...b.check }) : undefined;
   return (
     <article className="flex flex-col gap-2.5 rounded-xl border border-emerald/40 bg-emerald-soft/60 px-4 py-4">
       <span className="eyebrow !text-emerald">{t("Story")} · {t(b.kind)}</span>

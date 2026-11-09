@@ -33,14 +33,14 @@ export const CLEAN_LESSONS: Lesson[] = [
       { type: "reward", title: "Shining on the Day of Judgment", measure: "Bright faces, hands and feet",
         picture: "The Prophet ﷺ said his ummah will be called on the Day of Resurrection with shining faces, hands and feet from the traces of wuḍūʾ. That is how he will recognise us.", src: "Bukhari 136" },
       { type: "story", id: "clean-masjid-woman", kind: "From the life of the Prophet ﷺ", title: "The woman who swept the masjid",
-        scene: "Madinah. Every day a woman quietly swept and cleaned the Prophet’s ﷺ masjid.",
+        scene: "Madinah. Every day someone quietly swept and cleaned the Prophet’s ﷺ masjid: a woman, in most narrations, though one narrator was unsure whether it was a man or a woman.",
         story: [
           "Nobody paid her much attention. She picked up the dust, the leaves and the little bits of rubbish, so the believers could pray in a clean place.",
           "One day the Prophet ﷺ noticed she was missing and asked about her. The companions said she had died, and they had buried her at night.",
           "He said: “Why did you not tell me? Show me her grave.” He went to her grave and prayed for her there.",
         ],
         lesson: "Cleaning is not a small job. The Prophet ﷺ himself honoured the one who kept Allah’s house clean.",
-        src: "Bukhari 458",
+        src: "Bukhari 458, Bukhari 1337",
         check: { q: "What did the Prophet ﷺ do when he heard the woman who cleaned the masjid had died?", options: ["Nothing", "He went to her grave and prayed for her", "He sent a letter", "He chose someone else to clean"], answer: 1, why: "He honoured her for keeping the masjid clean." } },
       { type: "scenario", id: "clean-why-1", situation: "Your friend says: “Being clean is just about looking good. It has nothing to do with religion.” What do you say?",
         options: [
@@ -93,7 +93,7 @@ export const CLEAN_LESSONS: Lesson[] = [
         "Don’t waste water: the Prophet ﷺ made ghusl with about three litres and wuḍūʾ with about one (Bukhari 201).",
       ] },
       L("Toilet manners (istinjāʾ)", [
-        "Enter with the left foot and say the duʿāʾ: “Allāhumma innī aʿūdhu bika mina-l-khubthi wa-l-khabāʾith” (Bukhari 142).",
+        "Say the duʿāʾ: “Allāhumma innī aʿūdhu bika mina-l-khubthi wa-l-khabāʾith” (Bukhari 142), and enter with the left foot, as the scholars teach.",
         "Sit, and take care that no drops of urine splash on your body or clothes. The Prophet ﷺ warned that carelessness about urine is a cause of punishment in the grave (Bukhari 216).",
         "Clean yourself with water, using the left hand, then wash your hands with soap.",
         "Leave with the right foot and say: “Ghufrānak” (I ask Your forgiveness) (Abu Dawud 30).",
@@ -101,14 +101,14 @@ export const CLEAN_LESSONS: Lesson[] = [
       ]),
       L("Nails, hair and smell", [
         "The five practices of the fiṭrah include trimming the nails and removing underarm hair (Bukhari 5889). Do not leave them longer than forty days (Muslim 258); weekly is a good habit, for example on Friday.",
-        "Long, dirty nails collect germs and food. Keep them short and clean, for boys and girls.",
+        "Long, dirty nails collect germs and food (general health knowledge, not hadith). Keep them short and clean, for boys and girls.",
         "“Whoever has hair, let him look after it” (Abu Dawud 4163): wash it, comb it, keep it neat.",
         "Use deodorant or a pleasant scent so others are comfortable. Avoid coming to the masjid smelling of raw garlic or onion (Muslim 564).",
       ]),
       { type: "reward", title: "Friday ghusl", measure: "Sins forgiven until the next Friday",
         picture: "Whoever bathes on Friday, purifies himself as well as he can, uses oil or perfume, goes to the prayer and listens, his sins between that Friday and the next are forgiven.", src: "Bukhari 883" },
       { type: "story", id: "clean-messy-hair", kind: "From the life of the Prophet ﷺ", title: "Doesn’t he have something to comb his hair?",
-        scene: "A visitor came to the Prophet ﷺ.",
+        scene: "The Prophet ﷺ came to visit Jābir’s people.",
         story: [
           "Jābir reported that the Prophet ﷺ saw a man whose hair was messy and tangled. He said: “Can’t this man find something to calm his hair with?”",
           "Then he saw a man wearing dirty clothes, and said: “Can’t this man find water to wash his clothes with?”",
@@ -122,7 +122,7 @@ export const CLEAN_LESSONS: Lesson[] = [
           { text: "Wash your hands well, and if you can, have a quick shower and change before dinner.", best: true, feedback: "Clean hands for food, and a fresh body for the family table." },
           { text: "Just spray some perfume.", feedback: "Perfume covers smell but does not clean. Wash first, then a pleasant scent." },
         ] },
-      { type: "reflect", think: ["Do I wash my hands properly, for about 20 seconds, with soap?", "When did I last trim my nails?"],
+      { type: "reflect", think: ["Do I wash my hands properly with soap (health advice: about 20 seconds)?", "When did I last trim my nails?"],
         home: ["Make a family “Friday clean-up”: nails trimmed, ghusl, clean clothes, a little perfume, then Jumuʿah.", "Put a small checklist on the bathroom mirror: hands, teeth, face, hair."] },
       L("Key takeaways", [
         "Wash hands often, make wuḍūʾ carefully, and bathe the whole body at least weekly; daily is best for teens and after sport.",
@@ -135,7 +135,7 @@ export const CLEAN_LESSONS: Lesson[] = [
       { q: "Which day has a special sunnah ghusl every week?", options: ["Monday", "Friday", "Saturday", "Sunday"], answer: 1, why: "Ghusl on Friday.", src: "Bukhari 879" },
       { q: "What should you do with your hands when you wake up?", options: ["Nothing", "Wash them before putting them in a water pot", "Clap them", "Put them in your pockets"], answer: 1, why: "You don’t know where your hand was during the night.", src: "Bukhari 162" },
       { q: "Carelessness about what was warned to cause punishment in the grave?", options: ["Hair", "Urine", "Shoes", "Food"], answer: 1, why: "Not protecting oneself from urine.", src: "Bukhari 216" },
-      { q: "Which foot do we enter the toilet with?", options: ["The right", "The left", "Either", "Jump in"], answer: 1, why: "Left to enter the toilet, right to leave it.", src: "Bukhari 142" },
+      { q: "Which foot do we enter the toilet with?", options: ["The right", "The left", "Either", "Jump in"], answer: 1, why: "Left to enter the toilet, right to leave it.", src: "Etiquette taught by the scholars (cf. Bukhari 168)" },
       { q: "What do we say when leaving the toilet?", options: ["Bismillāh", "Ghufrānak", "Āmīn", "Nothing"], answer: 1, why: "“I ask Your forgiveness.”", src: "Abu Dawud 30" },
       { q: "What is the longest we should leave nails untrimmed?", options: ["Forty days", "A year", "Six months", "There is no limit"], answer: 0, why: "Not more than forty days.", src: "Muslim 258" },
       { q: "“Whoever has hair, let him…”", options: ["Shave it", "Look after it", "Hide it", "Ignore it"], answer: 1, why: "Wash and comb it.", src: "Abu Dawud 4163" },
@@ -160,10 +160,10 @@ export const CLEAN_LESSONS: Lesson[] = [
       ]),
       L("A daily plan for my teeth", [
         "Morning: brush after waking up (or after breakfast).",
-        "Night: brush before sleep. This is the most important time, because germs work while we sleep.",
+        "Night: brush before sleep. Dentists say this is the most important time, because germs work while we sleep (general health knowledge, not hadith).",
         "Health guide (general knowledge, not hadith): brush twice a day for about two minutes with a fluoride toothpaste, gently, on every side of every tooth, and visit the dentist regularly.",
         "Use the miswāk during the day: before prayers, in wuḍūʾ, and after eating.",
-        "Clean your tongue gently, and drink water instead of sweet drinks.",
+        "Clean your tongue gently, and drink water instead of sweet drinks (general health advice).",
       ]),
       { type: "steps", title: "How to use a miswāk", items: [
         "Rinse the tip and gently chew it until it becomes soft like a brush.",
@@ -228,7 +228,7 @@ export const CLEAN_LESSONS: Lesson[] = [
         "White clothes are lovely and loved: “Wear white, for it is among the best of your clothes” (Abu Dawud 3878).",
       ]),
       { type: "compare", title: "Boys and girls: what to remember", left: "Boys", right: "Girls", rows: [
-        ["Cover from the navel to the knees, and dress modestly", "Dress modestly; from puberty, cover the whole body except the face, hands and feet in front of non-maḥram men"],
+        ["Cover from just below the navel to the knees (knees included), and dress modestly", "Dress modestly; from puberty, cover the whole body except the face, hands and feet. Many Hanafi scholars teach covering the face too before non-maḥram men where there is a risk of unwanted attention; ask your parents or a trusted teacher"],
         ["Gold and silk are not for men (Abu Dawud 4057)", "Gold and silk are allowed for women"],
         ["Clean, neat clothes; a pleasant scent, especially at the masjid", "Clean, neat clothes; a hijab that is clean and tidy too"],
         ["Don’t copy the dress that is particular to women", "Don’t copy the dress that is particular to men"],
@@ -360,7 +360,7 @@ export const CLEAN_LESSONS: Lesson[] = [
       L("Outside the home", [
         "Don’t throw rubbish in the street; keep it until you find a bin.",
         "Removing harm from the road is a branch of faith (Muslim 35). Picking up rubbish is a good deed.",
-        "Don’t urinate in still water or where people walk or sit (Bukhari 239).",
+        "Don’t urinate in still water (Bukhari 239), or where people walk or sit in the shade (Muslim 269).",
         "Keep shared places clean: the stairs, the lift, the park, the masjid’s wuḍūʾ area.",
         "Be a good neighbour: don’t leave your rubbish outside their door (Bukhari 6018).",
       ]),

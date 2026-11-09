@@ -20,7 +20,7 @@ export const SOCIAL_LESSONS_5: Lesson[] = [
         "In truth there should be no knowledge without faith and no faith without knowledge. A bird cannot fly on one wing.",
       ]),
       L("Seeking knowledge is an obligation", [
-        "“Seeking knowledge is an obligation on every Muslim” (Ibn Majah 224), from the cradle to the grave.",
+        "“Seeking knowledge is an obligation on every Muslim” (Ibn Majah 224; ḥasan through its many chains). As the saying goes, seek it from the cradle to the grave.",
         "Obligations are of two kinds: farḍ ʿayn, which every Muslim must do personally, and farḍ kifāyah, which is fulfilled for all if some do it.",
         "Both apply to knowledge. Every Muslim must personally learn what he needs for his religion and daily life: belief, prayer, purity, fasting, and the rulings of his work.",
         "The community as a whole must produce experts in every field it needs, such as scholars, doctors and engineers. If no one does, everyone is sinful.",
@@ -48,7 +48,7 @@ export const SOCIAL_LESSONS_5: Lesson[] = [
         "Be patient in learning, memorising and revising.",
         "Ask about everything you find hard to understand.",
         "Arrive early at lessons.",
-        "Whoever goes out seeking knowledge is in the path of Allah until he returns (Tirmidhi 2647).",
+        "Whoever travels a path seeking knowledge, Allah makes easy for him a path to Paradise (Muslim 2699).",
       ]),
       L("2. Towards the teacher", [
         "Be humble before your teacher.",
@@ -148,15 +148,15 @@ export const SOCIAL_LESSONS_5: Lesson[] = [
       { type: "link", href: "/learn/ruhiy-3/friendship", label: "Spiritual Tarbiyah", text: "Read the eight rights of a friend in Volume 3." },
     ] },
 
-  { id: "social-earning", group: K, title: "Earning a living", summary: "What kasb is, and its five rulings from obligatory to forbidden.", sources: [src("288–290"), "Quran 62:10", "Quran 67:15", "Bukhari 2072", "Muslim 996"],
+  { id: "social-earning", group: K, title: "Earning a living", summary: "What kasb is, and its five levels from obligatory to forbidden.", sources: [src("288–290"), "Quran 62:10", "Quran 67:15", "Bukhari 2072", "Muslim 996"],
     blocks: [
       P("A person lives all his life in a web of social ties, and through his work he meets other people’s needs while they meet his. In Islamic belief, Allah creates and distributes provision. The servant’s part is to make the effort (kasb). “Walk in its paths and eat of His provision” (67:15). “When the prayer is finished, spread through the land and seek Allah’s bounty” (62:10)."),
       L("The rulings of earning", [
         "Obligatory (farḍ): earning enough to support yourself, your children and those you must provide for, and to pay your debts.",
-        "Permitted for everyone: earning in order to keep savings for yourself and your family.",
-        "Recommended (mustaḥabb): earning more than you need in order to support relatives and help the poor.",
-        "Permitted (mubāḥ): earning in order to increase wealth for honour, enjoyment, generosity and comfort.",
-        "Disliked (makrūh): in the Hanafi school, earning lawful wealth only to boast and pile it up, even though it is lawful.",
+                "Recommended (mustaḥabb): earning more than you need in order to help the poor and support relatives.",
+        "Permitted (mubāḥ): earning more, for comfort, savings for your family, and generosity.",
+        "Disliked (makrūh): in the Hanafi school, amassing wealth only to boast and pile it up, even if it is lawful.",
+        "Forbidden (ḥarām): earning by unlawful means.",
       ]),
       L("Why it matters", [
         "“No one has eaten better food than what he earned with his own hands. The Prophet of Allah, Dāwūd, used to eat from the work of his own hands” (Bukhari 2072).",
@@ -208,9 +208,9 @@ export const SOCIAL_LESSONS_5: Lesson[] = [
         "It is permissible to tell others about your illness and its kind; it is not complaining.",
         "Seek a cure. “Allah has not sent down a disease without sending down its cure” (Bukhari 5678).",
         "Arrange proper treatment.",
-        "Do not seek treatment with what the Sharīʿah forbids. Allah did not put your cure in what He made ḥarām (Abu Dawud 3874).",
+        "Do not seek treatment with what the Sharīʿah forbids (reported, Abu Dawud 3874). Ibn Masʿūd said: Allah did not put your cure in what He forbade you (Bukhari, Book of Drinks).",
         "Never seek treatment by means that damage belief, such as fortune-tellers, so-called jinn-healers, sorcerers and frauds who know nothing of medicine.",
-        "Only after qualified doctors confirm no more medical treatment is needed should one turn to ruqyah with the Quran and authentic duʿāʾs, which are always good alongside medicine.",
+        "Ruqyah with the Quran and authentic duʿāʾs is good at any time, alongside medical treatment, but never a reason to abandon it.",
         "Think well of Allah (Muslim 2877). “When I am ill, it is He who cures me” (26:80).",
       ]),
       L("The adab of the doctor", [
@@ -249,7 +249,7 @@ export const SOCIAL_LESSONS_5: Lesson[] = [
         "Show your affection and say you are ready to help.",
         "Do not look at his ʿawrah, his exposed parts, his medicines or his belongings.",
         "Do not sit too long and tire him, unless he wants you to stay.",
-        "After praying for him, ask him to pray for you. A sick person’s duʿāʾ is accepted (Ibn Majah 1441).",
+        "After praying for him, ask him to pray for you. It is reported that a sick person’s duʿāʾ is like the angels’ (Ibn Majah 1441, weak chain).",
         "Encourage him to be patient with Allah’s decree, and not to wish for death in despair of a cure.",
         "Urge his family and carers to treat him well and bear with him.",
       ]),

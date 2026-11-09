@@ -110,7 +110,7 @@ export const RUHIY_LESSONS: Lesson[] = [
         "When your mind wanders, gently bring it back without despair. Each return is part of the effort.",
       ]),
       L("Examples from the early Muslims", [
-        "Some companions stood so still in prayer that birds would land on them.",
+        "Some of the early Muslims are reported to have stood so still in prayer that birds would land on them.",
         "ʿUrwah ibn al-Zubayr is reported to have had his diseased leg amputated while he prayed, because in prayer he did not feel it.",
         "These stories are not meant to discourage us, but to show what a trained heart is capable of.",
       ]),
@@ -349,7 +349,7 @@ export const RUHIY_LESSONS: Lesson[] = [
         "It objects to Allah’s distribution of His favours: “Or do they envy people for what Allah has given them of His bounty?” (4:54).",
         "“Do not wish for that by which Allah has favoured some of you over others” (4:32).",
         "The Prophet ﷺ said: do not envy one another, do not hate one another, do not turn your backs on one another; be servants of Allah, brothers (Muslim 2563).",
-        "Iblīs’s first sin came from envy of Ādam, and the first murder, Qābīl killing Hābīl, came from envy.",
+        "Iblīs’s refusal came from arrogance and envy of Ādam, and the first murder, by one of Ādam’s two sons against the other (5:27; named Qābīl and Hābīl in tafsīr reports), came from envy.",
         "We are taught to seek refuge from “the evil of an envier when he envies” (113:5).",
       ]),
       L("Its causes", [
@@ -415,7 +415,7 @@ export const RUHIY_LESSONS: Lesson[] = [
       ]),
     ] },
 
-  { id: "qanaah", title: "Greed and contentment (qanāʿah)", summary: "The difference between hoping in Allah and craving the world, and how contentment brings true wealth.", sources: [src("456–472"), "Quran 26:82", "Quran 32:16", "Bukhari 6446", "Bukhari 6436", "Muslim 1054", "Muslim 2963"],
+  { id: "qanaah", title: "Greed and contentment (qanāʿah)", summary: "The difference between hoping in Allah and craving the world, and how contentment brings true wealth.", sources: [src("456–472"), "Quran 26:82", "Quran 32:16", "Bukhari 6446", "Bukhari 6439", "Muslim 1054", "Muslim 2963"],
     blocks: [
       P("Ṭamaʿ is the soul attaching itself to something with strong desire. Ḥirṣ is greed: never having enough. Qanāʿah is the opposite: contentment with what you have and with what is enough. A Muslim works and earns, but does not let wealth own his heart or covet what others have."),
       L("Two kinds of ṭamaʿ", [
@@ -423,8 +423,8 @@ export const RUHIY_LESSONS: Lesson[] = [
         "Blameworthy: craving the passing things of this world, and wanting what is in other people’s hands.",
       ]),
       L("Why greed is a trap", [
-        "If the son of Ādam had a valley of gold, he would want a second (Bukhari 6436). Greed has no finish line.",
-        "ʿUmar (ra) said that greed is poverty, and having no need of what people have is wealth.",
+        "If the son of Ādam had a valley of gold, he would want a second (Bukhari 6439). Greed has no finish line.",
+        "ʿUmar (ra) is reported to have said that greed is poverty, and having no need of what people have is wealth.",
         "Greed for what people have strips knowledge of its light; the book cites the early scholars on how it drains knowledge from the hearts of the learned.",
         "Greed leads to stinginess, cheating, envy and humiliation before people.",
       ]),
@@ -434,7 +434,7 @@ export const RUHIY_LESSONS: Lesson[] = [
         "Contentment does not mean laziness or refusing to improve your situation. It means peace with what Allah has decreed while you strive.",
       ]),
       L("How to build contentment", [
-        "In worldly things, look at those below you, not those above you, so you do not belittle Allah’s blessings (Muslim 2963). In religion, look at those above you.",
+        "In worldly things, look at those below you, not those above you, so you do not belittle Allah’s blessings (Muslim 2963). Scholars add: in religion, look at those above you (reported, Tirmidhi 2512).",
         "Remember that provision is written. Striving is your duty; the result is Allah’s.",
         "Limit comparison. Social media is a constant display of what others have.",
         "Practise gratitude daily for specific blessings.",
@@ -469,7 +469,7 @@ export const RUHIY_LESSONS: Lesson[] = [
       ]),
       L("The reward of holding it in", [
         "Allah praises “those who restrain anger and pardon people; and Allah loves those who do good” (3:134).",
-        "Whoever restrains his anger while able to act on it, Allah will call him before all creation on the Day of Judgment and let him choose whichever reward he wishes (Abu Dawud 4777).",
+        "Whoever restrains his anger while able to act on it, Allah will call him before all of creation on the Day of Resurrection (Abu Dawud 4777).",
       ]),
       L("Long-term cure", [
         "Work on the roots: humility, contentment and patience.",

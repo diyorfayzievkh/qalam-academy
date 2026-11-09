@@ -49,7 +49,7 @@ export const RUHIY3_LESSONS: Lesson[] = [
         "The Prophet ﷺ was sent only as a mercy to the worlds (21:107).",
         "The believers are “merciful among themselves” (48:29).",
         "“Be merciful to those on earth, and the One above the heavens will be merciful to you” (Tirmidhi 1924).",
-        "“Whoever is not merciful to people, Allah is not merciful to him” (Bukhari 6013).",
+        "“Whoever is not merciful to people, Allah is not merciful to him” (Bukhari 7376; Muslim 2319).",
         "When a man said he had ten children and had never kissed any of them, the Prophet ﷺ said: whoever does not show mercy is not shown mercy (Bukhari 5997).",
       ]),
       L("Mercy in action", [
@@ -145,7 +145,7 @@ export const RUHIY3_LESSONS: Lesson[] = [
         "In trade: honest weights, measures and contracts.",
       ]),
       L("Living examples", [
-        "The chapter tells stories of the justice of ʿUmar (ra), including the courts he held during the Hajj season where anyone could complain against his governors.",
+        "The chapter tells stories of the justice of ʿUmar (ra), including the reported practice of hearing complaints against his governors during the Hajj season.",
         "It also tells of ʿAlī (ra) and other companions standing before judges like ordinary people.",
       ]),
       L("Key takeaways", [
@@ -287,7 +287,7 @@ export const RUHIY3_LESSONS: Lesson[] = [
     blocks: [
       P("ʿAfw means to leave, erase and wipe away. Al-Kafawī: it is not harming when you are able to; whoever has the right to punish and lets it go has pardoned. Allah is al-ʿAfuww: He wipes sins away as if they never were."),
       L("Pardon (ʿafw) and forgiveness (maghfirah)", [
-        "Maghfirah covers the sin, removes the punishment and also grants reward. Only Allah can do this.",
+        "Maghfirah covers the sin, removes the punishment and also grants reward. Maghfirah of sins in this sense belongs to Allah alone, though people are also told to forgive one another (42:37).",
         "ʿAfw removes blame and penalty but does not itself mean reward. People can pardon one another.",
         "Some scholars note that ʿafw erases the sin completely, while maghfirah covers it.",
       ]),
@@ -484,7 +484,7 @@ export const RUHIY3_LESSONS: Lesson[] = [
       ]),
     ] },
 
-  { id: "spouses", title: "Husband and wife", summary: "The most sacred human relationship, with rights on both sides.", sources: [src("352–396"), "Quran 30:21", "Quran 4:19", "Quran 2:228", "Tirmidhi 3895", "Muslim 1468", "Muslim 1218", "Bukhari 676"],
+  { id: "spouses", title: "Husband and wife", summary: "The most sacred human relationship, with rights on both sides.", sources: [src("352–396"), "Quran 30:21", "Quran 4:19", "Quran 2:228", "Tirmidhi 3895", "Muslim 1469", "Muslim 1218", "Bukhari 676"],
     blocks: [
       P("The book calls marriage the most sacred human relationship, and stresses that it must be built on knowledge: who the husband is and what he owes, who the wife is and what she owes, and how they treat each other. The Quran, the Sunnah and the scholars answer all of these."),
       L("The purpose of marriage", [
@@ -507,7 +507,7 @@ export const RUHIY3_LESSONS: Lesson[] = [
       L("The Prophet’s ﷺ example at home", [
         "“The best of you is the best to his family, and I am the best of you to my family” (Tirmidhi 3895).",
         "He helped with housework, and when the prayer came he went out to pray (Bukhari 676).",
-        "“A believing man should not hate a believing woman: if he dislikes one of her traits, he will be pleased with another” (Muslim 1468).",
+        "“A believing man should not hate a believing woman: if he dislikes one of her traits, he will be pleased with another” (Muslim 1469).",
       ]),
       L("Building a strong marriage", [
         "Know the rights you owe before the rights you are owed.",
@@ -569,7 +569,7 @@ export const RUHIY3_LESSONS: Lesson[] = [
       ]),
       L("Work as worship", [
         "A believer tries to be the best worker, farmer, engineer, doctor or teacher he can be.",
-        "Allah loves that when one of you does a job, he does it well (cited by the book from al-Bayhaqī).",
+        "It is reported that Allah loves that when one of you does a job, he does it well (cited by the book from al-Bayhaqī).",
         "No one has eaten better food than what he earned with his own hands; Dāwūd (as) ate from the work of his hands (Bukhari 2072).",
       ]),
       L("Honesty at work", [
@@ -627,7 +627,7 @@ export const RUHIY3_QUIZ = {
     { q: "What does “Enter into Islam completely” (2:208) ask of us?", options: ["Only saying the Shahādah", "Submitting with tongue, heart and limbs together", "Moving to Makkah", "Learning fiqh first"], answer: 1, why: "Submission should be complete, not only in words.", src: "Quran 2:208" },
     { q: "Al-Jāḥiẓ defined ḥilm (forbearance) as…", options: ["Never feeling anger", "Not taking revenge when anger stirs, though you can", "Avoiding people", "Staying silent always"], answer: 1, why: "Forbearance is restraint with the power to retaliate.", src: src("95–118") },
     { q: "According to al-Kafawī, generosity by not harming someone when you are able to is called…", options: ["Jūd", "ʿAfw (pardon)", "Shajāʿah", "Zuhd"], answer: 1, why: "With wealth it is jūd; with not harming it is ʿafw; with oneself it is courage.", src: src("118–139") },
-    { q: "What is the difference between ʿafw and maghfirah?", options: ["There is none", "Maghfirah also grants reward and only Allah gives it; people can pardon", "ʿAfw is only for prophets", "Maghfirah is weaker"], answer: 1, why: "Maghfirah removes punishment and grants reward; ʿafw removes blame and penalty.", src: src("184–202") },
+    { q: "What is the difference between ʿafw and maghfirah?", options: ["There is none", "Maghfirah of sins also grants reward and belongs to Allah alone; people pardon each other", "ʿAfw is only for prophets", "Maghfirah is weaker"], answer: 1, why: "Maghfirah removes punishment and grants reward; ʿafw removes blame and penalty.", src: src("184–202") },
     { q: "What did the Prophet ﷺ save his one certain duʿāʾ for?", options: ["Victory in battle", "Intercession for his ummah on the Day of Judgment", "Rain", "Wealth for the poor"], answer: 1, why: "Bukhari 6304, Muslim 199.", src: src("202–266") },
     { q: "Which is one of the six rights of a Muslim over another?", options: ["Lending him money whenever asked", "Visiting him when he is ill", "Agreeing with all his opinions", "Giving him gifts every week"], answer: 1, why: "Greet, accept invitations, advise, reply to sneezing, visit the sick, follow the funeral (Muslim 2162).", src: src("272–318") },
     { q: "Jibrīl urged the Prophet ﷺ so much about the neighbour that he thought…", options: ["Neighbours must live together", "The neighbour would be made an heir", "Neighbours must pray together", "Neighbours pay zakāt for each other"], answer: 1, why: "Bukhari 6014.", src: src("340–352") },

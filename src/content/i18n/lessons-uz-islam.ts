@@ -97,7 +97,7 @@ const T: LessonTrMap = {
     title: "Namoz",
     summary: "Besh vaqt namoz nega bunchalik muhim va u mo‘min uchun nima qiladi.",
     blocks: [
-      { text: "Namoz ikkinchi rukn va Qiyomat kunida insondan birinchi so‘raladigan amaldir: agar u to‘g‘ri bo‘lsa, qolgan amallari ham to‘g‘ri bo‘ladi (Termiziy 413). U Me’roj kechasi yetti osmon ustida Payg‘ambar ﷺ ga to‘g‘ridan-to‘g‘ri berilgan yagona rukndir." },
+      { text: "Namoz ikkinchi rukn va Qiyomat kunida insondan birinchi so‘raladigan amaldir: agar u to‘g‘ri bo‘lsa, u najot topib, muvaffaq bo‘ladi (Termiziy 413). U Me’roj kechasi yetti osmon ustida Payg‘ambar ﷺ ga to‘g‘ridan-to‘g‘ri berilgan yagona rukndir." },
       { en: "Meni zikr qilish uchun namozni to‘kis ado et." },
       { title: "Elliktadan beshtagacha", items: [
         "Me’rojda Alloh kuniga ellik vaqt namozni farz qildi. Qaytishda Muso (a.s.) Payg‘ambar ﷺ ga qaytib borib, kamaytirishni so‘rashni maslahat berdi, bu qayta-qayta takrorlanib, nihoyat beshta qoldi.",
@@ -157,7 +157,7 @@ const T: LessonTrMap = {
         ["Bir qamariy yil turgan nisobdan ortiq molga", "Har qanday moldan"],
       ] },
       { title: "Zakot qanday hisoblanadi (hanafiy mazhabi, qisqacha)", items: [
-        "Nisobni tekshir: 85 g oltin yoki 595 g kumush qiymati. Hanafiy olimlari naqd pul uchun odatda kumush nisobini qo‘llaydi, chunki bu kambag‘allarga ko‘proq foyda beradi.",
+        "Nisobni tekshir: 87,48 g oltin yoki 612,36 g kumush. Naqd pul va aralash jamg‘armalar uchun hanafiy olimlari 612,36 g kumush qiymatini qo‘llaydi.",
         "Agar zakot olinadigan moling (naqd pul, jamg‘arma, oltin va kumush, savdo mollari) bir qamariy yil davomida nisob miqdorida yoki undan ortiq tursa, zakot vojib bo‘ladi.",
         "Hozir to‘lanishi kerak bo‘lgan qarzlarni ayir.",
         "Jamining 2,5 foizini, ya’ni qirqdan birini to‘la.",
@@ -167,12 +167,12 @@ const T: LessonTrMap = {
       { title: "Zakot oladigan sakkiz toifa (9:60)", items: [
         "Faqirlar va miskinlar.",
         "Uni yig‘ish uchun ishlaydiganlar.",
-        "Qalblarini Islomga moyil qilish kerak bo‘lganlar.",
+        "Qalblarini Islomga moyil qilish kerak bo‘lganlar. (Hanafiy mazhabida bu ulush endi berilmaydi; sahobalar Umar davrida uni to‘xtatishga kelishgan.)",
         "Asirlar va qullarni ozod qilish.",
         "Qarzdorlar.",
         "Alloh yo‘lida.",
         "Yo‘lda qolgan musofir.",
-        "Hanafiy mazhabida zakot o‘z ota-onasiga, bobo-buvisiga, farzandlariga yoki turmush o‘rtog‘iga berilmaydi, chunki ularni ta’minlash allaqachon uning burchidir.",
+        "Hanafiy mazhabida zakot ota-ona va bobo-buvilarga, farzand va nevaralarga, turmush o‘rtog‘iga, shuningdek Bani Hoshimga, nisobga ega boy kishiga yoki g‘ayridinga berilmaydi. Muhtoj aka-uka, opa-singil, amaki, tog‘a, amma va xolalar olishi mumkin, ularga berish esa afzalroq.",
       ] },
       { title: "Zakot va sadaqa nima qiladi", measure: "1 → 700, mol esa hech qachon kamaymaydi" },
       { title: "Uni bermaslik", items: [
@@ -180,7 +180,7 @@ const T: LessonTrMap = {
         "Kimga mol berilsa-yu, uning zakotini to‘lamasa, Qiyomat kunida mol unga kal ilon bo‘lib keladi va “Men sening moling, men sening xazinang” deydi (Buxoriy 1403).",
       ] },
       { situation: "Amakivachchang qarzga botib ketgan. Bu oy zakot berishing kerak. Uni unga bera olasanmi?", options: [
-        { text: "Yo‘q, zakot hech qachon qarindoshlarga berilmaydi.", feedback: "Hanafiy mazhabida faqat ota-ona, farzandlar, bobo-buvilar va turmush o‘rtog‘i istisno qilinadi. Qarzdor amakivachcha haqli." },
+        { text: "Yo‘q, zakot hech qachon qarindoshlarga berilmaydi.", feedback: "Hanafiy mazhabida ota-ona va bobo-buvilar, farzand va nevaralar hamda turmush o‘rtog‘i istisno qilinadi. Nisobga ega bo‘lmagan qarzdor amakivachcha haqli." },
         { text: "Ha; qarzdor amakivachcha haqli bo‘lganlardan, qarindoshga berish esa silai rahmni ham saqlaydi.", feedback: "Muhtoj qarindoshga sadaqa ikki barobar hisoblanadi: sadaqa va silai rahm (Termiziy 658)." },
         { text: "Istalgan kishiga beraman; toifalar muhim emas.", feedback: "Zakot Alloh nomini aytgan sakkiz toifaga berilishi shart." },
       ] },
@@ -214,11 +214,11 @@ const T: LessonTrMap = {
         "O‘ziga yoki bolasiga zarar yetishidan qo‘rqqan homilador va emizikli ayollar ro‘zani ochib, keyin qazosini tutishi mumkin (hanafiy).",
       ] },
       { title: "Ro‘zani ochadimi yoki yo‘qmi? (hanafiy mazhabi, qisqacha)", left: "Ochadi", right: "Ochmaydi", rows: [
-        ["Ataylab yeyish yoki ichish", "Chin unutish bilan yeyish yoki ichish: “Seni Alloh yedirdi va ichirdi” (Buxoriy 1933)"],
-        ["Chekish", "Yutmasdan tish yuvish yoki misvok ishlatish"],
-        ["Er-xotinlik munosabati (kafforat bilan: 60 kun ro‘za)", "Yutmasdan dush qabul qilish yoki suzish"],
+        ["Ataylab yeyish, ichish yoki chekish (qazo va kafforat)", "Chin unutish bilan yeyish yoki ichish: “Seni Alloh yedirdi va ichirdi” (Buxoriy 1933)"],
+        ["Og‘iz yoki burun orqali qabul qilingan dori", "Yutmasdan tish yuvish yoki misvok ishlatish"],
+        ["Er-xotinlik munosabati (qazo va kafforat: ketma-ket 60 kun ro‘za, faqat ro‘za tuta olmasa 60 miskinni to‘ydirish)", "Yutmasdan dush qabul qilish yoki suzish"],
         ["Ataylab og‘iz to‘la qusish", "Beixtiyor qusish"],
-        ["Og‘iz yoki burun orqali qabul qilingan dori", "Ko‘z tomchilari, hanafiy mazhabiga ko‘ra"],
+        ["Ovqat sifatida yeyilmaydigan narsani, masalan, toshchani yutish (faqat qazo)", "Ko‘z tomchilari, hanafiy mazhabiga ko‘ra"],
       ] },
       { title: "Haqiqiy ro‘za", items: [
         "Kim yolg‘on so‘z va unga amal qilishni tark etmasa, Allohga uning taomi va ichimligini tark etishiga ehtiyoj yo‘q (Buxoriy 1903).",
@@ -226,9 +226,9 @@ const T: LessonTrMap = {
         "Oshqozon bilan birga ko‘z, quloq va tilning ham ro‘zasini tut.",
       ] },
       { title: "Ro‘zani qanday yaxshi tutish kerak", items: [
-        "Har kecha niyat qil (yoki hanafiy fiqhida Ramazon uchun peshindan oldin).",
+        "Har kecha niyat qil (yoki hanafiy fiqhida Ramazon uchun zahvai kubrodan oldin: tong otishi bilan quyosh botishi o‘rtasidagi vaqt, soat 12 emas).",
         "Saharlik qil: unda baraka bor (Buxoriy 1923) va uni bomdodga yaqinroq kechiktir.",
-        "Quyosh botishi bilan xurmo yoki suv bilan darhol iftor qil va duo qil; ro‘zadorning iftordagi duosi qaytarilmaydi.",
+        "Quyosh botishi bilan xurmo yoki suv bilan darhol iftor qil va duo qil. Ro‘zadorning duosi qaytarilmasligi rivoyat qilingan (Termiziy 3598, Termiziy hasan degan).",
         "Taroveh o‘qi, Qur’on o‘qi va oxirgi o‘n kechada Qadr kechasini izla.",
         "Boshqalarni to‘ydir: ro‘zadorni iftor qildirgan kishi uning savobicha savob oladi (Termiziy 807).",
       ] },

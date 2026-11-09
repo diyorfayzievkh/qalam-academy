@@ -25,7 +25,7 @@ const T: LessonTrMap = {
       { title: "Iymon ortib-kamayadimi?", items: [
         "Qur’onda aytilishicha, mo‘minlarga Allohning oyatlari o‘qilganda iymonlari ziyoda bo‘ladi (8:2).",
         "Hanafiy-moturidiy olimlari aytadiki, iymonning asosi, ya’ni uning yaqini bir xil, ortadigani esa uning kuchi, nuri va mevasidir. Boshqa olimlar iymonning o‘zi toat bilan ortib, gunoh bilan kamayadi, deydi. Ikkalasi ham amalda mo‘minning iymoni kuchayib yoki zaiflashib turishiga ittifoq qiladi.",
-        "Iymon yetmishdan ortiq shoxdir; eng oliysi “La ilaha illalloh”, eng quyisi yo‘ldan ozor beruvchi narsani olib tashlash, hayo ham iymonning bir shoxidir (Buxoriy 9, Muslim 35).",
+        "Iymon yetmishdan ortiq shoxdir; eng oliysi “La ilaha illalloh”, eng quyisi yo‘ldan ozor beruvchi narsani olib tashlash, hayo ham iymonning bir shoxidir (Muslim 35).",
       ] },
       { title: "Iymoningni qanday kuchaytirasan", items: [
         "Allohni Uning ismlari va Qur’on orqali tani.",
@@ -283,14 +283,14 @@ const T: LessonTrMap = {
       { text: "Bu hayot oxiri emas. Har bir inson vafot etadi, qabrda so‘roq qilinadi, qayta tiriltiriladi va hisob uchun Alloh huzurida turadi. Oxirat kuniga iymon hayotga ma’no beradi: hech bir yaxshilik zoe bo‘lmaydi va hech bir zulm javobsiz qolmaydi. “Kim zarra miqdoricha yaxshilik qilsa, uni ko‘radi va kim zarra miqdoricha yomonlik qilsa, uni ko‘radi” (99:7–8)." },
       { title: "O‘limdan keyingi safar, tartib bilan", items: [
         "O‘lim: jonni belgilangan vaqtda o‘lim farishtasi oladi.",
-        "Qabr (barzax): ikki farishta so‘raydi: Robbing kim? Dining nima? Senga yuborilgan bu kishi kim? Mo‘min uchun qabr bog‘ga, boshqalar uchun chuqurga aylanadi (Termiziy 2460).",
+        "Qabr (barzax): ikki farishta so‘raydi: Robbing kim? Dining nima? Senga yuborilgan bu kishi kim? Mo‘min uchun qabr kengaytirilib, nurga to‘ldiriladi; boshqalarni esa siqadi (Buxoriy 1338; Abu Dovud 4753).",
         "Sur: Isrofil chaladi, hamma narsa o‘ladi; keyin ikkinchi chalinishda hamma tiriladi.",
         "Mahshar: odamlar yalangoyoq va yalang‘och, ellik ming yillik Kunda turadi (70:4), quyosh yaqinlashtiriladi, har kim amaliga qarab terga botadi (Muslim 2864).",
         "Shafoat: odamlar payg‘ambardan payg‘ambarga borib, nihoyat Muhammad ﷺ ga kelishadi, u sajda qilib, hisob boshlanishi uchun shafoat qiladi.",
         "Amal daftarlari: har kim o‘z daftarini o‘ng yoki chap qo‘liga oladi (69:19–26).",
         "Mezon: amallar tortiladi; “Biz adolat tarozilarini o‘rnatamiz” (21:47).",
         "Sirot: do‘zax ustiga qo‘yiladi; odamlar undan amallariga qarab o‘tadi, ba’zilari chaqmoqdek, ba’zilari emaklab (Buxoriy 7439).",
-        "Payg‘ambar ﷺ ning Havzi: sutdan oq, asaldan shirin; kim undan ichsa, hech qachon chanqamaydi (Buxoriy 6579).",
+        "Payg‘ambar ﷺ ning Havzi: sutdan oq, asaldan shirin (Muslim 2300); kim undan ichsa, hech qachon chanqamaydi (Buxoriy 6579).",
         "Jannat yoki do‘zax: oxirgi, abadiy maskan.",
       ] },
       { title: "Jannat va do‘zax", left: "Jannat", right: "Do‘zax (Jahannam)", rows: [
@@ -334,7 +334,7 @@ const T: LessonTrMap = {
     title: "Qadarga iymon",
     summary: "Alloh barcha narsani biladi, yozadi, xohlaydi va yaratadi, biz esa tanlovlarimiz uchun mas’ulmiz.",
     blocks: [
-      { text: "Qadarga iymon yaxshi bo‘lsin, yomon bo‘lsin, sodir bo‘ladigan har bir narsa Allohning ilmi, yozishi, xohishi va yaratishi bilan bo‘lishiga ishonishdir. “Albatta, Biz har bir narsani o‘lchov bilan yaratdik” (54:49). Bu mo‘minga xotirjamlik beradi: senga yetgan narsa sendan o‘tib ketishi mumkin emas edi, sendan o‘tib ketgan narsa esa senga yetishi mumkin emas edi (Termiziy 2516)." },
+      { text: "Qadarga iymon yaxshi bo‘lsin, yomon bo‘lsin, sodir bo‘ladigan har bir narsa Allohning ilmi, yozishi, xohishi va yaratishi bilan bo‘lishiga ishonishdir. “Albatta, Biz har bir narsani o‘lchov bilan yaratdik” (54:49). Bu mo‘minga xotirjamlik beradi: senga yetgan narsa sendan o‘tib ketishi mumkin emas edi, sendan o‘tib ketgan narsa esa senga yetishi mumkin emas edi (Abu Dovud 4699)." },
       { title: "Qadarning to‘rt darajasi", items: [
         "Ilm: Alloh o‘tmish, hozir va kelajakdagi hamma narsani to‘liq tafsiloti bilan biladi.",
         "Yozish: Alloh osmonlar va yerni yaratishdan ellik ming yil oldin hamma narsaning o‘lchovlarini yozib qo‘ygan (Muslim 2653).",

@@ -28,7 +28,7 @@ export const PRAYERS: Prayer[] = [
     { label: "Fard", n: 4, kind: "fard", loud: false, status: "Fard (obligatory)" },
     { label: "Sunnah", n: 2, kind: "sunnah", status: "Sunnah muʾakkadah" },
   ] },
-  { id: "asr", name: "Asr", time: "Shadow twice an object’s length", units: [
+  { id: "asr", name: "Asr", time: "Shadow twice an object’s length (plus its midday shadow)", units: [
     { label: "Sunnah", n: 4, kind: "sunnah", ghayr: true, status: "Sunnah ghayr muʾakkadah (optional)" },
     { label: "Fard", n: 4, kind: "fard", loud: false, status: "Fard (obligatory)" },
   ] },
@@ -121,7 +121,7 @@ export function buildSteps(p: Prayer, u: Unit): Step[] {
       steps.push({ rak: r, pos: "fold", tag: "sunnah", rec: "basmala", title: "Basmalah", text: "Say the Basmalah quietly before the Fātiḥah." });
     }
 
-    steps.push({ rak: r, pos: "fold", tag: "wajib", rec: "fatiha", title: "Sūrat al-Fātiḥah", text: `${recitationVoice(u, r)} After it, say “Āmīn” quietly.` });
+    steps.push({ rak: r, pos: "fold", tag: u.kind === "fard" && r > 2 ? "sunnah" : "wajib", rec: "fatiha", title: "Sūrat al-Fātiḥah", text: `${recitationVoice(u, r)} After it, say “Āmīn” quietly.${u.kind === "fard" && r > 2 ? " In the third and fourth rakʿahs of a farḍ prayer, reciting the Fātiḥah is sunnah." : ""}` });
 
     const withSurah = u.kind !== "fard" || r <= 2;
     if (withSurah) {
@@ -141,7 +141,7 @@ export function buildSteps(p: Prayer, u: Unit): Step[] {
 
     steps.push({ rak: r, pos: "ruku", tag: "fard", note: "ruku", rec: "ruku", title: "Rukūʿ (bowing)", text: "Say “Allāhu akbar” while bowing. Recite the tasbīḥ at least three times, calmly." });
     steps.push({ rak: r, pos: "stand", tag: "wajib", rec: "sami", title: "Rise from rukūʿ (qawmah)",
-      text: "Rise saying “Samiʿa-llāhu li man ḥamidah”, then, standing fully upright with arms at the sides, say “Rabbanā laka-l-ḥamd”. Pause until the body is still. A follower says only “Rabbanā laka-l-ḥamd”." });
+      text: "Rise saying “Samiʿa-llāhu li man ḥamidah”, then, standing fully upright with arms at the sides, say “Rabbanā laka-l-ḥamd”. Pause until the body is still. The imam says only “Samiʿa-llāhu li man ḥamidah”; the follower says only “Rabbanā laka-l-ḥamd”; praying alone, say both." });
     steps.push({ rak: r, pos: "sujud", tag: "fard", note: "sujud", rec: "sujud", title: "First sajdah", text: "Say “Allāhu akbar” and go down to prostration. Recite the tasbīḥ at least three times." });
     steps.push({ rak: r, pos: "sit", tag: "wajib", note: "sit", title: "Sit between the two sajdahs (jalsah)", text: "Say “Allāhu akbar” and sit up. Pause until the body is still." });
     steps.push({ rak: r, pos: "sujud", tag: "fard", note: "sujud", rec: "sujud", title: "Second sajdah", text: "Say “Allāhu akbar” and prostrate again, reciting the tasbīḥ at least three times." });
@@ -176,7 +176,7 @@ export const WUDU_STEPS: { title: string; text: string; tag: "fard" | "sunnah" }
   { title: "Wipe the ears", text: "With the same water, wipe the inside of the ears with the index fingers and the back with the thumbs.", tag: "sunnah" },
   { title: "Wipe the neck", text: "Wipe the back of the neck with the backs of the fingers. This is recommended (mustaḥabb) in the Hanafi school.", tag: "sunnah" },
   { title: "Wash the feet", text: "Wash the right foot, then the left, up to and including the ankles, three times. Pass the little finger between the toes.", tag: "fard" },
-  { title: "Duʿāʾ after wuḍūʾ", text: "Look up and recite the testimony. The eight gates of Paradise are opened for the one who says it (Muslim 234).", tag: "sunnah" },
+  { title: "Duʿāʾ after wuḍūʾ", text: "Recite the testimony. The eight gates of Paradise are opened for the one who says it (Muslim 234).", tag: "sunnah" },
 ];
 
 export const WUDU_BREAKERS = [

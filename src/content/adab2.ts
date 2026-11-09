@@ -49,7 +49,7 @@ export const ADAB_LESSONS_2: AdabLesson[] = [
       "Promise only what you can do, and say “in shāʾ Allāh” when you promise (18:23–24).",
       "Keep appointments and arrive on time.",
       "Return borrowed items on time and in good condition.",
-      "Keep secrets: what is said in confidence is a trust (Abu Dawud 4869).",
+      "Keep secrets: when someone tells you something and looks around to check who is listening, it is a trust (Abu Dawud 4868).",
       "Do your job fully. Your work, your time at work and your employer’s property are trusts.",
       "Pay debts on time; delaying when you can pay is wrongdoing (Bukhari 2287).",
       "If you truly cannot keep a promise, tell the person early and apologise.",
@@ -67,7 +67,7 @@ export const ADAB_LESSONS_2: AdabLesson[] = [
       { q: "Which are the three signs of a hypocrite?", options: ["Fasting, praying, giving", "Lying, breaking promises, betraying trusts", "Travelling, eating, sleeping", "Laughing, joking, playing"], answer: 1, why: "When he speaks he lies, when he promises he breaks it, and when trusted he betrays.", src: "Bukhari 33" },
       { q: "What should we say when promising something for the future?", options: ["Nothing", "In shāʾ Allāh", "Maybe", "Never"], answer: 1, why: "Allah taught us to say “if Allah wills” for future plans.", src: "Quran 18:23–24" },
       { q: "Delaying a debt when you are able to pay is…", options: ["Smart", "Wrongdoing (ẓulm)", "Recommended", "Generosity"], answer: 1, why: "The rich man’s delaying is injustice.", src: "Bukhari 2287" },
-      { q: "A secret someone tells you is…", options: ["Free to share", "A trust", "Gossip material", "Only for family"], answer: 1, why: "Gatherings and private words are a trust.", src: "Abu Dawud 4869" },
+      { q: "A secret someone tells you is…", options: ["Free to share", "A trust", "Gossip material", "Only for family"], answer: 1, why: "When someone tells you something and looks around, it is a trust.", src: "Abu Dawud 4868; Tirmidhi 1959" },
       { q: "Which verse commands returning trusts to their owners?", options: ["4:58", "2:2", "36:1", "114:1"], answer: 0, why: "“Allah commands you to return trusts to their owners.”", src: "Quran 4:58" },
       { q: "Is time at work part of amānah?", options: ["No", "Yes, your work and time are a trust", "Only for managers", "Only on Fridays"], answer: 1, why: "Doing your job fully is fulfilling a trust.", src: "Quran 4:58" },
     ],
@@ -172,7 +172,7 @@ export const ADAB_LESSONS_2: AdabLesson[] = [
       { q: "What should one say at a calamity?", options: ["Why me?", "Innā lillāhi wa innā ilayhi rājiʿūn", "Nothing", "It’s unfair"], answer: 1, why: "And ask Allah to replace it with better.", src: "Muslim 918" },
       { q: "How is the reward of the patient described in 39:10?", options: ["Small", "Without measure", "Only in this world", "Ten times"], answer: 1, why: "They are given their reward without measure.", src: "Quran 39:10" },
       { q: "Who did Yaʿqūb (as) complain to?", options: ["His sons", "Only to Allah", "The king", "Nobody"], answer: 1, why: "“I complain of my grief only to Allah.”", src: "Quran 12:86" },
-      { q: "What are the three kinds of patience?", options: ["Morning, noon, night", "In obedience, away from sin, and in hardship", "With family, friends, enemies", "In summer, winter, spring"], answer: 1, why: "Scholars divide patience into these three.", src: "Quran 2:153" },
+      { q: "What are the three kinds of patience?", options: ["Morning, noon, night", "In obedience, away from sin, and in hardship", "With family, friends, enemies", "In summer, winter, spring"], answer: 1, why: "Scholars divide patience into these three.", src: "Scholarly classification (e.g. Ibn al-Qayyim)" },
     ],
   },
   {
@@ -214,7 +214,7 @@ export const ADAB_LESSONS_2: AdabLesson[] = [
     summary: "Pardon others as you hope Allah will pardon you.",
     why: [
       "“Let them pardon and overlook. Do you not love that Allah should forgive you?” (Quran 24:22). “Whoever pardons and makes peace, his reward is with Allah” (42:40).",
-      "No one pardons except that Allah increases him in honour (Muslim 2588). The Prophet ﷺ pardoned the people of Makkah who had persecuted him for years.",
+      "No one pardons except that Allah increases him in honour (Muslim 2588). The Prophet ﷺ pardoned the people of Makkah who had persecuted him for years (Muslim 1780).",
     ],
     how: [
       "Let go of grudges in the heart, not only in words.",

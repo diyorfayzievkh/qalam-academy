@@ -5,7 +5,7 @@ import { SOCIAL_SRC as src } from "./social-book";
 // "Ijtimoiy odoblar".
 const QUESTIONS: Question[] = [
   { q: "What does the Arabic word adab originally point to?", options: ["Punishment", "An invitation to a feast: goodness", "Silence", "Wealth"], answer: 1, why: "From maʾdubah, a feast people are invited to; adab means goodness.", src: src("5–6") },
-  { q: "According to Tirmidhi 1952, what is the best gift a parent can give a child?", options: ["Money", "Good adab", "A house", "A car"], answer: 1, why: "No gift is better than good manners.", src: "Tirmidhi 1952" },
+  { q: "A reported hadith (Tirmidhi 1952) names the best gift a parent can give a child. What is it?", options: ["Money", "Good adab", "A house", "A car"], answer: 1, why: "Reported with a weak chain, but its meaning is supported by the Quran and Sunnah.", src: "Tirmidhi 1952 (reported, weak chain)" },
   { q: "Islam wants good manners to become a person’s…", options: ["Temporary state", "Permanent station (maqām)", "Hobby", "Secret"], answer: 1, why: "A passing trait is good; a permanent station is the goal.", src: src("14–18") },
   { q: "Which is the worst affliction of the tongue, according to the book?", options: ["Joking", "Lying", "Speaking fast", "Silence"], answer: 1, why: "Lying is the mother of every vileness.", src: src("23–33") },
   { q: "Whoever listens to backbiting without objecting…", options: ["Is innocent", "Shares the sin", "Gets reward", "Is wise"], answer: 1, why: "Only objecting with the tongue frees him.", src: src("23–33") },

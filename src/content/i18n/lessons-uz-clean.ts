@@ -23,7 +23,7 @@ const T: LessonTrMap = {
       ] },
       { title: "Tahorat gunohlarni yuvadi", measure: "Gunohlar oxirgi suv tomchisi bilan ketadi", picture: "Mo‘min tahoratda yuzini yuvganda, ko‘zlari qaragan har bir gunoh suv bilan ketadi, keyin qo‘llari, keyin oyoqlari bilan, oxiri u gunohlardan pok bo‘lib chiqadi." },
       { title: "Qiyomat kunida nurlanib", measure: "Yorug‘ yuzlar, qo‘llar va oyoqlar", picture: "Payg‘ambar ﷺ aytganki, uning ummati Qiyomat kunida tahorat izlaridan yuzlari, qo‘llari va oyoqlari nurlangan holda chaqiriladi. U bizni shundan taniydi." },
-      { title: "Masjidni supurgan ayol", scene: "Madina. Bir ayol har kuni jimgina Payg‘ambar ﷺ masjidini supurib, tozalab yurardi.", story: [
+      { title: "Masjidni supurgan ayol", scene: "Madina. Kimdir har kuni jimgina Payg‘ambar ﷺ masjidini supurib, tozalab yurardi: ko‘pchilik rivoyatlarda bu ayol, ammo bir roviy erkakmi yoki ayolmi, aniq bilmagan.", story: [
         "Unga hech kim unchalik e’tibor bermasdi. U mo‘minlar toza joyda namoz o‘qishlari uchun changni, barglarni va mayda axlatlarni terib olardi.",
         "Bir kuni Payg‘ambar ﷺ uning yo‘qligini sezib, u haqida so‘radi. Sahobalar u vafot etganini va uni kechasi dafn qilishganini aytishdi.",
         "U dedi: “Nega menga xabar bermadingiz? Uning qabrini ko‘rsatinglar.” U qabr oldiga borib, o‘sha yerda uning uchun namoz o‘qidi.",
@@ -86,7 +86,7 @@ const T: LessonTrMap = {
         "Suvni isrof qilma: Payg‘ambar ﷺ taxminan uch litr suv bilan g‘usl, taxminan bir litr bilan tahorat qilgan (Buxoriy 201).",
       ] },
       { title: "Hojatxona odobi (istinjo)", items: [
-        "Chap oyoq bilan kir va duo o‘qi: “Allohumma inniy a’uzu bika minal xubusi val xabois” (Buxoriy 142).",
+        "Duo o‘qi: “Allohumma inniy a’uzu bika minal xubusi val xabois” (Buxoriy 142) va olimlar o‘rgatganidek, chap oyoq bilan kir.",
         "O‘tir va tanangga yoki kiyimingga siydik tomchilari sachramasligiga ehtiyot bo‘l. Payg‘ambar ﷺ siydikdan ehtiyot bo‘lmaslik qabr azobiga sabab bo‘lishidan ogohlantirgan (Buxoriy 216).",
         "Chap qo‘l bilan suv yordamida tozalan, keyin qo‘llaringni sovun bilan yuv.",
         "O‘ng oyoq bilan chiq va “G‘ufronak” (mag‘firatingni so‘rayman) de (Abu Dovud 30).",
@@ -94,12 +94,12 @@ const T: LessonTrMap = {
       ] },
       { title: "Tirnoqlar, soch va hid", items: [
         "Besh fitrat sunnatiga tirnoq olish va qo‘ltiq tukini olib tashlash kiradi (Buxoriy 5889). Ularni qirq kundan ortiq qoldirma (Muslim 258); har hafta, masalan, juma kuni qilish yaxshi odat.",
-        "Uzun, kir tirnoqlar mikrob va ovqat qoldiqlarini yig‘adi. O‘g‘il bolalar ham, qizlar ham ularni qisqa va toza tutsin.",
+        "Uzun, kir tirnoqlar mikrob va ovqat qoldiqlarini yig‘adi (umumiy sog‘liq bilimi, hadis emas). O‘g‘il bolalar ham, qizlar ham ularni qisqa va toza tutsin.",
         "“Kimning sochi bo‘lsa, unga qarasin” (Abu Dovud 4163): uni yuv, tara, ozoda tut.",
         "Boshqalar o‘zini qulay his qilishi uchun dezodorant yoki yoqimli hid ishlat. Masjidga xom sarimsoq yoki piyoz hidi bilan kelma (Muslim 564).",
       ] },
       { title: "Juma g‘usli", measure: "Keyingi jumagacha gunohlar kechiriladi", picture: "Kim juma kuni yuvinsa, imkoni boricha poklansa, moy yoki xushbo‘y surtsa, namozga borib, xutbani tinglasa, o‘sha juma bilan keyingi juma orasidagi gunohlari kechiriladi." },
-      { title: "Uning sochini taraydigan narsasi yo‘qmi?", scene: "Payg‘ambar ﷺ ning oldiga bir mehmon keldi.", story: [
+      { title: "Uning sochini taraydigan narsasi yo‘qmi?", scene: "Payg‘ambar ﷺ Jobirning qavmini ziyorat qilgani keldi.", story: [
         "Jobir rivoyat qiladi: Payg‘ambar ﷺ sochi to‘zg‘igan, chigallashgan bir kishini ko‘rib dedi: “Bu kishi sochini tinchlantiradigan biror narsa topa olmaydimi?”",
         "Keyin u kir kiyim kiygan bir kishini ko‘rib dedi: “Bu kishi kiyimlarini yuvish uchun suv topa olmaydimi?”",
       ], lesson: "Payg‘ambar ﷺ odamlar o‘zlariga qaramaganini sezardi va mo‘min pokiza va ozoda bo‘lishi kerakligini muloyimlik bilan o‘rgatardi.", check: {
@@ -113,7 +113,7 @@ const T: LessonTrMap = {
         { text: "Shunchaki atir sepaman.", feedback: "Atir hidni yashiradi, lekin tozalamaydi. Avval yuvin, keyin yoqimli hid." },
       ] },
       { think: [
-        "Qo‘llarimni sovun bilan taxminan 20 soniya to‘g‘ri yuvamanmi?",
+        "Qo‘llarimni sovun bilan to‘g‘ri yuvamanmi (sog‘liq maslahati: taxminan 20 soniya)?",
         "Tirnoqlarimni oxirgi marta qachon oldim?",
       ], home: [
         "Oilaviy “juma tozaligi”ni tashkil qiling: tirnoqlar olingan, g‘usl, toza kiyim, ozgina xushbo‘y, keyin juma namozi.",
@@ -154,10 +154,10 @@ const T: LessonTrMap = {
       ] },
       { title: "Tishlarim uchun kundalik reja", items: [
         "Ertalab: uyg‘ongandan keyin (yoki nonushtadan keyin) tish yuv.",
-        "Kechasi: uxlashdan oldin tish yuv. Bu eng muhim vaqt, chunki biz uxlaganda mikroblar ishlaydi.",
+        "Kechasi: uxlashdan oldin tish yuv. Stomatologlar aytishicha, bu eng muhim vaqt, chunki biz uxlaganda mikroblar ishlaydi (umumiy sog‘liq bilimi, hadis emas).",
         "Salomatlik qo‘llanmasi (hadis emas, umumiy ma’lumot): kuniga ikki marta, taxminan ikki daqiqa davomida, ftorli tish pastasi bilan, har bir tishning har tomonini ohista yuv va tish shifokoriga muntazam bor.",
         "Kun davomida misvok ishlat: namozlardan oldin, tahoratda va ovqatdan keyin.",
-        "Tilingni ohista tozala va shirin ichimliklar o‘rniga suv ich.",
+        "Tilingni ohista tozala va shirin ichimliklar o‘rniga suv ich (umumiy sog‘liq maslahati).",
       ] },
       { title: "Misvokni qanday ishlatish kerak", items: [
         "Uchini chayib, cho‘tkadek yumshaguncha ohista chaynab ol.",
@@ -223,7 +223,7 @@ const T: LessonTrMap = {
         "Oq kiyim chiroyli va sevimli: “Oq kiyinglar, u kiyimlaringizning eng yaxshilaridandir” (Abu Dovud 3878).",
       ] },
       { title: "O‘g‘il va qiz bolalar: nimani esda tutish kerak", left: "O‘g‘il bolalar", right: "Qiz bolalar", rows: [
-        ["Kindikdan tizzagacha yop va odobli kiyin", "Odobli kiyin; balog‘atdan keyin nomahram erkaklar oldida yuz, qo‘l kaftlari va oyoqlardan boshqa butun tanani yop"],
+        ["Kindikning sal pastidan tizzagacha yop (tizzalar ham kiradi) va odobli kiyin", "Odobli kiyin; balog‘atdan keyin yuz, qo‘l kaftlari va oyoqlardan boshqa butun tanani yop. Ko‘plab hanafiy olimlari nomahram erkaklar oldida nojo‘ya e’tibor xavfi bo‘lsa, yuzni ham yopishni o‘rgatadi; ota-onang yoki ishonchli ustozingdan so‘ra"],
         ["Oltin va ipak erkaklar uchun emas (Abu Dovud 4057)", "Ayollar uchun oltin va ipak joiz"],
         ["Toza, ozoda kiyim; ayniqsa masjidda yoqimli hid", "Toza, ozoda kiyim; ro‘mol ham toza va tartibli bo‘lsin"],
         ["Ayollarga xos kiyimga taqlid qilma", "Erkaklarga xos kiyimga taqlid qilma"],
@@ -360,7 +360,7 @@ const T: LessonTrMap = {
       { title: "Uydan tashqarida", items: [
         "Ko‘chaga axlat tashlama; uni axlat qutisi topguningcha olib yur.",
         "Yo‘ldan ozor beruvchi narsani olib tashlash iymonning bir shoxidir (Muslim 35). Axlatni terib olish yaxshi amal.",
-        "Turg‘un suvga yoki odamlar yuradigan va o‘tiradigan joyga bavl qilma (Buxoriy 239).",
+        "Turg‘un suvga (Buxoriy 239) yoki odamlar yuradigan va soyada o‘tiradigan joyga (Muslim 269) bavl qilma.",
         "Umumiy joylarni toza tut: zinapoya, lift, bog‘, masjidning tahoratxonasi.",
         "Yaxshi qo‘shni bo‘l: axlatingni ularning eshigi oldida qoldirma (Buxoriy 6018).",
       ] },

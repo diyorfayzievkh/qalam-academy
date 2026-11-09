@@ -23,7 +23,7 @@ export const PUBLIC_UZ_1: LessonTrMap = {
         "Har bir qadam savobli: masjidga yurishda har bir qadam bilan bir daraja ko‘tarilasiz va bir gunohingiz o‘chiriladi (Muslim 666).",
         "Yugurmasdan, xotirjam: “Iqomatni eshitsangiz, namozga xotirjamlik va viqor bilan yuringlar, shoshilmanglar” (Buxoriy 636).",
         "Namoz o‘qiyotgan kishi Alloh bilan gaplashmoqda. Oldidan o‘tgan kishi gunohini bilganida, o‘tishdan ko‘ra qirq kutib turishni afzal ko‘rardi (Buxoriy 510).",
-        "Yomon hid farishtalarga ham, odamlarga ham ozor beradi (Buxoriy 855). Toza kiyim va xushbo‘ylik Allohning uyini ulug‘lashning bir qismi.",
+        "Yomon hid farishtalarga ham, odamlarga ham ozor beradi (Buxoriy 855; Muslim 564). Toza kiyim va xushbo‘ylik Allohning uyini ulug‘lashning bir qismi.",
         "Qalbi masjidlarga bog‘langan kishi Qiyomat kunida Alloh O‘z soyasida soyalantiradigan yetti kishidandir (Buxoriy 660).",
       ] },
       { title: "Masjiddagi bolalar", items: [
@@ -225,7 +225,7 @@ export const PUBLIC_UZ_1: LessonTrMap = {
       ] },
       { title: "Tashqarida", left: "Qiling", right: "Qilmang", rows: [
         ["Odamlar bilan salom va tabassum bilan salomlashing", "Odamlarga tikilib qarash yoki ularni masxara qilish"],
-        ["Yo‘lakdan shisha, tosh yoki axlatni olib tashlang", "Axlat tashlash, tupurish yoki saqich tashlab ketish (Muslim 269)"],
+        ["Yo‘lakdan shisha, tosh yoki axlatni olib tashlang", "Axlat tashlash, tupurish yoki saqich tashlab ketish (Buxoriy 2465: “ozor bermaslik”)"],
         ["O‘rindiqni keksalar, homilador ayollar va nogironlarga bo‘shating", "Bir nechta o‘rindiqni egallash yoki ularga oyoq qo‘yish"],
         ["Ovozingiz va musiqani past qiling", "Jamoat joyida baqirish, baland ovozda video qo‘yish yoki musiqani qattiq yoqish"],
         ["Arg‘imchoq va tepaliklarda navbat bilan uching", "Kichik bolalarni itarish yoki o‘yin maydonchasini egallab olish"],
@@ -242,7 +242,7 @@ export const PUBLIC_UZ_1: LessonTrMap = {
         options: ["Hech narsa", "Ishini qadrlab, uni mag‘firat qildi", "Uni boy qildi", "Uni mashhur qildi"],
         why: "Kichik amal, katta mukofot.",
       } },
-      { title: "Yo‘ldan ozorni ketkazish", measure: "Iymonning bir shoxobchasi", picture: "Yo‘lakdan tosh, shisha yoki shoxni olib tashlash iymonning bir qismidir (Muslim 35). Bir kishi tikanli shoxni odamlarning yo‘lidan olib tashlagani uchun mag‘firat qilinib, jannatga kirdi (Buxoriy 652)." },
+      { title: "Yo‘ldan ozorni ketkazish", measure: "Iymonning bir shoxobchasi", picture: "Yo‘lakdan tosh, shisha yoki shoxni olib tashlash iymonning bir qismidir (Muslim 35). Bir kishi tikanli shoxni odamlarning yo‘lidan olib tashlagani uchun mag‘firat qilinib, jannatga kirdi (Buxoriy 652; Muslim 1914)." },
       { situation: "Siz to‘la avtobusda o‘tiribsiz. Og‘ir sumkalar ko‘targan keksa bir ayol chiqdi, bo‘sh joy yo‘q. Nima qilasiz?", options: [
         { text: "Telefonimga qarab, uni ko‘rmaganga olaman.", feedback: "Kattalarni hurmat qilish dinimizdandir (Termiziy 1919)." },
         { text: "O‘rnimdan turib, tabassum bilan joyimni beraman va sumkalariga yordamlashaman.", feedback: "Kattaga hurmat va jamoat joyida mehribonlik: aynan musulmoncha yo‘l." },

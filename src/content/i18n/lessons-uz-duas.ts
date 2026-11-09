@@ -44,7 +44,7 @@ const T: LessonTrMap = {
       { label: "Allohning ne’matlaridan ayrilishdan panoh", r: { en: "Allohim, ne’matingning zavolidan, bergan ofiyatingning o‘zgarishidan, to‘satdan keladigan azobingdan va barcha g‘azabingdan Sendan panoh so‘rayman." } },
       { label: "Yomon xulqdan panoh", r: { en: "Allohim, yomon xulqlardan, yomon amallardan va yomon havolardan Sendan panoh so‘rayman." } },
       { label: "Qarilikning eng yomonidan va dunyo fitnalaridan panoh", r: { en: "Allohim, baxillik va qo‘rqoqlikdan, umrning eng xor qismiga qaytarilishdan, dunyo fitnalaridan va qabr azobidan Sendan panoh so‘rayman." }, note: "Sa’d ibn Abu Vaqqos (r.a.) buni bolalariga muallim yozuvni o‘rgatgandek o‘rgatgan." },
-      { label: "Og‘ir kasalliklardan panoh", r: { en: "Allohim, moxovdan, jinnilikdan, pesdan va barcha yomon kasalliklardan Sendan panoh so‘rayman." } },
+      { label: "Og‘ir kasalliklardan panoh", r: { en: "Allohim, pesdan, jinnilikdan, moxovdan va barcha yomon kasalliklardan Sendan panoh so‘rayman." } },
       { label: "Kufr va kambag‘allikdan panoh (ertalab va kechqurun ×3)", r: { en: "Allohim, kufr va kambag‘allikdan Sendan panoh so‘rayman, qabr azobidan ham Sendan panoh so‘rayman. Sendan o‘zga iloh yo‘q." } },
       { label: "O‘z amallarimning yomonligidan panoh", r: { en: "Allohim, qilgan narsamning yomonligidan va qilmagan narsamning yomonligidan Sendan panoh so‘rayman." } },
       { label: "Yangi joyga tushganda (va kechqurun ×3)", r: { en: "Allohning mukammal kalimalari bilan U yaratgan narsalarning yomonligidan panoh so‘rayman." }, note: "U joydan ketguningizcha sizga hech narsa zarar yetkazmaydi." },

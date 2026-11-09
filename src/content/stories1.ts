@@ -63,10 +63,10 @@ export const STORIES_1: Record<string, Story[]> = {
       "While he was away, the boy died. Umm Sulaym washed and wrapped him, laid him in a corner of the house, and told the family: do not tell Abū Ṭalḥah; I will tell him myself.",
       "When he came home and asked about the boy, she said: “He is calmer than he has been.” She served him dinner and made herself beautiful for him, and they spent the night together.",
       "Then she asked: “Abū Ṭalḥah, if people lent something to a family and then asked for it back, would they have the right to refuse?” He said no. She said: “Then hope for reward for your son.”",
-      "He went to the Prophet ﷺ, who prayed that Allah bless their night. Allah gave them another son, ʿAbdullāh, and from him came children who all learned the Quran.",
+      "He went to the Prophet ﷺ, who prayed that Allah bless their night. Allah gave them another son, ʿAbdullāh, and from him came nine children who all learned the Quran.",
     ],
     lesson: "Our children are a trust from Allah. Umm Sulaym met the hardest loss with patience, wisdom and care for her husband.",
-    src: "Bukhari 5470, Muslim 2144",
+    src: "Bukhari 5470, Bukhari 1301, Muslim 2144",
     check: { q: "What did Umm Sulaym compare her son to?", options: ["A gift to keep forever", "Something lent that the owner asked back", "A test of wealth", "A dream"], answer: 1, why: "He was a trust from Allah, and Allah took back what was His." } }],
 
   "akhlaq/forgiveness": [{ type: "story", id: "mistah", kind: C, title: "Abū Bakr and Misṭaḥ",
@@ -85,10 +85,10 @@ export const STORIES_1: Record<string, Story[]> = {
     scene: "The Prophet ﷺ told ʿUmar about a man he would never meet himself.",
     story: [
       "“A man called Uways will come to you with the reinforcements from Yemen, of the tribe of Murād and then of Qaran. He had leprosy and was cured of it except for a spot the size of a dirham. He has a mother to whom he is devoted. If he swore by Allah, Allah would fulfil it. If you can ask him to seek forgiveness for you, do so.”",
-      "Uways had never met the Prophet ﷺ. He stayed in Yemen to care for his mother.",
+      "Uways had never met the Prophet ﷺ. He had a mother he was devoted to, and scholars mention that he stayed in Yemen to care for her.",
       "Years later, ʿUmar, now the khalīfah, asked every group from Yemen: is Uways ibn ʿĀmir among you? At last he found him, checked every sign, and asked him: seek forgiveness for me. And Uways did.",
     ],
-    lesson: "Uways missed the honour of being a Companion because he would not leave his mother, and the Prophet ﷺ told the greatest of men to seek his duʿāʾ.",
+    lesson: "Uways was devoted to his mother, and scholars mention it kept him from travelling to meet the Prophet ﷺ; and the Prophet ﷺ told the greatest of men to seek his duʿāʾ.",
     src: "Muslim 2542",
     check: { q: "What raised Uways so high in the Prophet’s ﷺ words?", options: ["His wealth", "His devotion to his mother", "His poetry", "His battles"], answer: 1, why: "Kindness to his mother made his duʿāʾ answered." } }],
 

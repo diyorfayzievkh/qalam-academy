@@ -126,9 +126,9 @@ const T: LessonTrMap = {
 
   fatiha: {
     title: "Fotiha: Alloh bilan suhbat",
-    summary: "Har bir rakatda o‘qiladigan eng ulug‘ sura va Alloh har bir oyatga qanday javob berishi.",
+    summary: "Har bir namozda o‘qiladigan eng ulug‘ sura va Alloh har bir oyatga qanday javob berishi.",
     blocks: [
-      { text: "Fotihani o‘qimagan kishining namozi yo‘q (Buxoriy 756). Hanafiy mazhabida uni har bir rakatda o‘qish vojib, unutib qo‘yish esa sahv sajdasini talab qiladi. Payg‘ambar ﷺ uni Qur’ondagi eng ulug‘ sura, takror o‘qiladigan yetti oyat deb atagan (Buxoriy 4474)." },
+      { text: "Fotihani o‘qimagan kishining namozi yo‘q (Buxoriy 756). Hanafiy mazhabida uni farz namozning dastlabki ikki rakatida va vitr, sunnat va nafl namozlarning har bir rakatida o‘qish vojib; u yerda unutib qo‘yish sahv sajdasini talab qiladi. Farzning oxirgi ikki rakatida u sunnat, imomga iqtido qilgan kishi esa jim turadi. Payg‘ambar ﷺ uni Qur’ondagi eng ulug‘ sura, takror o‘qiladigan yetti oyat deb atagan (Buxoriy 4474)." },
       { label: "Fotiha surasi", r: { en: "Hamd olamlarning Robbi Allohgadir. U Rahmon va Rahimdir. Jazo kunining Egasidir. Faqat Senga ibodat qilamiz va faqat Sendan yordam so‘raymiz. Bizni to‘g‘ri yo‘lga hidoyat qil, O‘zing ne’mat bergan zotlarning yo‘liga, g‘azabga uchraganlarning va adashganlarning yo‘liga emas." } },
       { text: "Hadisi qudsiyda Alloh aytadi: “Namozni O‘zim bilan bandam o‘rtasida ikkiga bo‘ldim va bandamga so‘ragan narsasi bor.” Keyin U har bir oyatga javob beradi (Muslim 395):" },
       { title: "Alloh senga oyatma-oyat javob beradi", left: "Sen aytasan", right: "Alloh aytadi", rows: [
@@ -159,7 +159,7 @@ const T: LessonTrMap = {
         "Keyingi namozdan oldin har bir oyatning ma’nosini birga o‘qing, keyin uni sekin o‘qib namoz o‘qing.",
       ] },
       { title: "Asosiy xulosalar", items: [
-        "Eng ulug‘ sura, hanafiy mazhabida har bir rakatda vojib.",
+        "Eng ulug‘ sura; hanafiy mazhabida farz namozning dastlabki ikki rakatida vojib.",
         "Sen o‘qiganingda Alloh har bir oyatga javob beradi (Muslim 395).",
         "Uning qalbi: faqat Senga ibodat qilamiz, faqat Sendan yordam so‘raymiz; bizni hidoyat qil.",
       ] },
@@ -215,7 +215,7 @@ const T: LessonTrMap = {
         "Asr: Imom Shofeiy aytganki, agar odamlar faqat shu sura haqida tafakkur qilsalar, ularga kifoya qilardi (rivoyat).",
         "Kavsar: eng qisqa sura, Payg‘ambar ﷺ ga jannatdagi daryo sovg‘asi.",
         "Ixlos: Qur’onning uchdan biriga teng (Buxoriy 5013), chunki u Allohning yagonaligini tasvirlaydi.",
-        "Falaq va Nos: “muavvizatayn”, himoya suralari; panoh so‘rashda ularga teng keladigani yo‘q (Muslim 814).",
+        "Falaq va Nos: “muavvizatayn”, himoya suralari; panoh so‘rashda ularga teng keladigani yo‘q (Nasoiy 5438).",
       ] },
       { title: "Ixlosni sevgan imom", scene: "Namozga imomlik qilayotgan bir sahoba.", story: [
         "Payg‘ambar ﷺ bir kishini bir otryadga boshliq qilib yubordi. U har safar namozga imom bo‘lganda qiroatini “Qul huvallohu ahad” bilan tugatardi.",
@@ -389,7 +389,7 @@ const T: LessonTrMap = {
         "Namoz ichida: darhol sajda qil, keyin turib qiroatni davom ettir.",
         "Bir majlisda bitta oyat takrorlansa, bitta sajda kifoya.",
         "Darhol qila olmasang (tahorat bo‘lmasa), keyinroq qil; u soqit bo‘lmaydi.",
-        "Jonli qorining o‘qishini eshitish uni vojib qiladi; yozuvlar haqida olimlar ixtilof qilgan, shuning uchun ko‘pchilik ehtiyot uchun uni qilishni afzal ko‘radi.",
+        "Jonli qorining o‘qishini yoki jonli efirni (radio, televizor, masjid karnayi) eshitish uni vojib qiladi. Yozuv vojib qilmaydi, chunki u jonli tilovat emas; yozuvdan qilmoqchi bo‘lsangiz, oyatni o‘zingiz o‘qib, sajda qiling.",
       ] },
       { think: [
         "Bu sajdani qilganimda shayton yig‘lashini bilarmidim?",

@@ -65,7 +65,7 @@ export const SEERAH_LESSONS: Lesson[] = [
         "In the desert, angels opened his chest and washed his heart, removing Shayṭān’s share from it (Muslim 162).",
         "At six his mother Āminah died; at eight his grandfather ʿAbd al-Muṭṭalib died; then his uncle Abū Ṭālib raised him with great love.",
         "As a boy he herded sheep for the people of Makkah for a few coins. He said: every prophet herded sheep (Bukhari 2262), learning patience and care.",
-        "As a young man he joined Ḥilf al-Fuḍūl, a pact of Makkan chiefs to defend anyone wronged in the city. Years later he said he would still answer such a call in Islam.",
+        "As a young man he joined Ḥilf al-Fuḍūl, a pact of Makkan chiefs to defend anyone wronged in the city. It is reported that years later he said he would still answer such a call in Islam.",
       ]),
       story("black-stone", PS, "The Black Stone and the cloak", "Makkah, c. 605. A flood had damaged the Kaʿbah, and the tribes of Quraysh rebuilt it together.",
         [
@@ -141,17 +141,17 @@ export const SEERAH_LESSONS: Lesson[] = [
       L("They paid the price of faith", [
         "Bilāl, an Abyssinian slave, was laid on the burning sand with a rock on his chest. He kept repeating: “Aḥad, aḥad” (One, One), until Abū Bakr bought and freed him.",
         "Sumayyah, the mother of ʿAmmār, became the first martyr of Islam, killed by Abū Jahl. The Prophet ﷺ passed the family being tortured and said: “Patience, family of Yāsir; your promised place is Paradise.”",
-        "Khabbāb ibn al-Aratt was laid on hot coals until the fat of his back put them out.",
+        "It is reported that Khabbāb ibn al-Aratt was laid on hot coals until the fat of his back put them out.",
         "When a companion asked the Prophet ﷺ to pray against Quraysh, he told of believers before who were sawn in half without leaving their faith, and said: “Allah will complete this matter… but you are in a hurry” (Bukhari 3852).",
       ]),
       L("Abyssinia and the boycott", [
-        "In 615, a group of Muslims emigrated to Abyssinia, to a just Christian king, the Negus. When Quraysh demanded them back, Jaʿfar ibn Abī Ṭālib recited Sūrat Maryam; the Negus wept and said: this and what Mūsā brought come from the same lamp. He protected them.",
+        "In 615 the first Muslims emigrated to Abyssinia, to a just Christian king, the Negus. A second, larger group followed, with Jaʿfar ibn Abī Ṭālib. When Quraysh demanded them back, Jaʿfar recited Sūrat Maryam; the Negus wept and said: this and what Mūsā brought come from the same lamp. He protected them.",
         "From 616 to 619, Quraysh boycotted Banū Hāshim: no trade, no marriage. The Prophet ﷺ, his family and the Muslims were confined to a valley, eating leaves, with children crying from hunger, for about three years.",
       ]),
       story("taif", PB, "The day of Ṭāʾif", "619, the Year of Sorrow. Khadījah and Abū Ṭālib had both died. The Prophet ﷺ walked to the town of Ṭāʾif, hoping its people would accept Islam.",
         [
-          "Its leaders rejected him rudely and set their children and slaves on him. They lined the road and stoned him until his sandals filled with blood.",
-          "He took shelter in an orchard and turned to Allah with a moving duʿāʾ, complaining to Him of his weakness, and saying: “If You are not angry with me, I do not care.”",
+          "Its leaders rejected him rudely and set their children and slaves on him. They lined the road and stoned him; the books of Sīrah report that his sandals filled with blood.",
+          "He took shelter in an orchard. It is reported that he turned to Allah with a moving duʿāʾ, complaining to Him of his weakness, and saying: “If You are not angry with me, I do not care.”",
           "Jibrīl came with the angel of the mountains, who said: “If you wish, I will bring the two mountains together and crush them.”",
           "He said: “No. I hope that Allah will bring from their descendants people who worship Allah alone.” Years later, the people of Ṭāʾif became Muslims.",
         ],
@@ -189,17 +189,17 @@ export const SEERAH_LESSONS: Lesson[] = [
       ]),
       story("hijrah-night", PS, "The night of the Hijrah", "Makkah, 622. The leaders of Quraysh agreed to kill the Prophet ﷺ together, one young man from each clan, so that no single clan could be blamed.",
         [
-          "They surrounded his house at night. He asked ʿAlī to sleep in his bed, then walked out through them reciting from Sūrat Yāsīn, throwing dust over their heads; Allah blinded them and they did not see him.",
-          "He went to Abū Bakr, who wept with joy at being chosen as his companion. They hid three nights in the cave of Thawr while Quraysh searched with trackers and offered a hundred camels for him, dead or alive.",
+          "They surrounded his house at night. He asked ʿAlī to sleep in his bed, then walked out through them; it is reported that he recited from Sūrat Yāsīn and threw dust over their heads, and Allah blinded them so they did not see him.",
+          "He went to Abū Bakr, who, it is reported, wept with joy at being chosen as his companion. They hid three nights in the cave of Thawr while Quraysh searched with trackers and offered a hundred camels for him, dead or alive.",
           "Asmāʾ, Abū Bakr’s daughter, brought them food, tying it with her waistband torn in two; she became “the one with two waistbands”. A shepherd brought milk and covered their tracks with his flock.",
-          "On the road, Surāqah ibn Mālik chased them for the reward. His horse’s legs sank into the sand three times. The Prophet ﷺ promised him the bracelets of Chosroes; years later, under ʿUmar, Surāqah wore them.",
-          "Madinah came out to meet him, the girls singing “Ṭalaʿa-l-badru ʿalaynā”. Everyone wanted to host him, and he let his camel choose; where it knelt, the masjid was built.",
+          "On the road, Surāqah ibn Mālik chased them for the reward. His horse’s legs sank into the sand. It is reported that the Prophet ﷺ promised him the bracelets of Chosroes, and that years later, under ʿUmar, Surāqah wore them.",
+          "Madinah came out to meet him; it is reported that the girls sang “Ṭalaʿa-l-badru ʿalaynā”. Everyone wanted to host him, and he let his camel choose; where it knelt, the masjid was built.",
         ],
         "Planning, secrecy and effort, together with complete trust in Allah. The Hijrah teaches both.",
         "Bukhari 3905, Bukhari 3653, Ibn Hishām",
         { q: "Who slept in the Prophet’s ﷺ bed on the night of the Hijrah?", options: ["Abū Bakr", "ʿAlī", "Zayd", "Bilāl"], answer: 1, why: "ʿAlī stayed to return the trusts." }),
       Qt("Do not grieve; indeed Allah is with us.", "Quran 9:40", "لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا", "Lā taḥzan inna-llāha maʿanā."),
-      Rf(["What did the Hijrah cost the Muhājirūn, and what did they gain?", "Is there a “hijrah” I need to make: away from a habit, a place or company?"], ["Ask: why did the Prophet ﷺ plan so carefully if Allah was protecting him?", "Learn “Ṭalaʿa-l-badru ʿalaynā” together."]),
+      Rf(["What did the Hijrah cost the Muhājirūn, and what did they gain?", "Is there a “hijrah” I need to make: away from a habit, a place or company?"], ["Ask: why did the Prophet ﷺ plan so carefully if Allah was protecting him?", "Learn “Ṭalaʿa-l-badru ʿalaynā” together, the welcome song it is reported they sang."]),
       L("Key takeaways", [
         "Al-Isrāʾ wal-Miʿrāj gave the five prayers; Abū Bakr became al-Ṣiddīq.",
         "The pledges of ʿAqabah opened Madinah to Islam.",
@@ -208,11 +208,11 @@ export const SEERAH_LESSONS: Lesson[] = [
     ],
     quiz: [
       q("Why was Abū Bakr called al-Ṣiddīq?", ["He was rich", "He believed the Night Journey at once", "He was old", "He fought bravely"], 1, "“If he said it, then it is true.”", "Ibn Hishām"),
-      q("Where did the Prophet ﷺ lead the prophets in prayer?", ["Makkah", "Al-Masjid al-Aqṣā", "Madinah", "Ṭāʾif"], 1, "On the Night Journey.", "Muslim 162"),
+      q("Where did the Prophet ﷺ lead the prophets in prayer?", ["Makkah", "Al-Masjid al-Aqṣā", "Madinah", "Ṭāʾif"], 1, "On the Night Journey.", "Muslim 172"),
       q("Who was the first teacher sent to Yathrib?", ["ʿAlī", "Muṣʿab ibn ʿUmayr", "Bilāl", "ʿUmar"], 1, "After the first pledge of ʿAqabah.", "Ibn Hishām"),
       q("Where did they hide for three nights?", ["Ḥirāʾ", "Thawr", "Uḥud", "Ṭāʾif"], 1, "The cave of Thawr.", "Bukhari 3653"),
       q("Who was called “the one with two waistbands”?", ["Khadījah", "Asmāʾ bint Abī Bakr", "ʿĀʾishah", "Fāṭimah"], 1, "She tied their food with her waistband.", "Bukhari 2979"),
-      q("What did the Prophet ﷺ promise Surāqah?", ["Gold coins", "The bracelets of Chosroes", "A horse", "A house"], 1, "Fulfilled under ʿUmar.", "Ibn Hishām"),
+      q("What did the Prophet ﷺ promise Surāqah?", ["Gold coins", "The bracelets of Chosroes", "A horse", "A house"], 1, "Reported to have been fulfilled under ʿUmar.", "al-Bayhaqī, Dalāʾil (reported)"),
     ] },
 
   { id: "madinah", title: "Building Madinah", summary: "The masjid, the brotherhood, the constitution and the new community.", sources: ["Bukhari 3780", "Quran 59:9", "Ibn Hishām, al-Sīrah", "Bukhari 428"],
@@ -259,7 +259,7 @@ export const SEERAH_LESSONS: Lesson[] = [
       P("In Madinah, the Muslims were given permission to defend themselves against those who had driven them from their homes (22:39). Three battles shaped the young community, and each carries lessons the Quran itself draws out."),
       L("Badr, 17 Ramadan, 2 AH", [
         "About 313 poorly equipped Muslims faced around 1,000 Makkans.",
-        "The Prophet ﷺ spent the night in duʿāʾ until his cloak fell from his shoulders. Allah sent angels in support (8:9).",
+        "On the day of Badr the Prophet ﷺ made duʿāʾ until his cloak fell from his shoulders (Muslim 1763), after spending the night before in prayer (Musnad Aḥmad 1023). Allah sent angels in support (8:9).",
         "A decisive victory: “Allah had already given you victory at Badr when you were weak” (3:123).",
         "Lesson: victory comes from Allah, after preparation and duʿāʾ, not from numbers.",
       ]),
@@ -275,7 +275,7 @@ export const SEERAH_LESSONS: Lesson[] = [
         "After about a month, Allah sent a freezing wind and unseen forces; the coalition broke and left (33:9).",
         "Lesson: unity, new ideas from anyone, and patience under siege.",
       ]),
-      story("badr-cloak", PB, "The night before Badr", "Badr, the night before the battle. The Muslim army was small, tired and outnumbered three to one.",
+      story("badr-cloak", PB, "The morning of Badr", "Badr, as the two armies faced each other. The Muslim army was small, tired and outnumbered three to one.",
         [
           "The Prophet ﷺ stood in his tent facing the qiblah, raised his hands, and called on his Lord: “O Allah, fulfil what You promised me. O Allah, if this small band perishes, You will not be worshipped on the earth.”",
           "He kept raising his hands until his cloak fell from his shoulders. Abū Bakr picked it up, placed it back, and held him from behind: “Messenger of Allah, enough. Your Lord will fulfil what He promised you.”",
@@ -317,9 +317,9 @@ export const SEERAH_LESSONS: Lesson[] = [
       story("fath-makkah", PS, "The Conquest of Makkah", "Ramadan, 8 AH. Ten thousand Muslims camped outside Makkah, lighting thousands of fires on the hills.",
         [
           "The Prophet ﷺ declared: whoever enters the house of Abū Sufyān is safe; whoever closes his door is safe; whoever enters the Sacred Mosque is safe. Makkah was taken almost without bloodshed.",
-          "He entered with his head bowed so low in humility on his camel that his beard almost touched the saddle.",
+          "It is reported that he entered with his head bowed so low in humility on his camel that his beard almost touched the saddle.",
           "He went to the Kaʿbah and struck down its 360 idols with a staff, reciting: “Truth has come and falsehood has vanished” (17:81) (Bukhari 4287).",
-          "Then he stood before the people of Quraysh, who had persecuted him for twenty years, and asked what they thought he would do. He said: “No blame upon you today. Go, you are free.”",
+          "Then he stood before the people of Quraysh, who had persecuted him for twenty years, and asked what they thought he would do. He forgave them; the books of Sīrah report his words: “No blame upon you today. Go, you are free.”",
           "Bilāl, the former slave once tortured on Makkah’s sands, climbed onto the Kaʿbah and called the adhān.",
         ],
         "Complete power, used with complete humility and forgiveness. That is how hearts were conquered, not only a city.",
@@ -388,8 +388,8 @@ export const SEERAH_LESSONS: Lesson[] = [
     blocks: [
       P("Allah says: “Indeed, you are of a great moral character” (68:4). When ʿĀʾishah was asked about his character, she said: “His character was the Quran” (Muslim 746). His greatness was not only on battlefields and pulpits, but in how he treated his family, servants, children and the poorest people."),
       L("At home", [
-        "He served his family: mending his clothes, repairing his sandals and helping with housework, and when the prayer came he went out to pray (Bukhari 676).",
-        "He raced ʿĀʾishah and let her win, then she later won again (Abu Dawud 2578).",
+        "He served his family, and when the prayer came he went out to pray (Bukhari 676). He mended his own clothes and repaired his sandals (Musnad Aḥmad 24903).",
+        "He raced ʿĀʾishah and she won; years later they raced again and he won, laughing: “This is for that one” (Abu Dawud 2578).",
         "He never struck a woman, a servant or anyone with his hand (Muslim 2328).",
         "Anas served him ten years and never heard “uff”, or “why did you do that?” (Bukhari 6038).",
       ]),
@@ -428,7 +428,7 @@ export const SEERAH_LESSONS: Lesson[] = [
     ],
     quiz: [
       q("“His character was…”", ["Strict", "The Quran", "Unknown", "Quiet"], 1, "Muslim 746.", "Muslim 746"),
-      q("What did he do at home?", ["Only rested", "Helped his family and mended his own things", "Gave orders", "Studied only"], 1, "Bukhari 676.", "Bukhari 676"),
+      q("What did he do at home?", ["Only rested", "Helped his family and mended his own things", "Gave orders", "Studied only"], 1, "Bukhari 676; Musnad Aḥmad 24903.", "Musnad Aḥmad 24903"),
       q("How many years did Anas serve him without hearing “uff”?", ["Two", "Ten", "Twenty", "Five"], 1, "Bukhari 6038.", "Bukhari 6038"),
       q("Why did he shorten his prayer sometimes?", ["He was tired", "He heard a baby crying", "It was raining", "He was travelling"], 1, "Out of mercy for the mother.", "Bukhari 709"),
       q("What did he ask little Abū ʿUmayr?", ["About school", "What happened to his little bird", "About prayer", "His age"], 1, "Bukhari 6203.", "Bukhari 6203"),

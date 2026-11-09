@@ -8,7 +8,7 @@ const r = (title: string, measure: string, picture: string, src: string): R => (
 
 // Reused pictures
 const QIRAT = r("One qīrāṭ for the prayer, two for the burial", "1 qīrāṭ = a mountain like Uḥud",
-  "In the Prophet’s ﷺ time a qīrāṭ was a small coin. Here he used the word for a reward and explained it: the smaller of the two is like Mount Uḥud (Muslim 945). Uḥud is about 7.5 km long and 1,077 m high, taller than the Burj Khalifa (828 m) and as long as some 75 football pitches laid end to end. Stay for the prayer and you carry one such mountain of reward; stay until the burial and you carry two.",
+  "In the Prophet’s ﷺ time a qīrāṭ was a small coin. Here he used the word for a reward and explained it: the smaller of the two is like Mount Uḥud (Muslim 945). Uḥud is a mountain about 7 km long, rising hundreds of metres above the plain of Madinah, as long as some 70 football pitches laid end to end. Stay for the prayer and you carry one such mountain of reward; stay until the burial and you carry two.",
   "Bukhari 1325, Muslim 945");
 const SICK = r("Walking in the gardens of Paradise", "70,000 angels praying for you",
   "Whoever visits a sick Muslim is in the khurfah of Paradise until he returns (Muslim 2568). A khurfah is a garden at harvest time, its fruit already picked and ready: every step to the patient is like walking through it. Visit in the morning and 70,000 angels pray for you until evening; visit in the evening and they pray until morning (Tirmidhi 969).",
@@ -17,7 +17,7 @@ const STEPS = r("Every step to the masjid", "1 step = 1 sin erased + 1 rank rais
   "When a person makes wuḍūʾ well and walks to the masjid only for prayer, every step he takes raises him one rank and erases one sin (Bukhari 647). A 10-minute walk is roughly 1,000 steps: a thousand sins dropped and a thousand ranks gained, on the way to one prayer.",
   "Bukhari 647");
 const JAMAAH = r("Praying in congregation", "27 × the reward of praying alone",
-  "Prayer in congregation is twenty-seven degrees better than praying alone (Bukhari 645). Five prayers a day in congregation carry the reward of 135 prayers prayed alone, more than 27 days’ worth, every single day.",
+  "Prayer in congregation is twenty-seven degrees better than praying alone (Bukhari 645). Five prayers a day in congregation carry the reward of 135 prayers prayed alone: 27 days’ worth, every single day.",
   "Bukhari 645");
 const NIGHT = r("ʿIshāʾ and Fajr in congregation", "= standing the whole night in prayer",
   "Whoever prays ʿIshāʾ in congregation is as if he prayed half the night; whoever prays Fajr in congregation too is as if he prayed the whole night (Muslim 656). Two short prayers, and the record shows a full night of worship while you slept.",
@@ -26,7 +26,7 @@ const SHADE = r("Shade on the Day without shade", "Shade under Allah’s Throne"
   "The Day of Judgment lasts fifty thousand years (Quran 70:4), and the sun is brought within a mile of people, who stand in sweat by their deeds (Muslim 2864). On that Day seven kinds of people are shaded under Allah’s Throne, among them two who loved each other for Allah’s sake and the one who gave charity in secret (Bukhari 660).",
   "Bukhari 660, Muslim 2864");
 const LAYLAT = r("Laylat al-Qadr", "1 night > 1,000 months = 83 years and 4 months",
-  "One night of worship is better than a thousand months (97:3). That is more than 83 years, longer than most people’s whole lives. Pray all of the last ten nights and you are certain to catch it, and whoever stands it with faith and hope has all past sins forgiven (Bukhari 1901).",
+  "One night of worship is better than a thousand months (97:3). That is more than 83 years, longer than most people’s whole lives. It is most likely in the odd nights of the last ten, especially the 27th; Imam Abū Ḥanīfah taught that it is not fixed to one night, so seek it throughout Ramadan, and whoever stands it with faith and hope has all past sins forgiven (Bukhari 1901).",
   "Quran 97:3, Bukhari 1901");
 const GRAIN = r("Charity that grows", "1 → 700, and Allah multiplies more for whom He wills",
   "Allah compares spending in His path to one grain that grows seven ears, each with a hundred grains (2:261). Give one coin and you may find seven hundred waiting for you. Every good deed is written from ten up to seven hundred times, while a bad deed is written only once (Bukhari 6491).",
@@ -49,8 +49,8 @@ const KNOW = r("The path of knowledge", "A path to Paradise, and angels lowering
 const MOSQUE = r("Building a masjid", "A house in Paradise, even for a bird’s nest",
   "Whoever builds a masjid for Allah, Allah builds a house for him in Paradise (Bukhari 450), even if his share is as small as a sandgrouse’s nest (Ibn Majah 738). Chipping in for a few bricks of a masjid can buy a home that never crumbles.",
   "Bukhari 450, Ibn Majah 738");
-const FORGIVE_ANGER = r("Swallowing your anger", "Choose any reward you wish, before all creation",
-  "Whoever restrains his anger while able to act on it, Allah will call him before all creation on the Day of Judgment and let him choose whatever he wishes of the ḥūr al-ʿīn (Abu Dawud 4777). A few seconds of silence in anger, rewarded in front of every human who ever lived.",
+const FORGIVE_ANGER = r("Swallowing your anger", "Called by Allah before all creation",
+  "Whoever holds back his anger when he is able to act on it, Allah will call him before all of creation on the Day of Resurrection (Abu Dawud 4777). A few seconds of silence in anger, rewarded in front of every human who ever lived.",
   "Abu Dawud 4777");
 const ARGUE = r("Three houses in Paradise", "Outskirts · middle · highest part",
   "The Prophet ﷺ guaranteed a house on the outskirts of Paradise for whoever leaves arguing even when he is right, a house in the middle of Paradise for whoever leaves lying even when joking, and a house in the highest part of Paradise for whoever has good character (Abu Dawud 4800).",
@@ -62,7 +62,7 @@ const ORPHAN = r("Next to the Prophet ﷺ in Paradise", "As close as two fingers
   "“I and the one who cares for an orphan will be in Paradise like this,” and he held up his index and middle fingers with a small gap (Bukhari 5304). Whoever raises two daughters until they grow up will come on the Day of Judgment with him like these two fingers (Muslim 2631).",
   "Bukhari 5304, Muslim 2631");
 const MEAL = r("The duʿāʾ after eating", "Past sins forgiven",
-  "Whoever eats and says “Al-ḥamdu lillāhi-lladhī aṭʿamanī hādhā wa razaqanīhi min ghayri ḥawlin minnī wa lā quwwah” has his past sins forgiven (Abu Dawud 4023). The same is said when putting on new clothes. Three meals a day are three chances.",
+  "Whoever eats and says “Al-ḥamdu lillāhi-lladhī aṭʿamanī hādhā wa razaqanīhi min ghayri ḥawlin minnī wa lā quwwah” has his past sins forgiven (Abu Dawud 4023). A similar duʿāʾ, “Al-ḥamdu lillāhi-lladhī kasānī hādhā…”, is said when putting on new clothes (Abu Dawud 4023). Three meals a day are three chances.",
   "Abu Dawud 4023");
 const REPENT = r("Sins turned into good deeds", "Bad deeds rewritten as good",
   "For those who repent, believe and do good, “Allah will replace their evil deeds with good deeds” (25:70). Sincere repentance does not only erase the record; it can turn the lines of sin into lines of reward.",
@@ -91,9 +91,9 @@ const INTERCEDE = r("Forty people praying for you", "Their intercession is accep
 const CONDOLE = r("Comforting the bereaved", "Clothed in garments of honour",
   "“No believer consoles his brother in a calamity except that Allah clothes him with garments of honour on the Day of Judgment” (Ibn Majah 1601). A short visit and a few words to a grieving family, repaid with clothing of honour before all creation.",
   "Ibn Majah 1601");
-const MERCHANT = r("The honest trader", "With the prophets, the truthful and the martyrs",
-  "The truthful, trustworthy merchant will be with the prophets, the truthful and the martyrs (Tirmidhi 1209). Honest weights and an honest price can earn the company of the best of humanity.",
-  "Tirmidhi 1209");
+const MERCHANT = r("The honest trader", "A blessed sale",
+  "The buyer and the seller: if they are truthful and make things clear, their sale is blessed; if they hide and lie, its blessing is wiped out (Bukhari 2079). It is also reported that the truthful, trustworthy merchant will be with the prophets, the truthful and the martyrs (Tirmidhi 1209, weak chain).",
+  "Bukhari 2079");
 const TEACH = r("Knowledge that keeps paying", "Reward that continues after death",
   "When a person dies, his deeds end except three: ongoing charity, knowledge that benefits, and a righteous child who prays for him (Muslim 1631). Teach one child al-Fātiḥah, and every time they recite it in prayer, for the rest of their life, you share the reward.",
   "Muslim 1631, Bukhari 5027");
@@ -115,7 +115,7 @@ const NEIGHBOUR = r("The best neighbour", "Best with Allah",
 const CHARITY_FIRE = r("Charity puts out sins", "Like water on fire",
   "Charity extinguishes sin as water extinguishes fire (Tirmidhi 614), and protect yourselves from the Fire even with half a date (Bukhari 1417). A small coin can put out a big fire.",
   "Tirmidhi 614, Bukhari 1417");
-const QUBA = r("Two rakʿahs in Masjid Qubāʾ", "= the reward of an ʿumrah",
+const QUBA = r("A prayer in Masjid Qubāʾ", "= the reward of an ʿumrah",
   "Whoever purifies himself at home, then comes to Masjid Qubāʾ and prays in it has the reward of an ʿumrah (Ibn Majah 1412).",
   "Ibn Majah 1412");
 
@@ -161,7 +161,6 @@ export const REWARD_BLOCKS: Record<string, Block[]> = {
   "social/social-eating": [MEAL],
   "social/social-hospitality": [FEED],
   "social/social-gatherings": [SUBHAN],
-  "social/social-eid": [FRIDAY],
   "social/social-commemorations": [LAYLAT, SALAWAT],
   "social/social-youth": [SHADE],
   "social/social-purity": [WUDU],

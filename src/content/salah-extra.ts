@@ -16,7 +16,7 @@ export const SALAH_EXTRA: Lesson[] = [
       L("At a glance: one prayer is worth…", [
         "Alone: 1 prayer.",
         "In congregation (at the masjid): 27 prayers, more than 5 days of praying alone (Bukhari 645).",
-        "Two rakʿahs in Masjid Qubāʾ in Madinah: the reward of an ʿumrah (Ibn Majah 1412).",
+        "Making wuḍūʾ at home, then praying in Masjid Qubāʾ in Madinah: the reward of an ʿumrah (Ibn Majah 1412).",
         "In al-Masjid al-Aqṣā: about 250 to 500 prayers, roughly 2 to 3 months of daily prayers (see the note below).",
         "In the Prophet’s ﷺ Masjid in Madinah: 1,000 prayers, about 200 days (6½ months) of prayers (Bukhari 1190).",
         "In al-Masjid al-Ḥarām in Makkah: 100,000 prayers, about 20,000 days, or 55 years, of daily prayers (Ibn Majah 1406).",
@@ -24,14 +24,14 @@ export const SALAH_EXTRA: Lesson[] = [
       L("1. Praying alone at home", [
         "An obligatory prayer prayed alone at home is valid and rewarded, especially when there is an excuse such as illness, rain or fear.",
         "For voluntary prayers, home is best: “Pray in your houses; the best prayer of a man is in his house, except the obligatory prayer” (Bukhari 731).",
-        "“Do not make your houses graves” (Bukhari 432). A home where sunnahs and Quran are prayed is filled with light and keeps Shayṭān away.",
+        "“Do not make your houses graves” (Bukhari 432). Shayṭān flees from a house in which Sūrat al-Baqarah is recited (Muslim 780).",
         "For men in the Hanafi school, praying the farḍ in congregation is a strongly emphasised sunnah (sunnah muʾakkadah), close to wājib. Leaving it habitually without excuse is blameworthy.",
       ]),
       L("2. In congregation at home, with family or friends", [
         "A congregation is formed by an imam and at least one follower. When you pray together at home, with your wife, children or friends, you earn the virtue of congregation, and you teach your family the prayer.",
         "The Prophet ﷺ prayed with Anas and an orphan behind him and an elderly woman behind them, in a home (Bukhari 380).",
         "The masjid congregation is more complete: it adds the reward of every step, of waiting for the prayer, and of filling Allah’s house. So men should not make home congregation a habit instead of the masjid without a reason.",
-        "For women, prayer at home is better for them (Abu Dawud 570), and they are rewarded fully. They may still attend the masjid; “do not prevent the female servants of Allah from the mosques of Allah” (Bukhari 900).",
+        "For women: The Prophet ﷺ taught that we should not stop women from visiting the masjid, while also sharing that a woman’s prayer at home holds a special and beautiful reward. Because times changed and safety decreased, later Hanafi scholars advised that it is best for women to pray at home. However, many scholars today agree that it is perfectly fine and rewarding for women to go to the masjid when there is a good reason, such as traveling or attending a class to learn about Islam. (Bukhari 900; Abu Dawud 570)",
       ]),
       L("3. At the masjid", [
         "27 times the reward of praying alone (Bukhari 645). In another narration, 25 (Bukhari 646); scholars explain the extra degrees come with fuller manners, such as walking and arriving early.",
@@ -81,7 +81,7 @@ export const SALAH_EXTRA: Lesson[] = [
         "The deceased is a Muslim, has been washed (or given tayammum if washing is impossible), and is placed in front of those praying.",
         "All or most of the body is present. In the Hanafi school, the funeral prayer is not prayed in absentia.",
         "The imam stands in line with the chest of the deceased, whether a man or a woman.",
-        "It is recommended to form an odd number of rows, ideally three (Abu Dawud 3166).",
+        "It is recommended to form three rows (Abu Dawud 3166).",
       ]),
       L("Step by step (Hanafi)", [
         "Intention: in the heart, intend to pray the funeral prayer for Allah, as duʿāʾ for this deceased, following the imam.",
@@ -151,13 +151,13 @@ export const SALAH_EXTRA_QUIZ = {
   questions: [
     { q: "Prayer in congregation is how many times better than alone?", options: ["2", "10", "27", "100"], answer: 2, why: "Twenty-seven degrees.", src: "Bukhari 645" },
     { q: "Where is it best to pray voluntary (sunnah) prayers?", options: ["Only at the masjid", "At home", "Outdoors", "It doesn’t matter"], answer: 1, why: "The best prayer of a man is in his house, except the obligatory.", src: "Bukhari 731" },
-    { q: "Two rakʿahs in Masjid Qubāʾ equal…", options: ["A Hajj", "An ʿumrah", "A day of fasting", "Nothing special"], answer: 1, why: "The reward of an ʿumrah.", src: "Ibn Majah 1412" },
+    { q: "Making wuḍūʾ at home and praying in Masjid Qubāʾ equals…", options: ["A Hajj", "An ʿumrah", "A day of fasting", "Nothing special"], answer: 1, why: "The reward of an ʿumrah.", src: "Ibn Majah 1412" },
     { q: "A prayer in the Prophet’s ﷺ Masjid is better than…", options: ["10 prayers", "1,000 prayers elsewhere", "100,000 prayers", "500 prayers"], answer: 1, why: "Except al-Masjid al-Ḥarām.", src: "Bukhari 1190" },
     { q: "A prayer in al-Masjid al-Ḥarām equals about how many years of daily prayers?", options: ["1 year", "10 years", "About 55 years", "100 years"], answer: 2, why: "100,000 prayers ÷ 5 a day ≈ 20,000 days ≈ 55 years.", src: "Ibn Majah 1406" },
     { q: "Which are the three mosques worth travelling to?", options: ["Makkah, Madinah, al-Aqṣā", "Makkah, Qubāʾ, Cairo", "Madinah, Damascus, Baghdad", "Any three"], answer: 0, why: "Bukhari 1189.", src: "Bukhari 1189" },
     { q: "Praying ʿIshāʾ and Fajr in congregation is like…", options: ["One extra prayer", "Standing the whole night in prayer", "Fasting a day", "Nothing extra"], answer: 1, why: "ʿIshāʾ is half the night, Fajr the whole.", src: "Muslim 656" },
     { q: "Each step to the masjid…", options: ["Has no reward", "Erases a sin and raises a rank", "Counts only on Friday", "Only for the imam"], answer: 1, why: "With good wuḍūʾ and the intention of prayer.", src: "Bukhari 647" },
-    { q: "A qīrāṭ of reward for the funeral is described as…", options: ["A gold coin", "Like Mount Uḥud", "A palace", "A river"], answer: 1, why: "The smaller of the two is like Uḥud, about 7.5 km long and over 1 km high.", src: "Muslim 945" },
+    { q: "A qīrāṭ of reward for the funeral is described as…", options: ["A gold coin", "Like Mount Uḥud", "A palace", "A river"], answer: 1, why: "The smaller of the two is like Uḥud, a mountain about 7 km long, rising hundreds of metres above Madinah.", src: "Muslim 945" },
     { q: "How many takbīrs are in the funeral prayer?", options: ["2", "3", "4", "5"], answer: 2, why: "Four takbīrs, then salām.", src: "Nūr al-Īḍāḥ" },
     { q: "Does the funeral prayer have rukūʿ and sujūd?", options: ["Yes, both", "Only rukūʿ", "No, it is prayed standing only", "Only sujūd"], answer: 2, why: "Standing and takbīrs only.", src: "Nūr al-Īḍāḥ" },
     { q: "After the second takbīr of the funeral prayer you recite…", options: ["Al-Fātiḥah", "The ṣalawāt Ibrāhīmiyyah", "Āyat al-Kursī", "Nothing"], answer: 1, why: "Thanāʾ, then ṣalawāt, then duʿāʾ.", src: "Nūr al-Īḍāḥ" },

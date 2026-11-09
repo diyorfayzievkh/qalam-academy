@@ -148,7 +148,7 @@ export const PUBLIC_UZ_2: LessonTrMap = {
         ["Ertalabki ish: erta tong barakali (Abu Dovud 2606)", "Ertalabni uxlab o‘tkazish"],
       ] },
       { title: "Nega bu muhim", items: [
-        "Umrimiz va uni nimaga sarflaganimiz, yoshligimiz va uni nimada o‘tkazganimiz haqida so‘ralamiz (Termiziy 2417).",
+        "Umrimiz va uni nimaga sarflaganimiz haqida so‘ralamiz (Termiziy 2417); boshqa bir rivoyatda yoshligimiz va uni nimada o‘tkazganimiz ham qo‘shilgan (Termiziy 2416).",
         "“Kishi Islomining go‘zalligidan — o‘ziga taalluqli bo‘lmagan narsani tark etishidir” (Termiziy 2317).",
         "Najot topgan mo‘minlar behuda gaplardan yuz o‘giradilar (23:1–3).",
         "“Besh narsadan oldin besh narsani g‘animat bil: qarilikdan oldin yoshligingni, kasallikdan oldin sog‘ligingni, kambag‘allikdan oldin boyligingni, bandlikdan oldin bo‘sh vaqtingni va o‘limdan oldin hayotingni” (al-Mustadrak 7846).",
@@ -187,7 +187,7 @@ export const PUBLIC_UZ_2: LessonTrMap = {
       { q: "Kishi Islomining go‘zalligidan…", options: ["Hammaning yangiliklarini bilish", "O‘ziga taalluqli bo‘lmaganni tark etish", "Ko‘p gapirish", "Kech uxlash"], why: "Behuda ishlardan saqlaning." },
       { q: "Payg‘ambar ﷺ ummati uchun kunning qaysi vaqti barakali bo‘lishini so‘rab duo qilgan?", options: ["Yarim tun", "Erta tong", "Asr payti", "Tushlik payti"], why: "“Allohim, ummatimning erta tonglariga baraka ber.”" },
       { q: "“Besh narsadan oldin besh narsani g‘animat bil”: yoshlikni … oldin", options: ["Qarilikdan", "Maktabdan", "Tushlikdan", "Yozdan"], why: "Kasallikdan oldin sog‘liqni, bandlikdan oldin bo‘sh vaqtni ham." },
-      { q: "Yoshligimiz haqida so‘raladi: …", options: ["Uni nimada o‘tkazganimiz", "Bo‘yimiz qancha bo‘lgani", "Do‘stlarimiz kim bo‘lgani", "Hech narsa"], why: "O‘sha kundagi savollardan biri." },
+      { q: "Yoshligimiz haqida so‘raladi: …", options: ["Uni nimada o‘tkazganimiz", "Bo‘yimiz qancha bo‘lgani", "Do‘stlarimiz kim bo‘lgani", "Hech narsa"], why: "O‘sha kundagi savollardan biri, Ibn Mas’ud rivoyatida." },
       { q: "Najot topgan mo‘minlar nimadan yuz o‘giradi?", options: ["Namozdan", "Behuda gaplardan", "Sadaqadan", "Oiladan"], why: "Al-Mu’minun 23:3." },
       { q: "Ibn Mas’ud eng ko‘p nimaga afsuslanardi?", options: ["Yaxshi amallari ziyoda bo‘lmay tugagan kunga", "Bo‘yi pastligiga", "Ishiga", "Hech narsaga"], why: "Har kuni biror yaxshilik qo‘shilishi kerak." },
       { q: "“Dunyoda xuddi … bo‘l”", options: ["“…podshohdek”", "“…g‘arib yoki yo‘lovchidek”", "“…uxlab yotgandek”", "“…bolakaydek”"], why: "Yo‘lovchi safarini behuda o‘tkazmaydi." },

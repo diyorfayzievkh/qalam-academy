@@ -60,7 +60,7 @@ const T: LessonTrMap = {
         "Sahroda farishtalar uning ko‘ksini ochib, qalbini yuvdilar va undan shaytonning ulushini olib tashladilar (Muslim 162).",
         "Olti yoshida onasi Omina, sakkiz yoshida bobosi Abdulmuttalib vafot etdi; keyin uni amakisi Abu Tolib katta muhabbat bilan tarbiyaladi.",
         "Bolaligida u bir necha tanga evaziga Makka ahlining qo‘ylarini boqdi. U aytgan: har bir payg‘ambar qo‘y boqqan (Buxoriy 2262) va bu orqali sabr va g‘amxo‘rlikni o‘rgangan.",
-        "Yigitligida u shahardagi har qanday mazlumni himoya qilish uchun Makka boshliqlarining ahdi bo‘lgan Hilful-fuzulga qo‘shildi. Yillar o‘tib u Islomda ham bunday chaqiriqqa javob berishini aytgan.",
+        "Yigitligida u shahardagi har qanday mazlumni himoya qilish uchun Makka boshliqlarining ahdi bo‘lgan Hilful-fuzulga qo‘shildi. Rivoyat qilinishicha, yillar o‘tib u Islomda ham bunday chaqiriqqa javob berishini aytgan.",
       ] },
       { title: "Qora tosh va rido", scene: "Makka, taxm. 605-yil. Sel Ka’bani shikastlagan edi va Quraysh qabilalari uni birga qayta qurishdi.", story: [
         "Qora toshni joyiga qo‘yish vaqti kelganda, har bir urug‘ bu sharafni o‘zi olishni xohladi. Jahllar chiqdi; ba’zilar u uchun jang qilishga qasam ichib, qo‘llarini qonga botirishdi.",
@@ -153,16 +153,16 @@ const T: LessonTrMap = {
       { title: "Ular iymon bahosini to‘lashdi", items: [
         "Habashistonlik qul Bilolni qaynoq qum ustiga yotqizib, ko‘ksiga tosh qo‘yishdi. U Abu Bakr uni sotib olib, ozod qilgunicha: “Ahad, ahad” (Yagona, Yagona) deb takrorlayverdi.",
         "Ammorning onasi Sumayya Abu Jahl qo‘lida o‘ldirilib, Islomdagi birinchi shahid bo‘ldi. Payg‘ambar ﷺ qiynalayotgan oila yonidan o‘tib: “Sabr qilinglar, ey Yosir oilasi, sizlarga va’da qilingan joy jannatdir”, dedi.",
-        "Habbob ibn Arattni cho‘g‘ ustiga yotqizishdi, hatto orqasidagi yog‘ cho‘g‘ni o‘chirib qo‘ydi.",
+        "Rivoyat qilinishicha, Habbob ibn Arattni cho‘g‘ ustiga yotqizishdi, hatto orqasidagi yog‘ cho‘g‘ni o‘chirib qo‘ydi.",
         "Bir sahoba Payg‘ambar ﷺ dan Qurayshni duoibad qilishni so‘raganda, u o‘zidan oldingi iymonidan qaytmay arra bilan ikkiga bo‘lingan mo‘minlar haqida aytib berdi va dedi: “Alloh bu ishni albatta nihoyasiga yetkazadi… lekin sizlar shoshilyapsizlar” (Buxoriy 3852).",
       ] },
       { title: "Habashiston va qamal", items: [
-        "615-yilda bir guruh musulmonlar Habashistonga, adolatli nasroniy podshoh Najoshiyning oldiga hijrat qilishdi. Quraysh ularni qaytarishni talab qilganda, Ja’far ibn Abu Tolib Maryam surasini o‘qidi; Najoshiy yig‘lab: bu va Muso olib kelgan narsa bitta chiroqdan, dedi. U ularni himoya qildi.",
+        "615-yilda ilk musulmonlar Habashistonga, adolatli nasroniy podshoh Najoshiyning oldiga hijrat qilishdi. Keyin Ja’far ibn Abu Tolib bilan ikkinchi, kattaroq guruh bordi. Quraysh ularni qaytarishni talab qilganda, Ja’far Maryam surasini o‘qidi; Najoshiy yig‘lab: bu va Muso olib kelgan narsa bitta chiroqdan, dedi. U ularni himoya qildi.",
         "616-yildan 619-yilgacha Quraysh Bani Hoshimni qamal qildi: na savdo, na nikoh. Payg‘ambar ﷺ, uning oilasi va musulmonlar taxminan uch yil davomida bir darada qamalib, barg yeb yashashdi, bolalar ochlikdan yig‘lardi.",
       ] },
       { title: "Toif kuni", scene: "619-yil, G‘am yili. Xadicha ham, Abu Tolib ham vafot etgan edi. Payg‘ambar ﷺ Toif shahri ahli Islomni qabul qiladi degan umidda u yerga piyoda bordi.", story: [
-        "Uning boshliqlari uni qo‘pollik bilan rad etib, bolalari va qullarini uning ustiga gij-gijlashdi. Ular yo‘l bo‘yida saf tortib, kavushlari qonga to‘lguncha uni toshbo‘ron qilishdi.",
-        "U bir bog‘da panoh topib, ta’sirli duo bilan Allohga yuzlandi, Unga zaifligidan shikoyat qilib: “Agar Sen mendan g‘azablanmagan bo‘lsang, men parvo qilmayman”, dedi.",
+        "Uning boshliqlari uni qo‘pollik bilan rad etib, bolalari va qullarini uning ustiga gij-gijlashdi. Ular yo‘l bo‘yida saf tortib, uni toshbo‘ron qilishdi; siyrat kitoblari uning kavushlari qonga to‘lganini rivoyat qiladi.",
+        "U bir bog‘da panoh topdi. Rivoyat qilinishicha, u ta’sirli duo bilan Allohga yuzlandi, Unga zaifligidan shikoyat qilib: “Agar Sen mendan g‘azablanmagan bo‘lsang, men parvo qilmayman”, dedi.",
         "Jabroil tog‘lar farishtasi bilan keldi, u dedi: “Agar xohlasang, ikki tog‘ni bir-biriga qo‘shib, ularni ezib tashlayman.”",
         "U dedi: “Yo‘q. Men Alloh ularning zurriyotidan yolg‘iz Allohga ibodat qiladigan odamlarni chiqarishini umid qilaman.” Yillar o‘tib, Toif ahli musulmon bo‘lishdi.",
       ], lesson: "Eng og‘ir damda, unga ozor berganlarni halok qilish imkoni bo‘la turib, u ularning farzandlari uchun umid va rahmatni tanladi.", check: {
@@ -209,11 +209,11 @@ const T: LessonTrMap = {
         "622-yilda yetmish uch erkak va ikki ayol uni o‘z oilalarini himoya qilgandek himoya qilishga bay’at berishdi. Madinaga yo‘l ochildi.",
       ] },
       { title: "Hijrat kechasi", scene: "Makka, 622-yil. Quraysh boshliqlari hech bir urug‘ ayblanmasligi uchun har bir urug‘dan bittadan yigit chiqarib, Payg‘ambar ﷺ ni birgalikda o‘ldirishga kelishishdi.", story: [
-        "Ular kechasi uning uyini o‘rab olishdi. U Aliga o‘z to‘shagida yotishni buyurdi, keyin Yosin surasidan o‘qib, ularning boshlariga tuproq sepib, orasidan chiqib ketdi; Alloh ularni ko‘r qildi va ular uni ko‘rishmadi.",
-        "U Abu Bakrning oldiga bordi, Abu Bakr uning hamrohi qilib tanlanganidan quvonchdan yig‘ladi. Quraysh izquvarlar bilan qidirib, uning o‘ligi yoki tirigi uchun yuzta tuya mukofot va’da qilgan paytda, ular uch kecha Savr g‘orida yashirinishdi.",
+        "Ular kechasi uning uyini o‘rab olishdi. U Aliga o‘z to‘shagida yotishni buyurdi, keyin ularning orasidan chiqib ketdi; rivoyat qilinishicha, u Yosin surasidan o‘qib, ularning boshlariga tuproq sepdi va Alloh ularni ko‘r qildi, ular uni ko‘rishmadi.",
+        "U Abu Bakrning oldiga bordi; rivoyat qilinishicha, Abu Bakr uning hamrohi qilib tanlanganidan quvonchdan yig‘ladi. Quraysh izquvarlar bilan qidirib, uning o‘ligi yoki tirigi uchun yuzta tuya mukofot va’da qilgan paytda, ular uch kecha Savr g‘orida yashirinishdi.",
         "Abu Bakrning qizi Asmo ularga ovqat olib kelib, uni ikkiga yirtgan belbog‘i bilan bog‘ladi; u “ikki belbog‘li” bo‘lib qoldi. Bir cho‘pon ularga sut olib kelib, izlarini suruvi bilan yashirdi.",
-        "Yo‘lda Suroqa ibn Molik mukofot uchun ularni quvdi. Uning otining oyoqlari uch marta qumga botib ketdi. Payg‘ambar ﷺ unga Kisroning bilaguzuklarini va’da qildi; yillar o‘tib, Umar davrida Suroqa ularni taqdi.",
-        "Madina uni kutib olishga chiqdi, qizlar “Tala’al badru alayna” deb kuylashardi. Hamma uni mehmon qilmoqchi edi, u esa tuyasiga tanlashga ruxsat berdi; tuya cho‘kkan joyda masjid qurildi.",
+        "Yo‘lda Suroqa ibn Molik mukofot uchun ularni quvdi. Uning otining oyoqlari qumga botib ketdi. Rivoyat qilinishicha, Payg‘ambar ﷺ unga Kisroning bilaguzuklarini va’da qilgan va yillar o‘tib, Umar davrida Suroqa ularni taqqan.",
+        "Madina uni kutib olishga chiqdi; rivoyat qilinishicha, qizlar “Tala’al badru alayna” deb kuylashgan. Hamma uni mehmon qilmoqchi edi, u esa tuyasiga tanlashga ruxsat berdi; tuya cho‘kkan joyda masjid qurildi.",
       ], lesson: "Rejalashtirish, sir saqlash va harakat, Allohga to‘liq tavakkul bilan birga. Hijrat ikkalasini ham o‘rgatadi.", check: {
         q: "Hijrat kechasi Payg‘ambar ﷺ ning to‘shagida kim yotdi?",
         options: ["Abu Bakr", "Ali", "Zayd", "Bilol"],
@@ -225,7 +225,7 @@ const T: LessonTrMap = {
         "Men qilishim kerak bo‘lgan “hijrat” bormi: biror odatdan, joydan yoki davradan uzoqlashish?",
       ], home: [
         "So‘rang: agar Alloh uni himoya qilayotgan bo‘lsa, Payg‘ambar ﷺ nega bunchalik puxta reja tuzgan?",
-        "“Tala’al badru alayna”ni birga o‘rganing.",
+        "Rivoyatlarga ko‘ra kutib olishda kuylangan “Tala’al badru alayna”ni birga o‘rganing.",
       ] },
       { title: "Asosiy xulosalar", items: [
         "Isro va Me’rojda besh vaqt namoz berildi; Abu Bakr as-Siddiq bo‘ldi.",
@@ -239,7 +239,7 @@ const T: LessonTrMap = {
       { q: "Yasribga yuborilgan birinchi ustoz kim?", options: ["Ali", "Mus’ab ibn Umayr", "Bilol", "Umar"], why: "Birinchi Aqaba bay’atidan keyin." },
       { q: "Ular uch kecha qayerda yashirinishdi?", options: ["Hiroda", "Savrda", "Uhudda", "Toifda"], why: "Savr g‘orida." },
       { q: "Kim “ikki belbog‘li” deb atalgan?", options: ["Xadicha", "Asmo binti Abu Bakr", "Oisha", "Fotima"], why: "U ularning ovqatini belbog‘i bilan bog‘ladi." },
-      { q: "Payg‘ambar ﷺ Suroqaga nima va’da qildi?", options: ["Oltin tangalar", "Kisroning bilaguzuklari", "Ot", "Uy"], why: "Umar davrida ro‘yobga chiqdi." },
+      { q: "Payg‘ambar ﷺ Suroqaga nima va’da qildi?", options: ["Oltin tangalar", "Kisroning bilaguzuklari", "Ot", "Uy"], why: "Rivoyatlarga ko‘ra Umar davrida ro‘yobga chiqqan." },
     ],
   },
 
@@ -297,7 +297,7 @@ const T: LessonTrMap = {
       { text: "Madinada musulmonlarga ularni uylaridan haydab chiqarganlarga qarshi o‘zlarini himoya qilishga izn berildi (22:39). Uchta jang yosh jamiyatni shakllantirdi va har birida Qur’onning o‘zi ta’kidlagan saboqlar bor." },
       { title: "Badr, 17 Ramazon, hijriy 2-yil", items: [
         "Yomon qurollangan 313 ga yaqin musulmon taxminan 1000 makkalikka qarshi turdi.",
-        "Payg‘ambar ﷺ tunni ridosi yelkasidan tushib ketguncha duo bilan o‘tkazdi. Alloh yordamga farishtalar yubordi (8:9).",
+        "Badr kuni Payg‘ambar ﷺ ridosi yelkasidan tushib ketguncha duo qildi (Muslim 1763), undan oldingi kechani esa namoz bilan o‘tkazgan edi (Musnad Ahmad 1023). Alloh yordamga farishtalar yubordi (8:9).",
         "Hal qiluvchi g‘alaba: “Sizlar zaif bo‘lganingizda, Alloh sizlarga Badrda g‘alaba berdi” (3:123).",
         "Saboq: g‘alaba sondan emas, tayyorgarlik va duodan keyin Allohdan keladi.",
       ] },
@@ -313,7 +313,7 @@ const T: LessonTrMap = {
         "Taxminan bir oydan keyin Alloh muzdek shamol va ko‘rinmas lashkarlar yubordi; ittifoq parchalanib, chekindi (33:9).",
         "Saboq: birlik, kimdan bo‘lmasin yangi g‘oyalar va qamal ostidagi sabr.",
       ] },
-      { title: "Badr arafasidagi tun", scene: "Badr, jangdan oldingi tun. Musulmon qo‘shini kichik, charchagan va uch barobar kam edi.", story: [
+      { title: "Badr tongi", scene: "Badr, ikki qo‘shin bir-biriga ro‘para bo‘lgan payt. Musulmon qo‘shini kichik, charchagan va uch barobar kam edi.", story: [
         "Payg‘ambar ﷺ chodirida qiblaga qarab turdi, qo‘llarini ko‘tarib, Robbiga iltijo qildi: “Allohim, menga bergan va’dangni ado et. Allohim, agar bu kichik jamoa halok bo‘lsa, yer yuzida Senga ibodat qilinmaydi.”",
         "U ridosi yelkasidan tushib ketguncha qo‘llarini ko‘tarib turaverdi. Abu Bakr ridoni olib, qayta yelkasiga qo‘ydi va uni orqasidan quchoqlab dedi: “Ey Allohning Rasuli, yetar. Robbing senga bergan va’dasini albatta ado etadi.”",
         "Alloh nozil qildi: “Robbingizdan yordam so‘raganingizda, U sizlarga javob berdi: Men sizlarga ketma-ket keladigan ming farishta bilan madad beraman” (8:9).",
@@ -362,9 +362,9 @@ const T: LessonTrMap = {
       ] },
       { title: "Makkaning fathi", scene: "Ramazon, hijriy 8-yil. O‘n ming musulmon Makka tashqarisida qo‘nim topib, tepaliklarda minglab gulxan yoqishdi.", story: [
         "Payg‘ambar ﷺ e’lon qildi: kim Abu Sufyonning uyiga kirsa, omonda; kim eshigini yopsa, omonda; kim Masjidul Haromga kirsa, omonda. Makka deyarli qon to‘kilmasdan fath qilindi.",
-        "U tuyasida shunchalik kamtarlik bilan boshini egib kirdiki, soqoli egarga tegay derdi.",
+        "Rivoyat qilinishicha, u tuyasida shunchalik kamtarlik bilan boshini egib kirdiki, soqoli egarga tegay derdi.",
         "U Ka’baga borib, uning atrofidagi 360 butni hassa bilan qulatdi va o‘qidi: “Haq keldi va botil yo‘q bo‘ldi” (17:81) (Buxoriy 4287).",
-        "Keyin u yigirma yil davomida uni ta’qib qilgan Quraysh ahli oldida turib, ular u nima qiladi deb o‘ylashlarini so‘radi. U dedi: “Bugun sizlarga hech qanday malomat yo‘q. Boringlar, sizlar ozodsiz.”",
+        "Keyin u yigirma yil davomida uni ta’qib qilgan Quraysh ahli oldida turib, ular u nima qiladi deb o‘ylashlarini so‘radi. U ularni kechirdi; siyrat kitoblari uning so‘zlarini shunday rivoyat qiladi: “Bugun sizlarga hech qanday malomat yo‘q. Boringlar, sizlar ozodsiz.”",
         "Bir paytlar Makka qumlarida qiynalgan sobiq qul Bilol Ka’ba ustiga chiqib, azon aytdi.",
       ], lesson: "To‘liq kuch to‘liq kamtarlik va afv bilan ishlatildi. Faqat shahar emas, qalblar ham shunday fath qilindi.", check: {
         q: "Payg‘ambar ﷺ Makkaga qanday kirdi?",
@@ -451,8 +451,8 @@ const T: LessonTrMap = {
     blocks: [
       { text: "Alloh aytadi: “Albatta, sen buyuk xulq ustidasan” (68:4). Oishadan uning xulqi haqida so‘rashganda, u dedi: “Uning xulqi Qur’on edi” (Muslim 746). Uning buyukligi faqat jang maydonlari va minbarlarda emas, balki oilasi, xizmatkorlari, bolalar va eng kambag‘al odamlarga qanday muomala qilganida ham edi." },
       { title: "Uyda", items: [
-        "U oilasiga xizmat qilardi: kiyimlarini yamardi, kavushlarini tuzatardi, uy ishlarida yordam berardi, namoz vaqti kirganda esa namozga chiqardi (Buxoriy 676).",
-        "U Oisha bilan yugurish musobaqasi o‘tkazib, unga yutishga imkon berdi, keyinroq yana yutdi (Abu Dovud 2578).",
+        "U oilasiga xizmat qilardi, namoz vaqti kirganda esa namozga chiqardi (Buxoriy 676). U kiyimlarini o‘zi yamar va kavushlarini o‘zi tuzatardi (Musnad Ahmad 24903).",
+        "U Oisha bilan yugurish musobaqasi o‘tkazdi va Oisha yutdi; yillar o‘tib ular yana yugurishdi va u yutib, kulib: “Bu o‘shaning evaziga”, dedi (Abu Dovud 2578).",
         "U hech qachon ayolni, xizmatkorni yoki biror kishini qo‘li bilan urmagan (Muslim 2328).",
         "Anas unga o‘n yil xizmat qildi va undan hech qachon “uf” yoki “nega bunday qilding?” degan gapni eshitmadi (Buxoriy 6038).",
       ] },
@@ -496,7 +496,7 @@ const T: LessonTrMap = {
     ],
     quiz: [
       { q: "“Uning xulqi … edi”", options: ["Qattiq", "Qur’on", "Noma’lum", "Sokin"], why: "Muslim 746." },
-      { q: "U uyda nima qilardi?", options: ["Faqat dam olardi", "Oilasiga yordam berib, o‘z narsalarini o‘zi yamardi", "Buyruq berardi", "Faqat o‘qirdi"], why: "Buxoriy 676." },
+      { q: "U uyda nima qilardi?", options: ["Faqat dam olardi", "Oilasiga yordam berib, o‘z narsalarini o‘zi yamardi", "Buyruq berardi", "Faqat o‘qirdi"], why: "Buxoriy 676; Musnad Ahmad 24903." },
       { q: "Anas unga necha yil “uf” eshitmasdan xizmat qildi?", options: ["Ikki", "O‘n", "Yigirma", "Besh"], why: "Buxoriy 6038." },
       { q: "U nega ba’zan namozini qisqartirardi?", options: ["Charchagani uchun", "Go‘dakning yig‘isini eshitgani uchun", "Yomg‘ir yog‘gani uchun", "Safarda bo‘lgani uchun"], why: "Onasiga rahm qilib." },
       { q: "U kichkina Abu Umayrdan nima so‘radi?", options: ["Maktab haqida", "Qushchasiga nima bo‘lganini", "Namoz haqida", "Yoshini"], why: "Buxoriy 6203." },

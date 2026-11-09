@@ -104,7 +104,7 @@ export const QURAN_LESSONS: Lesson[] = [
       q("How did the Prophet ﷺ describe the hardest form of revelation?", ["Like a dream", "Like the ringing of a bell", "Like a whisper", "Like thunder"], 1, "And he would sweat even on a cold day.", "Bukhari 2"),
       q("Why was the Quran revealed gradually?", ["The angel was busy", "To strengthen hearts and teach step by step", "Paper was scarce", "No reason is known"], 1, "“Thus, that We may strengthen your heart by it” (25:32).", "Quran 25:32"),
       q("How often did Jibrīl review the Quran with the Prophet ﷺ?", ["Every Friday", "Every Ramadan", "Every Ḥajj", "Only once"], 1, "Every Ramadan, and twice in his final year.", "Bukhari 4998"),
-      q("Who was the first person to believe in the Prophet ﷺ?", ["Abū Bakr", "ʿAlī", "Khadījah", "Zayd"], 2, "Khadījah comforted him and believed first.", "Bukhari 3"),
+      q("Who was the first person to believe in the Prophet ﷺ?", ["Abū Bakr", "ʿAlī", "Khadījah", "Zayd"], 2, "Khadījah comforted him and believed first.", "Bukhari 3; Ibn Hishām"),
     ] },
 
   { id: "preserved", group: "Knowing the Quran", title: "How the Quran was preserved", summary: "From hearts and palm leaves to one book: Abū Bakr, Zayd ibn Thābit, ʿUthmān, and the muṣḥaf in Tashkent.", sources: ["Bukhari 4986", "Bukhari 4987", "Quran 15:9"],
@@ -144,9 +144,9 @@ export const QURAN_LESSONS: Lesson[] = [
     ] },
 
   // ---------------------------------------------------------------- Key sūrahs (existing lessons follow this one)
-  { id: "fatiha", group: "Key sūrahs", title: "Al-Fātiḥah: a conversation with Allah", summary: "The greatest sūrah, recited in every rakʿah, and how Allah answers each verse.", sources: ["Bukhari 4474", "Bukhari 756", "Muslim 395"],
+  { id: "fatiha", group: "Key sūrahs", title: "Al-Fātiḥah: a conversation with Allah", summary: "The greatest sūrah, recited in every prayer, and how Allah answers each verse.", sources: ["Bukhari 4474", "Bukhari 756", "Muslim 395"],
     blocks: [
-      P("There is no prayer for the one who does not recite Al-Fātiḥah (Bukhari 756). In the Hanafi school, reciting it is wājib in every rakʿah, and forgetting it requires the prostration of forgetfulness. The Prophet ﷺ called it the greatest sūrah in the Quran, the seven oft-repeated verses (Bukhari 4474)."),
+      P("There is no prayer for the one who does not recite Al-Fātiḥah (Bukhari 756). In the Hanafi school, reciting it is wājib in the first two rakʿahs of a farḍ prayer and in every rakʿah of Witr, sunnah and nafl; forgetting it there requires the prostration of forgetfulness. In the last two rakʿahs of a farḍ it is sunnah, and the follower stays silent behind the imam. The Prophet ﷺ called it the greatest sūrah in the Quran, the seven oft-repeated verses (Bukhari 4474)."),
       { type: "rec", label: "Sūrat al-Fātiḥah", r: { ...RECITATIONS.fatiha, ar: RECITATIONS.basmala.ar + " ۝ " + RECITATIONS.fatiha.ar }, src: "The greatest sūrah in the Quran (Bukhari 4474)" },
       P("In a ḥadīth qudsī, Allah says: “I have divided the prayer between Myself and My servant into two halves, and My servant shall have what he asks for.” Then He answers each verse (Muslim 395):"),
       Cmp("Allah answers you, verse by verse", "You say", "Allah says", [
@@ -172,14 +172,14 @@ export const QURAN_LESSONS: Lesson[] = [
       ]),
       Rf(["Did I know Allah answers every verse of the Fātiḥah?", "What do I most need guidance in right now?"], ["Before the next prayer, read the meaning of each verse together, then pray it slowly."]),
       L("Key takeaways", [
-        "The greatest sūrah, and wājib in every rakʿah in the Hanafi school.",
+        "The greatest sūrah; in the Hanafi school, wājib in the first two rakʿahs of a farḍ prayer.",
         "Allah answers each verse as you recite it (Muslim 395).",
         "Its heart is: You alone we worship, You alone we ask for help; guide us.",
       ]),
     ],
     quiz: [
       q("What did the Prophet ﷺ call Al-Fātiḥah?", ["The heart of the Quran", "The greatest sūrah", "The shortest sūrah", "The sūrah of light"], 1, "The seven oft-repeated verses, the greatest sūrah.", "Bukhari 4474"),
-      q("In the Hanafi school, reciting Al-Fātiḥah in each rakʿah is…", ["Sunnah", "Mustaḥabb", "Wājib", "Not required"], 2, "Leaving it by mistake requires sajdat al-sahw.", "Hanafi fiqh"),
+      q("In the Hanafi school, reciting Al-Fātiḥah in the first two rakʿahs of a farḍ prayer is…", ["Sunnah", "Mustaḥabb", "Wājib", "Not required"], 2, "Leaving it there by mistake requires sajdat al-sahw.", "Hanafi fiqh"),
       q("When you say “Al-ḥamdu lillāhi rabbi-l-ʿālamīn”, Allah says…", ["“My servant has asked”", "“My servant has praised Me”", "“My servant has forgotten”", "Nothing"], 1, "Ḥadīth qudsī about dividing the prayer.", "Muslim 395"),
       q("Which verse is “between Me and My servant”?", ["Māliki yawmi-d-dīn", "Iyyāka naʿbudu wa iyyāka nastaʿīn", "Ar-raḥmāni-r-raḥīm", "Ṣirāṭa-lladhīna anʿamta ʿalayhim"], 1, "Worship from us, help from Him.", "Muslim 395"),
       q("What is the main request in Al-Fātiḥah?", ["Wealth", "Guidance to the straight path", "Long life", "Victory"], 1, "“Ihdina-ṣ-ṣirāṭa-l-mustaqīm.”", "Quran 1:6"),
@@ -340,7 +340,7 @@ export const QURAN_LESSONS: Lesson[] = [
         "Inside prayer: prostrate straight away, then stand and continue reciting.",
         "If the same verse is repeated in one sitting, one sajdah is enough.",
         "If you can’t do it right away (no wuḍūʾ), do it later; it does not lapse.",
-        "Hearing it from a live reciter makes it wājib; scholars differ about recordings, so many prefer to do it to be safe.",
+        "Hearing it from a live reciter, or a live broadcast (radio, TV, masjid speaker), makes it wājib. A recording does not, since it is not a live recitation; to do it from a recording, recite the verse yourself and prostrate.",
       ]),
       Rf(["Did I know Shayṭān weeps when I make this prostration?"], ["Find the ۩ sign in your muṣḥaf at Al-ʿAlaq 96:19 and practise the sajdah together."]),
       L("Key takeaways", [
@@ -521,7 +521,7 @@ export const QURAN_EXTRA: Record<string, { blocks: Block[]; quiz: Question[] }> 
         "Al-ʿAṣr: Imam al-Shāfiʿī said that if people reflected on this sūrah alone, it would be enough for them (reported).",
         "Al-Kawthar: the shortest sūrah, a gift of a river in Paradise to the Prophet ﷺ.",
         "Al-Ikhlāṣ: equal to a third of the Quran (Bukhari 5013), because it describes Allah’s oneness.",
-        "Al-Falaq and An-Nās: “al-muʿawwidhatayn”, the two sūrahs of protection; nothing compares to them for seeking refuge (Muslim 814).",
+        "Al-Falaq and An-Nās: “al-muʿawwidhatayn”, the two sūrahs of protection; nothing compares to them for seeking refuge (Nasāʾī 5438).",
       ]),
       Story("ikhlas-love", "Bukhari 7375", "The imam who loved Al-Ikhlāṣ", "A companion leading prayer.", [
         "The Prophet ﷺ sent a man in charge of an expedition. Whenever he led the prayer, he ended his recitation with “Qul huwa-llāhu aḥad”.",

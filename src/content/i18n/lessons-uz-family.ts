@@ -34,7 +34,7 @@ const T: LessonTrMap = {
         ["“Bu mening ishim emas”", "Uy yumushlarini bo‘lishish va so‘ramasdan yordam berish"],
       ] },
       { title: "Rishtani uzmasdan qanday bahslashish kerak", items: [
-        "To‘xtang. “A’uzu billahi minash-shaytonir rojiym” deng; tik turgan bo‘lsangiz, o‘tiring (Abu Dovud 4782).",
+        "To‘xtang. “A’uzu billahi minash-shaytonir rojiym” deng; tik turgan bo‘lsangiz, o‘tiring (Buxoriy 6115; Abu Dovud 4782).",
         "Ovozingizni pasaytiring. Yumshoqlik har narsani chiroyli qiladi (Muslim 2594).",
         "Haqorat emas, his-tuyg‘ungizni ayting: “Sen doim…” o‘rniga “Men … bo‘lganda xafa bo‘ldim”.",
         "Javob berishdan oldin ikkinchi tomonni oxirigacha tinglang.",
@@ -81,8 +81,8 @@ const T: LessonTrMap = {
       { en: "Agar huzuringda ulardan biri yoki ikkalasi keksalikka yetsa, ularga “uf” ham dema, ularni jerkima va ularga yaxshi, hurmatli so‘z ayt. Ularga rahmat bilan tavoze’ qanotingni pasaytir va ayt: Robbim, ular meni kichikligimda tarbiya qilganlaridek, Sen ham ularga rahm qil." },
       { title: "Ularning haqqi qanchalik ulug‘?", items: [
         "Avval ona: yaxshi muomalaga eng haqli kim deb so‘ralganda, Payg‘ambar ﷺ uch marta “onang”, keyin “otang” dedi (Buxoriy 5971). Ona sizni zaiflik ustiga zaiflik bilan ko‘tarib yurgan (31:14).",
-        "Allohning roziligi ota-onaning roziligida, Allohning g‘azabi ota-onaning g‘azabidadir (Termiziy 1899).",
-        "Ota-ona jannatning o‘rta eshigidir (Termiziy 1900). Payg‘ambar ﷺ ota-onasini keksalik chog‘ida topib, shunda ham jannatga kira olmagan kishi haqida uch marta: “Burni yerga ishqalansin”, dedi (Muslim 2551).",
+        "Allohning roziligi otaning roziligida, Allohning g‘azabi otaning g‘azabidadir (Termiziy 1899); olimlar buni ikkala ota-onaga ham tatbiq qiladi.",
+        "Ota jannatning o‘rta eshigidir (Termiziy 1900), onaning haqqi esa bundan ham ulug‘. Payg‘ambar ﷺ ota-onasini keksalik chog‘ida topib, shunda ham jannatga kira olmagan kishi haqida uch marta: “Burni yerga ishqalansin”, dedi (Muslim 2551).",
         "Ularga xizmat qilish jihod bo‘lishi mumkin: bir kishi g‘azotga qo‘shilishga izn so‘radi. Payg‘ambar ﷺ: “Ota-onang tirikmi?” deb so‘radi. U ha dedi. “Unda ular yo‘lida jihod qil” (Buxoriy 3004).",
         "Ota-onaga oq bo‘lish (uquq) eng katta gunohlardandir (Buxoriy 5976).",
       ] },
@@ -102,7 +102,7 @@ const T: LessonTrMap = {
         options: ["Ularni uyg‘otdi", "Ular tongda uyg‘onguncha sut bilan kutib turdi", "Sutni bolalariga berdi", "O‘zi ichib qo‘ydi"],
         why: "U o‘zi uchun katta qiyinchilik bo‘lsa ham ularni ulug‘ladi.",
       } },
-      { title: "“Ey otajon”", scene: "Ibrohim (a.s.) yosh yigit edi. Uning otasi butlar yasab sotardi.", story: [
+      { title: "“Ey otajon”", scene: "Ibrohim (a.s.) yosh yigit edi. Uning otasi butlarga sig‘inardi.", story: [
         "Ibrohim otasi haqiqatni bilishini istardi. U baqirmadi va otasini haqorat qilmadi. U qayta-qayta: “Yo abati”, ey otajon, dedi: “Nega eshitmaydigan, ko‘rmaydigan va senga hech qanday foyda bermaydigan narsaga ibodat qilasan?”",
         "Otasi g‘azablandi: “Agar to‘xtamasang, seni toshbo‘ron qilaman. Ko‘p vaqtga mendan uzoqlash!”",
         "Ibrohim javob berdi: “Senga salom bo‘lsin. Robbimdan sening uchun mag‘firat so‘rayman, U menga doim lutf qilgan” (19:42–47).",
@@ -118,7 +118,7 @@ const T: LessonTrMap = {
         "Ularning va’dalarini bajaring va qarzlarini to‘lang.",
         "Musulmon bo‘lmagan ota-onaga ham yaxshi muomala qilinadi: Asmoga “Onang bilan aloqani uzma” deyilgan (Buxoriy 2620).",
       ] },
-      { title: "Ota-onangiz", measure: "Jannatning o‘rta eshigi", picture: "Ota-ona jannatning o‘rta eshigidir, uni xohlasang saqla, xohlasang yo‘qot (Termiziy 1900). Ularga olib borgan har bir stakan suv, har bir yaxshi so‘z va har bir duo o‘sha eshik sari bir qadam, u esa aynan uyingizning ichida." },
+      { title: "Ota-onangiz", measure: "Jannatning o‘rta eshigi", picture: "Ota jannatning o‘rta eshigidir, uni xohlasang saqla, xohlasang yo‘qot (Termiziy 1900), onaning haqqi esa yanada ulug‘roq. Ularga olib borgan har bir stakan suv, har bir yaxshi so‘z va har bir duo o‘sha eshik sari bir qadam, u esa aynan uyingizning ichida." },
       { situation: "O‘yining eng qiziq joyiga kelganda onang kechki ovqatga yordam berishni so‘radi. Nima qilasan?", options: [
         { text: "Ovoz chiqarib xo‘rsinib: “Hozir!” deyman.", feedback: "Hatto “uf” ham man qilingan (17:23). Xo‘rsinish biz o‘ylagandan ko‘ra ko‘proq ranjitadi." },
         { text: "O‘yinni to‘xtatib, “Xo‘p, oyijon” deyman va tabassum bilan yordam beraman.", feedback: "Ularning chaqirig‘iga xursandchilik bilan javob berish — sadoqat, o‘yin esa joyida turadi." },
@@ -141,10 +141,10 @@ const T: LessonTrMap = {
       { q: "17:23 oyatida yolg‘iz Allohga ibodat qilishdan keyin qaysi buyruq keladi?", options: ["Ro‘za tutish", "Ota-onaga yaxshilik qilish", "Haj", "Savdo"], why: "“Faqat Unga ibodat qilinglar va ota-onaga yaxshilik qilinglar.”" },
       { q: "Payg‘ambar ﷺ yaxshi muomalaga eng haqli deb kimni uch marta tilga oldi?", options: ["Otangni", "Onangni", "Ustozingni", "Do‘stingni"], why: "Onang, onang, onang, keyin otang." },
       { q: "Ota-onamizga qaysi so‘zni aytmasligimiz kerak?", options: ["Rahmat", "Uf", "Salom", "Iltimos"], why: "Hatto norozilik bilan xo‘rsinish ham yo‘q." },
-      { q: "Allohning roziligi … da", options: ["Boylikda", "Ota-onaning roziligida", "Shuhratda", "Uyquda"], why: "Uning g‘azabi esa ularning g‘azabida." },
+      { q: "Allohning roziligi … da", options: ["Boylikda", "Otaning roziligida", "Shuhratda", "Uyquda"], why: "Uning g‘azabi esa otaning g‘azabida; olimlar buni ikkala ota-onaga ham tatbiq qiladi." },
       { q: "G‘ordagi kishi uxlab yotgan ota-onasi uchun nima qildi?", options: ["Ularni uyg‘otdi", "Tong otguncha sutlari bilan kutib turdi", "Sutni berib yubordi", "Ketib qoldi"], why: "Uning yaxshi amali toshni siljitdi." },
       { q: "Bir kishi g‘azotga qo‘shilmoqchi bo‘ldi. Payg‘ambar ﷺ unga nima dedi?", options: ["Darhol bor", "Ota-onang yo‘lida jihod qil", "Masjidda qol", "Bozorga bor"], why: "Ota-onaga xizmat qilish katta jihod." },
-      { q: "Ibrohim but yasovchi otasiga qanday murojaat qildi?", options: ["Haqorat bilan", "“Ey otajon”", "Uni e’tiborsiz qoldirdi", "Baqirdi"], why: "Kelishmovchilikda ham hurmat." },
+      { q: "Ibrohim butga sig‘inuvchi otasiga qanday murojaat qildi?", options: ["Haqorat bilan", "“Ey otajon”", "Uni e’tiborsiz qoldirdi", "Baqirdi"], why: "Kelishmovchilikda ham hurmat." },
       { q: "Ota-ona gunoh ishni buyursa-chi?", options: ["Baribir itoat qilish", "Gunohda itoat qilmaslik, lekin ularga yaxshi muomala qilishda davom etish", "Aloqani uzish", "Ularni haqorat qilish"], why: "Bu dunyoda ularga yaxshilik bilan hamroh bo‘l." },
       { q: "Ota-ona vafot etgandan keyin ularni ulug‘lashning bir yo‘li qaysi?", options: ["Ularni unutish", "Ularning do‘stlari va qarindoshlari bilan aloqani saqlash", "Narsalarini sotish", "Hech narsa"], why: "Eng yaxshi yaxshilik." },
       { q: "Asmoning onasi musulmon emas edi. Asmoga nima deyildi?", options: ["Undan uzoq yur", "Onang bilan aloqani uzma", "Faqat salomlash", "Hech narsa"], why: "Ota-onaga yaxshilik har bir ota-ona uchun." },
@@ -225,7 +225,7 @@ const T: LessonTrMap = {
       { en: "Qiyomat kunida inson to umri haqida — uni nimaga sarflagani, ilmi haqida — u bilan nima amal qilgani, moli haqida — uni qayerdan topgani va nimaga sarflagani, tanasi haqida — uni nimada ishlatgani so‘ralmaguncha, qadami joyidan jilmaydi." },
       { title: "Halol mehnat ulug‘langan", items: [
         "“Hech kim o‘z qo‘li mehnati bilan topganidan yaxshiroq taom yemagan. Dovud payg‘ambar o‘z qo‘li mehnatidan yerdi” (Buxoriy 2072). Dovud podshoh edi, shunda ham mehnat qilardi.",
-        "Payg‘ambarlar mehnat qilishgan: Nuh kema yasagan, Muso qo‘y boqqan, Payg‘ambar ﷺ qo‘y boqqan va savdo qilgan.",
+        "Payg‘ambarlar mehnat qilishgan: Nuh kemani yasagan, Muso qo‘y boqqan, Payg‘ambar ﷺ qo‘y boqqan va savdo qilgan.",
         "Rizq allaqachon yozilgan. Shuning uchun “Allohdan qo‘rqinglar va rizq talabida mo‘tadil bo‘linglar”; uni gunoh orqali izlamang (Ibn Moja 2144).",
         "Shubhali narsani tark eting: shubhalidan saqlangan kishi dinini va obro‘sini himoya qiladi (Buxoriy 52).",
       ] },
@@ -269,7 +269,7 @@ const T: LessonTrMap = {
       { situation: "Do‘sting senga tikish ilovasini ko‘rsatdi: “Ozgina pul qo‘ysang, bir kunda ikki baravar qilasan. Hamma shunday qilyapti.” Nima qilasan?", options: [
         { text: "Ozgina pul bilan bir marta sinab ko‘raman.", feedback: "Qimor ozi ham, ko‘pi ham harom (5:90), u esa sizni o‘ziga bog‘lab olish uchun yaratilgan." },
         { text: "Qat’iy yo‘q deyman, bu qimor va harom ekanini tushuntiraman, halol yo‘l bilan topishni, masalan, biror mahoratni sotish yoki kichik halol ishni taklif qilaman.", feedback: "Pok pul, pok duo, balki do‘stingni ham qutqararsan." },
-        { text: "Ishlataman, yutuqni esa sadaqaga beraman.", feedback: "Alloh pokdir va faqat pok narsani qabul qiladi; sadaqa harom daromadni poklay olmaydi." },
+        { text: "Ishlataman, yutuqni esa sadaqaga beraman.", feedback: "Alloh pokdir va faqat pok narsani qabul qiladi: bunday sadaqa savob keltirmaydi va harom daromadni halol qilmaydi." },
       ] },
       { think: [
         "Daromadimning, garchi kichik bo‘lsa ham, halolligiga ishonchim komil bo‘lmagan qismi bormi?",
@@ -293,7 +293,7 @@ const T: LessonTrMap = {
       { q: "Abu Bakr ovqati aldovdan kelganini bilganda nima qildi?", options: ["Oxirigacha yedi", "Uni qusib tashladi", "Birovga berib yubordi", "Sotdi"], why: "Haromdan bir luqma ham yo‘q." },
       { q: "“Kim aldasa, u…”", options: ["“…aqlli”", "“…bizdan emas”", "“…kechirilgan”", "“…boy”"], why: "Ho‘l donni yashirish haqida aytilgan." },
       { q: "Quyidagilardan qaysi biri harom daromad?", options: ["O‘qituvchilik", "Qimor va tikish", "Dehqonchilik", "Halol savdo"], why: "Qimor shaytonning ishi." },
-      { q: "Harom pulni sadaqaga berib poklash mumkinmi?", options: ["Ha", "Yo‘q, Alloh faqat pok narsani qabul qiladi", "Faqat yarmini", "Faqat Ramazonda"], why: "Manbaning o‘zi halol bo‘lishi kerak." },
+      { q: "Harom pulni sadaqaga berib poklash mumkinmi?", options: ["Ha", "Yo‘q, Alloh faqat pok narsani qabul qiladi", "Faqat yarmini", "Faqat Ramazonda"], why: "U savob keltirmaydi va uni topishni halol qilmaydi. Qo‘ldagi harom pul egasiga qaytariladi, egasi topilmasa, savob umid qilmasdan kambag‘allarga beriladi." },
       { q: "Shubhali narsa bilan nima qilish kerak?", options: ["Tezda olish", "Dinni va obro‘ni himoya qilish uchun tark etish", "Hech kimdan so‘ramaslik", "Yashirish"], why: "Shubhalidan saqlanish dinni himoya qiladi." },
     ],
   },

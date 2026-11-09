@@ -114,7 +114,7 @@ export const SOCIAL_LESSONS_4: Lesson[] = [
         "When you stop somewhere, say: “Aʿūdhu bi-kalimāti-llāhi-t-tāmmāti min sharri mā khalaq.” Nothing will harm you until you leave (Muslim 2708).",
         "Say tasbīḥ when unloading.",
         "Make the general duʿāʾs and those for particular moments. A traveller’s duʿāʾ is answered.",
-        "Try to stay in wuḍūʾ and pray on time, using the traveller’s concessions of shortening (qaṣr) as the Hanafi school teaches.",
+        "Try to stay in wuḍūʾ and pray on time, shortening the four-rakʿah prayers to two, which the Hanafi school holds is required (wājib) for a traveller.",
       ]),
       L("Coming home", [
         "As you near home, say: “Āyibūna tāʾibūna ʿābidūna li-rabbinā ḥāmidūn.”",
@@ -199,7 +199,7 @@ export const SOCIAL_LESSONS_4: Lesson[] = [
         "Monopoly (iḥtikār): cornering a product to push up its price. Only a sinner hoards (Muslim 1605).",
         "Every kind of ribā (interest). “Allah has permitted trade and forbidden ribā” (2:275).",
         "Going out to meet goods before they reach the market, to buy cheap and sell dear.",
-        "Selling over someone else’s sale, or bidding over someone else’s bid before they have finished negotiating (Muslim 1412).",
+        "Selling over someone else’s sale, or bidding over someone else’s bid before they have finished negotiating (Muslim 1412, 1515).",
         "Trading in anything the Sharīʿah has forbidden or that has no lawful value.",
       ]),
       L("Key takeaways", [
@@ -251,7 +251,7 @@ export const SOCIAL_LESSONS_4: Lesson[] = [
         "Try to get a place in the first row.",
         "Do not wander between the rows or step over people’s shoulders.",
         "Never pass in front of someone who is praying. If people knew the sin in it, waiting forty would be better (Bukhari 510).",
-        "If the iqāmah for the farḍ is called while you are praying a sunnah, and you have not yet bowed, end it and join; otherwise complete it, as the Hanafi school teaches.",
+        "If the iqāmah starts during a nafl or sunnah, complete the two rakʿahs you are in, then join. If you have already stood for the third rakʿah of the four sunnah of Ẓuhr or Jumuʿah, complete all four, shortening the recitation. For the Fajr sunnah: pray it (away from the rows) if you expect to catch at least one rakʿah with the imam; otherwise join and leave it.",
         "Try not to miss the opening takbīr with the imam.",
       ]),
       L("Rows and positions", [
@@ -259,7 +259,7 @@ export const SOCIAL_LESSONS_4: Lesson[] = [
         "If another person arrives, the first steps back to form a row behind the imam, or the newcomer signals him to.",
         "With three, one leads and two stand behind him.",
         "Rows are formed starting directly behind the imam.",
-        "Straighten the rows and stand close, leaving no gaps. Straightening the rows is part of the perfection of prayer (Bukhari 723).",
+        "Straighten the rows and stand close, leaving no gaps. Straightening the rows is part of the perfection of prayer (Muslim 433).",
         "Those most fit to stand right behind the imam are people of knowledge, those who know the Quran and elders (Muslim 432).",
       ]),
       L("Following the imam", [
@@ -280,7 +280,7 @@ export const SOCIAL_LESSONS_4: Lesson[] = [
       P("Friday is the weekly Eid of the Muslims. “O you who believe, when the call is made for prayer on Friday, hasten to the remembrance of Allah and leave trade” (62:9). The book gives its adab in order, from preparation to the end of the day."),
       L("Preparing", [
         "Preparation starts on Thursday: clean clothes and perfume are made ready, and the heart is cleared of worldly worries for dhikr and worship.",
-        "Take ghusl on Friday with intention. Everyone who goes to Jumuʿah should bathe, because crowds and unpleasant smells harm people (Bukhari 879).",
+        "Take ghusl on Friday with intention. Whoever comes to Jumuʿah should bathe (Bukhari 877); people once came sweaty and dusty, and the smell bothered others (Bukhari 902).",
         "Do the general acts of cleanliness: hair, nails, perfume and your best, cleanest clothes.",
         "Go early, calmly and with dignity, humility and khushūʿ, intending to fulfil Allah’s command and hoping for His forgiveness. The earlier you go, the greater the reward (Muslim 850).",
       ]),
@@ -297,7 +297,7 @@ export const SOCIAL_LESSONS_4: Lesson[] = [
         "Attending gatherings of knowledge on Friday is very virtuous.",
         "Fill the day with dhikr, voluntary worship and good deeds.",
         "Do not forget there is an hour on Friday when duʿāʾ is answered (Bukhari 935). Many scholars hold it is in the last hour after ʿAṣr, so make plenty of duʿāʾ then.",
-        "It is disliked to set out on a journey on Friday before the Jumuʿah prayer.",
+        "It is disliked to set out on a journey on Friday after midday (zawāl) if you would miss the Jumuʿah prayer; before midday it is permitted.",
         "It is disliked to fast Friday alone without a day before or after (Muslim 1144).",
       ]),
       L("Key takeaways", [
@@ -312,7 +312,7 @@ export const SOCIAL_LESSONS_4: Lesson[] = [
       P("Allah commands kindness to the near neighbour and the distant neighbour (4:36), and Jibrīl kept urging the Prophet ﷺ about the neighbour until he thought the neighbour would be made an heir (Bukhari 6014). The book gives the neighbour’s legal rights and then a long list of practical kindnesses."),
       L("The neighbour’s legal rights", [
         "Pre-emption (shufʿah): when property is sold, the neighbour has a priority right to buy it, as the Hanafi school teaches.",
-        "A person may rest a beam on his neighbour’s wall, and the wall’s owner should not prevent him (Bukhari 2463).",
+        "A person may rest a beam on his neighbour’s wall, and the wall’s owner should not prevent him (Bukhari 2463). The Hanafis read this as a strong recommendation of kindness, not an enforceable right.",
       ]),
       L("Kindness to the neighbour begins with", [
         "Greeting him when you see him and asking after him.",

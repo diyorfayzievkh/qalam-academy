@@ -71,7 +71,7 @@ export const QUIZ_UZ: Record<string, Record<string, Q[]>> = {
       { q: "“Amalni tark etib, yozilganga suyanaylikmi?” deb so‘ralganda, Payg‘ambar ﷺ nima dedi?", options: ["“Ha”", "“Amal qilinglar, har kimga nima uchun yaratilgan bo‘lsa, o‘sha oson qilinadi”", "“Faqat namoz o‘qinglar”", "“Hech kim bilmaydi”"], why: "Buxoriy 4949." },
       { q: "Musibatdan keyin “qani endi” o‘rniga nima deyish kerak?", options: ["Hech narsa", "“Alloh taqdir qildi va U xohlaganini qildi”", "“Bu adolatsizlik”", "“Keyingi safar”"], why: "“Qani endi” shaytonga eshik ochadi." },
       { q: "Qadarni gunohga bahona qilish mumkinmi?", options: ["Ha", "Yo‘q", "Faqat kichik gunohlarga", "Faqat charchaganda"], why: "Biz tanlovlarimiz uchun mas’ulmiz." },
-      { q: "“Senga yetgan narsa…”", options: ["“…xato edi”", "“…sendan hech qachon o‘tib ketmasdi”", "“…omad edi”", "“…qaytarilishi mumkin”"], why: "Termiziy 2516." },
+      { q: "“Senga yetgan narsa…”", options: ["“…xato edi”", "“…sendan hech qachon o‘tib ketmasdi”", "“…omad edi”", "“…qaytarilishi mumkin”"], why: "Abu Dovud 4699." },
       { q: "Odam va Muso o‘rtasidagi bahsda kim g‘olib chiqdi?", options: ["Muso", "Odam", "Hech biri", "Ikkalasi"], why: "Buxoriy 3409." },
       { q: "Hamma narsa taqdir qilingani uchun duo befoydami?", options: ["Ha", "Yo‘q, duoning o‘zi taqdir qilingan sabablardandir", "Faqat Ramazonda", "Faqat payg‘ambarlar uchun"], why: "Alloh natijalarni sabablari, jumladan duo orqali taqdir qiladi." },
     ],
@@ -163,7 +163,7 @@ export const QUIZ_UZ: Record<string, Record<string, Q[]>> = {
     ],
     fatiha: [
       { q: "Payg‘ambar ﷺ Fotihani nima deb atagan?", options: ["Qur’onning qalbi", "Eng ulug‘ sura", "Eng qisqa sura", "Nur surasi"], why: "Takror o‘qiladigan yetti oyat, eng ulug‘ sura." },
-      { q: "Hanafiy mazhabida har bir rakatda Fotiha o‘qish…", options: ["Sunnat", "Mustahab", "Vojib", "Shart emas"], why: "Uni xato bilan tark etish sahv sajdasini talab qiladi." },
+      { q: "Hanafiy mazhabida farz namozning dastlabki ikki rakatida Fotiha o‘qish…", options: ["Sunnat", "Mustahab", "Vojib", "Shart emas"], why: "Uni u yerda xato bilan tark etish sahv sajdasini talab qiladi." },
       { q: "“Alhamdu lillahi robbil ’alamin” deganingda Alloh nima deydi?", options: ["“Bandam so‘radi”", "“Bandam Menga hamd aytdi”", "“Bandam unutdi”", "Hech narsa"], why: "Namozning bo‘linishi haqidagi hadisi qudsiy." },
       { q: "Qaysi oyat “Men bilan bandam o‘rtasida”?", options: ["Maliki yavmid din", "Iyyaka na’budu va iyyaka nasta’in", "Ar-rohmanir rohim", "Sirotallazina an’amta alayhim"], why: "Ibodat bizdan, yordam Undan." },
       { q: "Fotihadagi asosiy so‘rov nima?", options: ["Boylik", "To‘g‘ri yo‘lga hidoyat", "Uzun umr", "G‘alaba"], why: "“Ihdinas sirotal mustaqim.”" },

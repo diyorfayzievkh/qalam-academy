@@ -105,7 +105,7 @@ export const ISLAM_LESSONS: Lesson[] = [
 
   { id: "salah-pillar", title: "Ṣalāh: the prayer", summary: "Why the five prayers matter so much, and what they do for a believer.", sources: ["Quran 29:45", "Quran 20:14", "Bukhari 528", "Muslim 82", "Tirmidhi 413", "Bukhari 527", "Bukhari 349", "Muslim 233"],
     blocks: [
-      P("Ṣalāh is the second pillar and the first deed a person will be asked about on the Day of Judgment: if it is sound, the rest of his deeds are sound (Tirmidhi 413). It was the only pillar given directly to the Prophet ﷺ above the seven heavens, on the night of the Miʿrāj."),
+      P("Ṣalāh is the second pillar and the first deed a person will be asked about on the Day of Judgment: if it is sound, he has succeeded and prospered (Tirmidhi 413). It was the only pillar given directly to the Prophet ﷺ above the seven heavens, on the night of the Miʿrāj."),
       Qt("Establish the prayer for My remembrance.", "Quran 20:14", "وَأَقِمِ الصَّلَاةَ لِذِكْرِي", "Wa aqimi-ṣ-ṣalāta li-dhikrī."),
       L("From fifty to five", [
         "On the Miʿrāj, Allah prescribed fifty prayers a day. On the way down, Mūsā (as) advised the Prophet ﷺ to go back and ask for less, again and again, until they were five.",
@@ -166,7 +166,7 @@ export const ISLAM_LESSONS: Lesson[] = [
         ["On wealth above the niṣāb held a lunar year", "From any wealth"],
       ]),
       St("How zakāt works (Hanafi, in brief)", [
-        "Check the niṣāb: the value of 85 g of gold or 595 g of silver. Hanafi scholars generally use the silver niṣāb for cash, as it benefits the poor more.",
+        "Check the niṣāb: 87.48 g of gold or 612.36 g of silver. For cash and mixed savings, Hanafi scholars use the value of 612.36 g of silver.",
         "If your zakatable wealth (cash, savings, gold and silver, trade goods) stays at or above the niṣāb for one lunar year, zakāt is due.",
         "Deduct debts due now.",
         "Pay 2.5% of the total: one fortieth.",
@@ -176,12 +176,12 @@ export const ISLAM_LESSONS: Lesson[] = [
       L("The eight who may receive zakāt (9:60)", [
         "The poor (fuqarāʾ) and the needy (masākīn).",
         "Those employed to collect it.",
-        "Those whose hearts are to be reconciled.",
+        "Those whose hearts are to be reconciled. (In the Hanafi school this share is no longer given; the Companions agreed to stop it in the time of ʿUmar.)",
         "Freeing captives and slaves.",
         "Those in debt.",
         "In the path of Allah.",
         "The stranded traveller.",
-        "In the Hanafi school, zakāt is not given to one’s own parents, grandparents, children or spouse, since their support is already one’s duty.",
+        "In the Hanafi school, zakāt is not given to one’s parents and grandparents, children and grandchildren, or spouse, nor to Banū Hāshim, a wealthy person who owns the niṣāb, or a non-Muslim. Siblings, uncles and aunts in need may receive it, and it is better given to them.",
       ]),
       Rw("What zakāt and charity do", "1 → 700, and wealth never decreases", "Charity does not decrease wealth (Muslim 2588), and spending in Allah’s path grows like one grain into seven hundred (2:261). Zakāt of 2.5% on savings of 10,000 is 250, and it can feed a family for weeks, while Allah promises to replace it.", "Muslim 2588, Quran 2:261"),
       L("Withholding it", [
@@ -189,7 +189,7 @@ export const ISLAM_LESSONS: Lesson[] = [
         "Whoever is given wealth and does not pay its zakāt, it will come to him as a bald serpent on the Day of Judgment, saying “I am your wealth, I am your treasure” (Bukhari 1403).",
       ]),
       Sc("zakat-cousin", "Your cousin is drowning in debt. You owe zakāt this month. Can you give it to him?", [
-        { text: "No, zakāt can never go to relatives.", feedback: "Only parents, children, grandparents and spouse are excluded in the Hanafi school. A cousin in debt qualifies." },
+        { text: "No, zakāt can never go to relatives.", feedback: "Parents and grandparents, children and grandchildren, and the spouse are excluded in the Hanafi school. A cousin in debt who does not own the niṣāb qualifies." },
         { text: "Yes; a cousin in debt is among the eligible, and giving to a relative also keeps family ties.", best: true, feedback: "Charity to a needy relative counts twice: charity and kinship (Tirmidhi 658)." },
         { text: "Give it to anyone; categories don’t matter.", feedback: "Zakāt must go to the eight categories Allah named." },
       ]),
@@ -224,11 +224,11 @@ export const ISLAM_LESSONS: Lesson[] = [
         "Pregnant and nursing women who fear for themselves or the child may break and make up later (Hanafi).",
       ]),
       Cmp("Breaks the fast or not? (Hanafi, in brief)", "Breaks it", "Does not break it", [
-        ["Eating or drinking on purpose", "Eating or drinking by genuine forgetfulness: “Allah fed you and gave you drink” (Bukhari 1933)"],
-        ["Smoking", "Brushing teeth or miswāk, without swallowing"],
-        ["Intimate relations (with kaffārah: 60 days’ fasting)", "Taking a shower or swimming without swallowing"],
+        ["Eating, drinking or smoking on purpose (qaḍāʾ and kaffārah)", "Eating or drinking by genuine forgetfulness: “Allah fed you and gave you drink” (Bukhari 1933)"],
+        ["Medicine taken by mouth or nose", "Brushing teeth or miswāk, without swallowing"],
+        ["Intimate relations (qaḍāʾ and kaffārah: 60 consecutive days’ fasting, or feeding 60 poor only if unable to fast)", "Taking a shower or swimming without swallowing"],
         ["Deliberate vomiting of a mouthful", "Involuntary vomiting"],
-        ["Medicine taken by mouth or nose", "Eye drops, according to the Hanafi school"],
+        ["Swallowing something not eaten as food, like a pebble (qaḍāʾ only)", "Eye drops, according to the Hanafi school"],
       ]),
       L("The real fast", [
         "Whoever does not leave false speech and acting on it, Allah has no need of him leaving his food and drink (Bukhari 1903).",
@@ -236,9 +236,9 @@ export const ISLAM_LESSONS: Lesson[] = [
         "Fast the eyes, ears and tongue as well as the stomach.",
       ]),
       St("How to fast well", [
-        "Make the intention each night (or, in Hanafi fiqh, before midday for Ramadan).",
+        "Make the intention each night (or, in Hanafi fiqh, for Ramadan, before al-ḍaḥwah al-kubrā: the midpoint between true dawn and sunset, not 12 o’clock).",
         "Eat suḥūr: there is blessing in it (Bukhari 1923), and delay it towards Fajr.",
-        "Break the fast promptly at sunset with dates or water, and make duʿāʾ; the fasting person’s duʿāʾ at ifṭār is not rejected.",
+        "Break the fast promptly at sunset with dates or water, and make duʿāʾ. It is reported that the fasting person’s duʿāʾ is not turned back (Tirmidhi 3598, graded ḥasan by al-Tirmidhī).",
         "Pray tarāwīḥ, read the Quran, and seek Laylat al-Qadr in the last ten nights.",
         "Feed others: feeding a fasting person earns his reward (Tirmidhi 807).",
       ]),

@@ -21,7 +21,7 @@ export const ENRICH_RUHIY: Record<string, Block[]> = {
     S("nafs-alarm", "Your alarm rings for Fajr on a cold morning. Your nafs says “five more minutes”. What do you do?",
       no("Snooze; you’ll still make it.", "The ammārah wins small battles first; five minutes often becomes missing the prayer."),
       ok("Get up at once, say the waking duʿāʾ and splash water on your face.", "Each small win over the nafs trains it; that is tazkiyah in practice."),
-      no("Turn off the alarm; you can make it up later.", "Making up is for genuine oversleeping, not a planned choice.")),
+      no("Turn off the alarm; you can make it up later.", "Planning to miss the time is a sin. A missed prayer must still be made up, but that doesn’t erase the sin of delaying it on purpose.")),
     R(["Which of the three states describes me most of the time?", "What is one small daily battle with my nafs I could win this week?"], ["Ask each person: when did your conscience (lawwāmah) stop you from doing something wrong?", "Agree on one shared family “nafs challenge” for a week, like no phones at dinner."]),
   ],
   "ruhiy/heart": [
@@ -62,7 +62,7 @@ export const ENRICH_RUHIY: Record<string, Block[]> = {
   "ruhiy/murabata": [
     S("murabata-review", "It’s 10 pm. How do you practise muḥāsabah in two minutes?",
       no("Scroll until you fall asleep.", "The day ends without account."),
-      ok("Ask: did I keep this morning’s intention? Thank Allah for the good, seek forgiveness for the slips, and set tomorrow’s intention.", "Take account of yourselves before you are taken to account."),
+      ok("Ask: did I keep this morning’s intention? Thank Allah for the good, seek forgiveness for the slips, and set tomorrow’s intention.", "ʿUmar (ra) said: “Take account of yourselves before you are taken to account.”"),
       no("List everyone else’s mistakes today.", "Muḥāsabah is about your own soul, not others’.")),
     R(["What terms will I set with my soul tomorrow morning?", "Which of the six stations do I neglect most?"], ["Try a family “good deed and slip” round at dinner: one thing that went well, one to improve."]),
   ],
@@ -199,7 +199,7 @@ export const ENRICH_RUHIY: Record<string, Block[]> = {
       no("Keep it; it was their mistake.", "Taking what isn’t yours is a thorn on the path."),
       ok("Return it straight away.", "Taqwā is stepping carefully around the thorns, especially when no one sees."),
       no("Give it to charity instead.", "Charity from someone else’s money is not yours to give.")),
-    R(["Where do I walk carelessly among thorns?", "What doubtful thing could I leave for my religion’s sake?"], ["Tell children ʿUmar’s picture of taqwā and walk a ‘thorn path’ game together."]),
+    R(["Where do I walk carelessly among thorns?", "What doubtful thing could I leave for my religion’s sake?"], ["Tell children the reported answer Ubayy ibn Kaʿb (ra) gave ʿUmar (ra) about taqwā, walking carefully through a thorny path, and play a ‘thorn path’ game together."]),
   ],
   "ruhiy-2/shukr": [
     S("shukr-food", "Dinner is plain and your child complains. How do you teach shukr?",
@@ -230,7 +230,7 @@ export const ENRICH_RUHIY: Record<string, Block[]> = {
   "ruhiy-2/tawbah": [
     S("tawbah-again", "You keep falling into the same sin after repenting. What should you do?",
       no("Stop repenting; it’s hypocritical.", "That is exactly what Shayṭān wants."),
-      ok("Repent again sincerely, change what leads you to it, and add good deeds after.", "Allah does not tire of forgiving until you tire of asking."),
+      ok("Repent again sincerely, change what leads you to it, and add good deeds after.", "Allah says: “My servant knew he has a Lord who forgives sins… I have forgiven My servant” (Muslim 2758)."),
       no("Wait until you’re older to repent properly.", "No one knows their time.")),
     R(["What do I need to change around me to stop a repeated sin?", "Is there a right I owe someone that my repentance must include?"], ["Teach Sayyid al-Istighfār together and say it each morning."]),
   ],
@@ -319,7 +319,7 @@ export const ENRICH_RUHIY: Record<string, Block[]> = {
   "ruhiy-3/adl": [
     S("adl-siblings", "Two of your children quarrel; the one you usually favour is clearly in the wrong. What does justice require?",
       no("Side with your favourite as usual.", "Fear Allah and be just between your children (Bukhari 2587)."),
-      ok("Hear both, then judge fairly, even against your favourite.", "Justice even against those you love is closest to taqwā (5:8)."),
+      ok("Hear both, then judge fairly, even against your favourite.", "Stand for justice even against yourselves or your relatives (4:135); be just, that is nearer to taqwā (5:8)."),
       no("Punish both equally so no one complains.", "Equal punishment for unequal wrong isn’t justice.")),
     R(["Who do I treat unfairly because I dislike them?", "Where do I hold others to a stricter standard than myself?"], ["At family disputes, let each side speak fully before anyone decides."]),
   ],
@@ -410,12 +410,12 @@ export const ENRICH_RUHIY: Record<string, Block[]> = {
       no("Bring it up every time you argue.", "Forgiving slips is a right of friendship."),
       ok("Overlook it, or mention it gently once, and move on.", "Among the rights of a friend is forgiving his slips."),
       no("End the friendship.", "One slip is not a whole friendship.")),
-    R(["Which of the eight rights do I give my closest friend?", "Do my friends bring me closer to Allah?"], ["Ask children: what makes a good friend? Compare with the five people not to befriend."]),
+    R(["Which of the eight rights do I give my closest friend?", "Do my friends bring me closer to Allah?"], ["Ask children: what makes a good friend? Compare with the ‘Choosing friends’ list in the lesson."]),
   ],
   "ruhiy-3/society": [
     S("society-colleague", "A non-Muslim colleague invites you to a farewell lunch at a restaurant that serves alcohol. What do you do?",
       no("Refuse rudely and lecture them.", "Kindness and justice to peaceful people is commanded (60:8)."),
-      ok("Join if you can avoid the ḥarām, order something ḥalāl, or politely suggest another place; show warmth either way.", "Good character is the best invitation to Islam."),
+      ok("Join if no alcohol will be drunk at your table and you can order something ḥalāl; otherwise politely suggest another place or another time. Show warmth either way.", "Good character is the best invitation to Islam."),
       no("Drink a little to fit in.", "What is ḥarām remains ḥarām.")),
     R(["Do my non-Muslim colleagues see Islam in my honesty?", "Do I do my work with excellence?"], ["Bake something for non-Muslim neighbours on your Eid and tell them what it celebrates."]),
   ],

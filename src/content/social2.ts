@@ -26,7 +26,7 @@ export const SOCIAL_LESSONS_2: Lesson[] = [
         "Predatory animals and birds with fangs or talons, such as wolves, lions, tigers, eagles, falcons and hawks, are ḥarām (Muslim 1934).",
         "Creeping creatures such as scorpions, snakes, mice, ants, cockroaches and spiders are ḥarām.",
         "In the Hanafi view, the hyena, jackal and fox are also ḥarām.",
-        "Animals born of a lawful and an unlawful animal are ḥarām.",
+        "In the Hanafi school, an animal born of a lawful and an unlawful parent takes the ruling of its mother.",
         "Livestock such as camels, cattle, sheep and goats are lawful, as are non-predatory birds such as pigeons, doves, sparrows, quail, ducks, geese and chickens.",
         "Animals that live both on land and in water, such as crocodiles and frogs, are ḥarām.",
       ]),
@@ -35,8 +35,8 @@ export const SOCIAL_LESSONS_2: Lesson[] = [
         "Necessary (wājib): eating enough to be able to pray the obligatory prayers standing and to fast the obligatory fasts.",
         "Recommended (mandūb): eating enough to have strength to earn a living, study and do voluntary worship.",
         "Permitted (mubāḥ): eating until full, as long as it does no harm.",
-        "Disliked (makrūh): eating beyond fullness.",
-        "Forbidden (ḥarām): overeating to the point of harming yourself.",
+        "Eating beyond fullness is ḥarām in the Hanafi school, except in small exceptions such as keeping a shy guest company or gaining strength for the next day’s fast.",
+        "Overeating to the point of harming yourself is even more serious.",
         "It is recommended to eat from your own sacrifice and ʿaqīqah, and to eat at a wedding or banquet you are invited to.",
         "Somewhere unfamiliar, the Prophet ﷺ would first ask what the food was before eating it.",
       ]),
@@ -103,7 +103,7 @@ export const SOCIAL_LESSONS_2: Lesson[] = [
 
   { id: "social-hospitality", group: FO, title: "Host and guest", summary: "How a good host welcomes, and how a good guest behaves.", sources: [src("78–83"), "Bukhari 6018", "Bukhari 6135", "Quran 51:24–27"],
     blocks: [
-      P("“Whoever believes in Allah and the Last Day, let him honour his guest” (Bukhari 6018). Hospitality is one of the oldest virtues of Muslim society, going back to Ibrāhīm (as), who hurried to bring a roasted calf to his guests (51:24–27). The book sets out the adab on both sides."),
+      P("“Whoever believes in Allah and the Last Day, let him honour his guest” (Bukhari 6018). Hospitality is one of the oldest virtues of Muslim society, going back to Ibrāhīm (as), who hurried to bring a fat, roasted calf to his guests (51:24–27; 11:69). The book sets out the adab on both sides."),
       L("The host’s manners", [
         "Talk pleasantly and tell stories suited to the occasion.",
         "Keep a cheerful face, and show happiness when going in and out of the room.",
@@ -246,9 +246,9 @@ export const SOCIAL_LESSONS_2: Lesson[] = [
       ]),
       L("Friday: the weekly Eid", [
         "Friday is the weekly festival, when the Muslim community gathers. Many of the same sunnahs apply: ghusl, perfume and best clothes.",
-        "It is the master of days and the ḥajj of the poor, and deeds done on it are multiplied.",
+        "It is the master of days (Ibn Majah 1084).",
         "Send abundant ṣalawāt on the Prophet ﷺ on Friday.",
-        "As with the yearly Eids, it is better not to single it out for fasting.",
+        "Fasting on Eid is forbidden. Fasting Friday alone is mildly disliked; joining it with Thursday or Saturday removes this (Bukhari 1985).",
         "There is an hour on Friday in which duʿāʾ is answered (Bukhari 935).",
       ]),
       L("Key takeaways", [
@@ -277,13 +277,13 @@ export const SOCIAL_LESSONS_2: Lesson[] = [
         "It was not a dream or a journey of the soul only. The Prophet ﷺ travelled in body and soul, which is why the verse says “His servant”.",
         "In each heaven he met a prophet and many angels, and he received the five daily prayers.",
         "It showed that he was not an ordinary leader but the Messenger of Allah, and it lifted him after the Year of Sorrow.",
-        "Leading scholars of later centuries encouraged marking it in order to draw people closer to their religion.",
+        "Scholars have different views about holding special gatherings on these specific nights. Many scholars, including those in Central Asia, believe that coming together to learn about the Prophet’s ﷺ life, send blessings upon him, and feed the poor is a beautiful thing, as long as everything done is lawful. Other scholars prefer not to single out these specific dates for worship, to avoid creating un-Islamic rituals. Ultimately, all scholars agree that loving the Prophet ﷺ and following his Sunnah is a duty we should practice every single day.",
       ]),
       L("The Mawlid", [
         "The Prophet’s ﷺ birthday is marked in many Muslim lands. From the earliest days the ummah loved to learn and teach everything about him, which is how the Sīrah books were written.",
         "As people became busier and knew less of his life, scholars proposed a yearly occasion to teach it. The practice spread from Iraq across the Muslim world.",
-        "In Central Asia, the Mawlid of the Syrian scholar and poet Jaʿfar al-Barzanjī has long been recited.",
-        "Its main aim is to remind the ummah of the Prophet’s ﷺ life, character and Sunnah, and to renew love for him.",
+        "In Central Asia, the Mawlid of the Madinan scholar and poet Jaʿfar al-Barzanjī has long been recited.",
+        "Its main aim is to remind the ummah of the Prophet’s ﷺ life, character and Sunnah, and to renew love for him. As with al-Isrāʾ, scholars differ about holding such gatherings on fixed dates; all agree that loving him and following his Sunnah is a daily duty.",
       ]),
       L("Key takeaways", [
         "The Sharīʿah’s festivals are the two Eids and Friday.",
@@ -337,7 +337,7 @@ export const SOCIAL_LESSONS_2: Lesson[] = [
       L("Look to the future", [
         "Look at the future with hope, and work to become a mature, capable person.",
         "Every young person should have a clear picture of their future and define their goals in life.",
-        "You will be asked how you spent your youth (Tirmidhi 2417). Use it in knowledge, work and worship.",
+        "You will be asked how you spent your life (Tirmidhi 2417); another report adds “and your youth” (Tirmidhi 2416). Use it in knowledge, work and worship.",
       ]),
       L("Key takeaways", [
         "Parents first, then elders.",

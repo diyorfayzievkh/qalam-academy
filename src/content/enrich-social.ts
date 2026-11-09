@@ -21,7 +21,7 @@ export const ENRICH_SOCIAL: Record<string, Block[]> = {
   [k("sources")]: [
     S("sources-gift", "A parent asks what the best gift for a child’s birthday is. What does the Sunnah say?",
       no("The most expensive toy.", "Toys are fine, but not the best gift."),
-      ok("Good adab: no parent gives a child anything better (Tirmidhi 1952).", "Spend time teaching manners, alongside any gift."),
+      ok("Good adab: a reported hadith says no parent gives a child anything better (Tirmidhi 1952, weak chain).", "Spend time teaching manners, alongside any gift."),
       no("Money for the future only.", "Money without manners is easily lost.")),
     R(["What adab did my parents give me that I still use?"], ["Choose one Quranic manner (like 31:19, lowering the voice) to practise as a family this week."]),
   ],
@@ -91,7 +91,7 @@ export const ENRICH_SOCIAL: Record<string, Block[]> = {
   [k("halal-food")]: [
     S("halal-check", "At a friend’s house abroad, you’re unsure whether the meat is ḥalāl. What do you do?",
       no("Eat it to be polite.", "When in doubt, ask, as the Prophet ﷺ did."),
-      ok("Ask politely, and if unsure, choose the vegetarian or seafood options.", "Leave what makes you doubt for what does not."),
+      ok("Ask politely, and if unsure, choose the vegetarian or fish options. In the Hanafi school only fish is lawful from the sea; Hanafi scholars differ on shrimp.", "Leave what makes you doubt for what does not."),
       no("Accuse them of feeding you ḥarām.", "Ask gently; don’t accuse.")),
     R(["Do I check what I eat as carefully as what I buy?"], ["Teach children to read ingredient labels for gelatine and alcohol."]),
   ],
@@ -233,7 +233,7 @@ export const ENRICH_SOCIAL: Record<string, Block[]> = {
       no("Only packing and tickets.", "The book lists spiritual preparation too."),
       ok("Settle debts, seek your parents’ duʿāʾ, pray istikhārah and two rakʿahs before leaving.", "Prepare the heart as well as the bags."),
       no("Leave without telling family.", "Tell them, and ask for their prayers.")),
-    R(["Do I use the traveller’s concessions to keep my prayers?"], ["Learn the travel duʿāʾ together before the next family trip."]),
+    R(["Do I shorten my prayers when travelling, as the Hanafi school requires?"], ["Learn the travel duʿāʾ together before the next family trip."]),
   ],
   [k("media")]: [
     S("media-viral", "A viral video shows a scandal about a public figure. Should you share it?",
@@ -266,7 +266,7 @@ export const ENRICH_SOCIAL: Record<string, Block[]> = {
   [k("congregation")]: [
     S("congregation-gap", "In the row, there’s a gap next to you. What do you do?",
       no("Leave it; it’s not your space.", "Gaps in the rows were warned against."),
-      ok("Move gently to close it, shoulder to shoulder.", "Straight rows are part of the perfection of prayer (Bukhari 723)."),
+      ok("Move gently to close it, shoulder to shoulder.", "Straight rows are part of the perfection of prayer (Muslim 433)."),
       no("Spread your prayer mat to fill it.", "Close it with people, not things.")),
     R(["Which congregational prayer could I add this week?"], ["Fathers: take a child to Fajr in the masjid once a week."]),
   ],
@@ -336,7 +336,7 @@ export const ENRICH_SOCIAL: Record<string, Block[]> = {
   [k("visiting-sick")]: [
     S("sick-visit", "You visit a friend in hospital. What do you avoid?",
       no("Listing everyone you know who died of the same illness.", "That frightens and saddens the patient."),
-      ok("Keep it short, bring something small, raise their spirits and ask for their duʿāʾ.", "A sick person’s duʿāʾ is accepted."),
+      ok("Keep it short, bring something small, raise their spirits and ask for their duʿāʾ.", "It is reported that a sick person’s duʿāʾ is like the angels’."),
       no("Staying for hours.", "Don’t tire the patient, unless they ask you to stay.")),
     R(["Who is sick in my circle that I haven’t visited?"], ["Make a family card and visit a sick relative together."]),
   ],

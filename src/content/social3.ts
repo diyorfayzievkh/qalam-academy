@@ -24,7 +24,7 @@ export const SOCIAL_LESSONS_3: Lesson[] = [
       ]),
       L("General rulings on clothes", [
         "Any fabric is lawful unless the Sharīʿah forbids it, as with silk for men.",
-        "Tanned hides of animals that died without slaughter may be worn. Wool and hair of lawful animals are pure. Most jurists permit tanned skins of predators.",
+        "Tanned hides of animals that died without slaughter may be worn. Wool and hair of lawful animals are pure. Every skin except pig and human becomes pure by tanning, but using predator skins is disliked (Abu Dawud 4132).",
         "White is recommended: “Wear white, it is the best of your clothes” (Abu Dawud 4061). Green, the dress of Paradise, is recommended.",
         "Bright, pure red is disliked for men. Black is permitted. Striped, multi-coloured fabric is permitted.",
         "Clothes with pictures of animals or people are ḥarām for men and women, and so are clothes with a cross. Pictures of non-living things are fine.",
@@ -59,14 +59,14 @@ export const SOCIAL_LESSONS_3: Lesson[] = [
         "When undressing, fold clothes or hang them neatly and put them away.",
       ]),
       L("For men", [
-        "It is obligatory for an adult man to wear clothes that cover his ʿawrah, from the navel to the knee.",
+        "It is obligatory for an adult man to wear clothes that cover his ʿawrah, from just below the navel to the knees, the knees included.",
         "Silk and gold are ḥarām for men and permitted for women (Tirmidhi 1720).",
         "A silver ring is permitted for men.",
         "Men may not wear women’s clothing or imitate women (Bukhari 5885).",
       ]),
       L("For women", [
         "It is obligatory for an adult Muslim woman to wear clothes that cover her ʿawrah and do not reveal the shape of her body (24:31, 33:59).",
-        "Before non-maḥram men, a woman’s ʿawrah is her whole body except the face and hands.",
+        "Once a girl reaches puberty, she covers her whole body during prayer, leaving only her face, hands, and feet uncovered. When she is around men who are not part of her close family (non-maḥrams), many Hanafi scholars teach that she should also cover her face if there is a risk of unwanted attention or misunderstanding. Because families and communities apply this in different ways, it is always a good idea to ask your parents or a trusted teacher what is best for you.",
         "Before other women, her ʿawrah is from the navel to the knee.",
         "A man may look at the women who are his maḥrams except the back, stomach and thighs.",
         "Women may not wear men’s clothing or imitate men (Bukhari 5885).",
@@ -90,11 +90,11 @@ export const SOCIAL_LESSONS_3: Lesson[] = [
         "Do not talk without need, and do not stay longer than necessary.",
         "Urinate sitting.",
         "Do not relieve yourself facing into the wind, in water, in graveyards, on paths, in places people rest, in cracks and holes, or under fruit trees.",
-        "Do not face the qiblah or turn your back to it (Muslim 262).",
+        "Do not face the qiblah or turn your back to it (Muslim 264).",
         "Do not look at the sky or at what comes out of you.",
       ]),
       L("Istinjāʾ: cleaning oneself", [
-        "Cleaning with stone or similar after anything that breaks wuḍūʾ, except sleep and wind, is sunnah.",
+        "Cleaning with stone or similar after anything that leaves the front or back passage, except wind, is sunnah.",
         "If the impurity spreads beyond the size of a dirham, washing is obligatory.",
         "Do not use bones, dung, food, coal, glass, cloth or leaves, or anything useful, and do not use the right hand.",
         "Paper made for writing, especially paper with writing on it, may not be used. Paper made for the toilet is fine.",
@@ -113,13 +113,13 @@ export const SOCIAL_LESSONS_3: Lesson[] = [
         "Afterwards, say the shahādah and the duʿāʾ, and pray two rakʿahs.",
       ]),
       L("Ghusl", [
-        "Ghusl is obligatory after sexual discharge, intercourse, finding signs of discharge on waking, and at the end of menstruation and post-natal bleeding.",
+        "Ghusl is obligatory after emission of maniy with desire (madhy only breaks wuḍūʾ), intercourse, finding signs of discharge on waking, and at the end of menstruation and post-natal bleeding.",
         "It is sunnah for Friday, the two Eids, iḥrām and the day of ʿArafah.",
       ]),
       L("The sunnahs of the fitrah", [
         "Five are from the fitrah: circumcision, removing pubic hair, trimming the moustache, clipping the nails and plucking the armpits (Bukhari 5889).",
         "Using the miswāk, keeping hair tidy, and wearing pleasant scent are part of a Muslim’s personal cleanliness.",
-        "“Allah is pure and loves purity; clean and loves cleanliness” (Tirmidhi 2799).",
+        "“Purification is half of faith” (Muslim 223), and “Allah is beautiful and loves beauty” (Muslim 91).",
       ]),
       L("Key takeaways", [
         "Cleanliness is faith, and prayer depends on it.",

@@ -86,7 +86,7 @@ export const STORIES_2: Record<string, Story[]> = {
       "ʿAbdullāh said: “That is what has brought you there, and it is what we cannot manage.”",
     ],
     lesson: "A heart clean of envy and grudges can outweigh many extra acts of worship.",
-    src: "Musnad Aḥmad 12697",
+    src: "Musnad Aḥmad 12697 (reported)",
     check: { q: "What was the man’s secret?", options: ["All-night prayer", "A heart free of envy and deceit toward Muslims", "Great wealth", "Long fasts"], answer: 1, why: "A clean heart raised him to Paradise." } }],
 
   "ruhiy-3/adl": [{ type: "story", id: "makhzumi", kind: P, title: "“Even if it were Fāṭimah”",
@@ -176,7 +176,7 @@ export const STORIES_2: Record<string, Story[]> = {
       "He said: “Then answer it.”",
     ],
     lesson: "Even a blind man without a guide was encouraged to come to the congregation if he could hear the adhān. That shows how great its place is.",
-    src: "Muslim 653",
+    src: "Muslim 653; Abu Dawud 552 (named Ibn Umm Maktūm)",
     check: { q: "What did the Prophet ﷺ ask the blind man?", options: ["“Can you see the masjid?”", "“Do you hear the call to prayer?”", "“Do you have money?”", "“Are you tired?”"], answer: 1, why: "If you hear the call, answer it." } }],
 
   "social/social-jumuah": [{ type: "story", id: "necks", kind: P, title: "The man stepping over necks",
@@ -211,7 +211,7 @@ export const STORIES_2: Record<string, Story[]> = {
     src: "Muslim 2567",
     check: { q: "Why was the man visiting his brother?", options: ["To collect a debt", "Only out of love for Allah’s sake", "For business", "To complain"], answer: 1, why: "And Allah loved him for it." } }],
 
-  "social/social-youth": [{ type: "story", id: "ibn-abbas", kind: C, title: "Advice to a boy on a camel",
+  "social/social-youth": [{ type: "story", id: "ibn-abbas", kind: C, title: "Advice to a boy riding behind him",
     scene: "Ibn ʿAbbās, still a young boy, was riding behind the Prophet ﷺ.",
     story: [
       "The Prophet ﷺ said: “Young man, I will teach you some words.”",
@@ -283,6 +283,6 @@ export const STORIES_2: Record<string, Story[]> = {
       "Ibn ʿUmar himself kept doing it after him, following his example.",
     ],
     lesson: "The Prophet ﷺ made a weekly habit of a deed whose reward is like an ʿumrah. Small regular visits to blessed places are part of his Sunnah.",
-    src: "Bukhari 1193, Muslim 1399",
+    src: "Bukhari 1193, Muslim 1399; Ibn Majah 1412 (like an ʿumrah)",
     check: { q: "How often did the Prophet ﷺ visit Masjid Qubāʾ?", options: ["Once in his life", "Every Saturday", "Only in Ramadan", "Every Friday"], answer: 1, why: "Riding or walking, every Saturday." } }],
 };

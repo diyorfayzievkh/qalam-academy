@@ -17,12 +17,12 @@ export const PICTURES: Record<"uz" | "ru", Pics> = {
     "islam/hajj": { 1: "“Kim haj qilsa-yu, fahsh va fisq qilmasa, onasi tuqqan kundagidek bo‘lib qaytadi” (Buxoriy 1521). “Qabul bo‘lgan hajning mukofoti faqat jannatdir” (Buxoriy 1773). Alloh Arafa kunidagidan ko‘p odamni do‘zaxdan ozod qiladigan kun yo‘q (Muslim 1348)." },
     "salah/places": {
       6: "Kishi tahoratni yaxshilab olib, faqat namoz uchun masjidga yursa, har bir qadami uni bir daraja ko‘taradi va bir gunohini o‘chiradi (Buxoriy 647). 10 daqiqalik yo‘l taxminan 1000 qadam: bitta namozga borayotib ming gunoh to‘kiladi va ming daraja olinadi.",
-      7: "Jamoat bilan namoz yolg‘iz o‘qilgan namozdan yigirma yetti daraja afzal (Buxoriy 645). Kuniga besh vaqt jamoat bilan o‘qilgan namoz yolg‘iz o‘qilgan 135 namoz, ya’ni 27 kundan ortiq namoz savobiga teng, har kuni.",
+      7: "Jamoat bilan namoz yolg‘iz o‘qilgan namozdan yigirma yetti daraja afzal (Buxoriy 645). Kuniga besh vaqt jamoat bilan o‘qilgan namoz yolg‘iz o‘qilgan 135 namoz, ya’ni 27 kunlik namoz savobiga teng, har kuni.",
       8: "Kim xuftonni jamoat bilan o‘qisa, go‘yo tunning yarmini namozda o‘tkazgandek bo‘ladi; kim bomdodni ham jamoat bilan o‘qisa, go‘yo butun tunni namozda o‘tkazgandek bo‘ladi (Muslim 656). Ikki qisqa namoz va sen uxlab yotganingda amal daftaringda to‘liq bir tunlik ibodat yoziladi.",
       10: "Kim uyida poklanib, keyin Qubo masjidiga kelib, unda namoz o‘qisa, unga bir umra savobi bor (Ibn Moja 1412).",
     },
     "salah/janazah": {
-      1: "Payg‘ambar ﷺ davrida qirot kichik tanga edi. U bu so‘zni savob uchun ishlatib, uni tushuntirgan: ikkisining kichigi Uhud tog‘idek (Muslim 945). Uhud taxminan 7,5 km uzun va 1077 m baland, Burj Xalifadan (828 m) baland va ketma-ket qo‘yilgan 75 ga yaqin futbol maydonicha uzun. Namozga qolsang, shunday bir tog‘ savob olasan; dafngacha qolsang, ikkitasini.",
+      1: "Payg‘ambar ﷺ davrida qirot kichik tanga edi. U bu so‘zni savob uchun ishlatib, uni tushuntirgan: ikkisining kichigi Uhud tog‘idek (Muslim 945). Uhud taxminan 7 km uzun, Madina tekisligidan yuzlab metr baland ko‘tarilgan tog‘, ketma-ket qo‘yilgan 70 ga yaqin futbol maydonicha uzun. Namozga qolsang, shunday bir tog‘ savob olasan; dafngacha qolsang, ikkitasini.",
       2: "Agar Allohga hech narsani shirk keltirmaydigan qirq kishi bir musulmonga janoza namozini o‘qisa, Alloh ularning u haqdagi shafoatini qabul qiladi (Muslim 948). Yuz kishi o‘qisa ham shunday (Muslim 947). Janoza namoziga qo‘shilish notanish bir kishining jannatga kirishiga sabab bo‘lishi mumkin, bir kun boshqalar ham sen uchun shunday qiladi.",
     },
     "salah/taziyah": { 1: "“Qaysi mo‘min birodariga musibatda ta’ziya bildirsa, Alloh unga Qiyomat kunida karomat liboslarini kiydiradi” (Ibn Moja 1601). Qayg‘udagi oilaga qisqa ziyorat va bir necha so‘z, buning evaziga butun maxluqot oldida karomat libosi." },
@@ -45,12 +45,12 @@ export const PICTURES: Record<"uz" | "ru", Pics> = {
     "islam/hajj": { 1: "«Кто совершит хадж, не совершая непристойностей и грехов, вернётся таким, каким родила его мать» (Бухари 1521). «Наградой за принятый хадж может быть только Рай» (Бухари 1773). И нет дня, в который Аллах освобождает от Огня больше людей, чем в день Арафа (Муслим 1348)." },
     "salah/places": {
       6: "Когда человек хорошо совершает омовение и идёт в мечеть только ради молитвы, каждый его шаг поднимает его на ступень и стирает один грех (Бухари 647). 10 минут пешком — это примерно 1000 шагов: тысяча грехов сброшена и тысяча ступеней обретена по пути к одной молитве.",
-      7: "Коллективная молитва на двадцать семь степеней лучше молитвы в одиночку (Бухари 645). Пять коллективных молитв в день несут награду 135 молитв в одиночку — больше, чем за 27 дней, и так каждый день.",
+      7: "Коллективная молитва на двадцать семь степеней лучше молитвы в одиночку (Бухари 645). Пять коллективных молитв в день несут награду 135 молитв в одиночку — за 27 дней, и так каждый день.",
       8: "Кто совершил иша в джамаате, тот словно простоял в молитве полночи; а кто совершил в джамаате и фаджр, тот словно простоял всю ночь (Муслим 656). Две короткие молитвы — и в записи целая ночь поклонения, пока ты спал.",
       10: "Кто очистится дома, затем придёт в мечеть Куба и помолится в ней, тому награда умры (Ибн Маджа 1412).",
     },
     "salah/janazah": {
-      1: "Во времена Пророка ﷺ кират был мелкой монетой. Он использовал это слово для награды и объяснил: меньший из двух подобен горе Ухуд (Муслим 945). Ухуд — около 7,5 км в длину и 1077 м в высоту, выше Бурдж-Халифы (828 м) и длиной примерно с 75 футбольных полей подряд. Останься на молитву — и унесёшь одну такую гору награды; останься до погребения — две.",
+      1: "Во времена Пророка ﷺ кират был мелкой монетой. Он использовал это слово для награды и объяснил: меньший из двух подобен горе Ухуд (Муслим 945). Ухуд — гора около 7 км в длину, поднимающаяся на сотни метров над равниной Медины, длиной примерно с 70 футбольных полей подряд. Останься на молитву — и унесёшь одну такую гору награды; останься до погребения — две.",
       2: "Если над мусульманином совершат погребальную молитву сорок человек, не придающих Аллаху сотоварищей, Аллах примет их заступничество за него (Муслим 948). Если сто — так же (Муслим 947). Участие в джаназе может помочь незнакомцу войти в Рай, а однажды другие сделают это и для тебя.",
     },
     "salah/taziyah": { 1: "«Нет верующего, который утешит брата в беде, без того чтобы Аллах не облачил его в одежды почёта в Судный день» (Ибн Маджа 1601). Короткий визит и несколько слов скорбящей семье — и одежды почёта перед всеми творениями." },

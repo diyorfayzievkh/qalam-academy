@@ -23,9 +23,9 @@ const s = (surah: number, name: string, arabic: string, meaning: string, ayahs: 
 
 export const HIFZ: HifzItem[] = [
   // ---- Start here: what every Muslim recites in prayer ----
-  s(1, "Al-Fātiḥah", "الفاتحة", "The Opening", 7, "Start here", "The greatest sūrah, recited in every rakʿah (Bukhari 4474)."),
+  s(1, "Al-Fātiḥah", "الفاتحة", "The Opening", 7, "Start here", "The greatest sūrah (Bukhari 4474), recited in every prayer."),
   s(112, "Al-Ikhlāṣ", "الإخلاص", "Sincerity", 4, "Start here", "Equal to one third of the Quran (Bukhari 5013)."),
-  s(113, "Al-Falaq", "الفلق", "The Daybreak", 5, "Start here", "Nothing compares to it for seeking refuge (Muslim 814)."),
+  s(113, "Al-Falaq", "الفلق", "The Daybreak", 5, "Start here", "Nothing compares to it for seeking refuge (Nasāʾī 5438)."),
   s(114, "An-Nās", "الناس", "Mankind", 6, "Start here", "Recited with Al-Falaq for protection, morning, evening and before sleep."),
   s(108, "Al-Kawthar", "الكوثر", "Abundance", 3, "Start here", "The shortest sūrah in the Quran."),
   s(103, "Al-ʿAṣr", "العصر", "Time", 3, "Start here"),

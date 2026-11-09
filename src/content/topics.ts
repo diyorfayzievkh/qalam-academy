@@ -517,8 +517,8 @@ export const TOPICS: Topic[] = [
           "On his head"
         ],
         "answer": 1,
-        "why": "Men fold below the navel; women place their hands on the chest.",
-        "src": "Abu Dawud 756"
+        "why": "In the Hanafi school, men place the hands below the navel, following reports from ʿAlī and the Kufan scholars; women place them on the chest.",
+        "src": "Hanafi fiqh (Muṣannaf Ibn Abī Shaybah)"
       },
       {
         "q": "How many sunnah rakʿahs are prayed before Fajr?",

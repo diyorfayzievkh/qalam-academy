@@ -25,7 +25,7 @@ export const RUHIY2_LESSONS: Lesson[] = [
         "Oneness of lordship (rubūbiyyah): Allah alone creates, owns, sustains and controls everything.",
         "Oneness of divinity (ulūhiyyah): Allah alone deserves worship, so prayer, duʿāʾ, sacrifice, vows and reliance are for Him alone.",
         "Oneness of names and attributes: affirming what Allah affirmed for Himself, without likening Him to creation and without denying any of it.",
-        "The theologians express it as: necessary existence, creation and the right to be worshipped belong to Allah alone. Imam al-Ashʿarī spoke of oneness of the essence, of the attributes and of actions: nothing in existence has real effect except Allah.",
+        "The theologians express it as: necessary existence, creation and the right to be worshipped belong to Allah alone. Allah is One in His essence (dhāt), attributes (ṣifāt) and actions (afʿāl), as the Māturīdī theologians teach: nothing in existence has real effect except Allah.",
       ]),
       L("What worship (ʿibādah) is", [
         "Worship is the utmost humility joined with the utmost love, directed to Allah alone.",
@@ -258,7 +258,7 @@ export const RUHIY2_LESSONS: Lesson[] = [
     blocks: [
       P("Taqwā comes from a word meaning to guard and protect oneself. The book warns against a one-sided picture of taqwā as withdrawing from life into a dark room of worship. It is guarding oneself from sin and doing good deeds abundantly. Al-Rāghib defined it as protecting the soul from sin by leaving what is forbidden, perfected by leaving some of what is permitted."),
       L("ʿUmar’s image of taqwā", [
-        "When ʿUmar (ra) asked about taqwā, he was told it is like crossing a thorny field barefoot, stepping carefully to avoid the thorns.",
+        "It is reported that when ʿUmar (ra) asked Ubayy ibn Kaʿb about taqwā, Ubayy said it is like crossing a thorny path, gathering your clothes and stepping carefully to avoid the thorns.",
         "Sins are the thorns. Whoever is careful of them has taqwā, and it becomes a state of the heart that is always aware of Allah.",
       ]),
       L("Why it matters", [
@@ -392,12 +392,12 @@ export const RUHIY2_LESSONS: Lesson[] = [
       ]),
     ] },
 
-  { id: "tawbah", title: "Tawbah: repentance", summary: "Knowledge, regret, and leaving the sin: past, present and future.", sources: [src("289–330"), "Quran 66:8", "Quran 24:31", "Quran 39:53", "Quran 2:222", "Muslim 2702", "Muslim 2759", "Bukhari 6309", "Ibn Majah 4250"],
+  { id: "tawbah", title: "Tawbah: repentance", summary: "Knowledge, regret, and leaving the sin: past, present and future.", sources: [src("289–330"), "Quran 66:8", "Quran 24:31", "Quran 39:53", "Quran 2:222", "Muslim 2702", "Muslim 2759", "Bukhari 6309", "Ibn Majah 4252"],
     blocks: [
       P("Tawbah means returning: coming back to Allah after moving away from Him. The book explains that its reality has three parts that follow one another: knowledge, then a state of the heart, then action. Whoever does not see sin as what distances him from the Beloved will never repent."),
       L("The three parts of repentance", [
         "Knowledge: knowing how great the harm of sin is, and that it is a wall between the servant and what he loves.",
-        "State: the regret that this knowledge produces in the heart. “Regret is repentance” (Ibn Majah 4250).",
+        "State: the regret that this knowledge produces in the heart. “Regret is repentance” (Ibn Majah 4252).",
         "Action: leaving the sin now, resolving never to return to it, and making up for the past through expiation and making up missed obligations.",
         "If the sin involved another person’s right, a fourth condition is added: return the right or seek their pardon.",
       ]),
@@ -632,7 +632,7 @@ export const RUHIY2_QUIZ = {
     { q: "Does taking the means (working, sowing seed) contradict tawakkul?", options: ["Yes, true trust means doing nothing", "No, taking the means while relying on Allah is part of tawakkul", "Only for scholars", "Only in Ramadan"], answer: 1, why: "“Tie your camel, and rely on Allah” (Tirmidhi 2517).", src: src("79–94") },
     { q: "Which verse says “If you love Allah, follow me, and Allah will love you”?", options: ["2:255", "3:31", "18:10", "112:1"], answer: 1, why: "Āl ʿImrān 3:31.", src: "Quran 3:31" },
     { q: "Imam al-Ghazālī called fear and hope…", options: ["Two enemies", "Two wings", "Two diseases", "Two veils"], answer: 1, why: "The two wings on which those brought near fly to every station.", src: src("107–147") },
-    { q: "How was taqwā described to ʿUmar (ra)?", options: ["Praying all night", "Crossing a thorny field barefoot, stepping carefully", "Leaving all work", "Speaking softly"], answer: 1, why: "Sins are the thorns; taqwā is being careful of them.", src: src("136–199") },
+    { q: "According to a reported narration, how did Ubayy ibn Kaʿb describe taqwā to ʿUmar (ra)?", options: ["Praying all night", "Crossing a thorny field barefoot, stepping carefully", "Leaving all work", "Speaking softly"], answer: 1, why: "Sins are the thorns; taqwā is being careful of them.", src: src("136–199") },
     { q: "Which is higher, according to the book: patience or contentment (riḍā)?", options: ["Patience", "Contentment", "They are equal", "Neither"], answer: 1, why: "Patience is part of faith; contentment is its highest degree.", src: src("245–277") },
     { q: "Which of these is NOT one of the three parts of repentance?", options: ["Knowledge of the harm of sin", "Regret", "Leaving the sin and resolving not to return", "Telling everyone about the sin"], answer: 3, why: "Repentance is knowledge, regret and action. Sins are concealed, not announced.", src: src("289–330") },
     { q: "What does tabayyun teach us to do?", options: ["Forward news quickly", "Verify news before acting on it", "Ignore all news", "Only trust friends"], answer: 1, why: "If a wrongdoer brings you news, verify it (49:6).", src: "Quran 49:6" },

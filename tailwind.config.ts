@@ -38,8 +38,8 @@ const config: Config = {
         danger: { DEFAULT: "rgb(var(--bad) / <alpha-value>)", soft: "rgb(var(--bad-soft) / <alpha-value>)" },
       },
       fontFamily: {
-        sans: ['"Nunito Sans"', "system-ui", "-apple-system", '"Segoe UI"', "sans-serif"],
-        display: ['"Reem Kufi"', '"Nunito Sans"', "system-ui", "sans-serif"],
+        sans: ['"Nunito Sans"', "Amiri", "system-ui", "-apple-system", '"Segoe UI"', "sans-serif"],
+        display: ['"Reem Kufi"', '"Nunito Sans"', "Amiri", "system-ui", "sans-serif"],
         arabic: ["Amiri", '"Traditional Arabic"', "serif"],
       },
       borderRadius: { card: "14px" },

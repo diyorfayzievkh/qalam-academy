@@ -10,14 +10,18 @@ import { BEDTIME, BEDTIME_CATS, bedtimeMinutes, findBedtime, type Bedtime } from
 import { StoryCover } from "@/components/story-art";
 import { useT } from "@/components/lang";
 import { StoryThemeToggle, useStoryTheme } from "@/components/story-theme";
+import { useStoryTranslations } from "@/content/i18n/stories";
 
 const SLEEP_DUA = { ar: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا", tr: "Bismika-llāhumma amūtu wa aḥyā.", en: "In Your name, O Allah, I die and I live." };
 
 export default function StoryPage() {
   const { id } = useParams<{ id: string }>();
-  const s = findBedtime(id);
+  const base = findBedtime(id);
   const { studied, markStudied } = useProgress();
-  const { t } = useT();
+  const { t, lang } = useT();
+  const trMap = useStoryTranslations(lang);
+  const tr = base ? trMap?.[base.id] : undefined;
+  const s = base ? (tr ? { ...base, ...tr } : base) : undefined;
   const [dim, setDim] = useState(false);
   const [mode, setMode] = useStoryTheme();
   const [prog, setProg] = useState(0);
@@ -56,7 +60,8 @@ export default function StoryPage() {
           </div>
         </div>
         <StoryCover s={s} day={mode === "paper"} className="h-[180px] rounded-card sm:h-[220px]" />
-        <div data-dim><ReadAloud s={s} /></div>
+        {lang !== "en" && trMap && !tr && <p data-dim className="rounded-xl bg-gold-soft px-4 py-2.5 text-[0.9rem] font-bold text-gold">{t("This story is not translated yet, so it is shown in English.")}</p>}
+        <div data-dim><ReadAloud s={s} lang={tr ? lang : "en"} /></div>
         <article ref={art} className="flex flex-col gap-5 rounded-card border border-border bg-bg-surface/70 px-5 py-6 sm:px-9 sm:py-8">
           <span className="eyebrow">{t("{n}-minute story", { n: bedtimeMinutes(s) })}</span>
           {s.paras.map((p, k) => (
@@ -78,14 +83,14 @@ export default function StoryPage() {
           <button type="button" className="btn btn-gold" disabled={done} onClick={() => markStudied(`story:${s.id}`, "bedtime story", POINTS.lessonRead)}>
             {done ? `${t("Read")} ✓` : `${t("Finished")} · +${POINTS.lessonRead}`}
           </button>
-          <Link className="btn btn-ghost" href={`/stories/${next.id}`}>{t("Next")}: {next.title}</Link>
+          <Link className="btn btn-ghost" href={`/stories/${next.id}`}>{t("Next")}: {trMap?.[next.id]?.title ?? next.title}</Link>
         </div>
       </Page>
     </div>
   );
 }
 
-function ReadAloud({ s }: { s: Bedtime }) {
+function ReadAloud({ s, lang }: { s: Bedtime; lang: "en" | "uz" | "ru" }) {
   const { t } = useT();
   const [state, setState] = useState<"idle" | "playing" | "paused">("idle");
   const [ok, setOk] = useState(false);
@@ -102,11 +107,12 @@ function ReadAloud({ s }: { s: Bedtime }) {
     const synth = window.speechSynthesis;
     if (state === "paused") { synth.resume(); setState("playing"); return; }
     synth.cancel();
-    const parts = [s.title, ...s.paras, `The lesson. ${s.moral}`];
-    const voice = synth.getVoices().find((v) => v.lang.startsWith("en"));
+    const parts = [s.title, ...s.paras, `${t("The lesson")}. ${s.moral}`];
+    const code = { en: "en", uz: "uz", ru: "ru" }[lang];
+    const voice = synth.getVoices().find((v) => v.lang.toLowerCase().startsWith(code));
     queue.current = parts.map((text, k) => {
       const u = new SpeechSynthesisUtterance(text);
-      u.rate = 0.9; u.pitch = 1;
+      u.rate = 0.9; u.pitch = 1; u.lang = { en: "en-US", uz: "uz-UZ", ru: "ru-RU" }[lang];
       if (voice) u.voice = voice;
       if (k === parts.length - 1) u.onend = () => setState("idle");
       synth.speak(u);

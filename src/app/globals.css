@@ -157,7 +157,7 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; a
     linear-gradient(180deg, #060C1E, #0F1D3C);
 }
 .night .btn { color: #1A1405; }
-.font-story { font-family: "Literata", Georgia, "Times New Roman", serif; }
+.font-story { font-family: "Literata", "Amiri", Georgia, "Times New Roman", serif; }
 .lights-down [data-dim] { opacity: .12; transition: opacity .6s ease; }
 .lights-down [data-dim]:hover { opacity: .6; }
 [data-dim] { transition: opacity .6s ease; }

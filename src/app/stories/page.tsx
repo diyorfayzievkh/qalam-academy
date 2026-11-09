@@ -8,11 +8,13 @@ import { BEDTIME, BEDTIME_CATS, bedtimeMinutes, type BedtimeCat } from "@/conten
 import { StoryCover } from "@/components/story-art";
 import { useT } from "@/components/lang";
 import { StoryThemeToggle, useStoryTheme } from "@/components/story-theme";
+import { useStoryTranslations } from "@/content/i18n/stories";
 
 export default function StoriesPage() {
   const { studied } = useProgress();
-  const { t } = useT();
+  const { t, lang } = useT();
   const [mode, setMode] = useStoryTheme();
+  const tr = useStoryTranslations(lang);
   const [cat, setCat] = useState<BedtimeCat | "all">("all");
   const read = BEDTIME.filter((s) => studied[`story:${s.id}`]).length;
   const cats = BEDTIME_CATS.filter((c) => cat === "all" || c.id === cat);
@@ -55,8 +57,8 @@ export default function StoriesPage() {
                         <span>{t("{n}-min story", { n: bedtimeMinutes(s) })}</span>
                         {done && <span className="text-gold-bright">{t("Read")} ✓</span>}
                       </span>
-                      <h3 className="font-story text-[1.12rem] font-semibold leading-snug">{s.title}</h3>
-                      <span className="text-[0.92rem] text-fg-muted">{s.teaser}</span>
+                      <h3 className="font-story text-[1.12rem] font-semibold leading-snug">{tr?.[s.id]?.title ?? s.title}</h3>
+                      <span className="text-[0.92rem] text-fg-muted">{tr?.[s.id]?.teaser ?? s.teaser}</span>
                     </div>
                   </Link>
                 );

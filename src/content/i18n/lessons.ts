@@ -119,3 +119,11 @@ export function useLessonTranslations(lang: Lang, worldId: string | undefined): 
   }, [key, lang, worldId]);
   return map;
 }
+
+/** Load a world's translations outside React (cached), or null when there are none. */
+export async function loadLessonTranslations(lang: Lang, worldId: string): Promise<LessonTrMap | null> {
+  const key = `${lang}/${worldId}`;
+  if (lang === "en" || !loaders[key]) return null;
+  if (!cache[key]) cache[key] = await withPictures(lang, worldId, await loaders[key]());
+  return cache[key];
+}

@@ -3,7 +3,7 @@
 import { readdirSync } from "node:fs";
 import { WORLDS } from "../src/content/library";
 
-const SKIP = new Set(["type", "id", "href", "ar", "tr", "picture", "kind", "answer", "best", "audio", "surah", "ayah", "src"]);
+const SKIP = new Set(["type", "id", "href", "ar", "tr", "kind", "answer", "best", "audio", "surah", "ayah", "src"]);
 let problems = 0;
 const bad = (m: string) => { problems++; console.log("  ✗ " + m); };
 
@@ -38,6 +38,7 @@ async function main() {
       if (!tr) { console.log(`  · ${l.id}: not translated yet`); continue; }
       if (tr.blocks && tr.blocks.length !== l.blocks.length) bad(`${l.id}: ${tr.blocks.length} blocks, English has ${l.blocks.length}`);
       l.blocks.forEach((b, i) => cmp(b, tr.blocks?.[i], `${l.id}.blocks[${i}]`));
+      if (tr.quiz) cmp(l.quiz ?? [], tr.quiz, `${l.id}.quiz`);
     }
   }
   console.log(problems ? `${problems} problem(s)` : "All translations line up.");

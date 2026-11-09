@@ -20,6 +20,7 @@ export const WORLD_LOOKS: Record<string, WorldLook> = {
   social: { from: "#5A3415", to: "#C2843A", accent: "#FFE1A3", ink: "#FFF5E6" },
   duas: { from: "#2E2350", to: "#875A8A", accent: "#F6D28B", ink: "#FBF0FF" },
   quran: { from: "#08352A", to: "#17664F", accent: "#E9C46A", ink: "#EEF8F1" },
+  clean: { from: "#0F4C6E", to: "#3FA7C9", accent: "#FFFFFF", ink: "#F0FAFF" },
   seerah: { from: "#7A3E1D", to: "#E6B373", accent: "#FFF0C9", ink: "#FFF8EC" },
 };
 const FALLBACK: WorldLook = { from: "#0D4A3B", to: "#1D7A60", accent: "#E9C46A", ink: "#F5EFDC" };
@@ -146,6 +147,20 @@ function Scene({ id, L, g }: { id: string; L: WorldLook; g: string }) {
         <path d="M160 88c14-8 30-10 46-8v-28c-16-2-32 0-46 8z" fill={L.ink} opacity={0.92} />
         <path d="M160 60v28" stroke={a} strokeWidth={1.5} />
         {[0, 1, 2, 3].map((i) => <path key={i} d={`M122 ${62 + i * 5}q18-3 32 2M166 ${64 + i * 5}q14-5 32-2`} stroke={L.from} strokeOpacity={0.45} strokeWidth={1.2} fill="none" />)}
+        <Lattice color={L.ink} />
+      </>);
+    case "clean":
+      return (<>
+        <circle cx="160" cy="66" r="56" fill={`url(#${g}-glow)`} />
+        {/* A water jug (ibrīq) pouring into a basin, with bubbles */}
+        <path d="M128 52c0-10 10-16 20-16h10c10 0 18 6 18 16v40c0 10-8 16-18 16h-12c-10 0-18-6-18-16z" fill={L.ink} />
+        <path d="M176 60q22-4 26 12" stroke={L.ink} strokeWidth={6} fill="none" strokeLinecap="round" />
+        <path d="M128 60q-14 2-14 16t14 14" stroke={L.ink} strokeWidth={5} fill="none" />
+        <path d="M200 72q4 18 2 34" stroke={a} strokeWidth={3} strokeLinecap="round" strokeDasharray="2 6" />
+        <path d="M176 112h52q-4 16-26 16t-26-16z" fill={L.ink} opacity={0.9} />
+        {[[96, 40, 7], [80, 70, 5], [236, 38, 6], [252, 64, 4], [110, 100, 4], [222, 92, 5]].map(([x, y, r], i) => (
+          <circle key={i} cx={x} cy={y} r={r} fill="none" stroke={L.ink} strokeOpacity={0.7} strokeWidth={1.5} className="float-up" style={{ animationDelay: `${i * 0.6}s` }} />
+        ))}
         <Lattice color={L.ink} />
       </>);
     case "seerah":

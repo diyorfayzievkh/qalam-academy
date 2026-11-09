@@ -8,27 +8,51 @@ import { useT } from "@/components/lang";
 import { Page, PageHeader } from "@/components/app-shell";
 import { useProgress } from "@/components/progress";
 import { TOPICS, type Topic } from "@/content/topics";
+import { findWorld, WORLDS } from "@/content/library";
+import { translateQuiz, useLessonTranslations } from "@/content/i18n/lessons";
 
 export default function TopicPage() {
   const { topic: id } = useParams<{ topic: string }>();
-  const topic = TOPICS.find((t) => t.id === id);
+  const base = TOPICS.find((t) => t.id === id);
+  const { lang, t } = useT();
+  // Lesson quizzes link back to their lesson; use that lesson's translation when there is one.
+  const m = base?.back?.match(/^\/learn\/([^/]+)\/([^/]+)$/);
+  // A world's final quiz reuses questions from its lessons, so it can use their translations too.
+  const finalOf = !m && base ? WORLDS.find((x) => x.quizIds.includes(base.id) && x.lessons.some((l) => l.quiz?.length)) : undefined;
+  const trMap = useLessonTranslations(lang, m?.[1] ?? finalOf?.id);
+  const tr = m ? trMap?.[m[2]] : undefined;
+  const w = m ? findWorld(m[1]) : undefined;
+  let topic: Topic | undefined = base && tr ? {
+    ...base,
+    title: tr.title ?? base.title,
+    sub: w ? `${t("Lesson quiz")} · ${t(w.title)}` : base.sub,
+    questions: translateQuiz(base.questions, tr.quiz),
+  } : base;
+  if (base && finalOf && trMap) {
+    const byQ = new Map<object, Topic["questions"][number]>();
+    for (const l of finalOf.lessons) {
+      const qs = translateQuiz(l.quiz ?? [], trMap[l.id]?.quiz);
+      (l.quiz ?? []).forEach((q, k) => byQ.set(q, qs[k]));
+    }
+    topic = { ...base, questions: base.questions.map((q) => byQ.get(q) ?? q) };
+  }
   const [started, setStarted] = useState(false);
   const [round, setRound] = useState(0);
   if (!topic) notFound();
 
   return (
     <>
-      <PageHeader eyebrow="Quiz" title={topic.title} sub={topic.sub} />
+      <PageHeader eyebrow={t("Quiz")} title={t(topic.title)} sub={t(topic.sub)} />
       <Page>
         {!started ? (
           <section className="card flex flex-col gap-3">
-            <span className="eyebrow">Before you start</span>
+            <span className="eyebrow">{t("Before you start")}</span>
             <ul className="flex max-w-[65ch] list-disc flex-col gap-2 pl-5">
-              {topic.learn.map((l) => <li key={l}>{l}</li>)}
+              {topic.learn.map((l) => <li key={l}>{t(l)}</li>)}
             </ul>
             <div className="flex flex-wrap gap-3">
-              <button type="button" className="btn" onClick={() => setStarted(true)}>Start quiz</button>
-              <Link className="btn btn-ghost" href={topic.back ?? "/learn"}>{topic.back ? "Back to the lesson" : "Back to the library"}</Link>
+              <button type="button" className="btn" onClick={() => setStarted(true)}>{t("Start quiz")}</button>
+              <Link className="btn btn-ghost" href={topic.back ?? "/learn"}>{topic.back ? t("Back to the lesson") : t("Back to the library")}</Link>
             </div>
           </section>
         ) : (
@@ -53,16 +77,16 @@ function Quiz({ topic, onAgain }: { topic: Topic; onAgain: () => void }) {
     return (
       <section className="card flex flex-col items-start gap-3">
         {kids && <NuriSays mood={correct === total ? "cheer" : "happy"}>{correct === total ? t("Mā shāʾ Allāh! You got every one right!") : t("Well done for finishing! Shall we try again and beat your score?")}</NuriSays>}
-        <span className="eyebrow">Round complete</span>
-        <h2 className="text-[1.8rem]">{correct} / {total} correct</h2>
+        <span className="eyebrow">{t("Round complete")}</span>
+        <h2 className="text-[1.8rem]">{t("{c} / {n} correct", { c: correct, n: total })}</h2>
         <p className="text-fg-muted">
-          You earned {earned} points this round.
-          {correct === total ? " Mā shāʾ Allāh, a perfect score!" : " Review the explanations and try again; repeat correct answers earn 2 points each."}
+          {t("You earned {n} points this round.", { n: earned })}{" "}
+          {correct === total ? t("Mā shāʾ Allāh, a perfect score!") : t("Review the explanations and try again; repeat correct answers earn 2 points each.")}
         </p>
         <div className="flex flex-wrap gap-3">
-          <button type="button" className="btn" onClick={onAgain}>Try again</button>
-          <Link className="btn btn-ghost" href={topic.back ?? "/learn"}>{topic.back ? "Back to the lesson" : "Library"}</Link>
-          <Link className="btn btn-ghost" href="/badges">My badges</Link>
+          <button type="button" className="btn" onClick={onAgain}>{t("Try again")}</button>
+          <Link className="btn btn-ghost" href={topic.back ?? "/learn"}>{topic.back ? t("Back to the lesson") : t("Library")}</Link>
+          <Link className="btn btn-ghost" href="/badges">{t("My badges")}</Link>
         </div>
       </section>
     );
@@ -88,8 +112,8 @@ function Quiz({ topic, onAgain }: { topic: Topic; onAgain: () => void }) {
   return (
     <section className="card flex flex-col gap-3.5">
       <div className="flex flex-wrap items-baseline justify-between gap-3">
-        <span className="eyebrow">{topic.title} · Question {i + 1} of {total}</span>
-        <span className="font-bold tabular-nums text-fg-muted">{correct} correct</span>
+        <span className="eyebrow">{t(topic.title)} · {t("Question {i} of {n}", { i: i + 1, n: total })}</span>
+        <span className="font-bold tabular-nums text-fg-muted">{t("{n} correct", { n: correct })}</span>
       </div>
       <div className="progress"><i style={{ width: `${(i / total) * 100}%` }} /></div>
       <p className="font-display text-[1.3rem] font-semibold">{q.q}</p>
@@ -111,12 +135,12 @@ function Quiz({ topic, onAgain }: { topic: Topic; onAgain: () => void }) {
         <>
           {kids && <NuriSays mood={ok ? "cheer" : "think"} size={72}>{ok ? t("Mā shāʾ Allāh! That’s right!") : t("Good try! Let’s see why.")}</NuriSays>}
           <div className="rounded-xl bg-bg-inset px-3.5 py-3">
-            <b>{ok ? "Correct." : "Not quite."}</b> {q.why}
-            <div className="mt-1 text-[0.82rem] text-fg-muted">Source: {q.src}</div>
+            <b>{ok ? t("Correct.") : t("Not quite.")}</b> {q.why}
+            <div className="mt-1 text-[0.82rem] text-fg-muted">{t("Source:")} {q.src}</div>
           </div>
           <div>
             <button type="button" className="btn" autoFocus onClick={() => { setI(i + 1); setPicked(null); }}>
-              {i + 1 < total ? "Next question" : "See results"}
+              {i + 1 < total ? t("Next question") : t("See results")}
             </button>
           </div>
         </>

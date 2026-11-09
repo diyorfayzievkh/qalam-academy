@@ -1,4 +1,5 @@
 import { QURAN_EXTRA, QURAN_LESSONS } from "./quran-lessons";
+import { CLEAN_LESSONS } from "./cleanliness";
 import type { Recitation } from "./recitations";
 import { RECITATIONS } from "./recitations";
 import type { AdabLesson } from "./adab";
@@ -265,6 +266,12 @@ export function lessonCount(w: World) {
 {
   const salah = WORLDS.find((w) => w.id === "salah");
   if (salah) salah.lessons = [...salah.lessons, ...SALAH_EXTRA];
+  // Cleanliness world, placed right after Salah Academy.
+  WORLDS.splice(WORLDS.findIndex((w) => w.id === "salah") + 1, 0, {
+    id: "clean", title: "Cleanliness", arabic: "النظافة",
+    sub: "Keeping my body, teeth, clothes, room and home clean, and why Allah loves it. Every lesson has its own quiz.",
+    quizIds: [], lessons: CLEAN_LESSONS,
+  });
   const full: Record<string, Lesson[]> = { iman: IMAN_LESSONS, islam: ISLAM_LESSONS, seerah: SEERAH_LESSONS };
   const quran = WORLDS.find((w) => w.id === "quran");
   if (quran) {

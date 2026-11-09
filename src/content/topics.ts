@@ -737,3 +737,14 @@ for (const w of WORLDS) for (const l of w.lessons) {
     quran.quizIds = ["quran-basics"];
   }
 }
+
+// Cleanliness final quiz: two questions from each lesson.
+{
+  const clean = WORLDS.find((w) => w.id === "clean");
+  if (clean) {
+    const qs = clean.lessons.flatMap((l) => (l.quiz ?? []).slice(0, 2));
+    TOPICS.push({ id: "cleanliness", title: "Cleanliness", sub: `Final quiz: ${qs.length} questions across the Cleanliness world`, icon: "learn",
+      learn: ["Questions from every Cleanliness lesson: why it matters, the body, teeth, clothes, the room and the home."], questions: qs });
+    clean.quizIds = ["cleanliness"];
+  }
+}

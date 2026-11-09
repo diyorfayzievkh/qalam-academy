@@ -9,11 +9,11 @@ import type { Lesson } from "../library";
 // in. Anything missing (a null block, a missing field) falls back to English,
 // so a world can be translated gradually without breaking.
 
-export type LessonTr = { title?: string; summary?: string; blocks?: unknown[] };
+export type LessonTr = { title?: string; summary?: string; blocks?: unknown[]; quiz?: unknown[] };
 export type LessonTrMap = Record<string, LessonTr>;
 
 // Fields that are identifiers, links, Arabic or references: never overwritten.
-const KEEP = new Set(["type", "id", "href", "ar", "tr", "picture", "kind", "answer", "best", "audio", "surah", "ayah"]);
+const KEEP = new Set(["type", "id", "href", "ar", "tr", "kind", "answer", "best", "audio", "surah", "ayah", "src"]);
 
 function merge<T>(en: T, tr: unknown): T {
   if (tr === null || tr === undefined) return en;
@@ -44,6 +44,11 @@ export function translateLesson(l: Lesson, tr: LessonTr | undefined): Lesson {
   };
 }
 
+/** Lesson quiz questions in the reader's language; answers and sources stay as they are. */
+export function translateQuiz<Q extends { q: string; options: string[]; why: string }>(qs: Q[], tr: unknown[] | undefined): Q[] {
+  return tr ? qs.map((q, i) => merge(q, tr[i])) : qs;
+}
+
 type Loader = () => Promise<LessonTrMap>;
 // Registered per language and world. Worlds not listed here stay in English.
 const loaders: Record<string, Loader> = {
@@ -55,6 +60,7 @@ const loaders: Record<string, Loader> = {
   "ru/salah": () => import("./lessons-ru-salah").then((m) => m.default),
   "uz/quran": () => import("./lessons-uz-quran").then((m) => m.default),
   "ru/quran": () => import("./lessons-ru-quran").then((m) => m.default),
+  "uz/clean": () => import("./lessons-uz-clean").then((m) => m.default),
 };
 const cache: Record<string, LessonTrMap> = {};
 

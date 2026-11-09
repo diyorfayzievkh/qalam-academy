@@ -1,0 +1,120 @@
+import type { StoryTrMap } from "./types";
+
+// Uyqu oldi hikoyalari: Qur’on shaharlari (o‘zbekcha).
+
+export const UZ_CITIES: StoryTrMap = {
+  "makkah-city": {
+    title: "Makka: suvsiz vodiy",
+    teaser: "Ikki tepalik orasida yugurgan ona, qumni tepgan go‘dak va hech qachon uxlamaydigan shahar.",
+    paras: [
+      "Ming-ming yillar oldin Makka quruq, toshloq tog‘lar orasidagi bo‘m-bo‘sh vodiy edi. Na daraxt, na suv, na odam. Faqat sukunat va quyosh.",
+      "Bir kuni u yerga Ibrohim payg‘ambar ayoli Hojar va go‘dak o‘g‘li Ismoil bilan keldi. U ularni bir daraxt yoniga qo‘yib, bir xalta xurmo va bir mesh suv qoldirdi-da, ortiga o‘girilib keta boshladi.",
+      "Hojar uning ortidan yugurdi. “Ibrohim! Hech kim va hech narsa yo‘q bu vodiyda bizni qoldirib, qayerga ketyapsiz?” U qayta-qayta so‘radi, lekin Ibrohim ortiga o‘girilmadi. Keyin u so‘radi: “Buni sizga Alloh buyurdimi?” “Ha.” Shunda Hojar dedi: “Unda U bizni zoe qilmaydi.” Va go‘dagining yoniga qaytdi.",
+      "Ibrohim ular endi uni ko‘ra olmaydigan dovonga yetganda, Bayt joylashgan tomonga o‘girildi, qo‘llarini ko‘tarib duo qildi: “Robbimiz, men zurriyotimdan ba’zilarini ekin o‘smaydigan vodiyga, Sening muqaddas Uying yoniga joylashtirdim… Bas, odamlarning qalblarini ularga moyil qil va ularni mevalar bilan rizqlantir, shoyad shukr qilsalar.”",
+      "Tez orada xurmo ham, suv ham tugadi. Hojarning suti qolmadi, go‘dak Ismoil esa chanqoqdan yig‘lab, to‘lg‘ana boshladi. Hojar bunga qarab turolmadi. U eng yaqin tepalik Safoga chiqib qaradi: hech kim yo‘q. Pastga yugurib tushdi, vodiydan o‘tib, boshqa tepalik Marvaga chiqdi: hech kim yo‘q. U yetti marta u yoqdan bu yoqqa yugurdi. Payg‘ambar ﷺ aytgan: “Shuning uchun odamlar ularning orasida yurishadi”, ya’ni haj va umradagi sa’yda.",
+      "Yettinchi marta Marva tepasida u bir ovoz eshitdi. “Jim!” dedi u o‘ziga va quloq soldi. “Eshityapman. Yordam bera olasanmi?” U yerda, go‘dakning yonida farishta Jabroil turardi. U yerni urdi va yerdan suv otilib chiqdi!",
+      "Hojar uning atrofiga qumdan kichkina devor qura boshladi, suvni meshiga to‘ldirardi, suv esa qaynab chiqaverdi. Payg‘ambar ﷺ jilmayib aytgan: “Alloh Ismoilning onasiga rahm qilsin! Agar u Zamzamni o‘z holiga qo‘yganida, u oqar daryoga aylanardi.” Farishta unga dedi: “Qo‘rqma. Mana bu yerda Allohning Uyi bor, uni mana shu bola va uning otasi quradi.”",
+      "Suv ustida qushlar aylana boshladi. Yaqinda safar qilayotgan Jurhum qabilasi ularni ko‘rib dedi: “Qushlar faqat suv ustida aylanadi! Lekin bu vodiyda suv yo‘qligini bilamiz-ku.” Ular qarab kelish uchun bir kishini yuborishdi, u hayratda qaytib keldi. Ular Hojardan so‘rashdi: “Siz bilan qolsak maylimi?” “Ha, lekin suv bizniki.” “Rozimiz.” Shunday qilib Makka boshlandi.",
+      "Ismoil ular orasida o‘sib, arab tilini o‘rgandi. U yigit bo‘lganda, Ibrohim qaytib kelib dedi: “Ismoil, Alloh menga bu yerda bir Uy qurishni buyurdi.” Shunday qilib, ota va o‘g‘il Ka’bani birga qurishdi. Ismoil toshlarni tashidi, Ibrohim ularni terdi, devorlar ko‘tarilgan sari Ibrohim balandroqqa yetish uchun bir tosh ustiga chiqib turdi. Ishlayotib ular duo qilishardi: “Robbimiz, bizdan qabul qil. Albatta, Sen Eshituvchi, Biluvchisan.”",
+      "Alloh Ibrohimning duosini ijobat qildi. Bugun har yili har bir mamlakatdan millionlab odamlar Makkaga kelishadi. Hech narsa o‘smaydigan vodiydagi bozorlar dunyoning turli burchagidan kelgan mevalarga to‘la. Zamzam esa ming-ming yillardan keyin ham hamon oqmoqda.",
+      "Payg‘ambar ﷺ aynan Makkada tug‘ilgan va unga birinchi vahiy shahar ustidagi tog‘dagi g‘orda kelgan. Musulmonlar esa kuniga besh mahal yer yuzining har bir burchagidan yuzlarini unga qaratishadi.",
+    ],
+    moral: "Onaning tavakkuli, otaning duosi va oilaning mehnati qiyomatgacha ziyorat qilinadigan shaharni bunyod etdi. Alloh Unga tavakkul qilganlarni zoe qilmaydi.",
+    talk: "Hojar: “Unda U bizni zoe qilmaydi”, degan. Qachon uning so‘zlarini eslashimiz kerak?",
+  },
+
+  "madinah-city": {
+    title: "Madina: quchog‘ini ochgan shahar",
+    teaser: "Tomlardagi bolalar, o‘z joyini o‘zi tanlagan tuya va birodar bo‘lgan dushmanlar.",
+    paras: [
+      "Islomdan oldin Madina Yasrib deb atalardi: qora vulqon toshli dalalar orasidagi xurmozor yashil voha edi. Uning ikki arab qabilasi, Avs va Xazraj, avlodlar davomida urushdan urushga bir-biri bilan jang qilib kelgan.",
+      "Bir haj mavsumida Payg‘ambar ﷺ Makka yaqinida Yasribdan kelgan olti kishini uchratdi. U ularga Islom haqida gapirib, Qur’on o‘qib berdi va ular iymon keltirishdi. Ular uylariga qaytib, da’vatni tarqatishdi. Keyingi yili o‘n ikki kishi kelib, unga ergashishga va’da berishdi. Keyin Mus’ab ibn Umayr ularga ta’lim berish uchun bordi, undan keyingi yili esa yetmish besh kishi kelib, Payg‘ambar ﷺ ni o‘z shaharlariga kelib yashashga taklif qildi.",
+      "Shunday qilib Payg‘ambar ﷺ hijrat qildi. Madinada musulmonlar har tong shahar chetiga chiqib, jazirama quyosh ostida qora toshlar ustida yo‘lga tikilib kutishardi. Juda isib ketganda, umidlari puchga chiqib uylariga qaytishardi.",
+      "Bir kuni qal’a tepasidagi bir kishi ularning uzoqdan oppoq kiyimlari yaltirab kelayotganini ko‘rib, ovozining boricha qichqirdi: “Ey arablar! Mana siz kutgan zot keldi!” Hamma quvonchdan qurollarini olib, uni kutib olishga yugurdi.",
+      "Butun shahar ko‘chaga chiqdi. Sahoba Barro aytishicha, u Madina ahlini hech narsadan bunchalik xursand bo‘lganini ko‘rmagan. Erkaklar va ayollar tomlarga chiqishdi, bolalar va xizmatkorlar ko‘chalarda yugurib baqirishardi: “Muhammad! Rasululloh! Muhammad! Rasululloh!”",
+      "Har bir oila Payg‘ambar ﷺ o‘zlarinikida qolishini xohlardi. Ular tuyasining jilovidan ushlashardi: “Bizda qoling! Joyimiz keng, sizni himoya qilamiz!” U jilmayib dedi: “Uni qo‘yib yuboringlar. U buyurilgan.” Tuya ko‘chalar bo‘ylab yuraverdi, hamma nafasini ichiga yutib kuzatardi, nihoyat u xurmo quritiladigan bo‘sh bir joyga cho‘kdi. Aynan o‘sha yerda u masjidini qurdi.",
+      "Eng yaqin uy Abu Ayyub al-Ansoriyniki edi va Payg‘ambar ﷺ o‘sha yerda qoldi. Abu Ayyub yuqori qavatda, Payg‘ambar ﷺ esa pastki qavatda yashardi. Bir kecha yuqorida suv ko‘zasi sinib ketdi, Abu Ayyub va ayoli suv Payg‘ambar ﷺ ustiga tomib ketishidan shunchalik xavotirlandiki, uni yagona ko‘rpalari bilan artib olishdi. Ular unga yuqoriga ko‘chishini iltimos qilishdi va oxiri u rozi bo‘ldi.",
+      "Yasribning nomi al-Madina, ya’ni Shahar deb o‘zgartirildi. Avlodlar davomida dushman bo‘lgan Avs va Xazraj esa birodarlarga aylanib, birgalikda Ansor, ya’ni Yordamchilar deb ataldi. Payg‘ambar ﷺ har bir ansoriyni Makkada hamma narsasini tashlab kelgan bir muhojir bilan birodar qildi. Ulardan biri Sa’d ibn Rabi’ yangi birodari Abdurahmon ibn Avfga dedi: “Molimning yarmini ol!” Abdurahmon dedi: “Alloh molingni senga barakali qilsin. Menga bozorga yo‘lni ko‘rsat, bas.” Tez orada u muvaffaqiyatli savdogarga aylandi.",
+      "Payg‘ambar ﷺ Madinani yaxshi ko‘rardi. Safardan qaytayotib uning devorlarini ko‘rganda, tuyasini shoshtirardi. U duo qilardi: “Allohim, bizga Madinani Makkani sevganimizdek, hatto undan ham ko‘proq sevdir.” U uyi bilan minbari orasidagi joy jannat bog‘laridan bir bog‘ ekanini va Dajjol unga hech qachon kira olmasligini aytgan.",
+      "Payg‘ambar ﷺ Madinada, masjidi yonidagi Oishaning uyida dafn etilgan. Uning masjididagi bir namoz boshqa joydagi ming namozdan afzaldir.",
+    ],
+    moral: "Dushmanlar shahri iymon va saxovat tufayli birodarlar shahriga aylandi. Boshqalarni mehr bilan kutib olsak, Alloh bizga baraka beradi.",
+    talk: "Maktabga yoki masjidga kelgan yangi oilaga qanday qilib ansorlardek bo‘lishimiz mumkin?",
+  },
+
+  "aqsa-city": {
+    title: "Quddus: muborak yurt",
+    teaser: "Ko‘p payg‘ambarlar shahri, burilgan qibla va xizmatkori minib, o‘zi piyoda yurgan xalifa.",
+    paras: [
+      "Quddusni Baytul Maqdis, ya’ni Muqaddas Uy deyishadi. U Alloh Qur’onda muborak deb atagan yurtda joylashgan.",
+      "Sahoba Abu Zar bir marta Payg‘ambar ﷺ dan so‘radi: “Ey Allohning Rasuli, yer yuzida qaysi masjid birinchi qurilgan?” U dedi: “Masjidul Harom.” “Keyin qaysi?” “Masjidul Aqso.” “Ularning orasi qancha?” “Qirq yil.”",
+      "Ko‘p payg‘ambarlar bu yurtda va uning atrofida yashab, ta’lim berishgan: Ibrohim, Ishoq, Ya’qub, Dovud, Sulaymon, Zakariyo, Yahyo va Iso, barchalariga salom bo‘lsin. Dovud u yerda hukmronlik qilgan. Sulaymon u yerda buyuk ibodatxonasini qurgan. Zakariyo uning mehrobida ibodat qilgan va u yerda yosh Maryamning yonida mavsumsiz mevalarni topgan. “Maryam, bu senga qayerdan?” “Bu Allohdan.”",
+      "Hijratdan keyin taxminan o‘n olti oy davomida Madinadagi musulmonlar Quddusga qarab namoz o‘qishdi. Lekin Payg‘ambar ﷺ Ka’baga yuzlanishni orzu qilardi va umid bilan yuzini osmonga qaratardi. Shunda Alloh nozil qildi: “Yuzingning osmonga qarab burilishini ko‘ryapmiz. Bas, seni rozi bo‘ladigan qiblaga buramiz.”",
+      "U bilan namoz o‘qigan ba’zi sahobalar odamlar hali Quddusga qarab namoz o‘qiyotgan bir masjidga borishdi. Bir kishi baland ovozda dedi: “Guvohlik beramanki, men Rasululloh ﷺ bilan Makkaga qarab namoz o‘qidim!” Butun jamoat namoz o‘rtasida, shu zahoti Ka’ba tomonga o‘girildi. O‘sha masjid hozir ham Masjidul Qiblatayn, ya’ni Ikki qiblali masjid deb ataladi.",
+      "Bir kecha Alloh O‘z Rasuli ﷺ ni Buroqda Makkadan Aqsoga olib bordi, u yerda u barcha payg‘ambarlarga imom bo‘lib namoz o‘qidi va u yerdan osmonlarga ko‘tarildi.",
+      "Yillar o‘tib, xalifa Umar davrida musulmon qo‘shini Quddusni qamal qildi. Shahar boshlig‘i dedi: “Kalitlarni faqat xalifangizning o‘ziga topshiramiz.” Shunda Umar Madinadan butun yo‘lni bitta xizmatkor va bitta tuya bilan bosib keldi.",
+      "Tarixchilar rivoyat qilishicha, ular navbatma-navbat minishgan. Umar minganda xizmatkor piyoda yurardi, keyin xizmatkor minganda Umar jilovni ushlab piyoda yurardi. Quddusga yetib kelishganda, tasodifan minish navbati xizmatkorga to‘g‘ri keldi. Shunday qilib, musulmonlarning buyuk xalifasi yamoqli to‘nda, loy kechib, tuyadagi xizmatkorini yetaklab kirib keldi. Shahar ahli bunga ishonolmay qoldi.",
+      "Ba’zi sahobalar dedi: “Ey mo‘minlar amiri, odamlar qarab turibdi. Otga minib, chiroyliroq kiyim kiymaysizmi?” Umar javob berdi: “Biz odamlarning eng xorlari edik, Alloh bizni Islom bilan aziz qildi. Agar biz izzatni boshqa narsadan izlasak, Alloh bizni xor qiladi.”",
+      "Umar shahar ahliga ularning jonlari, mollari va ibodatxonalari uchun yozma omonlik ahdini berdi. Payg‘ambar ﷺ aytgan: faqat uchta masjidga maxsus safar qilinadi: Masjidul Harom, mening masjidim va Masjidul Aqso.",
+    ],
+    moral: "Aqso barcha payg‘ambarlar tarixining bir qismi, har bir musulmon uni qalbida va duosida olib yuradi. Haqiqiy izzat chiroyli kiyimdan emas, Islomdan keladi.",
+    talk: "Quddus bilan bog‘liq uchta payg‘ambarni ayt. Keling, bu kecha uning ahli uchun duo qilamiz.",
+  },
+
+  "misr-city": {
+    title: "Misr: ikki payg‘ambar, ikki podshoh",
+    teaser: "Yusufga ishongan adolatli podshoh, “Men sizlarning robbingizman” degan zolim va jannatni tanlagan malika.",
+    paras: [
+      "Misr Qur’onda bir necha bor tilga olingan. U buyuk Nil daryosi, boy dalalar va qudratli podshohlar yurti edi.",
+      "Yusuf payg‘ambar davrida Misrda hikmatga quloq soladigan podshoh bor edi. Yusuf yettita semiz va yettita oriq sigir haqidagi tushini ta’bir qilib berganda, podshoh dedi: “Uni menga keltiring. Uni o‘zimga xos qilib olaman.” U bilan gaplashgach esa dedi: “Bugun sen bizning huzurimizda ishonchli va omonliksan.”",
+      "Yusuf dedi: “Meni yurt xazinalariga mas’ul qilib qo‘y. Men ehtiyotkor saqlovchiman va nima qilishni bilaman.” Yetti yaxshi yil davomida u g‘alla jamg‘ardi. Ocharchilik kelganda, atrofdagi barcha yurtlardan, hatto uning o‘z akalari ham Misrdan oziq-ovqat sotib olgani kelishdi. Yusuf Misrni ham, uning atrofidagi yurtlarni ham qutqardi. Keyinchalik u oilasini kutib oldi: “Misrga, inshaalloh, omonlikda kiringlar.”",
+      "Yuzlab yillar o‘tib, Misrda boshqacha podshoh hukmronlik qildi: Fir’avn. U mag‘rur va shafqatsiz edi. U odamlarni yig‘ib e’lon qildi: “Men sizlarning eng oliy robbingizman!” U maqtanardi: “Misr podshohligi meniki emasmi, ostimdan oqayotgan bu daryolar ham?”",
+      "U hatto vaziri Homonga dedi: “Menga baland bir minora qur, chiqib Musoning ilohiga qaray, garchi uni yolg‘onchi deb o‘ylasam ham!”",
+      "Fir’avn Bani Isroilni qul qildi va ularning go‘dak o‘g‘illarini o‘ldirdi. Shunga qaramay, Alloh go‘dak Musoni Fir’avnning o‘z saroyida tarbiya topishiga sabab qildi. Musoni to‘xtatmoqchi bo‘lgan odamning o‘zi uni boqib, unga boshpana berdi!",
+      "Fir’avnning ayoli Osiyo yer yuzidagi eng shafqatsiz odamning xotini bo‘la turib, Allohga iymon keltirgan edi. Fir’avn buni bilgach, uni qattiq azobladi. Lekin Osiyo duo qildi: “Robbim, menga O‘z huzuringda jannatda bir uy bino qil va meni Fir’avndan va uning amalidan qutqar.” U uydan oldin qo‘shnini so‘radi: O‘z huzuringda. Payg‘ambar ﷺ uni hayotda o‘tgan eng komil ayollar qatorida tilga olgan.",
+      "Fir’avnning o‘z oilasida ham iymonini yashirgan bir mo‘min bor edi. Fir’avn Musoni o‘ldirmoqchi bo‘lganda, bu kishi hammaning oldida jasorat bilan o‘rnidan turdi: “Sizlarga aniq dalillar keltirgan bo‘lsa-yu, shunchaki ‘Robbim Alloh’, degani uchun bir odamni o‘ldirasizlarmi?”",
+      "Oxir-oqibat Fir’avn Musoni dengizgacha quvib bordi va g‘arq bo‘ldi. Suv uning ustini yopayotganda Alloh dedi: “Bugun sendan keyingilarga ibrat bo‘lishing uchun jasadingni qutqaramiz.”",
+      "Asrlar o‘tib, Misr Islomning olimlar va masjidlarga to‘la buyuk yurtiga aylandi. Imom ash-Shofeiy umrining so‘nggi yillarini o‘sha yerda o‘tkazgan va o‘sha yerda dafn etilgan.",
+    ],
+    moral: "Kuchni Yusufning podshohi kabi adolat uchun ham, Fir’avn kabi zulm uchun ham ishlatish mumkin. Hatto eng qorong‘i saroyda ham Osiyonikidek mo‘min qalb nur sochishi mumkin.",
+    talk: "Osiyo “O‘z huzuringda” uy so‘ragan. Allohga yaqin bo‘lishni xohlash nima degani?",
+  },
+
+  "saba-city": {
+    title: "Saba: bog‘lar va buzilgan to‘g‘on",
+    teaser: "Savatlarga o‘zi tushgan mevalar, buyuk to‘g‘on va shukr qilishni unutgan qavm.",
+    paras: [
+      "Arabistonning janubida, biz bugun Yaman deb ataydigan yurtda Saba qavmi yashardi. Ehtimol, ularning Sulaymon payg‘ambarni ziyorat qilib, uning shisha poli ustida yurgan va iymon keltirgan malikasini eslarsan.",
+      "Alloh Sabaga ajoyib yurt ato etgan edi. Ular tog‘lar orasiga Ma’rib to‘g‘oni deb atalgan buyuk to‘g‘on qurishdi. Yomg‘ir yog‘ganda to‘g‘on suvni ulkan ko‘ldek ushlab turardi, ular esa dalalarini sug‘orish uchun uni ariqlar orqali asta-sekin chiqarishardi.",
+      "Vodiylarining o‘ng tomonida bitta ulkan bog‘, chap tomonida esa yana biri bor edi. Mevalar shunchalik qalin o‘sardiki, tafsir olimlarining aytishicha, bir ayol boshida bo‘sh savat bilan daraxtlar ostidan yursa, narigi tomonga yetguncha savat o‘zi tushgan mevalarga to‘lib qolardi!",
+      "U yer sog‘lom ham edi. Aytishlaricha, u yerda pashsha ham, chivin ham bo‘lmagan, havo shunchalik toza ediki, u yerga bit bilan kelgan yo‘lovchilarning biti yo‘qolib ketardi.",
+      "Alloh ularga dedi: “Robbingizning rizqidan yenglar va Unga shukr qilinglar: pokiza yurt va mag‘firatli Robb.” Bundan yaxshisi bo‘lishi mumkinmi? Bu dunyoda pokiza yurt, oxiratda esa mag‘firatli Robb!",
+      "Ularning shaharlari shimolgacha zanjirdek cho‘zilgan, bir-biriga shunchalik yaqin ediki, yo‘lovchi bir shahardan ertalab chiqib, tushda keyingisida dam olardi. Alloh ularga dedi: “Ularning orasida kechayu kunduz omonlikda yuringlar.” Ovqat olib yurish shart emas. Qaroqchilardan qo‘rqish ham shart emas.",
+      "Lekin qavm Allohdan yuz o‘girdi. Ular bog‘larini kim berganini unutishdi. Keyin juda g‘alati bir gap aytishdi: “Robbimiz, safarlarimiz orasini uzoqroq qil!” Ular farovonlikdan zerikishgan edi. Ular og‘ir safarlarni xohlashdi, ehtimol kambag‘allar boylar kabi oson safar qila olmasin deb.",
+      "Shunda Alloh sel yubordi. Buyuk to‘g‘on yorilib, suv ularning bog‘larini yuvib ketdi. Ikki go‘zal bog‘lari o‘rnida faqat achchiq mevalar, yulg‘un butalari va bir nechta tikanli butalar o‘sdi.",
+      "Ularning xalqi yurtlar bo‘ylab tarqalib ketdi. Ba’zilari shimolga, Shomga, ba’zilari Madinaga, ba’zilari Iroqqa ketdi. Ularning hikoyasi shunchalik mashhur bo‘ldiki, arablarda bo‘linib, har tomonga tarqalib ketgan har qanday guruh haqida bir maqol paydo bo‘ldi: “Saba ahli kabi tarqalib ketishdi.”",
+      "Alloh ular haqida aytadi: “Kufroni ne’matlari uchun ularni shunday jazoladik. Biz noshukrlardan boshqani jazolaymizmi?” Boshqa joyda esa aytadi: “Agar shukr qilsangiz, albatta sizlarga ziyoda qilaman.”",
+    ],
+    moral: "Ne’matlar shukr bilan qoladi. Bor narsamiz uchun Allohga shukr qilsak, U bizga ko‘proq beradi. Uni unutsak, hatto eng buyuk bog‘lar ham yo‘q bo‘lib ketishi mumkin.",
+    talk: "Keling, har birimiz bugungi uchta ne’matni aytib, har biri uchun “Alhamdulillah” deymiz.",
+  },
+
+  "ad-thamud": {
+    title: "Iram va Hijr: qoyalarga o‘yilgan shaharlar",
+    teaser: "Baland ustunlar, tog‘larga o‘yilgan uylar va Allohning tuyasi.",
+    paras: [
+      "Qur’on qadimgi Arabistonning ikki qudratli qavmi haqida hikoya qiladi.",
+      "Birinchisi janubdagi qum barxanlari orasida yashagan Od qavmi edi. Ular baland ustunli shahar Iramni qurishgan, “uning misli yurtlarda yaratilmagan edi”. Ular baland bo‘yli, kuchli va juda mag‘rur edi. Ular: “Bizdan kuchliroq kim bor?” deyishardi. Ular har bir tepalikka faqat maqtanish uchun baland yodgorliklar, go‘yo abadiy yashaydigandek qal’alar qurishardi.",
+      "Alloh ularga o‘z qavmlaridan bo‘lgan Hud payg‘ambarni yubordi. U ularga dedi: “Yolg‘iz Allohga ibodat qilinglar. Robbingizdan mag‘firat so‘ranglar, U sizlarga yomg‘ir yog‘diradi va kuchingizga kuch qo‘shadi.” Lekin ular uni masxara qilishdi: “Hud, sen bizga hech qanday dalil keltirmading. Sen aytding deb ilohlarimizni tashlamaymiz!”",
+      "Keyin uzoq qurg‘oqchilik boshlandi. Bir kuni ular vodiylari tomon kelayotgan katta bulutni ko‘rib, xursand bo‘lib qichqirishdi: “Mana bizga yomg‘ir yog‘diradigan bulut!” Lekin bu yomg‘ir emas edi. Bu g‘azabnok, muzdek, guvillagan shamol edi. U yetti kecha va sakkiz kun to‘xtovsiz esib, ularni ichi bo‘sh xurmo tanalaridek qilib qo‘ydi. Hud va mo‘minlar najot topdi.",
+      "Shuning uchun, deydi Payg‘ambar ﷺ ning ayoli Oisha, u bulut yoki kuchli shamolni ko‘rganda yuzi o‘zgarar, yomg‘ir yog‘maguncha xavotir bilan kirib-chiqib yurardi. Oisha buning sababini so‘radi, u dedi: “Bu Od qavmiga bo‘lgan narsaga o‘xshash emasligini qayerdan bilay?”",
+      "Ulardan keyin Arabistonning shimolidagi Hijrda yashagan Samud qavmi keldi. Ular shunchalik mohir ediki, uylarini to‘g‘ridan-to‘g‘ri tog‘larning yon bag‘irlariga o‘yib qurishgan. Ularning o‘yib yasalgan binolarini bugun ham ko‘rish mumkin.",
+      "Alloh ularga Solih payg‘ambarni yubordi. Ular dedi: “Agar rost aytayotgan bo‘lsang, mo‘jiza keltir! Anavi qoyadan bo‘g‘oz tuya chiqar!” Allohning izni bilan tog‘dan ulkan bir tuya chiqdi. Solih dedi: “Bu Allohning tuyasi, sizlar uchun bir oyat. U bir kun quduqdan ichadi, keyingi kuni sizlar ichasiz. Unga ozor bermanglar.”",
+      "Bir muddat ba’zilar iymon keltirdi, tuya esa tinchgina suv ichib, o‘tlab yurdi. Lekin bir guruh yovuz odamlar undan nafratlanardi. Ularning eng yomoni sekin yaqinlashib, uni o‘ldirdi. Solih ularga dedi: “Uylaringizda uch kun huzur qilib turinglar. Bu yolg‘on chiqmaydigan va’da.”",
+      "Uch kundan keyin dahshatli bir sayha va zilzila keldi, tongda ular uylarida jonsiz yotishardi. Solih va mo‘minlar ketib qolgan va najot topgan edi.",
+      "Asrlar o‘tib, Payg‘ambar ﷺ Tabukka ketayotib Hijr yonidan o‘tganda, sahobalar uning quduqlaridan suv olib, u bilan xamir qora boshlashdi. U ularga suvni to‘kib tashlashni va xamirni tuyalarga berishni buyurdi. U boshini yopib, tuyasini shoshtirib o‘tib ketdi va dedi: “O‘zlariga zulm qilganlarning uylariga faqat yig‘lagan holda kiringlar, toki ularga yetgan narsa sizlarga yetmasin.”",
+    ],
+    moral: "Allohdan yuz o‘girgan qavmni na kuch, na mahorat, na baland binolar qutqara oladi. Faqat iymon va kamtarlik qutqaradi.",
+    talk: "Od qavmi: “Bizdan kuchliroq kim bor?” degan. Bu savolning nimasi noto‘g‘ri? Haqiqatda eng kuchli kim?",
+  },
+};

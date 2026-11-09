@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
 import { useState } from "react";
+import { NuriSays, useKids } from "@/components/kids";
+import { useT } from "@/components/lang";
 import { Page, PageHeader } from "@/components/app-shell";
 import { useProgress } from "@/components/progress";
 import { TOPICS, type Topic } from "@/content/topics";
@@ -39,6 +41,8 @@ export default function TopicPage() {
 
 function Quiz({ topic, onAgain }: { topic: Topic; onAgain: () => void }) {
   const { answerCorrect, markPerfect } = useProgress();
+  const { kids } = useKids();
+  const { t } = useT();
   const [i, setI] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [correct, setCorrect] = useState(0);
@@ -48,6 +52,7 @@ function Quiz({ topic, onAgain }: { topic: Topic; onAgain: () => void }) {
   if (i >= total) {
     return (
       <section className="card flex flex-col items-start gap-3">
+        {kids && <NuriSays mood={correct === total ? "cheer" : "happy"}>{correct === total ? t("Mā shāʾ Allāh! You got every one right!") : t("Well done for finishing! Shall we try again and beat your score?")}</NuriSays>}
         <span className="eyebrow">Round complete</span>
         <h2 className="text-[1.8rem]">{correct} / {total} correct</h2>
         <p className="text-fg-muted">
@@ -93,17 +98,18 @@ function Quiz({ topic, onAgain }: { topic: Topic; onAgain: () => void }) {
           const state = !answeredNow ? "" : k === q.answer ? "right" : k === picked ? "wrong" : "";
           return (
             <button key={o} type="button" disabled={answeredNow} onClick={() => pick(k)}
-              className={`rounded-xl border-[1.5px] px-3.5 py-3 text-left font-semibold disabled:cursor-default ${
+              className={`flex items-center rounded-xl border-[1.5px] px-3.5 py-3 text-left font-semibold disabled:cursor-default ${kids ? "min-h-[60px] text-[1.08rem]" : ""} ${
                 state === "right" ? "border-success bg-success-soft text-success"
                 : state === "wrong" ? "border-danger bg-danger-soft text-danger"
                 : "border-border bg-bg-surface enabled:hover:border-emerald"}`}>
-              {o}
+              <span className={`mr-2.5 inline-grid h-7 w-7 place-items-center rounded-full text-[0.85rem] font-extrabold ${state === "right" ? "bg-success text-bg-surface" : state === "wrong" ? "bg-danger text-bg-surface" : "bg-bg-inset text-fg-muted"}`}>{"ABCDEF"[k]}</span>{o}
             </button>
           );
         })}
       </div>
       {answeredNow && (
         <>
+          {kids && <NuriSays mood={ok ? "cheer" : "think"} size={72}>{ok ? t("Mā shāʾ Allāh! That’s right!") : t("Good try! Let’s see why.")}</NuriSays>}
           <div className="rounded-xl bg-bg-inset px-3.5 py-3">
             <b>{ok ? "Correct." : "Not quite."}</b> {q.why}
             <div className="mt-1 text-[0.82rem] text-fg-muted">Source: {q.src}</div>

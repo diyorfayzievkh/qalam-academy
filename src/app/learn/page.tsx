@@ -26,7 +26,7 @@ export default function KnowledgeBasePage() {
         {SECTIONS.map((sec) => {
           const list = WORLDS.filter((w) => (w.section ?? "core") === sec.key);
           return (
-            <section key={sec.key} className="flex flex-col gap-3">
+            <section key={sec.key} className="flex flex-col gap-3" {...(sec.key !== "core" ? { "data-adult": "" } : {})}>
               <div className="flex flex-col gap-0.5">
                 <h2 className="text-[1.3rem]"><T>{sec.title}</T></h2>
                 {sec.sub && <p className="max-w-[65ch] text-[0.92rem] text-fg-muted">{sec.sub}</p>}

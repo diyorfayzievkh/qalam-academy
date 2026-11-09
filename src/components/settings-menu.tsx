@@ -5,6 +5,7 @@ import { LANGS } from "@/lib/i18n";
 import { Icon } from "./icons";
 import { useT } from "./lang";
 import { useThemePref, type ThemePref } from "./theme";
+import { Nuri, useKids } from "./kids";
 
 const THEMES: { id: ThemePref; label: string; icon: "auto" | "sun" | "moon" }[] = [
   { id: "system", label: "Auto", icon: "auto" },
@@ -17,6 +18,7 @@ export function SettingsMenu() {
   const { t, lang, setLang } = useT();
   const [pref, setPref] = useThemePref();
   const [open, setOpen] = useState(false);
+  const { kids, setKids } = useKids();
   const box = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -40,6 +42,7 @@ export function SettingsMenu() {
         <span>{LANGS.find((l) => l.id === lang)!.short}</span>
         <span className="opacity-50" aria-hidden>·</span>
         <Icon name={theme.icon} size={15} />
+        {kids && <span aria-hidden className="-my-1"><Nuri size={22} /></span>}
       </button>
       {open && (
         <div role="menu" className="pop-in absolute right-0 top-[calc(100%+8px)] z-40 flex w-[220px] flex-col gap-1 rounded-card border border-border bg-bg-surface p-2 text-fg shadow-xl">
@@ -58,6 +61,13 @@ export function SettingsMenu() {
               {pref === x.id && <Icon name="check" size={16} className="ml-auto text-emerald" />}
             </button>
           ))}
+          <div className="my-1 border-t border-border" />
+          <button role="menuitemcheckbox" aria-checked={kids} type="button" className={row} onClick={() => setKids(!kids)}>
+            <span className="grid w-7 place-items-center" aria-hidden><Nuri size={24} /></span>{t("Kids Mode")}
+            <span className={`ml-auto inline-flex h-5 w-9 items-center rounded-full p-0.5 transition ${kids ? "bg-emerald" : "bg-bg-inset"}`}>
+              <i className={`block h-4 w-4 rounded-full bg-white shadow transition ${kids ? "translate-x-4" : ""}`} />
+            </span>
+          </button>
         </div>
       )}
     </div>

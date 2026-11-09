@@ -10,6 +10,7 @@ import { useT } from "@/components/lang";
 import { TopicCard } from "@/components/topic-card";
 import { WorldCover } from "@/components/world-art";
 import { StoryCover } from "@/components/story-art";
+import { NuriSays, useKids } from "@/components/kids";
 import { BADGES, badgeLevel, POINTS_PER_BADGE } from "@/content/badges";
 import type { BedtimeCat } from "@/content/bedtime";
 import { TOPICS } from "@/content/topics";
@@ -132,7 +133,79 @@ function Flame({ on }: { on: boolean }) {
   );
 }
 
+function KidsHome({ picks }: { picks: DailyPicks }) {
+  const { points, days } = useProgress();
+  const { user } = useAccount();
+  const { t } = useT();
+  const lvl = badgeLevel(points);
+  const streak = streakOf(days);
+  const hour = new Date().getHours();
+  const hello = hour < 12 ? t("Good morning") : hour < 17 ? t("Good afternoon") : t("Good evening");
+  const tiles = [
+    { href: "/learn", title: "Learn", sub: "Faith, prayer and good manners", art: "iman" },
+    { href: "/salah", title: "How to pray", sub: "Step by step", art: "salah" },
+    { href: "/stories", title: "Stories", sub: "Prophets and heroes", art: "seerah" },
+    { href: "/hifz", title: "Quran", sub: "Learn a sūrah", art: "quran" },
+    { href: "/badges", title: "My badges", sub: "The Path of Light", art: "duas" },
+    { href: "/learn/akhlaq", title: "Good manners", sub: "Be like the Prophet ﷺ", art: "akhlaq" },
+  ];
+  return (
+    <>
+      <PageHeader eyebrow="Bismillāh" title="As-salāmu ʿalaykum" />
+      <Page>
+        <NuriSays mood="cheer" size={104}>
+          <span className="block text-[1.15rem]">{hello}{user ? `, ${user.name}` : ""}!</span>
+          <span className="font-semibold text-fg-muted">{t("I’m Nuri. What shall we learn today?")}</span>
+        </NuriSays>
+
+        <section className="grid grid-cols-3 items-stretch gap-3 [&>*]:justify-center">
+          <div className="card flex flex-col items-center gap-1 text-center">
+            <b className="shimmer-gold font-display text-[1.8rem] leading-none tabular-nums">{points.toLocaleString()}</b>
+            <span className="text-[0.85rem] font-bold">{t("points")}</span>
+          </div>
+          <Link href="/badges" className="card flex flex-col items-center gap-1 text-center">
+            <BadgeIcon index={Math.max(0, lvl - 1)} locked={!lvl} size={44} />
+            <span className="text-[0.8rem] font-bold leading-tight">{lvl ? t(BADGES[lvl - 1].name) : t("First badge soon!")}</span>
+          </Link>
+          <div className="card flex flex-col items-center gap-1 text-center">
+            <Flame on={streak > 0} />
+            <span className="text-[0.85rem] font-bold">{t("{n} days", { n: streak })}</span>
+          </div>
+        </section>
+
+        <section className="grid grid-cols-2 gap-3.5 md:grid-cols-3">
+          {tiles.map((x) => (
+            <Link key={x.href + x.title} href={x.href} className="lift flex flex-col overflow-hidden rounded-card border-2 border-border bg-bg-surface hover:border-gold-bright">
+              <WorldCover id={x.art} className="h-[96px]" />
+              <div className="flex flex-col p-3.5">
+                <b className="font-display text-[1.2rem] leading-tight">{t(x.title)}</b>
+                <span className="text-[0.85rem] text-fg-muted">{t(x.sub)}</span>
+              </div>
+            </Link>
+          ))}
+        </section>
+
+        <Link href={picks.story.href} className="lift flex flex-col overflow-hidden rounded-card border-2 border-border bg-bg-surface hover:border-gold-bright sm:flex-row">
+          <StoryCover s={picks.story} day className="h-[130px] sm:h-auto sm:w-[240px] sm:flex-none" />
+          <div className="flex flex-col gap-1 p-4">
+            <span className="eyebrow">{t("Tonight’s story")}</span>
+            <b className="font-story text-[1.25rem] font-semibold leading-snug">{picks.story.title}</b>
+            <span className="text-[0.95rem] text-fg-muted">{picks.story.teaser}</span>
+          </div>
+        </Link>
+
+        <SkyHero />
+      </Page>
+    </>
+  );
+}
+
 export function HomeClient({ picks }: { picks: DailyPicks }) {
+  const { kids } = useKids();
+  return kids ? <KidsHome picks={picks} /> : <GrownUpHome picks={picks} />;
+}
+
+function GrownUpHome({ picks }: { picks: DailyPicks }) {
   const { points, answered, days } = useProgress();
   const { t } = useT();
   const { available, user, ready } = useAccount();

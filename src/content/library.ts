@@ -1,9 +1,11 @@
 import type { Recitation } from "./recitations";
 import { RECITATIONS } from "./recitations";
-import { ADAB_LESSONS, type AdabLesson } from "./adab";
+import type { AdabLesson } from "./adab";
+import { ADAB_LESSONS } from "./adab-all";
 import { RUHIY_LESSONS } from "./ruhiy";
 import { RUHIY2_LESSONS } from "./ruhiy2";
 import { RUHIY3_LESSONS } from "./ruhiy3";
+import { SOCIAL_LESSONS } from "./social";
 
 // The Knowledge Base: worlds → lessons. Akhlaq & Adab lessons use the
 // five-part template in adab.ts; all others are built from blocks.
@@ -16,7 +18,7 @@ export type Block =
   | { type: "timeline"; items: { when: string; what: string }[] }
   | { type: "link"; href: string; label: string; text: string };
 
-export type Lesson = { id: string; title: string; summary: string; sources: string[]; blocks: Block[] };
+export type Lesson = { id: string; title: string; summary: string; sources: string[]; blocks: Block[]; group?: string };
 export type World = {
   id: string;
   title: string;
@@ -25,6 +27,7 @@ export type World = {
   quizIds: string[];
   lessons: Lesson[];
   adab?: AdabLesson[];
+  section?: "spiritual" | "social";
 };
 
 const r = (ar: string, tr: string, en: string): Recitation => ({ ar, tr, en });
@@ -123,20 +126,24 @@ export const WORLDS: World[] = [
     ],
   },
   {
-    id: "akhlaq", title: "Akhlaq & Adab", arabic: "الأخلاق والآداب", sub: "Character and manners, the heaviest on the scale", quizIds: ["akhlaq"],
+    id: "akhlaq", title: "Akhlaq & Adab", arabic: "الأخلاق والآداب", sub: "Character and manners, the heaviest on the scale. Every lesson has its own quiz.", quizIds: ["akhlaq"],
     lessons: [], adab: ADAB_LESSONS,
   },
   {
-    id: "ruhiy", title: "Spiritual Education · Vol. 1", arabic: "التربية الروحية", sub: "Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf: the means of purification and the diseases of the heart", quizIds: ["ruhiy"],
+    id: "ruhiy", title: "Spiritual Tarbiyah · Vol. 1", arabic: "التربية الروحية", sub: "Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf: the means of purification and the diseases of the heart", quizIds: ["ruhiy"], section: "spiritual",
     lessons: RUHIY_LESSONS,
   },
   {
-    id: "ruhiy-2", title: "Spiritual Education · Vol. 2", arabic: "التربية الروحية", sub: "Ruhiy tarbiya, volume 2: tawḥīd, sincerity, trust, love, fear and hope, patience, repentance and modesty", quizIds: ["ruhiy-2"],
+    id: "ruhiy-2", title: "Spiritual Tarbiyah · Vol. 2", arabic: "التربية الروحية", sub: "Ruhiy tarbiya, volume 2: tawḥīd, sincerity, trust, love, fear and hope, patience, repentance and modesty", quizIds: ["ruhiy-2"], section: "spiritual",
     lessons: RUHIY2_LESSONS,
   },
   {
-    id: "ruhiy-3", title: "Spiritual Education · Vol. 3", arabic: "التربية الروحية", sub: "Ruhiy tarbiya, volume 3: taking on good character, the Prophet’s ﷺ manners, and the rights of family, neighbours and all creation", quizIds: ["ruhiy-3"],
+    id: "ruhiy-3", title: "Spiritual Tarbiyah · Vol. 3", arabic: "التربية الروحية", sub: "Ruhiy tarbiya, volume 3: taking on good character, the Prophet’s ﷺ manners, and the rights of family, neighbours and all creation", quizIds: ["ruhiy-3"], section: "spiritual",
     lessons: RUHIY3_LESSONS,
+  },
+  {
+    id: "social", title: "Social Tarbiyah", arabic: "الآداب الاجتماعية", sub: "Ijtimoiy odoblar by Shaykh Muhammad Sodik Muhammad Yusuf: the adab of every part of social life, from speech and the home to the mosque, work, illness and death", quizIds: ["social"], section: "social",
+    lessons: SOCIAL_LESSONS,
   },
   {
     id: "duas", title: "Daily Duas", arabic: "الأدعية", sub: "Short duas for every part of the day", quizIds: [],

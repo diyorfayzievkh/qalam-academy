@@ -16,14 +16,14 @@ export default function LessonPage() {
   const adab = w?.adab?.find((l) => l.id === lid);
   if (!w || (!lesson && !adab)) notFound();
 
-  const all = [...w.lessons.map((l) => l.id), ...(w.adab ?? []).map((l) => l.id)];
+  const all = [...(w.adab ?? []).map((l) => l.id), ...w.lessons.map((l) => l.id)];
   const idx = all.indexOf(lid);
   const nextId = all[idx + 1];
   const title = lesson?.title ?? adab!.title;
 
   return (
     <>
-      <PageHeader eyebrow={w.title} title={title} sub={lesson?.summary ?? adab!.summary} />
+      <PageHeader eyebrow={lesson?.group ? `${w.title} · ${lesson.group}` : w.title} title={title} sub={lesson?.summary ?? adab!.summary} />
       <Page>
         <Link href={`/learn/${w.id}`} className="font-bold text-fg-muted">← {w.title}</Link>
         {lesson ? <BlockLesson lesson={lesson} /> : <AdabView l={adab!} />}
@@ -137,6 +137,16 @@ function AdabView({ l }: { l: AdabLesson }) {
         <div className="rounded-xl bg-bg-inset px-4 py-3"><b>Reflect privately:</b> {l.practice.reflection}</div>
         <p className="text-[0.85rem] text-fg-muted">Challenges are between you and Allah, so they earn no points.</p>
       </Part>
+      {l.quiz && l.quiz.length > 0 && (
+        <section className="card flex flex-wrap items-center justify-between gap-3 border-l-[3px] border-l-gold-bright">
+          <div className="flex flex-col gap-0.5">
+            <span className="eyebrow">Lesson quiz</span>
+            <b className="font-display text-[1.1rem]">{l.quiz.length} questions on this lesson</b>
+            <span className="text-[0.9rem] text-fg-muted">10 points for each first correct answer, 30 for a perfect round.</span>
+          </div>
+          <Link className="btn" href={`/quiz/adab-${l.id}`}>Take the quiz</Link>
+        </section>
+      )}
     </>
   );
 }

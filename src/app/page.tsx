@@ -17,7 +17,8 @@ export default function HomePage() {
   const now = useNow();
   const lvl = badgeLevel(points);
   const into = points % POINTS_PER_BADGE;
-  const done = TOPICS.filter((t) => t.questions.every((_, i) => answered[`${t.id}-${i}`])).length;
+  const shown = TOPICS.filter((t) => !t.hidden);
+  const done = shown.filter((t) => t.questions.every((_, i) => answered[`${t.id}-${i}`])).length;
   const day = now ? todayWithNext(loc.lat, loc.lng, loc.tz, loc.method, now) : null;
 
   return (
@@ -61,7 +62,7 @@ export default function HomePage() {
               <i style={{ width: `${lvl >= 10 ? 100 : into / 10}%` }} />
             </div>
             <span className="text-[0.9rem] text-fg-muted">
-              {lvl >= 10 ? "All ten badges earned. Mā shāʾ Allāh!" : `${(1000 - into).toLocaleString()} points to the ${BADGES[lvl].name} badge · ${done} of ${TOPICS.length} topics complete`}
+              {lvl >= 10 ? "All ten badges earned. Mā shāʾ Allāh!" : `${(1000 - into).toLocaleString()} points to the ${BADGES[lvl].name} badge · ${done} of ${shown.length} topics complete`}
             </span>
           </div>
         </section>
@@ -72,13 +73,13 @@ export default function HomePage() {
             <Link href="/learn" className="font-bold text-fg-muted">See all</Link>
           </div>
           <div className="grid gap-3.5 [grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))]">
-            {TOPICS.slice(0, 3).map((t) => <TopicCard key={t.id} topic={t} />)}
+            {shown.slice(0, 3).map((t) => <TopicCard key={t.id} topic={t} />)}
           </div>
         </section>
 
         <section className="grid gap-3.5 sm:grid-cols-2">
           {[
-            { href: "/learn", eyebrow: "Knowledge Base", title: "Ilm Quest", text: "10 worlds: Iman, Islam, Salah, Spiritual Education (3 volumes), Akhlaq & Adab, Duas, Quran and Seerah." },
+            { href: "/learn", eyebrow: "Knowledge Base", title: "Ilm Quest", text: "Iman, Islam, Salah, Akhlaq & Adab, Duas, Quran and Seerah, plus Spiritual Tarbiyah (3 volumes) and Social Tarbiyah." },
             { href: "/hifz", eyebrow: "Hifz", title: "Memorise the Quran", text: "46 sūrahs and passages, ayah by ayah, with audio and spaced review." },
             { href: "/ramadan", eyebrow: "Seasonal", title: "Ramadan Quest", text: "Daily tracker, 30-day plan, duas, surahs and history." },
             { href: "/mizan", eyebrow: "Collection", title: "Mizan", text: "Deeds heaviest on the scale, from authentic hadith." },

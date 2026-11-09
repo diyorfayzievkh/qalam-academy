@@ -1,4 +1,5 @@
 import type { Recitation } from "./recitations";
+import type { Question } from "./topics";
 
 // Akhlaq & Adab lessons. Every lesson follows the same five parts:
 // why it matters, how to do it right, benefits, what we lose by neglecting it,
@@ -16,9 +17,10 @@ export type AdabLesson = {
   benefits: { spiritual: string; health?: string; social: string };
   lose: { spiritual: string; health?: string; social: string };
   practice: { challenge: string; reflection: string };
+  quiz?: Question[];
 };
 
-export const ADAB_LESSONS: AdabLesson[] = [
+export const ADAB_LESSONS_1: AdabLesson[] = [
   {
     id: "bed-sleep", title: "The adab of the bed and sleep", category: "Personal adab",
     summary: "Ending the day with cleanliness and remembrance.",

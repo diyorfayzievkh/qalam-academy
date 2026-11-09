@@ -1,6 +1,6 @@
 import type { Block, Lesson } from "./library";
 
-// Spiritual Education, volume 1: explainer lessons on "Ruhiy tarbiya, 1-juz"
+// Spiritual Tarbiyah, volume 1: explainer lessons on "Ruhiy tarbiya, 1-juz"
 // by Shaykh Muhammad Sodik Muhammad Yusuf (Hilol-Nashr). Each lesson teaches
 // the topic in depth: what it is, why it matters (with evidence), its types,
 // how to practise it, warning signs and key takeaways. Used with the rights
@@ -518,8 +518,8 @@ export const RUHIY_LESSONS: Lesson[] = [
 ];
 
 export const RUHIY_QUIZ = {
-  id: "ruhiy", title: "Spiritual Education 1", sub: "Ruhiy tarbiya, volume 1", icon: "learn" as const,
-  learn: ["Questions are based on the Spiritual Education lessons for volume 1 of Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf."],
+  id: "ruhiy", title: "Spiritual Tarbiyah 1", sub: "Ruhiy tarbiya, volume 1", icon: "learn" as const,
+  learn: ["Questions are based on the Spiritual Tarbiyah lessons for volume 1 of Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf."],
   questions: [
     { q: "What does “tazkiyah” mean?", options: ["Only cleaning the body", "Purifying and also growing the soul", "Memorising the Quran", "Giving charity"], answer: 1, why: "The word means both to purify and to grow: freeing the soul from its diseases and adorning it with good qualities.", src: src("1–21") },
     { q: "Which nafs blames its owner after a sin and urges more good after a good deed?", options: ["An-nafs al-muṭmaʾinnah", "An-nafs al-lawwāmah", "An-nafs al-ammārah", "None of these"], answer: 1, why: "The self-reproaching soul, the believer’s conscience (Quran 75:2).", src: src("1–21") },

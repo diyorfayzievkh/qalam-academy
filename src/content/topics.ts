@@ -1,10 +1,14 @@
 import { RUHIY_QUIZ } from "./ruhiy";
 import { RUHIY2_QUIZ } from "./ruhiy2";
 import { RUHIY3_QUIZ } from "./ruhiy3";
-// Quiz topics. Each topic: a short lesson, then 10 questions with a source.
+import { ADAB_LESSONS } from "./adab-all";
+import { SOCIAL_QUIZ } from "./social-quiz";
+import { RUHIY_EXTRA } from "./ruhiy-quiz-extra";
+// Quiz topics. Each topic: a short lesson, then up to 30 questions with a source.
+// Hidden topics are lesson quizzes, reached from inside their lesson.
 
 export type Question = { q: string; options: string[]; answer: number; why: string; src: string };
-export type Topic = { id: string; title: string; sub: string; icon: "home" | "learn" | "salah" | "times" | "qibla" | "badges"; learn: string[]; questions: Question[] };
+export type Topic = { id: string; title: string; sub: string; icon: "home" | "learn" | "salah" | "times" | "qibla" | "badges"; learn: string[]; questions: Question[]; hidden?: boolean; back?: string };
 
 export const TOPICS: Topic[] = [
   {
@@ -676,4 +680,27 @@ export const TOPICS: Topic[] = [
   RUHIY_QUIZ,
   RUHIY2_QUIZ,
   RUHIY3_QUIZ,
+  SOCIAL_QUIZ,
+  ...ADAB_LESSONS.map((l): Topic => ({
+    id: `adab-${l.id}`, title: l.title, sub: "Lesson quiz · Akhlaq & Adab", icon: "badges", hidden: true, back: `/learn/akhlaq/${l.id}`,
+    learn: [`Questions on the lesson “${l.title}”. Read the lesson first, then test yourself.`],
+    questions: l.quiz ?? [],
+  })),
 ];
+
+// The Akhlaq & Adab final quiz: 30 questions across every lesson in the world,
+// one from each lesson first, then a second from lessons in order.
+{
+  const ak = TOPICS.find((t) => t.id === "akhlaq");
+  if (ak) {
+    const qs = [ak.questions[0], ...ADAB_LESSONS.map((l) => l.quiz?.[0]), ...ADAB_LESSONS.map((l) => l.quiz?.[1])].filter((q): q is Question => !!q);
+    ak.questions = qs.slice(0, 30);
+    ak.sub = `Final quiz: ${ak.questions.length} questions across all Akhlaq & Adab lessons`;
+  }
+}
+
+// Spiritual Tarbiyah quizzes: 20 questions each.
+for (const [id, extra] of Object.entries(RUHIY_EXTRA)) {
+  const t = TOPICS.find((x) => x.id === id);
+  if (t && t.questions.length < 20) t.questions = [...t.questions, ...extra];
+}

@@ -1,7 +1,7 @@
 import type { Lesson } from "./library";
 import { L, P } from "./ruhiy";
 
-// Spiritual Education, volume 2: explainer lessons on "Ruhiy tarbiya, 2-juz"
+// Spiritual Tarbiyah, volume 2: explainer lessons on "Ruhiy tarbiya, 2-juz"
 // by Shaykh Muhammad Sodik Muhammad Yusuf (Hilol-Nashr): the stations of the
 // heart that rebuild the soul after purification. Used with the rights
 // holder's permission. A scholar should review before public release.
@@ -623,8 +623,8 @@ export const RUHIY2_LESSONS: Lesson[] = [
 ];
 
 export const RUHIY2_QUIZ = {
-  id: "ruhiy-2", title: "Spiritual Education 2", sub: "Ruhiy tarbiya, volume 2", icon: "learn" as const,
-  learn: ["Questions are based on the Spiritual Education lessons for volume 2 of Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf."],
+  id: "ruhiy-2", title: "Spiritual Tarbiyah 2", sub: "Ruhiy tarbiya, volume 2", icon: "learn" as const,
+  learn: ["Questions are based on the Spiritual Tarbiyah lessons for volume 2 of Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf."],
   questions: [
     { q: "According to al-Junayd, how are truthfulness (ṣidq) and sincerity (ikhlāṣ) related?", options: ["They are identical", "Truthfulness is the root; sincerity is the branch", "Sincerity is the root; truthfulness is the branch", "They are unrelated"], answer: 1, why: "Truthfulness underlies everything; sincerity begins once deeds begin, and no deed is accepted without both.", src: src("39–50") },
     { q: "In the ḥadīth qudsī in Muslim 2985, what happens to a deed done for Allah and someone else?", options: ["It gets half the reward", "Allah leaves the person with his partner", "It is accepted anyway", "It is rewarded double"], answer: 1, why: "Allah is the One most free of need of partners.", src: "Muslim 2985" },

@@ -26,7 +26,7 @@ export default function TopicPage() {
             </ul>
             <div className="flex flex-wrap gap-3">
               <button type="button" className="btn" onClick={() => setStarted(true)}>Start quiz</button>
-              <Link className="btn btn-ghost" href="/learn">Back to the library</Link>
+              <Link className="btn btn-ghost" href={topic.back ?? "/learn"}>{topic.back ? "Back to the lesson" : "Back to the library"}</Link>
             </div>
           </section>
         ) : (
@@ -56,7 +56,7 @@ function Quiz({ topic, onAgain }: { topic: Topic; onAgain: () => void }) {
         </p>
         <div className="flex flex-wrap gap-3">
           <button type="button" className="btn" onClick={onAgain}>Try again</button>
-          <Link className="btn btn-ghost" href="/learn">Library</Link>
+          <Link className="btn btn-ghost" href={topic.back ?? "/learn"}>{topic.back ? "Back to the lesson" : "Library"}</Link>
           <Link className="btn btn-ghost" href="/badges">My badges</Link>
         </div>
       </section>

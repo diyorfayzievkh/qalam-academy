@@ -7,18 +7,30 @@ import { TopicCard } from "@/components/topic-card";
 import { lessonCount, WORLDS } from "@/content/library";
 import { TOPICS } from "@/content/topics";
 
+const SECTIONS = [
+  { key: "core", title: "Worlds", sub: "" },
+  { key: "spiritual", title: "Spiritual Tarbiyah", sub: "Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf, in three volumes: purifying the soul, rebuilding it, and taking on good character." },
+  { key: "social", title: "Social Tarbiyah", sub: "Ijtimoiy odoblar by Shaykh Muhammad Sodik Muhammad Yusuf: the adab of speech, home, food, travel, work, the mosque, illness and more." },
+];
+
 export default function KnowledgeBasePage() {
   const { studied } = useProgress();
 
   return (
     <>
       <PageHeader eyebrow="Knowledge Base" title="Ilm Quest"
-        sub="Ten worlds of knowledge. Read a lesson for 10 points, then test yourself in the quizzes." />
+        sub="Worlds of knowledge, Spiritual Tarbiyah and Social Tarbiyah. Read a lesson for 10 points, then test yourself in the quizzes." />
       <Page>
-        <section className="flex flex-col gap-3">
-          <h2 className="text-[1.3rem]">Worlds</h2>
-          <div className="grid gap-3.5 [grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))]">
-            {WORLDS.map((w) => {
+        {SECTIONS.map((sec) => {
+          const list = WORLDS.filter((w) => (w.section ?? "core") === sec.key);
+          return (
+            <section key={sec.key} className="flex flex-col gap-3">
+              <div className="flex flex-col gap-0.5">
+                <h2 className="text-[1.3rem]">{sec.title}</h2>
+                {sec.sub && <p className="max-w-[65ch] text-[0.92rem] text-fg-muted">{sec.sub}</p>}
+              </div>
+              <div className="grid gap-3.5 [grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))]">
+            {list.map((w) => {
               const ids = [...w.lessons.map((l) => `lesson:${w.id}/${l.id}`), ...(w.adab ?? []).map((l) => `lesson:${w.id}/${l.id}`)];
               const read = ids.filter((id) => studied[id]).length;
               const total = lessonCount(w);
@@ -35,8 +47,10 @@ export default function KnowledgeBasePage() {
                 </Link>
               );
             })}
-          </div>
-        </section>
+              </div>
+            </section>
+          );
+        })}
 
         <section className="grid gap-3.5 sm:grid-cols-2">
           <Link href="/ramadan" className="card flex flex-col gap-1.5 transition hover:border-emerald">
@@ -54,7 +68,7 @@ export default function KnowledgeBasePage() {
         <section className="flex flex-col gap-3">
           <h2 className="text-[1.3rem]">Quizzes</h2>
           <div className="grid gap-3.5 [grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))]">
-            {TOPICS.map((t) => <TopicCard key={t.id} topic={t} />)}
+            {TOPICS.filter((t) => !t.hidden).map((t) => <TopicCard key={t.id} topic={t} />)}
           </div>
         </section>
       </Page>

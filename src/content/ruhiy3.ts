@@ -1,7 +1,7 @@
 import type { Lesson } from "./library";
 import { L, P } from "./ruhiy";
 
-// Spiritual Education, volume 3 ("Xulqlanish": taking on good character):
+// Spiritual Tarbiyah, volume 3 ("Xulqlanish": taking on good character):
 // explainer lessons on "Ruhiy tarbiya, 3-juz" by Shaykh Muhammad Sodik
 // Muhammad Yusuf (Hilol-Nashr). Used with the rights holder's permission.
 // A scholar should review before public release.
@@ -619,8 +619,8 @@ export const RUHIY3_LESSONS: Lesson[] = [
 ];
 
 export const RUHIY3_QUIZ = {
-  id: "ruhiy-3", title: "Spiritual Education 3", sub: "Ruhiy tarbiya, volume 3", icon: "learn" as const,
-  learn: ["Questions are based on the Spiritual Education lessons for volume 3 of Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf."],
+  id: "ruhiy-3", title: "Spiritual Tarbiyah 3", sub: "Ruhiy tarbiya, volume 3", icon: "learn" as const,
+  learn: ["Questions are based on the Spiritual Tarbiyah lessons for volume 3 of Ruhiy tarbiya by Shaykh Muhammad Sodik Muhammad Yusuf."],
   questions: [
     { q: "In spiritual training, what does “takhalluq” (xulqlanish) mean?", options: ["Memorising the names of Allah", "Taking on the character of Allah’s names in a human way, following the Prophet ﷺ", "Claiming Allah’s attributes", "Learning Arabic grammar"], answer: 1, why: "Reflecting the names in a human way, never claiming them as Allah has them.", src: src("1–14") },
     { q: "How did Ibn al-Qayyim describe mercy?", options: ["A feeling with no action", "Bringing benefit to others even when it is hard for you", "Only giving money", "Being soft on wrongdoing"], answer: 1, why: "True mercy shows in action, even at a cost.", src: src("14–29") },

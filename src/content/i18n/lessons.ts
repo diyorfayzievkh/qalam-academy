@@ -64,6 +64,24 @@ const loaders: Record<string, Loader> = {
 };
 const cache: Record<string, LessonTrMap> = {};
 
+// Adds translated reward-card descriptions that live in a separate file.
+async function withPictures(lang: Lang, world: string, map: LessonTrMap): Promise<LessonTrMap> {
+  if (lang === "en") return map;
+  const { PICTURES } = await import("./lessons-pictures");
+  const out: LessonTrMap = { ...map };
+  for (const [k, byIdx] of Object.entries(PICTURES[lang])) {
+    const [w, lesson] = k.split("/");
+    if (w !== world || !out[lesson]) continue;
+    const blocks = [...(out[lesson].blocks ?? [])];
+    for (const [i, text] of Object.entries(byIdx)) {
+      const n = Number(i);
+      blocks[n] = { ...((blocks[n] as object | null) ?? {}), picture: text };
+    }
+    out[lesson] = { ...out[lesson], blocks };
+  }
+  return map === out ? map : out;
+}
+
 export function hasLessonTranslations(lang: Lang, worldId: string) {
   return lang !== "en" && `${lang}/${worldId}` in loaders;
 }
@@ -75,7 +93,7 @@ export function useLessonTranslations(lang: Lang, worldId: string | undefined): 
     if (lang === "en" || !worldId || !loaders[key]) { setMap(null); return; }
     if (cache[key]) { setMap(cache[key]); return; }
     let live = true;
-    loaders[key]().then((m) => { cache[key] = m; if (live) setMap(m); }).catch(() => {});
+    loaders[key]().then((m) => withPictures(lang, worldId, m)).then((m) => { cache[key] = m; if (live) setMap(m); }).catch(() => {});
     return () => { live = false; };
   }, [key, lang, worldId]);
   return map;

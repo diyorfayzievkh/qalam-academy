@@ -363,6 +363,13 @@ const uz: Dict = {
   "Desert": "Sahro",
   "Sailboat": "Yelkanli qayiq",
   "Tree": "Daraxt",
+  "Family & Community": "Oila va jamiyat",
+  "Brothers and sisters, devotion to parents, the right of the neighbour, and earning only what is ḥalāl. Every lesson has its own quiz.": "Aka-uka va opa-singillar, ota-onaga sadoqat, qo‘shnining haqqi va faqat halol kasb qilish. Har bir darsning o‘z testi bor.",
+  "Family": "Oila",
+  "Community": "Jamiyat",
+  "From the lives of the scholars": "Ulamolar hayotidan",
+  "Final quiz: 12 questions across the Family & Community world": "Yakuniy test: Oila va jamiyat olami bo‘yicha 12 ta savol",
+  "Questions from every Family & Community lesson: siblings, parents, neighbours and ḥalāl earning.": "Oila va jamiyat olamining har bir darsidan savollar: aka-ukalar, ota-ona, qo‘shnilar va halol kasb.",
 };
 
 const ru: Dict = {
@@ -708,6 +715,13 @@ const ru: Dict = {
   "Desert": "Пустыня",
   "Sailboat": "Парусник",
   "Tree": "Дерево",
+  "Family & Community": "Семья и общество",
+  "Brothers and sisters, devotion to parents, the right of the neighbour, and earning only what is ḥalāl. Every lesson has its own quiz.": "Братья и сёстры, преданность родителям, право соседа и заработок только халяльным путём. У каждого урока свой тест.",
+  "Family": "Семья",
+  "Community": "Общество",
+  "From the lives of the scholars": "Из жизни учёных",
+  "Final quiz: 12 questions across the Family & Community world": "Итоговый тест: 12 вопросов по миру «Семья и общество»",
+  "Questions from every Family & Community lesson: siblings, parents, neighbours and ḥalāl earning.": "Вопросы из каждого урока мира «Семья и общество»: братья и сёстры, родители, соседи и халяльный заработок.",
 };
 
 export const DICT: Record<Exclude<Lang, "en">, Dict> = { uz, ru };

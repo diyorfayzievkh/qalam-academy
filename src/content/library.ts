@@ -1,5 +1,6 @@
 import { QURAN_EXTRA, QURAN_LESSONS } from "./quran-lessons";
 import { CLEAN_LESSONS } from "./cleanliness";
+import { FAMILY_LESSONS } from "./family";
 import type { Recitation } from "./recitations";
 import { RECITATIONS } from "./recitations";
 import type { AdabLesson } from "./adab";
@@ -271,6 +272,12 @@ export function lessonCount(w: World) {
     id: "clean", title: "Cleanliness", arabic: "النظافة",
     sub: "Keeping my body, teeth, clothes, room and home clean, and why Allah loves it. Every lesson has its own quiz.",
     quizIds: [], lessons: CLEAN_LESSONS,
+  });
+  // Family & Community world, right after Cleanliness.
+  WORLDS.splice(WORLDS.findIndex((w) => w.id === "clean") + 1, 0, {
+    id: "family", title: "Family & Community", arabic: "الأسرة والجيران",
+    sub: "Brothers and sisters, devotion to parents, the right of the neighbour, and earning only what is ḥalāl. Every lesson has its own quiz.",
+    quizIds: [], lessons: FAMILY_LESSONS,
   });
   const full: Record<string, Lesson[]> = { iman: IMAN_LESSONS, islam: ISLAM_LESSONS, seerah: SEERAH_LESSONS };
   const quran = WORLDS.find((w) => w.id === "quran");

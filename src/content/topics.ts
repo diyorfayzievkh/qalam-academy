@@ -748,3 +748,14 @@ for (const w of WORLDS) for (const l of w.lessons) {
     clean.quizIds = ["cleanliness"];
   }
 }
+
+// Family & Community final quiz: three questions from each lesson.
+{
+  const family = WORLDS.find((w) => w.id === "family");
+  if (family) {
+    const qs = family.lessons.flatMap((l) => (l.quiz ?? []).slice(0, 3));
+    TOPICS.push({ id: "family-community", title: "Family & Community", sub: `Final quiz: ${qs.length} questions across the Family & Community world`, icon: "learn",
+      learn: ["Questions from every Family & Community lesson: siblings, parents, neighbours and ḥalāl earning."], questions: qs });
+    family.quizIds = ["family-community"];
+  }
+}

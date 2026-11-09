@@ -1,0 +1,86 @@
+import type { StoryTrMap } from "./types";
+
+// Uyqu oldi hikoyalari: oila va qo‘ni-qo‘shnilar, Ali va Zaynab bilan (o‘zbekcha).
+
+export const UZ_FAMILY: StoryTrMap = {
+  "team-of-two": {
+    title: "Ali, Zaynab va ikki kishilik jamoa",
+    teaser: "Singan maket, qarsillab yopilgan eshik, uch kunlik jimlik va dunyoni o‘zgartirgan ikki aka-uka.",
+    paras: [
+      "Ali maktab loyihasi uchun Ka’baning maketini rosa ikki hafta yasagan edi. Maket stol ustida mukammal turardi, qora matosi atrofida kichkina tilla harflar bo‘yalgandi. Bir kuni tushdan keyin Zaynab quvvatlagichni so‘rab xonaga shoshib kirdi-yu, Alining sumkasiga qoqilib, maketni yerga tushirib yubordi. Bir burchagi sinib tushdi.",
+      "“Buzding-ku! — deb qichqirdi Ali. — Sen doim hamma narsani buzasan!” Zaynabning yuzi qizarib ketdi. “Ataylab qilmadim! Sen esa menga doim qo‘pollik qilasan!” U yugurib chiqib, eshikni shunday qarsillatib yopdiki, deraza zirillab ketdi. O‘sha oqshom kechki ovqatda ikkalasi bir-biriga bir og‘iz ham gapirmadi. Ertasiga ham shunday. Indiniga ham.",
+      "Uchinchi oqshom bobolari divanda ularning o‘rtasiga o‘tirdi. “Bu uyda juda jimjitlik, — dedi u. — Haddan tashqari jim. Sizlarga ikki kishilik jamoa haqida aytib beraymi?” Hech biri javob bermadi, lekin hech biri turib ketmadi ham.",
+      "“Qadim zamonda Alloh Muso payg‘ambarga dunyodagi eng og‘ir vazifani berdi. U yer yuzidagi eng qudratli va zolim podshoh Fir’avnning oldiga borib, Bani Isroilga zulm qilishni to‘xtatishni aytishi kerak edi. Muso qo‘rqdi. U: ‘Robbim, ko‘ksim tor, tilim ravon gapirmaydi’, dedi. Keyin faqat bir narsa so‘radi. Lashkar emas. Oltin emas. U: ‘Menga ahlimdan bir yordamchi qilib ber: akam Horunni. U bilan meni quvvatlantir’, dedi.”",
+      "“Alloh rozi bo‘ldi. U Musoga: ‘Biz sening bilagingni akang bilan quvvatlantiramiz’, dedi. Shunday qilib, ikki aka-uka Fir’avnning saroyiga birga kirishdi. Biri charchasa, ikkinchisi gapirardi. Biri qo‘rqsa, ikkinchisi yonida turardi. O‘z zamonasining eng ulug‘ vazifasini ikki aka-ukadan iborat jamoa bajardi.”",
+      "Ali yerga qaradi. Bobosi davom etdi. “Lekin hamma aka-ukalar ham bunday bo‘lmagan. Yusufning akalari unga hasad qilishardi, chunki otalari uni ko‘proq yaxshi ko‘radi deb o‘ylashardi. Ular uni qorong‘i quduqqa tashlashdi. Yillar o‘tib Yusuf Misrda vazir bo‘ldi, o‘sha akalari esa uning oldiga kambag‘al va och holda kelishdi. U ularni jazolashi mumkin edi. Lekin u: ‘Bugun sizlarga hech qanday malomat yo‘q. Alloh sizlarni mag‘firat qilsin’, dedi. U ularni butunlay kechirdi va butun oila yana birga bo‘ldi.”",
+      "“Yana bir narsa”, dedi bobosi uchta barmog‘ini ko‘rsatib. “Payg‘ambar ﷺ musulmonga birodari bilan uch kundan ortiq gaplashmay yurish halol emasligini aytgan. Ikkalasining yaxshirog‘i esa birinchi bo‘lib salom bergani.” U avval biriga, keyin ikkinchisiga qaradi. “Bugun uchinchi kun.”",
+      "Uzoq jimlik cho‘kdi. Keyin ikkalasi aynan bir paytda: “Assalomu alaykum”, deyishdi. Ular hayron bo‘lib bir-biriga qarashdi, Zaynab esa kulib yubordi. “Bu hisob emas, birga aytdik-ku!” “Unda ikkalamiz ham yaxshirog‘imiz”, dedi Ali va u ham kuldi.",
+      "“Sindirib qo‘yganim uchun kechir”, dedi Zaynab. “Baqirganim uchun kechir, — dedi Ali. — ‘Doim hamma narsani buzasan’ deganim uchun ham kechir. Unday emassan. Tilla harflarni bo‘yashga yordam bergansan-ku.” Zaynab qaddini rostladi. “Burchagini tuzatishga yordam beraman. Yelimlashni yaxshi bilaman.”",
+      "Shunday qilib ular uni oshxona stolida kech tungacha birga tuzatishdi. Yoriq butunlay yo‘qolmadi, diqqat bilan qarasangiz, ingichka chiziq ko‘rinib turardi. Lekin Ali uni shunday holda ko‘proq yoqtirishini aytdi. “Bu uni jamoa bo‘lib tuzatganimizni ko‘rsatadi.” Loyihasi qaytib kelganda, ustida tilla yulduzcha bor edi, Ali esa maqtovning yarmini Zaynabga berdi.",
+      "O‘sha kechasi bobosi ularga bir-birlari uchun qiladigan duoni o‘rgatdi. “Aka yoki singlingiz eshitmaydigan joyda ular uchun duo qilsangiz, bir farishta: ‘Senga ham shunday bo‘lsin’, deydi. Demak, har safar bir-biringiz uchun duo qilganingizda, o‘zingiz uchun ham duo qilgan bo‘lasiz.”",
+    ],
+    moral: "Aka-uka va opa-singillar Muso va Horun kabi bir jamoadir. Janjal bo‘lib turadi, lekin biz Yusufdek kechiramiz, uch kundan ortiq gaplashmay yurmaymiz va birinchi bo‘lib salom berishga harakat qilamiz.",
+    talk: "Akang, opang, ukang yoki amakivachchang nimani juda yaxshi qiladi? Buni ularga hech aytganmisan? Kimgadir birinchi bo‘lib salom berishing kerakmi?",
+  },
+
+  "milk-till-dawn": {
+    title: "G‘orni ochgan bir piyola sut",
+    teaser: "Bo‘ron, tosh ortida qolib ketgan uch kishi va uxlab yotgan ikki ota-ona yonidagi uzun tun.",
+    paras: [
+      "Zaynabning kayfiyati yomon edi. Onasi undan uch marta xaridlarni olib kirishga yordam berishni so‘radi, u esa uch marta ham rasmidan bosh ko‘tarmay: “Hozir!” dedi. Nihoyat borganida, ovoz chiqarib xo‘rsindi va oyog‘ini sudrab yurdi. Onasi hech narsa demadi, lekin charchagan va biroz xafa ko‘rinardi.",
+      "Uxlash vaqtida otasi Zaynabning karavoti chetiga o‘tirdi. “Senga Payg‘ambar ﷺ sahobalariga aytib bergan bir hikoyani aytib bermoqchiman, — dedi u. — Bu uch kishi, bo‘ron va bir tosh haqida.”",
+      "“Qadim zamonda uch kishi safarda ketayotganida dahshatli bo‘ron boshlandi. Yomg‘ir sharillab quydi, tog‘lar uzra momaqaldiroq gumburladi. Ular bir g‘orni ko‘rib, panoh topish uchun ichkariga yugurishdi. Lekin endigina kirishganida, tog‘dan ulkan tosh dumalab tushib, g‘orning og‘zini berkitib qo‘ydi. Zim-ziyo qorong‘i bo‘ldi. Ular itarishdi, itarishdi, lekin tosh qimirlamadi.”",
+      "“Ular bir-birlariga: ‘Endi bizni Allohdan boshqa hech kim qutqara olmaydi. Har birimiz faqat Alloh uchun qilgan eng yaxshi amalimiz bilan Unga duo qilaylik’, deyishdi.”",
+      "“Birinchi kishi qo‘llarini ko‘tarib dedi: ‘Allohim, O‘zing bilasanki, mening juda keksa ota-onam bor edi. Har oqshom qo‘ylarimni sog‘ib, sutni xotinim va bolalarimdan oldin avval ota-onamga olib borardim.’”",
+      "“‘Bir kecha suruv bilan juda kech qaytdim. Qo‘ylarni sog‘ib, piyolani olib kelgunimcha, ota-onam uxlab qolishgan ekan. Ularni uyg‘otgim kelmadi, chunki ular keksa va charchagan edi. Sutni ulardan oldin boshqa hech kimga ham bergim kelmadi. Bolalarim och qolib, oyog‘im ostida yig‘lashardi. Lekin men piyolani ushlab, ota-onamning to‘shagi yonida kutib turdim.’”",
+      "“‘Osmon yorisha boshlaguncha tun bo‘yi shunday turdim. Keyin ota-onam uyg‘onishdi va men ularga sutlarini berdim. Allohim, agar buni faqat Sen uchun qilgan bo‘lsam, bu toshni bizdan surib qo‘y.’”",
+      "Zaynabning ko‘zlari katta-katta ochildi. “Tosh siljidimi?” “Biroz siljidi, — dedi otasi. — Ichkariga ingichka nur tushdi. Keyin ikkinchi kishi o‘zining bir yaxshi amali bilan duo qildi, tosh yana siljidi. Keyin uchinchi kishi duo qildi, tosh butunlay dumalab ketdi va ular quyosh nuriga chiqib ketishdi.”",
+      "Zaynab uzoq jim qoldi. “U tun bo‘yi turdimi? Faqat ularni uyg‘otmaslik uchunmi?” “Tun bo‘yi, — dedi otasi. — Alloh buni shunchalik yaxshi ko‘rdiki, uning hayotini aynan shu amal bilan qutqardi. Alloh Qur’onda: ota-onangga hatto ‘uf’ ham dema, deydi. Hatto xo‘rsinma ham. Va: ularga rahmat bilan tavoze’ qanotingni pasaytir, deydi.”",
+      "“Payg‘ambar ﷺ ota-ona jannatning o‘rta eshigi ekanini aytgan. Har safar onangga yoki menga yordam berganingda, har bir stakan suv, har bir ‘albatta, xo‘p’ bilan o‘sha eshik sari yurasan. U aynan shu yerda, uyimizning ichida.”",
+      "Zaynab ko‘rpani iyagigacha tortdi. “Bugun ‘uf’ dedim. Ko‘p marta.” Otasi mayin jilmaydi. “Bilaman. Lekin ertaga yangi kun.” Ertasi tongda hech kim so‘ramasdan Zaynab nonushta likopchalarini stolga olib keldi, onasiga choy damlab, ikki qo‘llab oldiga qo‘ydi. Onasi hayron bo‘lib qaradi. “Bu nima uchun?” Zaynab jilmaydi. “O‘rta eshikka mashq qilyapman.”",
+    ],
+    moral: "Ota-onamizga sabr va tabassum bilan xizmat qilish Alloh eng yaxshi ko‘radigan amallardan biridir. Ularga hech qachon xo‘rsinmang va ‘uf’ demang; ularga qilingan har bir yaxshilik jannat eshigi sari bir qadamdir.",
+    talk: "Ertaga onang yoki otang uchun so‘ramasdan nima qila olasan? Sence, o‘sha kishi tun bo‘yi piyolani ushlab turganda o‘zini qanday his qilgan?",
+  },
+
+  "more-water-in-the-soup": {
+    title: "Sho‘rvaga ko‘proq suv",
+    teaser: "Qo‘shni uyga ko‘chib kelgan yangi oila, bir qozon sho‘rva va Jabroil qayta-qayta tavsiya qilgan qo‘shni.",
+    paras: [
+      "Qo‘shni uy oldida yuk mashinasi to‘xtadi. Ali va Zaynab derazadan charchagan bir oilaning qutilarni ichkariga tashiyotganini kuzatishdi: ota, ona, hassaga suyangan buvi va mushuk ko‘targan kichkina qizcha. “Ular bu yerlik emasga o‘xshaydi, — dedi Ali. — Boshqa tilda gaplashayotganlarini eshitdim.”",
+      "O‘sha oqshom onalari sho‘rva pishirayotgan edi: go‘sht va sabzavotli katta qozon, hidi butun uyni tutib ketgan. Keyin u g‘alati bir ish qildi. Ko‘zani olib, qozonga yana suv quydi va yana sabzavot soldi. “Oyi, juda ko‘p bo‘lib ketyapti-ku!” dedi Zaynab. Onasi jilmaydi. “Ko‘p emas. Qo‘shnilarga yetadigan qilyapman, xolos.”",
+      "“Payg‘ambar ﷺ sahobasi Abu Zarrga: ‘Sho‘rva pishirsang, suvini ko‘paytir va qo‘shnilaringdan xabar ol’, degan. Men aynan shuni qilyapman. Endigina ko‘chib kelgan oila hali qozon-tovoqlarini ham ochib ulgurmagan bo‘ladi. Sho‘rvamizning hidi esa allaqachon ularning uyiga kirib boryapti. Hidini hidlatib, tatib ko‘rdirmaslik to‘g‘ri bo‘lmaydi.”",
+      "Shunday qilib Ali issiq qozonni, Zaynab esa bir tovoq nonni ko‘tarib, qo‘shni eshikni taqillatishdi. Eshikni ota ochdi, hayron bo‘lib qaradi. Ali: “Assalomu alaykum. Biz qo‘shni uyda yashaymiz. Buni sizlar uchun oyimiz pishirdi”, dedi. U kishi hamma so‘zlarni tushunmadi, lekin sho‘rvani tushundi. Yuzi keng tabassumga yoyildi, o‘z tilida nimadir dedi va qo‘lini ko‘ksiga qo‘ydi.",
+      "Uyga qaytgach, Zaynab so‘radi: “Oyi, ular musulmon bo‘lmasligi ham mumkin. Baribir ulardan xabar olishimiz kerakmi?” Onasi o‘tirdi. “Senga Abdulloh ibn Amr degan sahoba haqida aytib beray. Bir kuni uning oilasi qo‘y so‘yibdi. U uyga kelib, birinchi bo‘lib: ‘Yahudiy qo‘shnimizga ham berdingizmi?’ deb so‘rabdi. Chunki u Payg‘ambar ﷺ ning: ‘Jabroil menga qo‘shni haqida shunchalik ko‘p tavsiya qildiki, hatto uni merosxo‘r qilsa kerak, deb o‘yladim’, deganini eshitgan edi.”",
+      "“Merosxo‘r — kishi vafot etganda uning molidan meros oladigan odam, — deb tushuntirdi u. — Jabroil qo‘shnilar haqida shunchalik ko‘p gapirdiki, Payg‘ambar ﷺ qo‘shnilarga ham merosdan ulush berilsa kerak, deb o‘ylagan! Ular shunchalik muhim. Har bir qo‘shnining dinidan qat’i nazar haqqi bor.”",
+      "“Bundan ham jiddiyroq gap bor, — dedi otalari ichkariga kirib. — Payg‘ambar ﷺ bir kuni: ‘Allohga qasamki, iymon keltirmagan! Allohga qasamki, iymon keltirmagan! Allohga qasamki, iymon keltirmagan!’ dedi. Sahobalar: ‘Kim, ey Allohning Rasuli?’ deb so‘rashdi. U: ‘Qo‘shnisi uning yomonligidan omonda bo‘lmagan kishi’, dedi. Demak, yaxshi qo‘shni bo‘lish shunchaki odob emas. Bu iymonning bir qismi.”",
+      "Keyingi haftalarda Ali va Zaynab qo‘shnilarining ismlarini bilib olishdi. Qizchaning ismi Amira, mushugining ismi esa Pechenye ekan. Zaynab Amiraga o‘z tillaridagi so‘zlarni o‘rgatdi. Ali buvining xaridlarini zinadan ko‘tarib chiqib berdi. Oilaning mashinasi qorga botib qolganda, Ali otasi bilan kurak olib chiqdi.",
+      "Keyin bir sovuq oqshom ularning o‘z eshigi taqilladi. Bu Amiraning onasi edi, qo‘lida mato bilan yopilgan katta patnis. Tagida yong‘oq va asal solingan, hali iliq shirinliklar tog‘dek uyulib turardi. “Sizlarga, — dedi u ehtiyotkorlik bilan, ularning tilida. — Sho‘rva uchun rahmat.” U bu jumlani bir necha kundan beri mashq qilib yurgan ekan.",
+      "O‘sha kechasi Zaynab dedi: “Oyi, qiziq-a. Biz shunchaki biroz ko‘proq suv qo‘shdik. Endi esa butun bir yangi oilamiz bor.” Onasi kuldi. “Hammasi shunday bo‘ladi. Payg‘ambar ﷺ: ‘Bir-biringizga hadya beringlar, bir-biringizni yaxshi ko‘rasizlar’, degan. Qozondagi ozgina suv mehrning boshlanishi bo‘ladi.”",
+    ],
+    moral: "Qo‘shnilarimizning dinidan qat’i nazar, bizning ustimizda muqaddas haqqi bor. Ovqatingizni baham ko‘ring, ismlarini biling, yordam bering va hech qachon ozor bermang. Qozonga qo‘shilgan ozgina suv bir umrlik mehrni bunyod etishi mumkin.",
+    talk: "Qo‘shnilaringning ismlarini bilasanmi? Bu hafta oilamiz ular bilan nimani baham ko‘rishi mumkin?",
+  },
+
+  "ali-easy-money": {
+    title: "Ali va oson pul",
+    teaser: "‘Yutqazib bo‘lmaydigan’ o‘yin, duosi ijobat bo‘lmagan changli musofir va Abu Bakr qaytarib chiqargan bir luqma.",
+    paras: [
+      "Ali yangi butsi olmoqchi edi. Har qanday butsi emas: eng zo‘r o‘yinchilar kiyadigan yorqin to‘q sariq butsi. Ular juda qimmat edi, Ali esa ozgina pul yiqqan edi, xolos. Shunda do‘sti Temur telefonida bir narsani ko‘rsatdi. “Qara, bu o‘yin. Qaysi jamoa yutishini tanlaysan, to‘g‘ri topsang, puling ikki baravar bo‘ladi. O‘tgan hafta rosa pul qildim. Oson pul!”",
+      "Alining ko‘ngli moyil bo‘ldi. U futbolni yaxshi bilardi. G‘oliblarni topa olardi, axir? Bir haftada butsiga ega bo‘lardi. Lekin nimadir noto‘g‘riday tuyuldi. O‘sha oqshom u bobosidan so‘radi. “Bobojon, ozgina, juda ozgina tikib ko‘rsam bo‘ladimi? Faqat butsi uchun?”",
+      "Bobosi choyini qo‘ydi. “Ali, bu qimor. Alloh uni shaytonning ishi deb ataydi va undan ozmi-ko‘pmi butunlay uzoq bo‘lishni buyuradi. Lekin senga pulimiz qayerdan kelishi nega bunchalik muhimligini aytib beray. Payg‘ambar ﷺ bir kuni sahobalariga bir kishi haqida aytib bergan.”",
+      "“Bu kishi juda-juda uzoq safar qilgan edi. Sochlari to‘zg‘igan, kiyimlari chang bosgan. U qo‘llarini osmonga ko‘tarib yolvordi: ‘Yo Robbim! Yo Robbim!’ Duosi albatta ijobat bo‘ladigan odamga o‘xshaydi, shunday emasmi? Allohga nido qilayotgan charchagan musofir.”",
+      "“Lekin Payg‘ambar ﷺ dedi: uning yegani harom, ichgani harom, kiygani harom va harom bilan oziqlangan. Unday holda uning duosi qanday ijobat bo‘lsin?”",
+      "Alining og‘zi ochilib qoldi. “Duosi puli sababli ijobat bo‘lmadimi?” “Alloh pokdir, — dedi bobosi, — va faqat pok narsani qabul qiladi. Pul aldash, o‘g‘irlik, qimor yoki yolg‘ondan kelsa, u shunchaki cho‘ntagingda yotmaydi. U ovqatingga, kiyimingga, tanangga kiradi. Va duoning eshigini to‘sib qo‘yadi.”",
+      "“Senga Abu Bakr haqida aytib beray, — deb davom etdi u. — Uning ovqat olib keladigan bir xizmatkori bor edi. Bir kuni Abu Bakr bir luqma yedi, shunda xizmatkor dedi: ‘Bu qayerdan kelganini bilasizmi? Islomdan oldin men bir kishiga folbinlik qilgandek bo‘lgan edim. Aslida hech narsa bilmasdim, shunchaki uni aldagandim. U bugun meni ko‘rib, shu ovqat bilan haqimni berdi.’”",
+      "“Abu Bakr nima qilganini bilasanmi? U barmoqlarini og‘ziga solib, o‘sha ovqatning hammasi chiqib ketguncha qusdi. U tanasida haromdan hatto bir luqma ham qolishini xohlamadi.”",
+      "Ali jim qoldi. “Bu ko‘p-ku. Atigi bir luqma uchun.” “Aynan shunday, — dedi bobosi. — Agar u bir luqma haqida shunchalik qayg‘urgan bo‘lsa, biz bir juft butsi haqida qanchalik qayg‘urishimiz kerakligini o‘ylab ko‘r. Payg‘ambar ﷺ qiyomat kuni har bir insondan moli haqida so‘ralishini aytgan: uni qayerdan topgani va nimaga sarflagani haqida.”",
+      "“Unda butsini qanday olaman?” Bobosi jilmaydi. “Payg‘ambar ﷺ: ‘Hech kim o‘z qo‘li mehnati bilan topganidan yaxshiroq taom yemagan’, degan. Dovud payg‘ambar podshoh bo‘la turib ham rizqini o‘z qo‘li bilan narsalar yasab topardi. Sening qo‘ling nima qila oladi?”",
+      "Shunday qilib Ali ishga kirishdi. Har shanba tog‘asining mashinasini yuvdi. Pastdagi keksa ayolning xaridlarini ko‘tarishga yordam berdi, Ali kerak emas desa ham, u albatta haq to‘lardi. Futbolchilarning rasmlarini chizib, sinfdoshlariga sotdi. Bir hafta emas, ikki oy ketdi. Lekin u uddaladi.",
+      "Bir haftadan keyin Temur maktabga juda xafa holda keldi. U o‘yinda bor pulini, hatto tug‘ilgan kuniga berilgan pulni ham yutqazib qo‘ygan, ota-onasiga aytishga qo‘rqardi. Ali uning yoniga o‘tirdi. “Shanba kuni men bilan mashina yuvishni xohlaysanmi? Tog‘amning uchta mashinasi bor bir do‘sti bor.” Temur boshini ko‘tardi. “Rostdanmi?” “Rostdan. Sekinroq. Lekin bu pok pul, va u g‘oyib bo‘lib qolmaydi.”",
+      "Ali nihoyat to‘q sariq butsisini kiyganida, bobosi dedi: “Bilasanmi, bular butun jamoadagi eng zo‘r butsilar.” “Nega? Boshqalarnikidan farqi yo‘q-ku.” “Yo‘q, — dedi bobosi. — Seniki halol. Ulardagi har bir qadam barakadir.”",
+    ],
+    moral: "Pulimiz qayerdan kelishi juda muhim. Aldash, qimor, o‘g‘irlik yoki yolg‘ondan kelgan harom pul duomizni to‘sib qo‘yadi va barakani ketkazadi. O‘z qo‘limiz bilan topilgan halol pul, garchi ko‘proq vaqt olsa ham, barakaga to‘la.",
+    talk: "Bola ozgina pulni qanday halol yo‘llar bilan topishi mumkin? Sence, nega Alloh faqat pok narsani qabul qiladi?",
+  },
+};

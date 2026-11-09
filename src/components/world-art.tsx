@@ -21,6 +21,7 @@ export const WORLD_LOOKS: Record<string, WorldLook> = {
   duas: { from: "#2E2350", to: "#875A8A", accent: "#F6D28B", ink: "#FBF0FF" },
   quran: { from: "#08352A", to: "#17664F", accent: "#E9C46A", ink: "#EEF8F1" },
   clean: { from: "#0F4C6E", to: "#3FA7C9", accent: "#FFFFFF", ink: "#F0FAFF" },
+  family: { from: "#1E3A2F", to: "#C2703D", accent: "#FFD98A", ink: "#FFF4E4" },
   seerah: { from: "#7A3E1D", to: "#E6B373", accent: "#FFF0C9", ink: "#FFF8EC" },
 };
 const FALLBACK: WorldLook = { from: "#0D4A3B", to: "#1D7A60", accent: "#E9C46A", ink: "#F5EFDC" };
@@ -162,6 +163,24 @@ function Scene({ id, L, g }: { id: string; L: WorldLook; g: string }) {
           <circle key={i} cx={x} cy={y} r={r} fill="none" stroke={L.ink} strokeOpacity={0.7} strokeWidth={1.5} className="float-up" style={{ animationDelay: `${i * 0.6}s` }} />
         ))}
         <Lattice color={L.ink} />
+      </>);
+    case "family":
+      return (<>
+        <circle cx="214" cy="60" r="58" fill={`url(#${g}-glow)`} />
+        <Stars color={L.ink} opacity={0.5} count={8} />
+        {/* Three homes side by side, lit windows, a shared path and a crescent */}
+        <path d="M96 24a14 14 0 1 0 10 24a11 11 0 1 1 -10 -24z" fill={a} />
+        {[[150, 88, 40], [204, 72, 48], [266, 90, 36]].map(([x, y, w], i) => (
+          <g key={i}>
+            <path d={`M${x - 4} ${y}l${w / 2 + 4} -${w * 0.45}l${w / 2 + 4} ${w * 0.45}z`} fill={L.ink} opacity={0.95} />
+            <rect x={x} y={y} width={w} height={124 - y} fill={L.ink} opacity={0.88} />
+            <rect x={x + w / 2 - 6} y={110} width={12} height={14} rx={6} fill={L.from} />
+            <rect x={x + 8} y={y + 10} width={10} height={10} rx={2} fill={a} />
+            <rect x={x + w - 18} y={y + 10} width={10} height={10} rx={2} fill={a} className="twinkle" style={{ animationDelay: `${i * 0.8}s` }} />
+          </g>
+        ))}
+        <path d="M0 124h320v16H0z" fill={L.from} opacity={0.55} />
+        <path d="M130 132q90-10 180 0" stroke={a} strokeOpacity={0.6} strokeWidth={2} strokeDasharray="4 6" fill="none" />
       </>);
     case "seerah":
       return (<>

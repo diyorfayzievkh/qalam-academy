@@ -62,6 +62,7 @@ const loaders: Record<string, Loader> = {
   "ru/quran": () => import("./lessons-ru-quran").then((m) => m.default),
   "uz/clean": () => import("./lessons-uz-clean").then((m) => m.default),
   "uz/seerah": () => import("./lessons-uz-seerah").then((m) => m.default),
+  "uz/duas": () => import("./lessons-uz-duas").then((m) => m.default),
 };
 const cache: Record<string, LessonTrMap> = {};
 
@@ -80,7 +81,13 @@ async function withPictures(lang: Lang, world: string, map: LessonTrMap): Promis
     }
     out[lesson] = { ...out[lesson], blocks };
   }
-  return map === out ? map : out;
+  if (lang === "uz") {
+    const { QUIZ_UZ } = await import("./lessons-uz-quiz");
+    for (const [lesson, quiz] of Object.entries(QUIZ_UZ[world] ?? {})) {
+      if (out[lesson] && !out[lesson].quiz) out[lesson] = { ...out[lesson], quiz };
+    }
+  }
+  return out;
 }
 
 export function hasLessonTranslations(lang: Lang, worldId: string) {

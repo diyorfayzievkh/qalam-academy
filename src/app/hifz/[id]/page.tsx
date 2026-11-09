@@ -26,12 +26,15 @@ export default function HifzStudyPage() {
   const [lang, setLang] = useState<Lang>("en");
   const [showTr, setShowTr] = useState(true);
   const [repeat, setRepeat] = useState(3);
+  // How many times to play the whole sūrah; 0 means keep looping until stopped.
+  const [rounds, setRounds] = useState(1);
+  const [round, setRound] = useState(1);
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
   const [rated, setRated] = useState<string | null>(null);
 
   // Audio: play one ayah N times, optionally continue through the surah.
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const queue = useRef<{ i: number; left: number; all: boolean } | null>(null);
+  const queue = useRef<{ i: number; left: number; all: boolean; per: number; round: number; rounds: number } | null>(null);
   const [playing, setPlaying] = useState<number | null>(null);
 
   useEffect(() => {
@@ -61,16 +64,24 @@ export default function HifzStudyPage() {
       const q = queue.current;
       if (!q) return;
       if (q.left > 1) { q.left -= 1; el.currentTime = 0; void el.play(); return; }
-      if (q.all && data && q.i + 1 < data.ayahs.length) { queue.current = { i: q.i + 1, left: repeat, all: true }; playIndex(q.i + 1); return; }
+      if (q.all && data && q.i + 1 < data.ayahs.length) { queue.current = { ...q, i: q.i + 1, left: q.per }; playIndex(q.i + 1); return; }
+      // End of the sūrah: start again if more rounds are wanted (0 = loop until stopped).
+      if (q.all && data && (q.rounds === 0 || q.round < q.rounds)) {
+        queue.current = { ...q, i: 0, left: q.per, round: q.round + 1 };
+        setRound(q.round + 1);
+        setTimeout(() => { if (queue.current) playIndex(0); }, 1200);
+        return;
+      }
       stop();
     };
     setPlaying(i);
     void el.play().catch(() => stop());
-  }, [data, repeat, stop]);
+  }, [data, stop]);
 
   const play = (i: number, all = false) => {
     if (playing === i && !all) { stop(); return; }
-    queue.current = { i, left: repeat, all };
+    queue.current = { i, left: repeat, all, per: repeat, round: 1, rounds: all ? rounds : 1 };
+    setRound(1);
     playIndex(i);
   };
 
@@ -109,6 +120,12 @@ export default function HifzStudyPage() {
                 {[1, 3, 5, 10, 20].map((n) => <option key={n} value={n}>{n}×</option>)}
               </select>
             </label>
+            <label className="field" htmlFor="rounds">Repeat whole sūrah
+              <select id="rounds" className="input" value={rounds} onChange={(e) => setRounds(Number(e.target.value))}>
+                {[1, 2, 3, 5, 7, 10].map((n) => <option key={n} value={n}>{n}×</option>)}
+                <option value={0}>Loop until I stop</option>
+              </select>
+            </label>
             <label className="flex items-center gap-2 pb-2 font-bold text-fg-muted">
               <input type="checkbox" checked={showTr} onChange={(e) => setShowTr(e.target.checked)} /> Transliteration
             </label>
@@ -116,6 +133,12 @@ export default function HifzStudyPage() {
               {playing !== null ? "Stop audio" : "Play whole sūrah"}
             </button>
           </div>
+          {playing !== null && queue.current?.all && (
+            <p role="status" className="flex flex-wrap items-center gap-2 text-[0.9rem] font-bold text-emerald">
+              <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-emerald" />
+              {queue.current.rounds === 0 ? `Round ${round} · looping` : `Round ${round} of ${queue.current.rounds}`} · ayah {(data?.ayahs[playing]?.n ?? playing + 1)} · each ayah ×{queue.current.per}
+            </p>
+          )}
           <p className="text-[0.88rem] text-fg-muted">
             {mode === "learn" && "Listen to each ayah several times and repeat after the reciter. Tick an ayah when you can say it without looking."}
             {mode === "test" && "Only the first word of each ayah is shown. Recite the rest from memory, then tap to check."}

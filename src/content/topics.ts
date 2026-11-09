@@ -4,6 +4,7 @@ import { RUHIY3_QUIZ } from "./ruhiy3";
 import { ADAB_LESSONS } from "./adab-all";
 import { SOCIAL_QUIZ } from "./social-quiz";
 import { RUHIY_EXTRA } from "./ruhiy-quiz-extra";
+import { SALAH_EXTRA_QUIZ } from "./salah-extra";
 // Quiz topics. Each topic: a short lesson, then up to 30 questions with a source.
 // Hidden topics are lesson quizzes, reached from inside their lesson.
 
@@ -681,6 +682,7 @@ export const TOPICS: Topic[] = [
   RUHIY2_QUIZ,
   RUHIY3_QUIZ,
   SOCIAL_QUIZ,
+  SALAH_EXTRA_QUIZ,
   ...ADAB_LESSONS.map((l): Topic => ({
     id: `adab-${l.id}`, title: l.title, sub: "Lesson quiz · Akhlaq & Adab", icon: "badges", hidden: true, back: `/learn/akhlaq/${l.id}`,
     learn: [`Questions on the lesson “${l.title}”. Read the lesson first, then test yourself.`],

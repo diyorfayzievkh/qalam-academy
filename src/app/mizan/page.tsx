@@ -1,5 +1,6 @@
 "use client";
 
+import { MIZAN_PICTURES } from "@/content/mizan-pictures";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { Page, PageHeader } from "@/components/app-shell";
@@ -68,6 +69,7 @@ function Card({ c, store }: { c: MizanCard; store: ReturnType<typeof useMizanSto
       {c.tr && <p className="font-semibold italic text-emerald">{c.tr}</p>}
       {c.meaning && <p className="text-fg-muted">{c.meaning}</p>}
       <p className="rounded-xl bg-bg-inset px-3.5 py-2.5"><b>Reward:</b> {c.reward}</p>
+      {MIZAN_PICTURES[c.id] && <p className="rounded-xl border border-gold-bright/40 bg-gold-bright/10 px-3.5 py-2.5 text-[0.95rem]"><b className="text-gold">Picture it:</b> {MIZAN_PICTURES[c.id]}</p>}
       <p className="text-[0.82rem] font-bold text-fg-muted">{c.source} · {c.grade} · {c.times.join(", ")}</p>
       <div className="flex flex-wrap gap-2">
         <button type="button" className={`btn ${inRoutine ? "btn-gold" : "btn-ghost"} !px-3.5 !py-2 text-[0.88rem]`} aria-pressed={inRoutine}

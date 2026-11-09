@@ -8,6 +8,7 @@ import { POINTS, useProgress } from "@/components/progress";
 import { RecitationBlock } from "@/components/recitation";
 import type { AdabLesson } from "@/content/adab";
 import { findWorld, type Block, type Lesson } from "@/content/library";
+import { REWARD_BLOCKS } from "@/content/rewards";
 
 export default function LessonPage() {
   const { world: wid, lesson: lid } = useParams<{ world: string; lesson: string }>();
@@ -26,7 +27,7 @@ export default function LessonPage() {
       <PageHeader eyebrow={lesson?.group ? `${w.title} · ${lesson.group}` : w.title} title={title} sub={lesson?.summary ?? adab!.summary} />
       <Page>
         <Link href={`/learn/${w.id}`} className="font-bold text-fg-muted">← {w.title}</Link>
-        {lesson ? <BlockLesson lesson={lesson} /> : <AdabView l={adab!} />}
+        {lesson ? <BlockLesson lesson={lesson} /> : <AdabView l={adab!} rewards={REWARD_BLOCKS[`${w.id}/${lid}`]} />}
         <FinishBar id={`lesson:${w.id}/${lid}`} next={nextId ? `/learn/${w.id}/${nextId}` : null} back={`/learn/${w.id}`} />
       </Page>
     </>
@@ -46,6 +47,8 @@ function BlockView({ b }: { b: Block }) {
   switch (b.type) {
     case "p":
       return <p className="max-w-[65ch]">{b.text}</p>;
+    case "reward":
+      return <RewardCard b={b} />;
     case "points":
       return (
         <div className="flex flex-col gap-2">
@@ -109,7 +112,18 @@ function Triple({ rows }: { rows: { label: string; text?: string }[] }) {
   );
 }
 
-function AdabView({ l }: { l: AdabLesson }) {
+function RewardCard({ b }: { b: Extract<Block, { type: "reward" }> }) {
+  return (
+    <aside className="flex flex-col gap-1.5 rounded-xl border border-gold-bright/50 bg-gold-bright/10 px-4 py-3.5">
+      <span className="eyebrow !text-gold">Key reward · {b.title}</span>
+      <b className="font-display text-[1.25rem] leading-snug text-emerald">{b.measure}</b>
+      <p className="max-w-[65ch]">{b.picture}</p>
+      <p className="text-[0.82rem] font-bold text-gold">{b.src}</p>
+    </aside>
+  );
+}
+
+function AdabView({ l, rewards }: { l: AdabLesson; rewards?: Block[] }) {
   return (
     <>
       <Part n={1} title="Why it matters">
@@ -128,6 +142,7 @@ function AdabView({ l }: { l: AdabLesson }) {
       <Part n={3} title="Benefits">
         <Triple rows={[{ label: "Spiritual", text: l.benefits.spiritual }, { label: "Health", text: l.benefits.health }, { label: "Social", text: l.benefits.social }]} />
         {l.benefits.health && <p className="text-[0.82rem] text-fg-muted">Health points are general health knowledge, not hadith.</p>}
+        {rewards?.map((b, i) => <BlockView key={i} b={b} />)}
       </Part>
       <Part n={4} title="What we lose by neglecting it">
         <Triple rows={[{ label: "Spiritual", text: l.lose.spiritual }, { label: "Health", text: l.lose.health }, { label: "Social", text: l.lose.social }]} />

@@ -7,6 +7,7 @@ import { useAccount } from "@/components/account";
 import { useT } from "@/components/lang";
 import { BADGES, badgeLevel } from "@/content/badges";
 import { LANGS } from "@/lib/i18n";
+import { readDeviceFamily, saveDeviceFamily, type DeviceFamily } from "@/lib/family-device";
 
 type Member = { id: string; name: string; kind: string; role: string; me: boolean; points?: number; studied?: number; answered?: number; perfect?: number; memorized?: number; lastActive?: string | null };
 type FamilyData = { family: { name: string; code: string | null } | null; role?: string; members?: Member[] };
@@ -41,10 +42,22 @@ function SignedOut() {
   const [tab, setTab] = useState<"login" | "signup" | "child">("login");
   const [name, setName] = useState(""); const [email, setEmail] = useState(""); const [pw, setPw] = useState("");
   const [code, setCode] = useState(""); const [pin, setPin] = useState("");
+  // A family saved on this device: children just tap their name and type their PIN.
+  const [saved, setSaved] = useState<DeviceFamily | null>(null);
+  const [otherCode, setOtherCode] = useState(false);
+  useEffect(() => { const d = readDeviceFamily(); if (d) { setSaved(d); setCode(d.code); setTab("child"); } }, []);
+  const useSaved = tab === "child" && saved && !otherCode;
 
   const f = useForm(() => tab === "login" ? call("/api/auth/login", "POST", { email, password: pw })
     : tab === "signup" ? call("/api/auth/signup", "POST", { name, email, password: pw })
-    : call("/api/auth/child", "POST", { code, name, pin }), refresh);
+    : call("/api/auth/child", "POST", { code: useSaved ? saved!.code : code, name, pin }), async () => {
+      if (tab === "child") {
+        const c = (useSaved ? saved!.code : code).trim().toUpperCase();
+        const prev = readDeviceFamily();
+        saveDeviceFamily({ code: c, children: [...(prev?.code === c ? prev.children : []), name.trim()] });
+      }
+      await refresh();
+    });
 
   return (
     <div className="mx-auto flex w-full max-w-[480px] flex-col gap-4">
@@ -56,11 +69,29 @@ function SignedOut() {
       <form onSubmit={f.submit} className="card flex flex-col gap-3.5">
         <h2 className="text-[1.25rem]">{tab === "login" ? t("Parent sign in") : tab === "signup" ? t("Create a parent account") : t("Sign in as a child")}</h2>
         <p className="text-[0.92rem] text-fg-muted">
-          {tab === "child" ? t("Ask your parent for the family code and your PIN.") : t("Your progress syncs across your devices. What you have done on this device so far is kept.")}
+          {tab === "child" ? (useSaved ? t("Tap your name and type your PIN.") : t("Ask your parent for the family code and your PIN.")) : t("Your progress syncs across your devices. What you have done on this device so far is kept.")}
         </p>
         {tab === "child" ? (
           <>
-            <Field label={t("Family code")}><input className={`${input} font-mono uppercase tracking-[0.2em]`} value={code} onChange={(e) => setCode(e.target.value)} autoCapitalize="characters" autoComplete="off" required maxLength={12} /></Field>
+            {useSaved ? (
+              <div className="flex flex-col gap-2 rounded-btn bg-emerald-soft px-3.5 py-3">
+                <span className="text-[0.92rem] font-bold">{saved!.name ? t("Family: {name}", { name: saved!.name }) : t("Your family is saved on this device.")}</span>
+                <button type="button" className="self-start text-[0.85rem] font-bold text-emerald underline underline-offset-4" onClick={() => { setOtherCode(true); setCode(""); }}>{t("Use a different family code")}</button>
+              </div>
+            ) : (
+              <Field label={t("Family code")}><input className={`${input} font-mono uppercase tracking-[0.2em]`} value={code} onChange={(e) => setCode(e.target.value)} autoCapitalize="characters" autoComplete="off" required maxLength={12} /></Field>
+            )}
+            {useSaved && saved!.children.length > 0 && (
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[0.92rem] font-bold">{t("Who are you?")}</span>
+                <div className="flex flex-wrap gap-2">
+                  {saved!.children.map((c) => (
+                    <button key={c} type="button" aria-pressed={name === c} onClick={() => setName(c)}
+                      className={`rounded-full border-2 px-4 py-2 font-bold ${name === c ? "border-emerald bg-emerald text-white" : "border-border bg-bg-surface"}`}>{c}</button>
+                  ))}
+                </div>
+              </div>
+            )}
             <Field label={t("Your name")}><input className={input} value={name} onChange={(e) => setName(e.target.value)} autoComplete="off" required maxLength={40} /></Field>
             <Field label={t("PIN (4 digits)")}><input className={`${input} tracking-[0.4em]`} value={pin} onChange={(e) => setPin(e.target.value.replace(/\D/g, "").slice(0, 4))} inputMode="numeric" type="password" autoComplete="off" required /></Field>
           </>
@@ -153,7 +184,14 @@ function Family() {
   const [kidName, setKidName] = useState(""); const [kidPin, setKidPin] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const load = useCallback(async () => { const r = await call<FamilyData>("/api/family"); if (r.ok) setData(r.data); }, [call]);
+  const load = useCallback(async () => {
+    const r = await call<FamilyData>("/api/family");
+    if (!r.ok) return;
+    setData(r.data);
+    // Remember the family on this device so children can sign in with their name and PIN.
+    const fam = r.data.family;
+    if (fam) saveDeviceFamily({ code: fam.code ?? undefined, name: fam.name, children: (r.data.members ?? []).filter((m) => m.kind === "CHILD").map((m) => m.name) });
+  }, [call]);
   useEffect(() => { load(); }, [load, user?.familyId]);
 
   const create = useForm(() => call("/api/family", "POST", { name: famName }), refresh);

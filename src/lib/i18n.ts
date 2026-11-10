@@ -507,6 +507,12 @@ const uz: Dict = {
   "Don’t waste": "Isrof qilmang",
   "Final quiz: 14 questions across the Manners in Public world": "Yakuniy test: Jamoat joylari odobi olami bo‘yicha 14 ta savol",
   "Questions from every Manners in Public lesson: the masjid, the bazaar, school, streets, and not wasting food, money or time.": "Jamoat joylari odobi olamining har bir darsidan savollar: masjid, bozor, maktab, ko‘chalar, ovqat, pul va vaqtni isrof qilmaslik.",
+  "Reading and meaning": "O‘qish va ma’no", "Voice": "Ovoz",
+  "Uses your device’s voices. We pick a warm, natural female voice when your device has one.": "Qurilmangiz ovozlaridan foydalanadi. Qurilmada bo‘lsa, iliq va tabiiy ayol ovozini tanlaymiz.",
+  "Your device has no voice for this language yet.": "Qurilmangizda bu til uchun ovoz hali yo‘q.",
+  "Family: {name}": "Oila: {name}", "Your family is saved on this device.": "Oilangiz shu qurilmada saqlangan.",
+  "Use a different family code": "Boshqa oila kodidan foydalanish", "Who are you?": "Siz kimsiz?",
+  "Tap your name and type your PIN.": "Ismingizni bosing va PIN kodingizni kiriting.",
 };
 
 const ru: Dict = {
@@ -996,6 +1002,12 @@ const ru: Dict = {
   "Don’t waste": "Не расточай",
   "Final quiz: 14 questions across the Manners in Public world": "Итоговый тест: 14 вопросов по миру «Поведение в общественных местах»",
   "Questions from every Manners in Public lesson: the masjid, the bazaar, school, streets, and not wasting food, money or time.": "Вопросы из каждого урока: мечеть, базар, школа, улицы, и как не тратить впустую еду, деньги и время.",
+  "Reading and meaning": "Чтение и смысл", "Voice": "Голос",
+  "Uses your device’s voices. We pick a warm, natural female voice when your device has one.": "Используются голоса вашего устройства. Мы выбираем тёплый, естественный женский голос, если он есть.",
+  "Your device has no voice for this language yet.": "На вашем устройстве пока нет голоса для этого языка.",
+  "Family: {name}": "Семья: {name}", "Your family is saved on this device.": "Ваша семья сохранена на этом устройстве.",
+  "Use a different family code": "Другой код семьи", "Who are you?": "Кто ты?",
+  "Tap your name and type your PIN.": "Нажми на своё имя и введи PIN-код.",
 };
 
 export const DICT: Record<Exclude<Lang, "en">, Dict> = { uz, ru };

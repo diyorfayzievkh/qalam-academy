@@ -145,11 +145,11 @@ function KidsHome({ picks }: { picks: DailyPicks }) {
   const hour = new Date().getHours();
   const hello = hour < 12 ? t("Good morning") : hour < 17 ? t("Good afternoon") : t("Good evening");
   const tiles = [
-    { href: "/learn", title: "Learn", sub: "Faith, prayer and good manners", art: "iman" },
+    { href: "/learn", title: "Ilm Quest", sub: "Faith, prayer and good manners", art: "iman" },
     { href: "/salah", title: "How to pray", sub: "Step by step", art: "salah" },
     { href: "/stories", title: "Stories", sub: "Prophets and heroes", art: "seerah" },
-    { href: "/hifz", title: "Quran", sub: "Learn a sūrah", art: "quran" },
-    { href: "/badges", title: "My badges", sub: "The Path of Light", art: "duas" },
+    { href: "/learn/quran", title: "Quran", sub: "Reading and meaning", art: "quran" },
+    { href: "/hifz", title: "Hifz", sub: "Learn a sūrah", art: "duas" },
     { href: "/learn/akhlaq", title: "Good manners", sub: "Be like the Prophet ﷺ", art: "akhlaq" },
   ];
   return (

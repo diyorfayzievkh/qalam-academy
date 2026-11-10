@@ -90,44 +90,96 @@ export default function StoryPage() {
   );
 }
 
+// Voices we prefer for a warm, storytelling read: natural/neural voices first,
+// then known female voices. Device voices differ, so we score what is there.
+const NATURAL = /natural|neural|premium|enhanced|online/i;
+const FEMALE = /female|aria|jenny|sonia|libby|ava|emma|michelle|samantha|karen|moira|serena|tessa|victoria|zoe|fiona|kate|susan|hazel|allison|nicky|joanna|kendra|salli|svetlana|milena|irina|dariya|katya|alena|madina|zira|google uk english female|google us english/i;
+const MALE = /\bmale\b|guy|ryan|daniel|alex\b|fred|tom\b|aaron|arthur|david|mark|george|james|oliver|thomas|dmitry|pavel|maxim|yuri|sardor/i;
+const VOICE_KEY = "qalam-voice";
+
+function rankVoices(all: SpeechSynthesisVoice[], code: string) {
+  const score = (v: SpeechSynthesisVoice) => (NATURAL.test(v.name) ? 4 : 0) + (FEMALE.test(v.name) && !/\bmale\b/i.test(v.name.replace(/female/i, "")) ? 3 : 0) - (MALE.test(v.name) ? 3 : 0) + (v.localService ? 0 : 1);
+  return all.filter((v) => v.lang.toLowerCase().replace("_", "-").startsWith(code)).sort((x, y) => score(y) - score(x));
+}
+
 function ReadAloud({ s, lang }: { s: Bedtime; lang: "en" | "uz" | "ru" }) {
   const { t } = useT();
   const [state, setState] = useState<"idle" | "playing" | "paused">("idle");
   const [ok, setOk] = useState(false);
-  const queue = useRef<SpeechSynthesisUtterance[]>([]);
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [pick, setPick] = useState("");
+  const run = useRef(0); // bumps on every stop, so stale callbacks do nothing
+  const timer = useRef<ReturnType<typeof setTimeout>>();
+  const code = { en: "en", uz: "uz", ru: "ru" }[lang];
 
   useEffect(() => {
-    setOk(typeof window !== "undefined" && "speechSynthesis" in window);
-    return () => { try { window.speechSynthesis.cancel(); } catch { /* ignore */ } };
-  }, []);
-  useEffect(() => { try { window.speechSynthesis?.cancel(); } catch { /* ignore */ } setState("idle"); }, [s.id]);
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    setOk(true);
+    const synth = window.speechSynthesis;
+    const load = () => setVoices(rankVoices(synth.getVoices(), code));
+    load(); synth.addEventListener?.("voiceschanged", load);
+    try { setPick(localStorage.getItem(`${VOICE_KEY}:${code}`) || ""); } catch { /* ignore */ }
+    return () => { synth.removeEventListener?.("voiceschanged", load); };
+  }, [code]);
+  useEffect(() => () => stop(), []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { stop(); }, [s.id, lang]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!ok) return null;
+
+  const voice = voices.find((v) => v.voiceURI === pick) ?? voices[0];
+
+  function stop() {
+    run.current++; clearTimeout(timer.current);
+    try { window.speechSynthesis.cancel(); } catch { /* ignore */ }
+    setState("idle");
+  }
 
   function play() {
     const synth = window.speechSynthesis;
     if (state === "paused") { synth.resume(); setState("playing"); return; }
-    synth.cancel();
-    const parts = [s.title, ...s.paras, `${t("The lesson")}. ${s.moral}`];
-    const code = { en: "en", uz: "uz", ru: "ru" }[lang];
-    const voice = synth.getVoices().find((v) => v.lang.toLowerCase().startsWith(code));
-    queue.current = parts.map((text, k) => {
-      const u = new SpeechSynthesisUtterance(text);
-      u.rate = 0.9; u.pitch = 1; u.lang = { en: "en-US", uz: "uz-UZ", ru: "ru-RU" }[lang];
-      if (voice) u.voice = voice;
-      if (k === parts.length - 1) u.onend = () => setState("idle");
+    stop();
+    const id = ++run.current;
+    // Read sentence by sentence with small pauses, like a storyteller:
+    // a longer breath between paragraphs, and a moment before the lesson.
+    const split = (p: string) => p.match(/[^.!?…]+[.!?…]+["”»’)]*|[^.!?…]+$/g)?.map((x) => x.trim()).filter(Boolean) ?? [p];
+    const items: { text: string; pause: number }[] = [{ text: s.title, pause: 900 }];
+    s.paras.forEach((p) => { const ss = split(p); ss.forEach((x, k) => items.push({ text: x, pause: k === ss.length - 1 ? 750 : 260 })); });
+    items.push({ text: `${t("The lesson")}. ${s.moral}`, pause: 0 });
+    items[items.length - 2].pause = 1100;
+    let i = 0;
+    const next = () => {
+      if (id !== run.current) return;
+      if (i >= items.length) { setState("idle"); return; }
+      const it = items[i++];
+      const u = new SpeechSynthesisUtterance(it.text);
+      u.lang = { en: "en-GB", uz: "uz-UZ", ru: "ru-RU" }[lang];
+      if (voice) { u.voice = voice; u.lang = voice.lang; }
+      u.rate = 0.86; u.pitch = 1.04;
+      u.onend = () => { if (id === run.current) timer.current = setTimeout(next, it.pause); };
+      u.onerror = u.onend;
       synth.speak(u);
-      return u;
-    });
+    };
+    next();
     setState("playing");
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-2.5">
-      <button type="button" className="btn" onClick={() => (state === "playing" ? (window.speechSynthesis.pause(), setState("paused")) : play())}>
-        {state === "playing" ? t("Pause") : state === "paused" ? t("Resume") : t("Read aloud")}
-      </button>
-      {state !== "idle" && <button type="button" className="btn btn-ghost" onClick={() => { window.speechSynthesis.cancel(); setState("idle"); }}>{t("Stop")}</button>}
-      <span className="text-[0.85rem] text-fg-muted">{t("Uses your device’s voice. Arabic names may sound unusual.")}</span>
+    <div className="flex flex-col gap-2">
+      <div className="flex flex-wrap items-center gap-2.5">
+        <button type="button" className="btn" onClick={() => (state === "playing" ? (window.speechSynthesis.pause(), setState("paused")) : play())}>
+          {state === "playing" ? t("Pause") : state === "paused" ? t("Resume") : t("Read aloud")}
+        </button>
+        {state !== "idle" && <button type="button" className="btn btn-ghost" onClick={stop}>{t("Stop")}</button>}
+        {voices.length > 1 && (
+          <label className="flex items-center gap-2 text-[0.88rem] font-bold">
+            {t("Voice")}
+            <select className="max-w-[220px] rounded-btn border-2 border-border bg-bg-surface px-2.5 py-1.5 text-[0.88rem] font-normal" value={voice?.voiceURI ?? ""}
+              onChange={(e) => { stop(); setPick(e.target.value); try { localStorage.setItem(`${VOICE_KEY}:${code}`, e.target.value); } catch { /* ignore */ } }}>
+              {voices.map((v) => <option key={v.voiceURI} value={v.voiceURI}>{v.name.replace(/^(Microsoft|Google)\s+/, "").replace(/\s*\(.*\)$/, "")}</option>)}
+            </select>
+          </label>
+        )}
+      </div>
+      <span className="text-[0.85rem] text-fg-muted">{voices.length ? t("Uses your device’s voices. We pick a warm, natural female voice when your device has one.") : t("Your device has no voice for this language yet.")}</span>
     </div>
   );
 }

@@ -12,6 +12,7 @@ export const NAV: { href: string; label: string; icon: IconName; desc: string }[
   { href: "/ramadan", label: "Ramadan Quest", icon: "moon", desc: "Tracker, 30-day plan, duas and history" },
   { href: "/mizan", label: "Mizan", icon: "scale", desc: "Heaviest on the scale, with myth check" },
   { href: "/badges", label: "Badges", icon: "badges", desc: "Your 10 badges on the Path of Light" },
+  { href: "/notifications", label: "Notifications", icon: "bell", desc: "Prayer times, bedtime story, study time and game invites" },
   { href: "/account", label: "Family & account", icon: "user", desc: "Sign in, sync progress and your family circle" },
 ];
 
@@ -23,5 +24,5 @@ export const TABS: { href: string; label: string; icon: IconName }[] = [
   { href: "/times", label: "Times", icon: "times" },
   { href: "/more", label: "More", icon: "more" },
 ];
-export const MORE_PATHS = ["/more", "/account", "/stories", "/hifz", "/qibla", "/ramadan", "/mizan", "/badges", "/play"];
+export const MORE_PATHS = ["/more", "/account", "/stories", "/hifz", "/qibla", "/ramadan", "/mizan", "/badges", "/play", "/notifications"];
 

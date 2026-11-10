@@ -19,12 +19,14 @@ import { LangProvider } from "@/components/lang";
 import { KidsProvider } from "@/components/kids";
 import { ProfileProvider } from "@/components/profile";
 import { themeInitScript } from "@/components/theme";
+import { PushSync } from "@/lib/push-client";
 
 export const metadata: Metadata = {
   title: "Qalam Academy — learn prayer, faith and good character",
   description: "A gamified way for families to learn Islam: step-by-step Hanafi prayer guide, prayer times, qibla, quizzes and badges.",
   applicationName: "Qalam Academy",
   appleWebApp: { capable: true, title: "Qalam Academy", statusBarStyle: "black-translucent" },
+  icons: { icon: "/icon-192.png", apple: "/apple-touch-icon.png" },
 };
 
 // viewport-fit=cover lets the tab bar sit above the iPhone home indicator.
@@ -51,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <LangProvider>
               <KidsProvider>
                 <AppShell>{children}</AppShell>
+                <PushSync />
               </KidsProvider>
             </LangProvider>
           </ProfileProvider>

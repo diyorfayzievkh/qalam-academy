@@ -1,4 +1,4 @@
-export type IconName = "home" | "learn" | "salah" | "times" | "qibla" | "badges" | "sun" | "moon" | "auto" | "pin" | "scale" | "more" | "hifz" | "stars" | "search" | "user" | "globe" | "check" | "play";
+export type IconName = "home" | "learn" | "salah" | "times" | "qibla" | "badges" | "sun" | "moon" | "auto" | "pin" | "scale" | "more" | "hifz" | "stars" | "search" | "user" | "globe" | "check" | "play" | "bell";
 
 const PATHS: Record<IconName, JSX.Element> = {
   home: <path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z" />,
@@ -8,6 +8,7 @@ const PATHS: Record<IconName, JSX.Element> = {
   qibla: <><circle cx="12" cy="12" r="8.5" /><path d="m15.5 8.5-2 5-5 2 2-5z" /></>,
   badges: <><circle cx="12" cy="9" r="5.5" /><path d="m8.5 13.5-1.5 7 5-2.5 5 2.5-1.5-7" /></>,
   sun: <><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></>,
+  bell: <><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 1.5h-15z" /><path d="M10 20.5a2 2 0 0 0 4 0" /></>,
   moon: <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" />,
   globe: <><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.4 2.4 3.6 5.2 3.6 8.5s-1.2 6.1-3.6 8.5c-2.4-2.4-3.6-5.2-3.6-8.5s1.2-6.1 3.6-8.5z" /></>,
   check: <path d="m5 12.5 4.5 4.5L19 7.5" />,

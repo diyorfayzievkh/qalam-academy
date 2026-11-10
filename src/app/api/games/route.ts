@@ -3,6 +3,8 @@ import { body, fail, handle, ok, requireUser } from "@/lib/api";
 import { currentUser } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { newPin, QuestionSchema } from "@/lib/games";
+import { sendTo, type SubRow } from "@/lib/push";
+import { MSG } from "@/lib/push-messages";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +32,7 @@ export async function POST(req: Request) {
         await db()`insert into games (pin, host_id, family_id, title, mode, lang, questions, seconds, state, ends_at)
           values (${pin}, ${me.id}, ${me.familyId}, ${b.title}, ${b.mode}, ${b.lang}, ${db().json(b.questions)}, ${b.seconds},
                   ${b.mode === "CHALLENGE" ? "QUESTION" : "LOBBY"}, ${endsAt})`;
+        if (me.familyId) await notifyFamily(me.familyId, me.id, me.name, pin, b.mode === "LIVE", b.title).catch((e) => console.error("push", e));
         return ok({ pin });
       } catch (e) {
         if ((e as { code?: string }).code !== "23505") throw e; // PIN already in use: try another
@@ -37,6 +40,14 @@ export async function POST(req: Request) {
     }
     return fail(503, "Could not create a game PIN. Please try again.");
   });
+}
+
+/** Tell the rest of the family a game has started, on every device that opted in. */
+async function notifyFamily(familyId: string, hostId: string, host: string, pin: string, live: boolean, title: string) {
+  const subs = await db()<SubRow[]>`
+    select s.id, s.endpoint, s.p256dh, s.auth, s.lang from push_subs s join users u on u.id = s.user_id
+    where u.family_id = ${familyId} and u.id <> ${hostId} and coalesce((s.prefs->>'arena')::boolean, true) and s.fails < 5`;
+  await Promise.all(subs.map((s) => sendTo(s, MSG.arena(s.lang, host, pin, live, title))));
 }
 
 /** My games, plus open games my family members are hosting (internal invites). */

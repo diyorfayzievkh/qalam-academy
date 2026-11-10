@@ -76,6 +76,7 @@ const loaders: Record<string, Loader> = {
   "uz/duas": () => import("./lessons-uz-duas").then((m) => m.default),
   "uz/family": () => import("./lessons-uz-family").then((m) => m.default),
   "uz/public": () => import("./lessons-uz-public").then((m) => m.default),
+  "uz/isrof": () => import("./lessons-uz-isrof").then((m) => m.default),
   "uz/akhlaq": () => import("./lessons-uz-akhlaq").then((m) => m.default),
 };
 const cache: Record<string, LessonTrMap> = {};

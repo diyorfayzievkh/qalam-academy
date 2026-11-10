@@ -23,6 +23,7 @@ export const WORLD_LOOKS: Record<string, WorldLook> = {
   clean: { from: "#0F4C6E", to: "#3FA7C9", accent: "#FFFFFF", ink: "#F0FAFF" },
   family: { from: "#1E3A2F", to: "#C2703D", accent: "#FFD98A", ink: "#FFF4E4" },
   public: { from: "#173B57", to: "#B9774A", accent: "#FFD27A", ink: "#FFF3E2" },
+  isrof: { from: "#1F3D33", to: "#8E7A3E", accent: "#F3D27A", ink: "#FFF6E3" },
   seerah: { from: "#7A3E1D", to: "#E6B373", accent: "#FFF0C9", ink: "#FFF8EC" },
 };
 const FALLBACK: WorldLook = { from: "#0D4A3B", to: "#1D7A60", accent: "#E9C46A", ink: "#F5EFDC" };
@@ -182,6 +183,27 @@ function Scene({ id, L, g }: { id: string; L: WorldLook; g: string }) {
         ))}
         <path d="M0 124h320v16H0z" fill={L.from} opacity={0.55} />
         <path d="M130 132q90-10 180 0" stroke={a} strokeOpacity={0.6} strokeWidth={2} strokeDasharray="4 6" fill="none" />
+      </>);
+    case "isrof":
+      return (<>
+        <circle cx="220" cy="56" r="56" fill={`url(#${g}-glow)`} />
+        <Stars color={L.ink} opacity={0.45} count={6} />
+        {/* The middle way: a balanced scale holding a drop of water and a loaf of bread */}
+        <g transform="translate(0 12)">
+        <g stroke={L.ink} strokeWidth={2.5} strokeLinecap="round" fill="none">
+          <path d="M220 40v72" />
+          <path d="M168 50h104" />
+          <path d="M176 50l-14 34M176 50l14 34M264 50l-14 34M264 50l14 34" strokeWidth={1.5} opacity={0.8} />
+        </g>
+        <circle cx="220" cy="38" r="5" fill={a} className="glow-pulse" />
+        <path d="M158 84h36a18 10 0 0 1 -36 0z" fill={L.ink} opacity={0.92} />
+        <path d="M246 84h36a18 10 0 0 1 -36 0z" fill={L.ink} opacity={0.92} />
+        <path d="M176 60c6 8 9 13 9 17a9 9 0 0 1 -18 0c0-4 3-9 9-17z" fill="#6FC3E0" />
+        <rect x="252" y="66" width="24" height="15" rx="7.5" fill="#D9A55B" />
+        <path d="M258 70l3 7M264 70l3 7M270 70l3 7" stroke="#A8743A" strokeWidth={1.5} strokeLinecap="round" />
+        <path d="M204 112h32" stroke={L.ink} strokeWidth={4} strokeLinecap="round" />
+        </g>
+        <path d="M0 124h320v16H0z" fill={L.from} opacity={0.55} />
       </>);
     case "public":
       return (<>

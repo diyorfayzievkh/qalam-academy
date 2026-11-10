@@ -770,3 +770,14 @@ for (const w of WORLDS) for (const l of w.lessons) {
     pub.quizIds = ["public-manners"];
   }
 }
+
+// Not Wasting (Isrof) final quiz: two questions from each lesson.
+{
+  const isrof = WORLDS.find((w) => w.id === "isrof");
+  if (isrof) {
+    const qs = isrof.lessons.flatMap((l) => (l.quiz ?? []).slice(0, 2));
+    TOPICS.push({ id: "isrof", title: "Not Wasting (Isrof)", sub: `Final quiz: ${qs.length} questions across the Not Wasting world`, icon: "learn",
+      learn: ["Questions from every lesson of the Not Wasting (Isrof) world: food, water, money, time, childhood, clothes and celebrations."], questions: qs });
+    isrof.quizIds = ["isrof"];
+  }
+}

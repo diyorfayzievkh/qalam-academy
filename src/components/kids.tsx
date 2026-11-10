@@ -3,26 +3,30 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import { useAccount } from "./account";
 
-// Kids Mode: bigger, simpler, friendlier. Turns on by default for child
-// accounts; anyone can switch it from the settings menu.
+// Kids Mode: bigger, simpler, friendlier. It switches on automatically when a
+// child signs in, even on a device where it was off. A child's own on/off choice
+// is remembered for that child; parents and guests keep the device's setting.
 
 const KEY = "qalam-kids";
 type Ctx = { kids: boolean; setKids: (v: boolean) => void };
 const KidsContext = createContext<Ctx>({ kids: false, setKids: () => {} });
 
+const read = (k: string) => { try { return localStorage.getItem(k); } catch { return null; } };
+const write = (k: string, v: boolean) => { try { localStorage.setItem(k, v ? "1" : "0"); } catch {} };
+
 export function KidsProvider({ children }: { children: ReactNode }) {
   const { user } = useAccount();
   const [kids, setState] = useState(false);
+  const childKey = user?.kind === "CHILD" ? `${KEY}:${user.id}` : null;
 
   useEffect(() => {
-    let saved: string | null = null;
-    try { saved = localStorage.getItem(KEY); } catch {}
+    const saved = read(childKey ?? KEY);
     if (saved === "1" || saved === "0") setState(saved === "1");
-    else if (user?.kind === "CHILD") setState(true);
-  }, [user?.kind]);
+    else setState(Boolean(childKey)); // a child's first sign-in on this device: on
+  }, [childKey]);
   useEffect(() => { document.documentElement.classList.toggle("kids", kids); }, [kids]);
 
-  const setKids = useCallback((v: boolean) => { setState(v); try { localStorage.setItem(KEY, v ? "1" : "0"); } catch {} }, []);
+  const setKids = useCallback((v: boolean) => { setState(v); write(childKey ?? KEY, v); }, [childKey]);
   return <KidsContext.Provider value={{ kids, setKids }}>{children}</KidsContext.Provider>;
 }
 

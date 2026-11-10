@@ -23,7 +23,7 @@ export const WORLD_LOOKS: Record<string, WorldLook> = {
   clean: { from: "#0F4C6E", to: "#3FA7C9", accent: "#FFFFFF", ink: "#F0FAFF" },
   family: { from: "#1E3A2F", to: "#C2703D", accent: "#FFD98A", ink: "#FFF4E4" },
   public: { from: "#173B57", to: "#B9774A", accent: "#FFD27A", ink: "#FFF3E2" },
-  isrof: { from: "#1F3D33", to: "#8E7A3E", accent: "#F3D27A", ink: "#FFF6E3" },
+  israf: { from: "#1F3D33", to: "#8E7A3E", accent: "#F3D27A", ink: "#FFF6E3" },
   seerah: { from: "#7A3E1D", to: "#E6B373", accent: "#FFF0C9", ink: "#FFF8EC" },
 };
 const FALLBACK: WorldLook = { from: "#0D4A3B", to: "#1D7A60", accent: "#E9C46A", ink: "#F5EFDC" };
@@ -184,7 +184,7 @@ function Scene({ id, L, g }: { id: string; L: WorldLook; g: string }) {
         <path d="M0 124h320v16H0z" fill={L.from} opacity={0.55} />
         <path d="M130 132q90-10 180 0" stroke={a} strokeOpacity={0.6} strokeWidth={2} strokeDasharray="4 6" fill="none" />
       </>);
-    case "isrof":
+    case "israf":
       return (<>
         <circle cx="220" cy="56" r="56" fill={`url(#${g}-glow)`} />
         <Stars color={L.ink} opacity={0.45} count={6} />

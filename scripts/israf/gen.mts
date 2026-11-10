@@ -1,13 +1,13 @@
-// Writes the English lessons (src/content/isrof.ts) and the Uzbek overlay
-// (src/content/i18n/lessons-uz-isrof.ts) from the bilingual source.
-// Run: npx -y tsx scripts/isrof/gen.mts
+// Writes the English lessons (src/content/israf.ts) and the Uzbek overlay
+// (src/content/i18n/lessons-uz-israf.ts) from the bilingual source.
+// Run: npx -y tsx scripts/israf/gen.mts
 import { writeFileSync } from "node:fs";
 import { PART1 } from "./src-1.mts";
 import { PART2 } from "./src-2.mts";
 import { PART3 } from "./src-3.mts";
 import { PART4 } from "./src-4.mts";
 
-const ORDER = ["what-is-isrof", "isrof-quran-sunnah", "why-we-waste", "harms-of-isrof", "spending-middle-way", "wasting-time",
+const ORDER = ["what-is-israf", "israf-quran-sunnah", "why-we-waste", "harms-of-israf", "spending-middle-way", "wasting-time",
   "childhood-without-waste", "water", "food", "clothing", "ceremonies", "weddings", "gatherings", "everyday-waste"];
 const all = [...PART1, ...PART2, ...PART3, ...PART4] as any[];
 const lessons = ORDER.map((id) => { const l = all.find((x) => x.id === id); if (!l) throw new Error("missing " + id); return l; });
@@ -22,7 +22,7 @@ function en(v: any, path: string, key = ""): any {
     if (NO_TR.has(key)) { if (v.includes(" || ")) problems.push(`${path}: unexpected || in ${key}`); return v; }
     const parts = v.split(" || ");
     if (parts.length !== 2) problems.push(`${path}: needs exactly one " || " → ${v.slice(0, 60)}`);
-    return parts[0].trim();
+    return parts[0].trim().replace(/\bIsrof\b/g, "Israf").replace(/\bisrof\b/g, "israf");
   }
   if (Array.isArray(v)) return v.map((x, i) => en(x, `${path}[${i}]`, NO_TR.has(key) ? key : ""));
   if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, en(x, `${path}.${k}`, k)]));
@@ -51,20 +51,20 @@ for (const l of lessons) {
 if (problems.length) { console.log(problems.join("\n")); process.exit(1); }
 
 const head = (s: string) => s.split("\n").map((x) => `// ${x}`).join("\n");
-writeFileSync("src/content/isrof.ts", `import type { Lesson } from "./library";
+writeFileSync("src/content/israf.ts", `import type { Lesson } from "./library";
 
-${head(`Not Wasting (Isrof) world: explainer lessons on "Isrof" by Shaykh Muhammad Sodiq
+${head(`Not Wasting (Israf) world: explainer lessons on the book "Isrof" (Israf) by Shaykh Muhammad Sodiq
 Muhammad Yusuf (Hilol-Nashr, 2024), following the book's sections. Generated from
-scripts/isrof/src-*.mts by scripts/isrof/gen.mts; edit the source, not this file.
+scripts/israf/src-*.mts by scripts/israf/gen.mts; edit the source, not this file.
 A scholar should review before public release.`)}
 
-export const ISROF_BOOK = { title: "Isrof", author: "Shaykh Muhammad Sodiq Muhammad Yusuf", publisher: "Hilol-Nashr, 2024" };
+export const ISRAF_BOOK = { title: "Isrof", author: "Shaykh Muhammad Sodiq Muhammad Yusuf", publisher: "Hilol-Nashr, 2024" };
 
-export const ISROF_LESSONS: Lesson[] = ${JSON.stringify(EN, null, 2)};
+export const ISRAF_LESSONS: Lesson[] = ${JSON.stringify(EN, null, 2)};
 `);
-writeFileSync("src/content/i18n/lessons-uz-isrof.ts", `import type { LessonTrMap } from "./lessons";
+writeFileSync("src/content/i18n/lessons-uz-israf.ts", `import type { LessonTrMap } from "./lessons";
 
-// Isrof olami (o‘zbekcha). scripts/isrof/gen.mts yordamida yaratilgan.
+// Isrof (Israf) olami (o‘zbekcha). scripts/israf/gen.mts yordamida yaratilgan.
 
 const T: LessonTrMap = ${JSON.stringify(UZ, null, 2)};
 export default T;

@@ -2,7 +2,7 @@ import { QURAN_EXTRA, QURAN_LESSONS } from "./quran-lessons";
 import { CLEAN_LESSONS } from "./cleanliness";
 import { FAMILY_LESSONS } from "./family";
 import { PUBLIC_LESSONS } from "./public";
-import { ISROF_LESSONS } from "./isrof";
+import { ISRAF_LESSONS } from "./israf";
 import type { Recitation } from "./recitations";
 import { RECITATIONS } from "./recitations";
 import type { AdabLesson } from "./adab";
@@ -287,11 +287,11 @@ export function lessonCount(w: World) {
     sub: "The masjid, the bazaar, school, streets and parks: what to do, what not to do and why. And why we never waste food, money or time.",
     quizIds: [], lessons: PUBLIC_LESSONS,
   });
-  // Not Wasting (Isrof) world, from the book "Isrof", right after Manners in Public.
+  // Not Wasting (Israf) world, from the book "Isrof" (Israf), right after Manners in Public.
   WORLDS.splice(WORLDS.findIndex((w) => w.id === "public") + 1, 0, {
-    id: "isrof", title: "Not Wasting (Isrof)", arabic: "الإسراف",
-    sub: "From the book “Isrof” by Shaykh Muhammad Sodiq Muhammad Yusuf: wasting food, water, money, time, childhood, clothes and celebrations, and the middle way of Islam. Every lesson has its own quiz.",
-    quizIds: [], lessons: ISROF_LESSONS,
+    id: "israf", title: "Not Wasting (Israf)", arabic: "الإسراف",
+    sub: "From the book “Israf” by Shaykh Muhammad Sodiq Muhammad Yusuf: wasting food, water, money, time, childhood, clothes and celebrations, and the middle way of Islam. Every lesson has its own quiz.",
+    quizIds: [], lessons: ISRAF_LESSONS,
   });
   const full: Record<string, Lesson[]> = { iman: IMAN_LESSONS, islam: ISLAM_LESSONS, seerah: SEERAH_LESSONS };
   const quran = WORLDS.find((w) => w.id === "quran");

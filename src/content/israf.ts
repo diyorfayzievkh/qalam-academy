@@ -1,20 +1,20 @@
 import type { Lesson } from "./library";
 
-// Not Wasting (Isrof) world: explainer lessons on "Isrof" by Shaykh Muhammad Sodiq
+// Not Wasting (Israf) world: explainer lessons on the book "Isrof" (Israf) by Shaykh Muhammad Sodiq
 // Muhammad Yusuf (Hilol-Nashr, 2024), following the book's sections. Generated from
-// scripts/isrof/src-*.mts by scripts/isrof/gen.mts; edit the source, not this file.
+// scripts/israf/src-*.mts by scripts/israf/gen.mts; edit the source, not this file.
 // A scholar should review before public release.
 
-export const ISROF_BOOK = { title: "Isrof", author: "Shaykh Muhammad Sodiq Muhammad Yusuf", publisher: "Hilol-Nashr, 2024" };
+export const ISRAF_BOOK = { title: "Isrof", author: "Shaykh Muhammad Sodiq Muhammad Yusuf", publisher: "Hilol-Nashr, 2024" };
 
-export const ISROF_LESSONS: Lesson[] = [
+export const ISRAF_LESSONS: Lesson[] = [
   {
-    "id": "what-is-isrof",
-    "group": "Understanding isrof",
-    "title": "What is isrof?",
-    "summary": "Wealth is a gift and a test. What isrof and tabdhīr mean, and why Islam guards what Allah has given us.",
+    "id": "what-is-israf",
+    "group": "Understanding israf",
+    "title": "What is israf?",
+    "summary": "Wealth is a gift and a test. What israf and tabdhīr mean, and why Islam guards what Allah has given us.",
     "sources": [
-      "Isrof, “Muqaddima”",
+      "Israf, “Muqaddima”",
       "Quran 18:46",
       "Quran 3:14",
       "Quran 2:168",
@@ -43,18 +43,18 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "points",
-        "title": "The meaning of isrof",
+        "title": "The meaning of israf",
         "items": [
           "In Arabic, isrāf means crossing the limit. “He was wasteful in it” means he used more of it than was needed.",
-          "Imam ar-Rāghib said: “Going beyond the limit in anything a person does is isrof.” It is used most of all for spending.",
-          "Sufyān ath-Thawrī said: “Whatever you spend on other than obeying Allah is isrof, even if it is very little.”",
+          "Imam ar-Rāghib said: “Going beyond the limit in anything a person does is israf.” It is used most of all for spending.",
+          "Sufyān ath-Thawrī said: “Whatever you spend on other than obeying Allah is israf, even if it is very little.”",
           "Al-Jurjānī defined it as spending a lot on something worthless, going too far in spending, eating what is not ḥalāl, or eating more than is needed."
         ]
       },
       {
         "type": "compare",
-        "title": "Isrof and tabdhīr",
-        "left": "Isrof",
+        "title": "Israf and tabdhīr",
+        "left": "Israf",
         "right": "Tabdhīr",
         "rows": [
           [
@@ -73,7 +73,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "p",
-        "text": "Scholars note this fine difference, but most commentators use the two words for the same thing, and the book translates both as isrof. The point is the same: a blessing used beyond its right, or in the wrong place, is a blessing wasted."
+        "text": "Scholars note this fine difference, but most commentators use the two words for the same thing, and the book translates both as israf. The point is the same: a blessing used beyond its right, or in the wrong place, is a blessing wasted."
       },
       {
         "type": "reflect",
@@ -90,7 +90,7 @@ export const ISROF_LESSONS: Lesson[] = [
         "title": "Key takeaways",
         "items": [
           "Wealth is a gift and an adornment, but its value lies in how it is used.",
-          "Isrof is crossing the limit: too much, or in the wrong place.",
+          "Israf is crossing the limit: too much, or in the wrong place.",
           "What is wasted harms the owner, the family and the whole community."
         ]
       }
@@ -109,7 +109,7 @@ export const ISROF_LESSONS: Lesson[] = [
         "src": "Quran 18:46"
       },
       {
-        "q": "What does the word isrof mean in Arabic?",
+        "q": "What does the word israf mean in Arabic?",
         "options": [
           "Saving",
           "Crossing the limit",
@@ -118,7 +118,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Isrāf is going beyond the proper limit.",
-        "src": "Isrof, “Isrofning lug‘atdagi ma’nosi”"
+        "src": "Israf, “Isrofning lug‘atdagi ma’nosi”"
       },
       {
         "q": "Does Islam forbid loving good things such as wealth?",
@@ -157,7 +157,7 @@ export const ISROF_LESSONS: Lesson[] = [
         "src": "Quran 4:5"
       },
       {
-        "q": "According to Sufyān ath-Thawrī, what counts as isrof?",
+        "q": "According to Sufyān ath-Thawrī, what counts as israf?",
         "options": [
           "Only spending a lot",
           "Whatever is spent on other than obeying Allah, even a little",
@@ -166,19 +166,19 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Even a small amount spent in disobedience is waste.",
-        "src": "Isrof, “Isrofning lug‘atdagi ma’nosi”"
+        "src": "Israf, “Isrofning lug‘atdagi ma’nosi”"
       },
       {
-        "q": "What is the difference between isrof and tabdhīr?",
+        "q": "What is the difference between israf and tabdhīr?",
         "options": [
           "No difference at all",
-          "Isrof is too much of what is needed; tabdhīr is spending where it should not go",
+          "Israf is too much of what is needed; tabdhīr is spending where it should not go",
           "Tabdhīr is charity",
-          "Isrof is only about water"
+          "Israf is only about water"
         ],
         "answer": 1,
         "why": "Tabdhīr comes from scattering seed.",
-        "src": "Isrof, “Isrof bilan tabzir orasidagi farq”"
+        "src": "Israf, “Isrof bilan tabzir orasidagi farq”"
       },
       {
         "q": "Which of these is forbidden by 2:188?",
@@ -195,14 +195,14 @@ export const ISROF_LESSONS: Lesson[] = [
       {
         "q": "Eating more than you need is…",
         "options": [
-          "…a kind of isrof",
+          "…a kind of israf",
           "…always a good thing",
           "…only wrong in Ramadan",
           "…a sunnah"
         ],
         "answer": 0,
-        "why": "Al-Jurjānī counts eating beyond need as isrof.",
-        "src": "Isrof, “Isrofning istilohiy ma’nosi”"
+        "why": "Al-Jurjānī counts eating beyond need as israf.",
+        "src": "Israf, “Isrofning istilohiy ma’nosi”"
       },
       {
         "q": "What gives a life its true value?",
@@ -219,13 +219,13 @@ export const ISROF_LESSONS: Lesson[] = [
     ]
   },
   {
-    "id": "isrof-quran-sunnah",
-    "group": "Understanding isrof",
-    "title": "Isrof in the Quran and Sunnah",
+    "id": "israf-quran-sunnah",
+    "group": "Understanding israf",
+    "title": "Israf in the Quran and Sunnah",
     "summary": "Allah does not love the wasteful, and the Prophet ﷺ warned against waste even in wuḍūʾ.",
     "sources": [
-      "Isrof, “Qur’oni Karimda isrof haqida”",
-      "Isrof, “Sunnatda isrof haqida”",
+      "Israf, “Qur’oni Karimda isrof haqida”",
+      "Israf, “Sunnatda isrof haqida”",
       "Quran 7:31",
       "Quran 17:26–27",
       "Quran 6:141",
@@ -239,7 +239,7 @@ export const ISROF_LESSONS: Lesson[] = [
     "blocks": [
       {
         "type": "p",
-        "text": "The Quran condemns isrof strongly. It describes the wasteful with bad qualities and warns that their end is not good. Islam does not tell us to stop eating, dressing well or giving; it tells us to do all of these without crossing the limit."
+        "text": "The Quran condemns israf strongly. It describes the wasteful with bad qualities and warns that their end is not good. Islam does not tell us to stop eating, dressing well or giving; it tells us to do all of these without crossing the limit."
       },
       {
         "type": "quote",
@@ -267,7 +267,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "story",
-        "id": "isrof-saad-wudu",
+        "id": "israf-saad-wudu",
         "kind": "From the life of the Prophet ﷺ",
         "title": "Waste even at a river?",
         "scene": "The Prophet ﷺ passed by Saʿd while he was making wuḍūʾ.",
@@ -292,7 +292,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "story",
-        "id": "isrof-umar-kafan",
+        "id": "israf-umar-kafan",
         "kind": "From the Companions",
         "title": "ʿUmar’s last advice",
         "scene": "ʿUmar ibn al-Khaṭṭāb, ruler of a vast state, spoke to his son about his own burial.",
@@ -438,11 +438,11 @@ export const ISROF_LESSONS: Lesson[] = [
   },
   {
     "id": "why-we-waste",
-    "group": "Understanding isrof",
+    "group": "Understanding israf",
     "title": "Why do people waste?",
     "summary": "Seven roots of waste, from not knowing the religion to copying others, and how to pull each one out.",
     "sources": [
-      "Isrof, “Isrofning sabablari”",
+      "Israf, “Isrofning sabablari”",
       "Quran 17:29",
       "Quran 56:41–45",
       "Abu Dawud 4833",
@@ -486,7 +486,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "scenario",
-        "id": "isrof-cause-copy",
+        "id": "israf-cause-copy",
         "situation": "Your cousin had a huge birthday party with a hired hall. Your family can afford something small. A relative says: “If you do less, people will talk.” What is the best answer?",
         "options": [
           {
@@ -535,7 +535,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "Knowledge shows the reality and end of waste.",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       },
       {
         "q": "What happens to a child raised in a wasteful home?",
@@ -547,7 +547,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Children copy what they see.",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       },
       {
         "q": "What does 17:29 compare the miser to?",
@@ -583,7 +583,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Plenty can turn into hardship.",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       },
       {
         "q": "“A man is upon the religion of his…”",
@@ -607,7 +607,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "“So-and-so did it, I must do more.”",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       },
       {
         "q": "Why were the “people of the left” punished, according to 56:45?",
@@ -643,17 +643,17 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "One of the seven causes of waste.",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       }
     ]
   },
   {
-    "id": "harms-of-isrof",
-    "group": "Understanding isrof",
+    "id": "harms-of-israf",
+    "group": "Understanding israf",
     "title": "What waste does to us",
-    "summary": "The harms of isrof for the soul, the family and society, from the anger of Allah to poverty and shame.",
+    "summary": "The harms of israf for the soul, the family and society, from the anger of Allah to poverty and shame.",
     "sources": [
-      "Isrof, “Isrofning zararlaridan ba’zilari”",
+      "Israf, “Isrofning zararlaridan ba’zilari”",
       "Quran 7:31",
       "Quran 17:27",
       "Quran 17:29"
@@ -661,7 +661,7 @@ export const ISROF_LESSONS: Lesson[] = [
     "blocks": [
       {
         "type": "p",
-        "text": "Waste is not only a matter of money. The book lists eighteen harms of isrof. Some reach our relationship with Allah, some our families, and some the whole society. Here they are in three groups."
+        "text": "Waste is not only a matter of money. The book lists eighteen harms of israf. Some reach our relationship with Allah, some our families, and some the whole society. Here they are in three groups."
       },
       {
         "type": "points",
@@ -719,7 +719,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "scenario",
-        "id": "isrof-harm-envy",
+        "id": "israf-harm-envy",
         "situation": "Your friend got the newest phone. Yours works perfectly well, but you feel you must have the new one too. What helps most?",
         "options": [
           {
@@ -741,7 +741,7 @@ export const ISROF_LESSONS: Lesson[] = [
         "type": "points",
         "title": "Key takeaways",
         "items": [
-          "Isrof harms our faith: it draws Allah’s anger and makes us brothers of Shayṭān.",
+          "Israf harms our faith: it draws Allah’s anger and makes us brothers of Shayṭān.",
           "It harms us and our families: poverty, regret, shame and envy.",
           "It harms society: carelessness, dependence and lost wealth."
         ]
@@ -749,7 +749,7 @@ export const ISROF_LESSONS: Lesson[] = [
     ],
     "quiz": [
       {
-        "q": "Whose anger does isrof draw?",
+        "q": "Whose anger does israf draw?",
         "options": [
           "The neighbours’",
           "Allah’s",
@@ -773,7 +773,7 @@ export const ISROF_LESSONS: Lesson[] = [
         "src": "Quran 17:27"
       },
       {
-        "q": "Where does isrof lead its owner in this world?",
+        "q": "Where does israf lead its owner in this world?",
         "options": [
           "To wealth",
           "To poverty",
@@ -782,7 +782,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Wasting wealth leads to need.",
-        "src": "Isrof, “Isrofning zararlaridan ba’zilari”"
+        "src": "Israf, “Isrofning zararlaridan ba’zilari”"
       },
       {
         "q": "Which feeling does the book say eats up the waster?",
@@ -794,10 +794,10 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "Always wanting what others have.",
-        "src": "Isrof, “Isrofning zararlaridan ba’zilari”"
+        "src": "Israf, “Isrofning zararlaridan ba’zilari”"
       },
       {
-        "q": "What does isrof do to its owner in front of people?",
+        "q": "What does israf do to its owner in front of people?",
         "options": [
           "Honours him",
           "Humiliates him",
@@ -806,10 +806,10 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "One of the listed harms.",
-        "src": "Isrof, “Isrofning zararlaridan ba’zilari”"
+        "src": "Israf, “Isrofning zararlaridan ba’zilari”"
       },
       {
-        "q": "Isrof is a return to the habits of…",
+        "q": "Israf is a return to the habits of…",
         "options": [
           "…the time of ignorance (jāhiliyyah)",
           "…the Companions",
@@ -818,10 +818,10 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "Boasting with wealth was a habit of jāhiliyyah.",
-        "src": "Isrof, “Isrofning zararlaridan ba’zilari”"
+        "src": "Israf, “Isrofning zararlaridan ba’zilari”"
       },
       {
-        "q": "How does isrof affect a whole society?",
+        "q": "How does israf affect a whole society?",
         "options": [
           "Makes it more serious and hard-working",
           "Spreads carelessness and dependence on others",
@@ -830,10 +830,10 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "A wasteful society cannot do its own duties.",
-        "src": "Isrof, “Isrofning zararlaridan ba’zilari”"
+        "src": "Israf, “Isrofning zararlaridan ba’zilari”"
       },
       {
-        "q": "Isrof moves a person…",
+        "q": "Israf moves a person…",
         "options": [
           "…closer to Paradise",
           "…away from Paradise and closer to the Fire",
@@ -842,7 +842,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "It is obedience to Shayṭān.",
-        "src": "Isrof, “Isrofning zararlaridan ba’zilari”"
+        "src": "Israf, “Isrofning zararlaridan ba’zilari”"
       },
       {
         "q": "What is the cure for wanting everything others have?",
@@ -866,17 +866,17 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "That is why wasting it harms others too.",
-        "src": "Isrof, “Infoq-xarajatdagi isrof”"
+        "src": "Israf, “Infoq-xarajatdagi isrof”"
       }
     ]
   },
   {
     "id": "spending-middle-way",
-    "group": "Kinds of isrof",
+    "group": "Kinds of israf",
     "title": "Spending: the middle way",
     "summary": "The servants of the Most Merciful are neither wasteful nor stingy. How to spend so that Allah replaces what you give.",
     "sources": [
-      "Isrof, “Infoq-xarajatdagi isrof”",
+      "Israf, “Infoq-xarajatdagi isrof”",
       "Quran 25:67",
       "Quran 34:39",
       "Bukhari 1477",
@@ -925,7 +925,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "scenario",
-        "id": "isrof-spend-pocket",
+        "id": "israf-spend-pocket",
         "situation": "You receive a gift of money for Eid. What is the middle way?",
         "options": [
           {
@@ -985,7 +985,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "So moderation applies to all our spending.",
-        "src": "Isrof, “Infoq-xarajatdagi isrof”"
+        "src": "Israf, “Infoq-xarajatdagi isrof”"
       },
       {
         "q": "According to Ibn ʿAbbās, when does Allah replace what you spend?",
@@ -1033,7 +1033,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "He is then given what he needs.",
-        "src": "Isrof, “Infoq-xarajatdagi isrof”"
+        "src": "Israf, “Infoq-xarajatdagi isrof”"
       },
       {
         "q": "According to ʿAlī, spending for show and fame is…",
@@ -1069,7 +1069,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "How it is spent matters as much as how it is earned.",
-        "src": "Isrof, “Infoq-xarajatdagi isrof”"
+        "src": "Israf, “Infoq-xarajatdagi isrof”"
       },
       {
         "q": "What is the middle way with an Eid money gift?",
@@ -1087,12 +1087,12 @@ export const ISROF_LESSONS: Lesson[] = [
   },
   {
     "id": "wasting-time",
-    "group": "Kinds of isrof",
+    "group": "Kinds of israf",
     "title": "Wasting time and life",
     "summary": "Our life is the most precious thing we own. How it gets wasted, from street corners to screens, and how to spend it well.",
     "sources": [
-      "Isrof, “Infoq-xarajatdagi isrof”",
-      "Isrof, “Turli maishiy isroflar”",
+      "Israf, “Infoq-xarajatdagi isrof”",
+      "Israf, “Turli maishiy isroflar”",
       "Tirmidhi 2417",
       "Bukhari 6412",
       "Quran 103:1–3"
@@ -1212,14 +1212,14 @@ export const ISROF_LESSONS: Lesson[] = [
       {
         "q": "Spending your life on useless things is…",
         "options": [
-          "…a kind of isrof",
+          "…a kind of israf",
           "…fine if you are young",
           "…a sunnah",
           "…rewarded"
         ],
         "answer": 0,
         "why": "We will answer for every moment.",
-        "src": "Isrof, “Infoq-xarajatdagi isrof”"
+        "src": "Israf, “Infoq-xarajatdagi isrof”"
       },
       {
         "q": "What will we be asked about our knowledge?",
@@ -1255,7 +1255,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "The book mentions both children and elders wasting their years.",
-        "src": "Isrof, “Turli maishiy isroflar”"
+        "src": "Israf, “Turli maishiy isroflar”"
       },
       {
         "q": "Which is the best use of an hour after school?",
@@ -1279,7 +1279,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Money can be earned again; time cannot.",
-        "src": "Isrof, “Turli maishiy isroflar”"
+        "src": "Israf, “Turli maishiy isroflar”"
       },
       {
         "q": "A good way to see where a family’s time goes is…",
@@ -1291,18 +1291,18 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "What gets counted gets cared for.",
-        "src": "Isrof, “Turli maishiy isroflar”"
+        "src": "Israf, “Turli maishiy isroflar”"
       }
     ]
   },
   {
     "id": "childhood-without-waste",
-    "group": "Kinds of isrof",
+    "group": "Kinds of israf",
     "title": "A childhood without waste",
     "summary": "Childhood is the best time to learn. How parents raise children who value food, things and time, and how children can guard their own years.",
     "sources": [
-      "Isrof, “Isrofning sabablari”",
-      "Isrof, “Turli maishiy isroflar”",
+      "Israf, “Isrofning sabablari”",
+      "Israf, “Turli maishiy isroflar”",
       "Quran 66:6",
       "Bukhari 893",
       "Muslim 2033"
@@ -1310,7 +1310,7 @@ export const ISROF_LESSONS: Lesson[] = [
     "blocks": [
       {
         "type": "p",
-        "text": "A child who grows up in waste thinks waste is normal. The book teaches that it is the duty of adults to raise children far from isrof and close to thrift. Habits planted in childhood stay for life, and so do the years spent well or badly."
+        "text": "A child who grows up in waste thinks waste is normal. The book teaches that it is the duty of adults to raise children far from israf and close to thrift. Habits planted in childhood stay for life, and so do the years spent well or badly."
       },
       {
         "type": "quote",
@@ -1340,7 +1340,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "story",
-        "id": "isrof-boy-bread",
+        "id": "israf-boy-bread",
         "kind": "A story to learn from",
         "title": "The piece of bread",
         "scene": "A story the book’s teaching brings to mind: a family meal, and a crust that fell to the floor.",
@@ -1407,7 +1407,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "So teach the manners of eating.",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       },
       {
         "q": "Why does the book suggest sometimes letting children eat plain bread?",
@@ -1419,7 +1419,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "It teaches contentment.",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       },
       {
         "q": "What do children copy most?",
@@ -1431,7 +1431,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "Example teaches more than words.",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       },
       {
         "q": "What should be done with a morsel that falls?",
@@ -1455,7 +1455,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "Childhood habits last a lifetime.",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       },
       {
         "q": "Which is a way children waste their childhood, according to the book?",
@@ -1467,7 +1467,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Instead of learning.",
-        "src": "Isrof, “Turli maishiy isroflar”"
+        "src": "Israf, “Turli maishiy isroflar”"
       },
       {
         "q": "Eating in a rush without noticing you are full is…",
@@ -1479,7 +1479,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "The book calls it the way animals eat.",
-        "src": "Isrof, “Isrofning sabablari”"
+        "src": "Israf, “Isrofning sabablari”"
       },
       {
         "q": "Why is childhood called the best time to learn?",
@@ -1491,7 +1491,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "What you learn young stays with you.",
-        "src": "Isrof, “Turli maishiy isroflar”"
+        "src": "Israf, “Turli maishiy isroflar”"
       },
       {
         "q": "Which is a good “keeper” job for a child at home?",
@@ -1503,18 +1503,18 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Small habits build a person who does not waste.",
-        "src": "Isrof, “Turli maishiy isroflar”"
+        "src": "Israf, “Turli maishiy isroflar”"
       }
     ]
   },
   {
     "id": "water",
-    "group": "Kinds of isrof",
+    "group": "Kinds of israf",
     "title": "Water, the source of life",
     "summary": "Allah made every living thing from water. The Prophet ﷺ made wuḍūʾ with one mudd. How we waste water today and how to save it.",
     "sources": [
-      "Isrof, “Suvning isrofi haqida”",
-      "Isrof, “Isrof qilishdan to‘xtang!”",
+      "Israf, “Suvning isrofi haqida”",
+      "Israf, “Isrof qilishdan to‘xtang!”",
       "Quran 21:30",
       "Quran 24:45",
       "Bukhari 201",
@@ -1543,7 +1543,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "story",
-        "id": "isrof-masjid-tap",
+        "id": "israf-masjid-tap",
         "kind": "From the lives of the scholars",
         "title": "The tap that kept running",
         "scene": "A polite visitor came to the Shaykh with a worry about the wuḍūʾ rooms of the masjids.",
@@ -1553,7 +1553,7 @@ export const ISROF_LESSONS: Lesson[] = [
           "Someone said kindly, “Brother, the water is being wasted.” The man answered with a sneer: “Have people become so clever?”"
         ],
         "lesson": "Careless waste in the very place of worship shows how far we are from the Sunnah. Turning off a tap takes a second; it is a small act of obedience.",
-        "src": "Isrof, “Isrof qilishdan to‘xtang!”",
+        "src": "Israf, “Isrof qilishdan to‘xtang!”",
         "check": {
           "q": "How did the Shaykh say to advise someone wasting water?",
           "options": [
@@ -1664,7 +1664,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "That is how much they valued water.",
-        "src": "Isrof, “Suvning isrofi haqida”"
+        "src": "Israf, “Suvning isrofi haqida”"
       },
       {
         "q": "Moderation, with good guidance and a good appearance, is…",
@@ -1688,7 +1688,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "The book suggests a bucket.",
-        "src": "Isrof, “Suvning isrofi haqida”"
+        "src": "Israf, “Suvning isrofi haqida”"
       },
       {
         "q": "In the masjid story, what was wrong?",
@@ -1700,7 +1700,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Carelessness with water in the house of worship.",
-        "src": "Isrof, “Isrof qilishdan to‘xtang!”"
+        "src": "Israf, “Isrof qilishdan to‘xtang!”"
       },
       {
         "q": "How should we tell someone they are wasting water?",
@@ -1712,7 +1712,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Advice with adab is more likely to be heard.",
-        "src": "Isrof, “Isrof qilishdan to‘xtang!”"
+        "src": "Israf, “Isrof qilishdan to‘xtang!”"
       },
       {
         "q": "Cooling melons under running water for hours is…",
@@ -1724,7 +1724,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "One of the examples of water waste in the book.",
-        "src": "Isrof, “Suvning isrofi haqida”"
+        "src": "Israf, “Suvning isrofi haqida”"
       },
       {
         "q": "Why does wasting water matter beyond our own home?",
@@ -1736,17 +1736,17 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "We waste what others are praying for.",
-        "src": "Isrof, “Suvning isrofi haqida”"
+        "src": "Israf, “Suvning isrofi haqida”"
       }
     ]
   },
   {
     "id": "food",
-    "group": "Kinds of isrof",
+    "group": "Kinds of israf",
     "title": "Food: eat, but do not waste",
     "summary": "A third for food, a third for drink, a third for air. Why overeating is also waste, and where the blessing in our food may be.",
     "sources": [
-      "Isrof, “Taomdagi isrof haqida”",
+      "Israf, “Taomdagi isrof haqida”",
       "Quran 7:31",
       "Quran 2:168",
       "Tirmidhi 2380",
@@ -1794,7 +1794,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "scenario",
-        "id": "isrof-food-feast",
+        "id": "israf-food-feast",
         "situation": "You are hosting guests. You can either cook three times more than anyone can eat “so no one says it wasn’t enough”, or cook a generous amount and plan for leftovers. What does the book teach?",
         "options": [
           {
@@ -1843,7 +1843,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "The book calls it the greatest waste and a great sin.",
-        "src": "Isrof, “Taomdagi isrof haqida”"
+        "src": "Israf, “Taomdagi isrof haqida”"
       },
       {
         "q": "What is the worst vessel the son of Ādam fills?",
@@ -1870,7 +1870,7 @@ export const ISROF_LESSONS: Lesson[] = [
         "src": "Tirmidhi 2380"
       },
       {
-        "q": "Is eating more than we need a kind of isrof?",
+        "q": "Is eating more than we need a kind of israf?",
         "options": [
           "No, only throwing food away is",
           "Yes",
@@ -1879,7 +1879,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "The Sharīʿah counts both.",
-        "src": "Isrof, “Taomdagi isrof haqida”"
+        "src": "Israf, “Taomdagi isrof haqida”"
       },
       {
         "q": "What did the Prophet ﷺ say to do with a fallen morsel?",
@@ -1951,17 +1951,17 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Extra food becomes charity.",
-        "src": "Isrof, “Taomdagi isrof haqida”"
+        "src": "Israf, “Taomdagi isrof haqida”"
       }
     ]
   },
   {
     "id": "clothing",
-    "group": "Kinds of isrof",
+    "group": "Kinds of israf",
     "title": "Clothing without waste or pride",
     "summary": "Clothes cover, protect and beautify. How they become a tool of pride and waste, and the moderate way of the salaf.",
     "sources": [
-      "Isrof, “Kiyimdagi isrof haqida”",
+      "Israf, “Kiyimdagi isrof haqida”",
       "Quran 7:26",
       "Nasai 2559",
       "Abu Dawud 4094",
@@ -2088,7 +2088,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 2,
         "why": "And their best for Jumuʿah, the Eids and meeting brothers.",
-        "src": "Isrof, “Kiyimdagi isrof haqida”"
+        "src": "Israf, “Kiyimdagi isrof haqida”"
       },
       {
         "q": "According to Ibn Sīrīn, where did showing off move to?",
@@ -2100,7 +2100,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "First it was long clothes, then always new ones.",
-        "src": "Isrof, “Kiyimdagi isrof haqida”"
+        "src": "Israf, “Kiyimdagi isrof haqida”"
       },
       {
         "q": "What did ʿUmar wear while giving a khuṭbah from the minbar?",
@@ -2117,14 +2117,14 @@ export const ISROF_LESSONS: Lesson[] = [
       {
         "q": "Throwing away good clothes because they are “out of fashion” is…",
         "options": [
-          "…isrof",
+          "…israf",
           "…a sunnah",
           "…good for the clothes",
           "…required"
         ],
         "answer": 0,
         "why": "Pass them on instead.",
-        "src": "Isrof, “Kiyimdagi isrof haqida”"
+        "src": "Israf, “Kiyimdagi isrof haqida”"
       },
       {
         "q": "What should a Muslim check first about clothes?",
@@ -2136,7 +2136,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Ḥalāl and ḥarām come before style.",
-        "src": "Isrof, “Kiyimdagi isrof haqida”"
+        "src": "Israf, “Kiyimdagi isrof haqida”"
       },
       {
         "q": "What did ash-Shaʿbī advise about clothes?",
@@ -2148,7 +2148,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "The middle way.",
-        "src": "Isrof, “Kiyimdagi isrof haqida”"
+        "src": "Israf, “Kiyimdagi isrof haqida”"
       }
     ]
   },
@@ -2158,8 +2158,8 @@ export const ISROF_LESSONS: Lesson[] = [
     "title": "Ceremonies and memorial meals",
     "summary": "Many customs we keep have no basis in Islam and are pure waste. What the Sharīʿah actually teaches about meals after a death and what reaches the deceased.",
     "sources": [
-      "Isrof, “Marosimlardagi isrof haqida”",
-      "Isrof, “Ota-onani yo‘qlab taom ulashib, ehson qilish”",
+      "Israf, “Marosimlardagi isrof haqida”",
+      "Israf, “Ota-onani yo‘qlab taom ulashib, ehson qilish”",
       "Abu Dawud 3132",
       "Tirmidhi 998",
       "Ahmad 12683"
@@ -2201,7 +2201,7 @@ export const ISROF_LESSONS: Lesson[] = [
       },
       {
         "type": "scenario",
-        "id": "isrof-cer-loan",
+        "id": "israf-cer-loan",
         "situation": "A family has just lost their father. There are young children among the heirs. Relatives say they must hold a big “fortieth day” meal, even if they borrow. What is right?",
         "options": [
           {
@@ -2240,7 +2240,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Presenting as religion what is not in it is a sin and a waste.",
-        "src": "Isrof, “Marosimlardagi isrof haqida”"
+        "src": "Israf, “Marosimlardagi isrof haqida”"
       },
       {
         "q": "Is it recommended for the bereaved family to host meals in the first three days?",
@@ -2252,7 +2252,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Others should feed them instead.",
-        "src": "Isrof, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
+        "src": "Israf, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
       },
       {
         "q": "If there are minor heirs, making food for others from the estate is…",
@@ -2264,7 +2264,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "Their share may not be spent on others.",
-        "src": "Isrof, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
+        "src": "Israf, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
       },
       {
         "q": "What did the Prophet ﷺ say when Jaʿfar was martyred?",
@@ -2288,7 +2288,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Only a voluntary “wadīmah” with no fixed day is mentioned.",
-        "src": "Isrof, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
+        "src": "Israf, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
       },
       {
         "q": "What is a wadīmah?",
@@ -2300,7 +2300,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Its day, size and dishes are not fixed.",
-        "src": "Isrof, “Marosimlar va ularning odoblari”"
+        "src": "Israf, “Marosimlar va ularning odoblari”"
       },
       {
         "q": "May a memorial meal be paid for with a loan?",
@@ -2312,7 +2312,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Only someone with money beyond his needs gives it.",
-        "src": "Isrof, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
+        "src": "Israf, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
       },
       {
         "q": "Which acts do all scholars agree benefit the deceased?",
@@ -2324,7 +2324,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "These are agreed upon.",
-        "src": "Isrof, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
+        "src": "Israf, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
       },
       {
         "q": "On the chosen Hanafi view, does the reward of Quran recitation reach the deceased?",
@@ -2336,7 +2336,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "The later scholars of the four schools agreed on it.",
-        "src": "Isrof, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
+        "src": "Israf, “Ota-onani yo‘qlab taom ulashib, ehson qilish”"
       },
       {
         "q": "How should we remember our deceased parents?",
@@ -2358,8 +2358,8 @@ export const ISROF_LESSONS: Lesson[] = [
     "title": "The wedding feast (walīmah)",
     "summary": "The walīmah is sunnah, and the Prophet’s ﷺ own were simple. Why the feast is the groom’s duty, and why demands on the bride’s family are waste.",
     "sources": [
-      "Isrof, “Nikoh to‘yi”",
-      "Isrof, “Nikoh to‘yini qilish kimning zimmasida?”",
+      "Israf, “Nikoh to‘yi”",
+      "Israf, “Nikoh to‘yini qilish kimning zimmasida?”",
       "Bukhari 371",
       "Muslim 1365",
       "Bukhari 5168",
@@ -2402,7 +2402,7 @@ export const ISROF_LESSONS: Lesson[] = [
           "He told the married men among the Companions to hold it, and gave the duty to his own son-in-law ʿAlī even though he was poor.",
           "The Ummah and the majority of scholars agree on this.",
           "The new family carries the groom’s name, and the bride leaving her home to join it is an honour for the groom’s family, so they hold the feast in her honour.",
-          "Demanding that the bride’s side host the wedding, provide a dowry of goods, or fill the house with furniture goes against the Sharīʿah, decency and good custom. All of it is isrof."
+          "Demanding that the bride’s side host the wedding, provide a dowry of goods, or fill the house with furniture goes against the Sharīʿah, decency and good custom. All of it is israf."
         ]
       },
       {
@@ -2450,7 +2450,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "The rest are customs people made.",
-        "src": "Isrof, “Nikoh to‘yi”"
+        "src": "Israf, “Nikoh to‘yi”"
       },
       {
         "q": "What was served at the walīmah for Ṣafiyyah?",
@@ -2510,7 +2510,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "The Prophet ﷺ always held his own.",
-        "src": "Isrof, “Nikoh to‘yini qilish kimning zimmasida?”"
+        "src": "Israf, “Nikoh to‘yini qilish kimning zimmasida?”"
       },
       {
         "q": "Did the Prophet ﷺ ever tell a bride “Tell your father to hold the wedding”?",
@@ -2522,19 +2522,19 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "He gave the duty to the groom, even to poor ʿAlī.",
-        "src": "Isrof, “Nikoh to‘yini qilish kimning zimmasida?”"
+        "src": "Israf, “Nikoh to‘yini qilish kimning zimmasida?”"
       },
       {
         "q": "Demanding goods and furniture from the bride’s family is…",
         "options": [
           "…a sunnah",
-          "…isrof and against the Sharīʿah",
+          "…israf and against the Sharīʿah",
           "…required",
           "…a kindness"
         ],
         "answer": 1,
         "why": "And Allah does not love the wasteful.",
-        "src": "Isrof, “Nikoh to‘yini qilish kimning zimmasida?”"
+        "src": "Israf, “Nikoh to‘yini qilish kimning zimmasida?”"
       },
       {
         "q": "Which is a wisdom of the walīmah?",
@@ -2546,7 +2546,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Also joy, brotherhood, equality and duʿāʾ.",
-        "src": "Isrof, “Nikoh to‘yi”"
+        "src": "Israf, “Nikoh to‘yi”"
       },
       {
         "q": "A blessed wedding…",
@@ -2558,7 +2558,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Simplicity brings blessing.",
-        "src": "Isrof, “Nikoh to‘yi”"
+        "src": "Israf, “Nikoh to‘yi”"
       }
     ]
   },
@@ -2568,7 +2568,7 @@ export const ISROF_LESSONS: Lesson[] = [
     "title": "Gatherings and their manners",
     "summary": "The twelve occasions on which scholars allow inviting people to a meal, and the manners of hosts and guests, without waste or show.",
     "sources": [
-      "Isrof, “Marosimlar va ularning odoblari”",
+      "Israf, “Marosimlar va ularning odoblari”",
       "Tirmidhi 1855",
       "Bukhari 2568",
       "Abu Dawud 3764",
@@ -2686,7 +2686,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "The others named by the scholars are mustaḥabb.",
-        "src": "Isrof, “Marosimlar va ularning odoblari”"
+        "src": "Israf, “Marosimlar va ularning odoblari”"
       },
       {
         "q": "What is the ʿaqīqah?",
@@ -2698,7 +2698,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "In thanks for the child and the mother’s safety.",
-        "src": "Isrof, “Marosimlar va ularning odoblari”"
+        "src": "Israf, “Marosimlar va ularning odoblari”"
       },
       {
         "q": "What did the Prophet ﷺ do on returning to Madinah from a journey?",
@@ -2734,7 +2734,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "One of the manners listed in the book.",
-        "src": "Isrof, “Marosimlar va ularning odoblari”"
+        "src": "Israf, “Marosimlar va ularning odoblari”"
       },
       {
         "q": "When should a guest arrive?",
@@ -2746,7 +2746,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Respect for the host’s arrangements.",
-        "src": "Isrof, “Marosimlar va ularning odoblari”"
+        "src": "Israf, “Marosimlar va ularning odoblari”"
       },
       {
         "q": "May a guest take food home from the gathering?",
@@ -2758,7 +2758,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "One of the guest’s manners in the book.",
-        "src": "Isrof, “Marosimlar va ularning odoblari”"
+        "src": "Israf, “Marosimlar va ularning odoblari”"
       },
       {
         "q": "Accepting a walīmah invitation is, in the Hanafi school…",
@@ -2770,7 +2770,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 0,
         "why": "Other invitations are mustaḥabb.",
-        "src": "Isrof, “Marosimlar va ularning odoblari”"
+        "src": "Israf, “Marosimlar va ularning odoblari”"
       },
       {
         "q": "What should someone who cannot attend do?",
@@ -2782,7 +2782,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Good manners even in absence.",
-        "src": "Isrof, “Marosimlar va ularning odoblari”"
+        "src": "Israf, “Marosimlar va ularning odoblari”"
       }
     ]
   },
@@ -2790,18 +2790,18 @@ export const ISROF_LESSONS: Lesson[] = [
     "id": "everyday-waste",
     "group": "Living without waste",
     "title": "Everyday waste, and what we can do",
-    "summary": "Lights left on, gas and electricity, cars that are never cared for, and meters wound back. Then the book’s call: fight isrof together.",
+    "summary": "Lights left on, gas and electricity, cars that are never cared for, and meters wound back. Then the book’s call: fight israf together.",
     "sources": [
-      "Isrof, “Turli maishiy isroflar”",
-      "Isrof, “Isrof qilishdan to‘xtang!”",
-      "Isrof, “Xotima”",
+      "Israf, “Turli maishiy isroflar”",
+      "Israf, “Isrof qilishdan to‘xtang!”",
+      "Israf, “Xotima”",
       "Quran 7:31",
       "Quran 4:29"
     ],
     "blocks": [
       {
         "type": "p",
-        "text": "Isrof can be seen in every part of life. Young people switch on a light, finish what they came for, and leave it burning for days. Gas and electricity are wasted even after many reminders. Saving every drop of water and every bit of power is the duty of every member of society."
+        "text": "Israf can be seen in every part of life. Young people switch on a light, finish what they came for, and leave it burning for days. Gas and electricity are wasted even after many reminders. Saving every drop of water and every bit of power is the duty of every member of society."
       },
       {
         "type": "points",
@@ -2851,7 +2851,7 @@ export const ISROF_LESSONS: Lesson[] = [
         "type": "points",
         "title": "What the book asks of us",
         "items": [
-          "Isrof harms individuals, families and societies, and its harm reaches into the Hereafter.",
+          "Israf harms individuals, families and societies, and its harm reaches into the Hereafter.",
           "So we must fight it together: each person, each family and the whole community.",
           "Knowledge comes first. Imams, schools, media and families should all teach about it, through lessons, poems, stories and every means.",
           "Then the thrift becomes a good deed: it benefits ourselves, our family economy, our society and our whole country, and it earns reward."
@@ -2873,7 +2873,7 @@ export const ISROF_LESSONS: Lesson[] = [
         "items": [
           "Saving water, gas and electricity is the duty of every member of society.",
           "Looking after machines is part of not wasting. Winding back a meter is theft from everyone.",
-          "Fight isrof together, with knowledge, example and patience."
+          "Fight israf together, with knowledge, example and patience."
         ]
       }
     ],
@@ -2888,7 +2888,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Every citizen shares in it.",
-        "src": "Isrof, “Isrof qilishdan to‘xtang!”"
+        "src": "Israf, “Isrof qilishdan to‘xtang!”"
       },
       {
         "q": "What did the car mechanic say is the biggest waste now?",
@@ -2900,7 +2900,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "People drive but do not maintain.",
-        "src": "Isrof, “Turli maishiy isroflar”"
+        "src": "Israf, “Turli maishiy isroflar”"
       },
       {
         "q": "Making a meter show less than was used is…",
@@ -2912,7 +2912,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "It takes from orphans, pensioners and the needy too.",
-        "src": "Isrof, “Turli maishiy isroflar”"
+        "src": "Israf, “Turli maishiy isroflar”"
       },
       {
         "q": "Which verse forbids consuming others’ wealth unjustly?",
@@ -2936,10 +2936,10 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "A small habit with a big effect.",
-        "src": "Isrof, “Isrof qilishdan to‘xtang!”"
+        "src": "Israf, “Isrof qilishdan to‘xtang!”"
       },
       {
-        "q": "According to the conclusion, how should isrof be fought?",
+        "q": "According to the conclusion, how should israf be fought?",
         "options": [
           "Alone, in secret",
           "Together: individuals, families and society",
@@ -2948,10 +2948,10 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "It is a shared duty.",
-        "src": "Isrof, “Xotima”"
+        "src": "Israf, “Xotima”"
       },
       {
-        "q": "What comes first in fighting isrof?",
+        "q": "What comes first in fighting israf?",
         "options": [
           "Punishment",
           "Knowledge and teaching",
@@ -2960,10 +2960,10 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Imams, schools, media and families all teach.",
-        "src": "Isrof, “Xotima”"
+        "src": "Israf, “Xotima”"
       },
       {
-        "q": "Does the harm of isrof end in this world?",
+        "q": "Does the harm of israf end in this world?",
         "options": [
           "Yes",
           "No, it reaches into the Hereafter",
@@ -2972,19 +2972,19 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "The book’s conclusion.",
-        "src": "Isrof, “Xotima”"
+        "src": "Israf, “Xotima”"
       },
       {
         "q": "Replacing a working phone every year just to have the newest is…",
         "options": [
-          "…a kind of isrof",
+          "…a kind of israf",
           "…a duty",
           "…charity",
           "…always needed"
         ],
         "answer": 0,
         "why": "Using a blessing beyond need, often to impress.",
-        "src": "Isrof, “Turli maishiy isroflar”"
+        "src": "Israf, “Turli maishiy isroflar”"
       },
       {
         "q": "When does thrift become a good deed?",
@@ -2996,7 +2996,7 @@ export const ISROF_LESSONS: Lesson[] = [
         ],
         "answer": 1,
         "why": "Then it earns reward.",
-        "src": "Isrof, “Isrof qilishdan to‘xtang!”"
+        "src": "Israf, “Isrof qilishdan to‘xtang!”"
       }
     ]
   }

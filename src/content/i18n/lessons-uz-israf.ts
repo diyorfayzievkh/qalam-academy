@@ -1,9 +1,9 @@
 import type { LessonTrMap } from "./lessons";
 
-// Isrof olami (o‘zbekcha). scripts/isrof/gen.mts yordamida yaratilgan.
+// Isrof (Israf) olami (o‘zbekcha). scripts/israf/gen.mts yordamida yaratilgan.
 
 const T: LessonTrMap = {
-  "what-is-isrof": {
+  "what-is-israf": {
     "title": "Isrof nima?",
     "summary": "Mol-dunyo — ne’mat va imtihon. Isrof va tabzir nima, va nega Islom Alloh bergan ne’matlarni asraydi.",
     "blocks": [
@@ -174,7 +174,7 @@ const T: LessonTrMap = {
       }
     ]
   },
-  "isrof-quran-sunnah": {
+  "israf-quran-sunnah": {
     "title": "Qur’on va Sunnatda isrof",
     "summary": "Alloh isrofchilarni sevmaydi, Payg‘ambar ﷺ esa hatto tahoratda ham isrofdan qaytargan.",
     "blocks": [
@@ -513,7 +513,7 @@ const T: LessonTrMap = {
       }
     ]
   },
-  "harms-of-isrof": {
+  "harms-of-israf": {
     "title": "Isrof bizga nima qiladi",
     "summary": "Isrofning qalbga, oilaga va jamiyatga zararlari: Allohning g‘azabidan tortib kambag‘allik va xorlikkacha.",
     "blocks": [

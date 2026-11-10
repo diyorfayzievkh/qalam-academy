@@ -513,11 +513,11 @@ const uz: Dict = {
   "Family: {name}": "Oila: {name}", "Your family is saved on this device.": "Oilangiz shu qurilmada saqlangan.",
   "Use a different family code": "Boshqa oila kodidan foydalanish", "Who are you?": "Siz kimsiz?",
   "Tap your name and type your PIN.": "Ismingizni bosing va PIN kodingizni kiriting.",
-  "Not Wasting (Isrof)": "Isrof qilmaslik",
-  "From the book “Isrof” by Shaykh Muhammad Sodiq Muhammad Yusuf: wasting food, water, money, time, childhood, clothes and celebrations, and the middle way of Islam. Every lesson has its own quiz.": "Shayx Muhammad Sodiq Muhammad Yusufning “Isrof” kitobi asosida: taom, suv, pul, vaqt, bolalik, kiyim va marosimlardagi isrof hamda Islomning o‘rta yo‘li. Har bir darsning o‘z testi bor.",
+  "Not Wasting (Israf)": "Isrof qilmaslik",
+  "From the book “Israf” by Shaykh Muhammad Sodiq Muhammad Yusuf: wasting food, water, money, time, childhood, clothes and celebrations, and the middle way of Islam. Every lesson has its own quiz.": "Shayx Muhammad Sodiq Muhammad Yusufning “Isrof” kitobi asosida: taom, suv, pul, vaqt, bolalik, kiyim va marosimlardagi isrof hamda Islomning o‘rta yo‘li. Har bir darsning o‘z testi bor.",
   "Final quiz: 28 questions across the Not Wasting world": "Yakuniy test: Isrof qilmaslik olami bo‘yicha 28 ta savol",
-  "Questions from every lesson of the Not Wasting (Isrof) world: food, water, money, time, childhood, clothes and celebrations.": "Isrof qilmaslik olamining har bir darsidan savollar: taom, suv, pul, vaqt, bolalik, kiyim va marosimlar.",
-  "Understanding isrof": "Isrofni tushunish", "Kinds of isrof": "Isrofning turlari", "Celebrations and customs": "Marosim va odatlar", "Living without waste": "Isrofsiz hayot",
+  "Questions from every lesson of the Not Wasting (Israf) world: food, water, money, time, childhood, clothes and celebrations.": "Isrof qilmaslik olamining har bir darsidan savollar: taom, suv, pul, vaqt, bolalik, kiyim va marosimlar.",
+  "Understanding israf": "Isrofni tushunish", "Kinds of israf": "Isrofning turlari", "Celebrations and customs": "Marosim va odatlar", "Living without waste": "Isrofsiz hayot",
   "A story to learn from": "Ibratli hikoya",
 };
 
@@ -1014,11 +1014,11 @@ const ru: Dict = {
   "Family: {name}": "Семья: {name}", "Your family is saved on this device.": "Ваша семья сохранена на этом устройстве.",
   "Use a different family code": "Другой код семьи", "Who are you?": "Кто ты?",
   "Tap your name and type your PIN.": "Нажми на своё имя и введи PIN-код.",
-  "Not Wasting (Isrof)": "Не расточительствуй (исраф)",
-  "From the book “Isrof” by Shaykh Muhammad Sodiq Muhammad Yusuf: wasting food, water, money, time, childhood, clothes and celebrations, and the middle way of Islam. Every lesson has its own quiz.": "По книге шейха Мухаммада Садыка Мухаммада Юсуфа «Исраф»: расточительство в еде, воде, деньгах, времени, детстве, одежде и торжествах, и средний путь Ислама. У каждого урока свой тест.",
+  "Not Wasting (Israf)": "Не расточительствуй (исраф)",
+  "From the book “Israf” by Shaykh Muhammad Sodiq Muhammad Yusuf: wasting food, water, money, time, childhood, clothes and celebrations, and the middle way of Islam. Every lesson has its own quiz.": "По книге шейха Мухаммада Садыка Мухаммада Юсуфа «Исраф»: расточительство в еде, воде, деньгах, времени, детстве, одежде и торжествах, и средний путь Ислама. У каждого урока свой тест.",
   "Final quiz: 28 questions across the Not Wasting world": "Итоговый тест: 28 вопросов по миру «Не расточительствуй»",
-  "Questions from every lesson of the Not Wasting (Isrof) world: food, water, money, time, childhood, clothes and celebrations.": "Вопросы из каждого урока мира «Не расточительствуй»: еда, вода, деньги, время, детство, одежда и торжества.",
-  "Understanding isrof": "Что такое исраф", "Kinds of isrof": "Виды исрафа", "Celebrations and customs": "Торжества и обычаи", "Living without waste": "Жизнь без расточительства",
+  "Questions from every lesson of the Not Wasting (Israf) world: food, water, money, time, childhood, clothes and celebrations.": "Вопросы из каждого урока мира «Не расточительствуй»: еда, вода, деньги, время, детство, одежда и торжества.",
+  "Understanding israf": "Что такое исраф", "Kinds of israf": "Виды исрафа", "Celebrations and customs": "Торжества и обычаи", "Living without waste": "Жизнь без расточительства",
   "A story to learn from": "Поучительная история",
 };
 

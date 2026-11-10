@@ -5,7 +5,7 @@ import { B, P, L, Q } from "./helpers.mts";
 
 export const PART1 = [
   {
-    id: "what-is-isrof", group: "Understanding isrof || Isrofni tushunish",
+    id: "what-is-israf", group: "Understanding isrof || Isrofni tushunish",
     title: "What is isrof? || Isrof nima?",
     summary: "Wealth is a gift and a test. What isrof and tabdhīr mean, and why Islam guards what Allah has given us. || Mol-dunyo — ne’mat va imtihon. Isrof va tabzir nima, va nega Islom Alloh bergan ne’matlarni asraydi.",
     sources: [B("Muqaddima"), "Quran 18:46", "Quran 3:14", "Quran 2:168", "Quran 4:5", "Quran 2:188"],
@@ -53,7 +53,7 @@ export const PART1 = [
   },
 
   {
-    id: "isrof-quran-sunnah", group: "Understanding isrof || Isrofni tushunish",
+    id: "israf-quran-sunnah", group: "Understanding isrof || Isrofni tushunish",
     title: "Isrof in the Quran and Sunnah || Qur’on va Sunnatda isrof",
     summary: "Allah does not love the wasteful, and the Prophet ﷺ warned against waste even in wuḍūʾ. || Alloh isrofchilarni sevmaydi, Payg‘ambar ﷺ esa hatto tahoratda ham isrofdan qaytargan.",
     sources: [B("Qur’oni Karimda isrof haqida"), B("Sunnatda isrof haqida"), "Quran 7:31", "Quran 17:26–27", "Quran 6:141", "Nasai 2559", "Ibn Majah 3605", "Bukhari 1425", "Muslim 1024", "Abu Dawud 2872", "Ibn Majah 425"],
@@ -71,7 +71,7 @@ export const PART1 = [
         "A wife who gives from the household food without wasting is rewarded, and so are her husband who earned it and the keeper who stored it (Bukhari 1425; Muslim 1024). || Ayol uydagi taomdan isrof qilmay infoq qilsa, unga ajr bor, topib kelgan eriga ham, saqlab turgan xazinachiga ham ajr bor (Buxoriy 1425; Muslim 1024).",
         "A poor guardian may eat from an orphan’s wealth only “without wasting, without rushing, and without taking it as your own” (Abu Dawud 2872). || Kambag‘al vasiy yetimning molidan faqat “isrof qilmay, shoshilmay va o‘zingniki qilib olmay” yeyishi mumkin (Abu Dovud 2872).",
       ]),
-      { type: "story", id: "isrof-saad-wudu", kind: "From the life of the Prophet ﷺ", title: "Waste even at a river? || Daryoda ham isrofmi?",
+      { type: "story", id: "israf-saad-wudu", kind: "From the life of the Prophet ﷺ", title: "Waste even at a river? || Daryoda ham isrofmi?",
         scene: "The Prophet ﷺ passed by Saʿd while he was making wuḍūʾ. || Payg‘ambar ﷺ tahorat qilayotgan Sa’dning yonidan o‘tib qoldilar.",
         story: [
           "Saʿd was pouring a lot of water. The Prophet ﷺ said: “What is this waste, O Saʿd?” || Sa’d suvni ko‘p ishlatayotgan edi. Payg‘ambar ﷺ: “Bu qanday isrofgarchilik, ey Sa’d?” dedilar.",
@@ -81,7 +81,7 @@ export const PART1 = [
         lesson: "If wasting is wrong in wuḍūʾ, an act of worship, beside a river that never runs dry, it is even more wrong everywhere else. || Ibodat bo‘lmish tahoratda, tugamaydigan daryo bo‘yida ham isrof joiz bo‘lmasa, boshqa ishlarda albatta joiz emas.",
         src: "Ahmad 7065; Ibn Majah 425 (weak chain; cited by scholars for this meaning)",
         check: { q: "Where did the Prophet ﷺ say waste is still waste? || Payg‘ambar ﷺ qayerda ham isrof isrofligicha qolishini aytdilar?", options: ["Only at home || Faqat uyda", "Even at a flowing river || Hatto oqib turgan daryoda ham", "Only in the desert || Faqat cho‘lda", "Nowhere || Hech qayerda"], answer: 1, why: "“Yes, even if you are at a flowing river.” || “Ha, hatto oqib turgan daryoda bo‘lsang ham.”" } },
-      { type: "story", id: "isrof-umar-kafan", kind: "From the Companions", title: "ʿUmar’s last advice || Umarning vasiyati",
+      { type: "story", id: "israf-umar-kafan", kind: "From the Companions", title: "ʿUmar’s last advice || Umarning vasiyati",
         scene: "ʿUmar ibn al-Khaṭṭāb, ruler of a vast state, spoke to his son about his own burial. || Ulkan davlatning xalifasi Umar ibn Xattob o‘g‘liga o‘z dafni haqida gapirdi.",
         story: [
           "“Do not be wasteful with my shroud. If there is good for me with Allah, He will give me something better in its place.” || “Kafanimda isrof qilmanglar. Agar men uchun Allohning huzurida yaxshilik bo‘lsa, uning badaliga undan yaxshirog‘ini beradi.”",
@@ -132,7 +132,7 @@ export const PART1 = [
         "Then He gives the reason: “Before this they were living in luxury” (56:45), chasing pleasure and forgetting faith. || So‘ng sababini aytadi: “Albatta, ular bundan oldin maishatparast edilar” (56:45), lazzat ortidan quvib, iymonni unutgan edilar.",
         "ʿUmar said: “Do not be slaves of your stomachs. It ruins the body, brings illness and keeps you from prayer. Be moderate; moderation is better for the body.” (reported) || Umar: “Taom va ichimlikda qorin bandasi bo‘lmanglar. Bu jasadni buzadi, kasal keltiradi, namozdan qoldiradi. Tejamkor bo‘linglar, bu jasad uchun yaxshi”, deganlar (rivoyat).",
       ]),
-      { type: "scenario", id: "isrof-cause-copy", situation: "Your cousin had a huge birthday party with a hired hall. Your family can afford something small. A relative says: “If you do less, people will talk.” What is the best answer? || Amakivachchangizga zal ijaraga olinib, katta tug‘ilgan kun o‘tkazildi. Oilangizning imkoni kichikrog‘iga yetadi. Bir qarindoshingiz: “Kamroq qilsangiz, odamlar gapiradi”, deydi. Eng to‘g‘ri javob qaysi?",
+      { type: "scenario", id: "israf-cause-copy", situation: "Your cousin had a huge birthday party with a hired hall. Your family can afford something small. A relative says: “If you do less, people will talk.” What is the best answer? || Amakivachchangizga zal ijaraga olinib, katta tug‘ilgan kun o‘tkazildi. Oilangizning imkoni kichikrog‘iga yetadi. Bir qarindoshingiz: “Kamroq qilsangiz, odamlar gapiradi”, deydi. Eng to‘g‘ri javob qaysi?",
         options: [
           { text: "Borrow money so ours is bigger. || Qarz olib, biznikini kattaroq qilamiz.", feedback: "Spending beyond your means to beat others is exactly the copying the book warns about. || Boshqalardan o‘tish uchun imkondan ortiq sarflash — kitob ogohlantirgan taqlidning aynan o‘zi." },
           { text: "Do something simple and warm that fits what we have, and maybe give something to someone in need. || O‘z imkonimizga yarasha sodda va samimiy narsa qilamiz, balki muhtojga ham biror narsa beramiz.", best: true, feedback: "Moderation, sincerity and generosity, without competing. || Musobaqasiz, mo‘tadillik, ixlos va saxovat." },

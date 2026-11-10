@@ -3,7 +3,7 @@ import { B, P, L, Q } from "./helpers.mts";
 
 export const PART2 = [
   {
-    id: "harms-of-isrof", group: "Understanding isrof || Isrofni tushunish",
+    id: "harms-of-israf", group: "Understanding isrof || Isrofni tushunish",
     title: "What waste does to us || Isrof bizga nima qiladi",
     summary: "The harms of isrof for the soul, the family and society, from the anger of Allah to poverty and shame. || Isrofning qalbga, oilaga va jamiyatga zararlari: Allohning g‘azabidan tortib kambag‘allik va xorlikkacha.",
     sources: [B("Isrofning zararlaridan ba’zilari"), "Quran 7:31", "Quran 17:27", "Quran 17:29"],
@@ -33,7 +33,7 @@ export const PART2 = [
         ["Always wants what the neighbours have || Doim qo‘shnisidagi narsani xohlaydi", "Is content and grateful || Qanoatli va shukrli"],
         ["Has nothing left when hard days come || Og‘ir kun kelganda hech narsasi qolmaydi", "Is ready for hard days and can help others || Og‘ir kunlarga tayyor, boshqalarga ham yordam bera oladi"],
       ] },
-      { type: "scenario", id: "isrof-harm-envy", situation: "Your friend got the newest phone. Yours works perfectly well, but you feel you must have the new one too. What helps most? || Do‘stingiz eng yangi telefonni oldi. Sizniki bemalol ishlaydi, lekin siz ham yangisini olishingiz kerakdek tuyuladi. Eng ko‘p nima yordam beradi?",
+      { type: "scenario", id: "israf-harm-envy", situation: "Your friend got the newest phone. Yours works perfectly well, but you feel you must have the new one too. What helps most? || Do‘stingiz eng yangi telefonni oldi. Sizniki bemalol ishlaydi, lekin siz ham yangisini olishingiz kerakdek tuyuladi. Eng ko‘p nima yordam beradi?",
         options: [
           { text: "Ask my parents again and again until they give in. || Ota-onam rozi bo‘lguncha qayta-qayta so‘rayman.", feedback: "This feeds the envy that the book lists among the harms of waste. || Bu kitobda isrof zararlari qatorida sanalgan hasadni kuchaytiradi." },
           { text: "Thank Allah for the phone that works, and remember that wanting what others have never ends. || Ishlab turgan telefonim uchun Allohga shukr qilaman va boshqalardagi narsani xohlash hech tugamasligini eslayman.", best: true, feedback: "Gratitude is the cure for envy and waste. || Shukr hasad va isrofning davosi." },
@@ -81,7 +81,7 @@ export const PART2 = [
       ]),
       Q("A servant’s feet will not move on the Day of Resurrection until he is asked about his life and how he spent it, his knowledge and what he did with it, his wealth, where he earned it and how he spent it, and his body and how he wore it out. || Qiyomat kuni bandaning ikki qadami to undan umridan — uni nimada o‘tkazgani, ilmidan — u bilan nima qilgani, molidan — uni qayerdan kasb qilgani va nimaga sarflagani, jismidan — uni nimada qaritgani haqida so‘ralmagunicha joyidan jilmaydi.", "Tirmidhi 2417"),
       P("The wise of old said: “The ḥalāl of wealth has a reckoning, and the ḥarām of it has a punishment.” Wealth in our hands is a trust (amānah). We will be asked twice about it: where it came from, and where it went. || Hukamolar: “Mol-mulkning halolining hisobi, haromining azobi bor”, deganlar. Qo‘limizdagi mol — omonat. U haqida ikki marta so‘raladi: qayerdan keldi va qayerga ketdi."),
-      { type: "scenario", id: "isrof-spend-pocket", situation: "You receive a gift of money for Eid. What is the middle way? || Hayitda sizga pul sovg‘a qilishdi. O‘rta yo‘l qaysi?",
+      { type: "scenario", id: "israf-spend-pocket", situation: "You receive a gift of money for Eid. What is the middle way? || Hayitda sizga pul sovg‘a qilishdi. O‘rta yo‘l qaysi?",
         options: [
           { text: "Spend it all today on sweets and toys. || Bugun hammasini shirinlik va o‘yinchoqqa sarflayman.", feedback: "That is the open hand that empties itself. || Bu o‘zini bo‘shatib qo‘yadigan ochiq qo‘l." },
           { text: "Hide it all and never use any of it. || Hammasini yashirib, hech ishlatmayman.", feedback: "That is the tied hand. Money is for using well, not only for keeping. || Bu bog‘langan qo‘l. Pul faqat saqlash uchun emas, yaxshi ishlatish uchun." },
@@ -178,7 +178,7 @@ export const PART2 = [
         "Look after your things: clothes, books, toys and devices. A broken toy that could be fixed is a small waste; a habit of breaking is a big one. || Narsalaringizni asrang: kiyim, kitob, o‘yinchoq va qurilmalar. Tuzatsa bo‘ladigan buzuq o‘yinchoq — kichik isrof, buzish odati — katta isrof.",
         "Finish your plate, turn off the lights, and close the tap. Small habits make a person who does not waste. || Likopchangizni tugating, chiroqni o‘chiring, jo‘mrakni yoping. Kichik odatlar isrof qilmaydigan insonni yasaydi.",
       ]),
-      { type: "story", id: "isrof-boy-bread", kind: "A story to learn from", title: "The piece of bread || Bir burda non",
+      { type: "story", id: "israf-boy-bread", kind: "A story to learn from", title: "The piece of bread || Bir burda non",
         scene: "A story the book’s teaching brings to mind: a family meal, and a crust that fell to the floor. || Kitob ta’limoti eslatadigan voqea: oilaviy dasturxon va yerga tushgan bir burda non.",
         story: [
           "A boy dropped a piece of bread while eating and left it on the floor. His grandfather picked it up, wiped it, and ate it. || Bola ovqatlanayotib bir burda nonni yerga tushirib, o‘sha yerda qoldirdi. Bobosi uni olib, tozalab, yedi.",
@@ -225,7 +225,7 @@ export const PART2 = [
         "He warned Saʿd that waste in wuḍūʾ is waste “even at a flowing river”. || U zot Sa’dni tahoratdagi isrof “hatto oqib turgan daryoda bo‘lsang ham” isrof ekanidan ogohlantirganlar.",
         "Good guidance, a good appearance and moderation are a part of prophethood (Abu Dawud 4776). || Solih hidoyat, go‘zal ko‘rinish va iqtisodli bo‘lish nubuvvatning bir juzidir (Abu Dovud 4776).",
       ]),
-      { type: "story", id: "isrof-masjid-tap", kind: "From the lives of the scholars", title: "The tap that kept running || Oqib turaverdi",
+      { type: "story", id: "israf-masjid-tap", kind: "From the lives of the scholars", title: "The tap that kept running || Oqib turaverdi",
         scene: "A polite visitor came to the Shaykh with a worry about the wuḍūʾ rooms of the masjids. || Bir odobli inson Shayxning huzuriga masjid tahoratxonalari haqidagi tashvishi bilan keldi.",
         story: [
           "“Even where signs say ‘Please do not waste water’, people sit right under them and let it pour,” he said. “May I gently tell a brother when I see it?” “Yes,” said the Shaykh, “politely and kindly.” || “Hatto ‘Iltimos, suvni isrof qilmang’ degan yozuv bor joyda ham odamlar tagida o‘tirib, suvni oqizib yuborishadi”, dedi u. “Ko‘rsam, birodarga muloyimlik bilan aytsam bo‘ladimi?” Shayx: “Bo‘ladi, odob bilan, sekinlik bilan”, dedilar.",
@@ -233,7 +233,7 @@ export const PART2 = [
           "Someone said kindly, “Brother, the water is being wasted.” The man answered with a sneer: “Have people become so clever?” || Bir kishi muloyimlik bilan: “Birodar, suv isrof bo‘lyapti”, dedi. U esa istehzo bilan: “Odamlar juda aqlli bo‘lib ketishibdimi?” dedi.",
         ],
         lesson: "Careless waste in the very place of worship shows how far we are from the Sunnah. Turning off a tap takes a second; it is a small act of obedience. || Ibodat joyining o‘zida beparvo isrof Sunnatdan qanchalik uzoqlashganimizni ko‘rsatadi. Jo‘mrakni yopish bir soniya oladi; bu kichik itoatdir.",
-        src: "Isrof, “Isrof qilishdan to‘xtang!”",
+        src: "Israf, “Isrof qilishdan to‘xtang!”",
         check: { q: "How did the Shaykh say to advise someone wasting water? || Shayx suvni isrof qilayotganga qanday nasihat qilishni aytdilar?", options: ["Shout at him || Unga baqirish", "Politely and gently || Odob bilan, sekinlik bilan", "Take a photo and post it || Suratga olib, joylash", "Say nothing ever || Hech qachon hech narsa demaslik"], answer: 1, why: "Advice is given with adab. || Nasihat odob bilan qilinadi." } },
       { type: "compare", title: "Water at home || Uydagi suv", left: "Wasteful || Isrof", right: "Thrifty || Tejamkor", rows: [
         ["Tap open while brushing teeth or between washing each foot || Tish yuvayotganda yoki oyoqlar orasida jo‘mrak ochiq", "Open only when you need the water || Faqat suv kerak bo‘lganda oching"],

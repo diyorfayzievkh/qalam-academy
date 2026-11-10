@@ -519,6 +519,13 @@ const uz: Dict = {
   "Questions from every lesson of the Not Wasting (Israf) world: food, water, money, time, childhood, clothes and celebrations.": "Isrof qilmaslik olamining har bir darsidan savollar: taom, suv, pul, vaqt, bolalik, kiyim va marosimlar.",
   "Understanding israf": "Isrofni tushunish", "Kinds of israf": "Isrofning turlari", "Celebrations and customs": "Marosim va odatlar", "Living without waste": "Isrofsiz hayot",
   "A story to learn from": "Ibratli hikoya",
+  "Play": "Tinglash", "Female": "Ayol", "Male": "Erkak",
+  "Choose a storyteller voice": "Hikoyachi ovozini tanlang",
+  "Listen to the same short passage in each voice, then tell us which one should read the bedtime stories.": "Bir xil qisqa parchani har bir ovozda tinglang, so‘ng uxlash oldi hikoyalarini qaysi biri o‘qishini ayting.",
+  "Please sign in to play the samples.": "Namunalarni tinglash uchun hisobingizga kiring.",
+  "The voice service is not connected yet. Add an ElevenLabs API key to the project’s settings on Vercel as ELEVENLABS_API_KEY, then reload this page.": "Ovoz xizmati hali ulanmagan. Vercel’dagi loyiha sozlamalariga ElevenLabs API kalitini ELEVENLABS_API_KEY nomi bilan qo‘shing va sahifani yangilang.",
+  "Could not load this sample.": "Bu namunani yuklab bo‘lmadi.",
+  "Native Arabic speakers": "Arab tili ona tili bo‘lganlar", "English narrators, for comparison": "Ingliz tilidagi hikoyachilar, taqqoslash uchun",
 };
 
 const ru: Dict = {
@@ -1020,6 +1027,13 @@ const ru: Dict = {
   "Questions from every lesson of the Not Wasting (Israf) world: food, water, money, time, childhood, clothes and celebrations.": "Вопросы из каждого урока мира «Не расточительствуй»: еда, вода, деньги, время, детство, одежда и торжества.",
   "Understanding israf": "Что такое исраф", "Kinds of israf": "Виды исрафа", "Celebrations and customs": "Торжества и обычаи", "Living without waste": "Жизнь без расточительства",
   "A story to learn from": "Поучительная история",
+  "Play": "Слушать", "Female": "Женский", "Male": "Мужской",
+  "Choose a storyteller voice": "Выберите голос рассказчика",
+  "Listen to the same short passage in each voice, then tell us which one should read the bedtime stories.": "Послушайте один и тот же отрывок каждым голосом и скажите, какой должен читать истории перед сном.",
+  "Please sign in to play the samples.": "Войдите, чтобы прослушать образцы.",
+  "The voice service is not connected yet. Add an ElevenLabs API key to the project’s settings on Vercel as ELEVENLABS_API_KEY, then reload this page.": "Голосовой сервис ещё не подключён. Добавьте ключ API ElevenLabs в настройки проекта на Vercel как ELEVENLABS_API_KEY и обновите страницу.",
+  "Could not load this sample.": "Не удалось загрузить образец.",
+  "Native Arabic speakers": "Носители арабского языка", "English narrators, for comparison": "Англоязычные рассказчики для сравнения",
 };
 
 export const DICT: Record<Exclude<Lang, "en">, Dict> = { uz, ru };

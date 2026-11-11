@@ -16,6 +16,7 @@
     "@fontsource/reem-kufi": "^5.1.0",
     "clsx": "^2.1.1",
     "next": "^14.2.35",
+    "nodemailer": "^6.9.16",
     "postgres": "^3.4.5",
     "qrcode": "^1.5.4",
     "react": "^18.3.1",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.16.11",
+    "@types/nodemailer": "^6.4.17",
     "@types/qrcode": "^1.5.5",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",

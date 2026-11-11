@@ -42,6 +42,7 @@ function SignedOut() {
   const [tab, setTab] = useState<"login" | "signup" | "child">("login");
   const [name, setName] = useState(""); const [email, setEmail] = useState(""); const [pw, setPw] = useState("");
   const [code, setCode] = useState(""); const [pin, setPin] = useState("");
+  const [forgot, setForgot] = useState(false);
   // A family saved on this device: children just tap their name and type their PIN.
   const [saved, setSaved] = useState<DeviceFamily | null>(null);
   const [otherCode, setOtherCode] = useState(false);
@@ -58,6 +59,8 @@ function SignedOut() {
       }
       await refresh();
     });
+
+  if (forgot) return <ForgotForm email={email} back={() => setForgot(false)} />;
 
   return (
     <div className="mx-auto flex w-full max-w-[480px] flex-col gap-4">
@@ -101,12 +104,40 @@ function SignedOut() {
             <Field label={t("Email")}><input className={input} type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" required /></Field>
             <Field label={t("Password")}><input className={input} type="password" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete={tab === "signup" ? "new-password" : "current-password"} minLength={tab === "signup" ? 8 : undefined} required /></Field>
             {tab === "signup" && <span className="text-[0.85rem] text-fg-muted">{t("At least 8 characters.")}</span>}
+            {tab === "login" && <button type="button" className="self-start text-[0.88rem] font-bold text-emerald underline underline-offset-4" onClick={() => setForgot(true)}>{t("Forgot password?")}</button>}
           </>
         )}
         <Err msg={f.err} />
         <button className="btn self-start" disabled={f.busy}>{f.busy ? t("Please wait…") : tab === "signup" ? t("Create account") : t("Sign in")}</button>
       </form>
       <p className="text-[0.88rem] text-fg-muted">{t("You can keep using the app without an account; progress then stays on this device only.")}</p>
+    </div>
+  );
+}
+
+/** Ask for a one-time password reset link by email. */
+function ForgotForm({ email: initial, back }: { email: string; back: () => void }) {
+  const { t } = useT();
+  const { call } = useAccount();
+  const [email, setEmail] = useState(initial);
+  const [sent, setSent] = useState(false);
+  const f = useForm(() => call("/api/auth/forgot", "POST", { email }), () => setSent(true));
+  return (
+    <div className="mx-auto flex w-full max-w-[480px] flex-col gap-4">
+      <form onSubmit={f.submit} className="card flex flex-col gap-3.5">
+        <h2 className="text-[1.25rem]">{t("Reset your password")}</h2>
+        {sent ? (
+          <p className="text-[0.95rem]">{t("If an account uses {email}, we have sent it a link to choose a new password. The link works for 1 hour. Check your spam folder too.", { email })}</p>
+        ) : (
+          <>
+            <p className="text-[0.92rem] text-fg-muted">{t("Enter the email you signed up with and we will send you a link to choose a new password.")}</p>
+            <Field label={t("Email")}><input className={input} type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" required /></Field>
+            <Err msg={f.err && t(f.err)} />
+            <button className="btn self-start" disabled={f.busy}>{f.busy ? t("Please wait…") : t("Send reset link")}</button>
+          </>
+        )}
+        <button type="button" className="self-start text-[0.88rem] font-bold text-emerald underline underline-offset-4" onClick={back}>{t("Back to sign in")}</button>
+      </form>
     </div>
   );
 }

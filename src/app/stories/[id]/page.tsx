@@ -106,9 +106,13 @@ const isUK = (v: SpeechSynthesisVoice) => /^en[-_]gb/i.test(v.lang);
 
 function rankVoices(all: SpeechSynthesisVoice[], code: string) {
   if (code === "en") {
+    // A woman's voice matters most: UK female, then any English female, and a
+    // male voice only if the device has nothing else.
+    const male = (v: SpeechSynthesisVoice) => UK_MALE.test(v.name.replace(/female/i, "")) || MALE.test(v.name.replace(/female/i, ""));
+    const female = (v: SpeechSynthesisVoice) => UK_FEMALE.test(v.name) || FEMALE.test(v.name);
     const score = (v: SpeechSynthesisVoice) =>
-      (isUK(v) ? 20 : 0) + (UK_FEMALE.test(v.name) ? 10 : 0) - (UK_MALE.test(v.name.replace(/female/i, "")) ? 15 : 0)
-      + (FEMALE.test(v.name) ? 3 : 0) + (NATURAL.test(v.name) ? 2 : 0);
+      (female(v) ? 100 : 0) - (male(v) ? 100 : 0) + (isUK(v) ? 20 : 0) + (UK_FEMALE.test(v.name) ? 10 : 0)
+      + (NATURAL.test(v.name) ? 2 : 0) + (/^en[-_](us|au|ie|ie|za|nz)/i.test(v.lang) ? 1 : 0);
     return all.filter((v) => /^en/i.test(v.lang)).sort((x, y) => score(y) - score(x));
   }
   const score = (v: SpeechSynthesisVoice) => (NATURAL.test(v.name) ? 4 : 0) + (FEMALE.test(v.name) && !/\bmale\b/i.test(v.name.replace(/female/i, "")) ? 3 : 0) - (MALE.test(v.name) ? 3 : 0) + (v.localService ? 0 : 1);
@@ -154,6 +158,9 @@ function ReadAloud({ s, lang }: { s: Bedtime; lang: "en" | "uz" | "ru" }) {
     if (state === "paused") { synth.resume(); setState("playing"); return; }
     stop();
     const id = ++run.current;
+    // iPad and iPhone may fill the voice list only after the page loads: choose again now.
+    const fresh = rankVoices(synth.getVoices(), code);
+    const useVoice = (code === "en" ? fresh[0] : fresh.find((v) => v.voiceURI === pick) ?? fresh[0]) ?? voice;
     // Read sentence by sentence with small pauses, like a storyteller:
     // a longer breath between paragraphs, and a moment before the lesson.
     const split = (p: string) => p.match(/[^.!?…]+[.!?…]+["”»’)]*|[^.!?…]+$/g)?.map((x) => x.trim()).filter(Boolean) ?? [p];
@@ -168,7 +175,7 @@ function ReadAloud({ s, lang }: { s: Bedtime; lang: "en" | "uz" | "ru" }) {
       const it = items[i++];
       const u = new SpeechSynthesisUtterance(it.text);
       u.lang = { en: "en-GB", uz: "uz-UZ", ru: "ru-RU" }[lang];
-      if (voice) { u.voice = voice; u.lang = voice.lang; }
+      if (useVoice) { u.voice = useVoice; u.lang = useVoice.lang; }
       u.rate = 0.86; u.pitch = 1.04;
       u.onend = () => { if (id === run.current) timer.current = setTimeout(next, it.pause); };
       u.onerror = u.onend;

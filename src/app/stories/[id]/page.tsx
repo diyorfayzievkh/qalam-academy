@@ -97,7 +97,20 @@ const FEMALE = /female|aria|jenny|sonia|libby|ava|emma|michelle|samantha|karen|m
 const MALE = /\bmale\b|guy|ryan|daniel|alex\b|fred|tom\b|aaron|arthur|david|mark|george|james|oliver|thomas|dmitry|pavel|maxim|yuri|sardor/i;
 const VOICE_KEY = "qalam-voice";
 
+// English stories always use a UK English female voice. Each platform names it
+// differently: Chrome "Google UK English Female", iPhone/iPad "Kate", "Serena",
+// "Stephanie" or "Martha", Edge "Sonia"/"Libby"/"Maisie", Android en-gb-x-gba/gbc/gbg.
+const UK_FEMALE = /google uk english female|\b(kate|serena|stephanie|martha|sonia|libby|maisie|hazel|susan|emily|fiona)\b|en-gb-x-gb[acg]/i;
+const UK_MALE = /\bmale\b|daniel|arthur|oliver|ryan|george|thomas|en-gb-x-gb[bd]|en-gb-x-rjs/i;
+const isUK = (v: SpeechSynthesisVoice) => /^en[-_]gb/i.test(v.lang);
+
 function rankVoices(all: SpeechSynthesisVoice[], code: string) {
+  if (code === "en") {
+    const score = (v: SpeechSynthesisVoice) =>
+      (isUK(v) ? 20 : 0) + (UK_FEMALE.test(v.name) ? 10 : 0) - (UK_MALE.test(v.name.replace(/female/i, "")) ? 15 : 0)
+      + (FEMALE.test(v.name) ? 3 : 0) + (NATURAL.test(v.name) ? 2 : 0);
+    return all.filter((v) => /^en/i.test(v.lang)).sort((x, y) => score(y) - score(x));
+  }
   const score = (v: SpeechSynthesisVoice) => (NATURAL.test(v.name) ? 4 : 0) + (FEMALE.test(v.name) && !/\bmale\b/i.test(v.name.replace(/female/i, "")) ? 3 : 0) - (MALE.test(v.name) ? 3 : 0) + (v.localService ? 0 : 1);
   return all.filter((v) => v.lang.toLowerCase().replace("_", "-").startsWith(code)).sort((x, y) => score(y) - score(x));
 }
@@ -118,14 +131,17 @@ function ReadAloud({ s, lang }: { s: Bedtime; lang: "en" | "uz" | "ru" }) {
     const synth = window.speechSynthesis;
     const load = () => setVoices(rankVoices(synth.getVoices(), code));
     load(); synth.addEventListener?.("voiceschanged", load);
+    // iPhone and iPad sometimes fill the voice list late without an event.
+    let tries = 0;
+    const poll = setInterval(() => { if (synth.getVoices().length || ++tries > 20) { load(); clearInterval(poll); } }, 250);
     try { setPick(localStorage.getItem(`${VOICE_KEY}:${code}`) || ""); } catch { /* ignore */ }
-    return () => { synth.removeEventListener?.("voiceschanged", load); };
+    return () => { clearInterval(poll); synth.removeEventListener?.("voiceschanged", load); };
   }, [code]);
   useEffect(() => () => stop(), []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { stop(); }, [s.id, lang]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!ok) return null;
 
-  const voice = voices.find((v) => v.voiceURI === pick) ?? voices[0];
+  const voice = (code === "en" ? undefined : voices.find((v) => v.voiceURI === pick)) ?? voices[0];
 
   function stop() {
     run.current++; clearTimeout(timer.current);
@@ -169,7 +185,7 @@ function ReadAloud({ s, lang }: { s: Bedtime; lang: "en" | "uz" | "ru" }) {
           {state === "playing" ? t("Pause") : state === "paused" ? t("Resume") : t("Read aloud")}
         </button>
         {state !== "idle" && <button type="button" className="btn btn-ghost" onClick={stop}>{t("Stop")}</button>}
-        {voices.length > 1 && (
+        {code !== "en" && voices.length > 1 && (
           <label className="flex items-center gap-2 text-[0.88rem] font-bold">
             {t("Voice")}
             <select className="max-w-[220px] rounded-btn border-2 border-border bg-bg-surface px-2.5 py-1.5 text-[0.88rem] font-normal" value={voice?.voiceURI ?? ""}
@@ -179,7 +195,7 @@ function ReadAloud({ s, lang }: { s: Bedtime; lang: "en" | "uz" | "ru" }) {
           </label>
         )}
       </div>
-      <span className="text-[0.85rem] text-fg-muted">{voices.length ? t("Uses your device’s voices. We pick a warm, natural female voice when your device has one.") : t("Your device has no voice for this language yet.")}</span>
+      <span className="text-[0.85rem] text-fg-muted">{voices.length ? (code === "en" ? t("Read by a UK English female voice.") : t("Uses your device’s voices. We pick a warm, natural female voice when your device has one.")) : t("Your device has no voice for this language yet.")}</span>
     </div>
   );
 }

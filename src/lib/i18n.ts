@@ -575,6 +575,7 @@ const uz: Dict = {
   "Too many requests. Please wait 15 minutes.": "So‘rovlar juda ko‘p. 15 daqiqa kuting.",
   "We could not send the email. Please try again later.": "Xatni yuborib bo‘lmadi. Keyinroq qayta urinib ko‘ring.",
   "Please enter a valid email.": "To‘g‘ri email kiriting.",
+  "Read by a UK English female voice.": "Britaniya ingliz tilidagi ayol ovozi o‘qiydi.",
 };
 
 const ru: Dict = {
@@ -1132,6 +1133,7 @@ const ru: Dict = {
   "Too many requests. Please wait 15 minutes.": "Слишком много запросов. Подождите 15 минут.",
   "We could not send the email. Please try again later.": "Не удалось отправить письмо. Попробуйте позже.",
   "Please enter a valid email.": "Введите корректный email.",
+  "Read by a UK English female voice.": "Читает женский голос с британским английским.",
 };
 
 export const DICT: Record<Exclude<Lang, "en">, Dict> = { uz, ru };

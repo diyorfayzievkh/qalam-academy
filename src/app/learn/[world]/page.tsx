@@ -10,6 +10,7 @@ import { T, useT } from "@/components/lang";
 import { translateLesson, useLessonTranslations } from "@/content/i18n/lessons";
 import { findWorld } from "@/content/library";
 import { TOPICS } from "@/content/topics";
+import { pickBi, TOOLS } from "@/content/israf-tools";
 
 export default function WorldPage() {
   const { world: id } = useParams<{ world: string }>();
@@ -60,6 +61,20 @@ export default function WorldPage() {
             </WorldCover>
           );
         })()}
+        {w.id === "israf" && (
+          <section className="flex flex-col gap-2.5">
+            <h2 className="text-[1.2rem]">{lang === "uz" ? "O‘quv vositalari" : "Study tools"}</h2>
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+              {TOOLS.map((x) => (
+                <Link key={x.id} href={`/learn/israf/tools/${x.id}`} className="lift flex flex-col gap-1 rounded-card border border-border bg-bg-surface p-3.5 hover:border-emerald">
+                  <span className="text-[1.6rem] leading-none">{x.icon}</span>
+                  <b className="text-[1rem]">{pickBi(x.title, lang)}</b>
+                  <span className="text-[0.82rem] leading-snug text-fg-muted">{pickBi(x.sub, lang)}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
         {sections.map((sec, si) => (
           <section key={si} className="reveal flex flex-col gap-2.5">
             {sec.title && (

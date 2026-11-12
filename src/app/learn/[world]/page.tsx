@@ -64,7 +64,7 @@ export default function WorldPage() {
         {w.id === "israf" && (
           <section className="flex flex-col gap-2.5">
             <h2 className="text-[1.2rem]">{lang === "uz" ? "O‘quv vositalari" : "Study tools"}</h2>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+            <div className="grid gap-2.5 sm:grid-cols-2">
               {TOOLS.map((x) => (
                 <Link key={x.id} href={`/learn/israf/tools/${x.id}`} className="lift flex flex-col gap-1 rounded-card border border-border bg-bg-surface p-3.5 hover:border-emerald">
                   <span className="text-[1.6rem] leading-none">{x.icon}</span>

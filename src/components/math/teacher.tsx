@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useAccount } from "@/components/account";
 import { useProgress } from "@/components/progress";
 import { ProblemCard } from "@/components/math/problem";
 import { MathVisual } from "@/components/math/visual";
@@ -22,7 +23,10 @@ type Scene =
   | { kind: "turn"; say: string }
   | { kind: "bye"; say: string; next: string };
 
-const NAME = "Ustoza Nur";
+const NAME = "Mrs. Sizemore";
+const PHOTO = "/math/mrs-sizemore.jpg";
+/** Replaced with ", Ali" (the child's first name) or "" when spoken. */
+const KID = "{kid}";
 
 function exampleScenes(ex: Example, intro: string): Scene[] {
   const out: Scene[] = [{ kind: "example", say: `${intro} ${ex.q}.`, ex, shown: 0, done: false }];
@@ -34,7 +38,7 @@ function exampleScenes(ex: Example, intro: string): Scene[] {
 export function itemScenes(s: Sub, t: Topic, testLen: number): Scene[] {
   const out: Scene[] = [
     { kind: "hello", title: s.title, icon: t.icon, badge: s.code,
-      say: `Assalamu alaikum! I'm ${NAME}, your maths teacher. Today's lesson is: ${s.title}. Let's begin!` },
+      say: `Assalamu alaikum${KID}! I'm ${NAME}, your maths teacher. I'm so happy to see you. Today's lesson is: ${s.title}. Let's begin!` },
   ];
   if (HOOK[s.id]) out.push({ kind: "story", say: HOOK[s.id] });
   out.push({ kind: "idea", heading: "The big idea", say: s.bigIdea, visual: s.visual });
@@ -42,7 +46,7 @@ export function itemScenes(s: Sub, t: Topic, testLen: number): Scene[] {
     say: `${k === 0 ? "Here is how we do it. " : ""}Step ${k + 1}. ${st}` }));
   s.examples.slice(0, 2).forEach((ex, k) => out.push(...exampleScenes(ex, k === 0 ? "Let's try one together." : "Here's another one.")));
   if (s.tip) out.push({ kind: "tip", say: `Here's a clever trick. ${s.tip}` });
-  out.push({ kind: "turn", say: "Now it's your turn! Have a go at this one." });
+  out.push({ kind: "turn", say: `Now it's your turn${KID}! Have a go at this one.` });
   out.push({ kind: "bye", next: `Practise below, then take the ${testLen}-question test`,
     say: `Wonderful work today! Now practise a few more, and when you feel ready, take the ${testLen}-question test. You can do it, in sha Allah!` });
   return out;
@@ -53,7 +57,7 @@ export function subtopicScenes(st: Subtopic, t: Topic, testLen: number): Scene[]
   const n = st.subs.length;
   const out: Scene[] = [
     { kind: "hello", title: st.name, icon: t.icon,
-      say: `Assalamu alaikum! I'm ${NAME}. In this lesson we explore ${st.name}. ${n === 1 ? "There is one skill to learn." : `There are ${n} skills, from easier to harder.`}` },
+      say: `Assalamu alaikum${KID}! I'm ${NAME}, your maths teacher. In this lesson we explore ${st.name}. ${n === 1 ? "There is one skill to learn." : `There are ${n} skills, from easier to harder.`}` },
   ];
   st.subs.forEach((s, k) => {
     if (n > 1) out.push({ kind: "map", items: titles, at: k, say: `Skill ${k + 1}: ${s.title}.` });
@@ -62,7 +66,7 @@ export function subtopicScenes(st: Subtopic, t: Topic, testLen: number): Scene[]
     out.push(...exampleScenes(s.examples[0], "Let's see it in action."));
   });
   if (n > 1) out.push({ kind: "map", items: titles, at: -1, say: "See how the skills build on each other? The second skill uses the same idea as the first, just with bigger numbers." });
-  out.push({ kind: "turn", say: "Your turn! Let's check what you've learned." });
+  out.push({ kind: "turn", say: `Your turn${KID}! Let's check what you've learned.` });
   out.push({ kind: "bye", next: `Open each item to practise, then take the ${testLen}-question subtopic test`,
     say: `Masha'Allah, great job! Open each item to practise, then try the ${testLen}-question subtopic test.` });
   return out;
@@ -72,7 +76,7 @@ export function topicScenes(subs: Subtopic[], t: Topic, gradeId: string, testLen
   const names = subs.map((x) => x.name);
   const out: Scene[] = [
     { kind: "hello", title: t.title, icon: t.icon,
-      say: `Assalamu alaikum! I'm ${NAME}. Welcome to the topic: ${t.title}. Let me show you the whole map before we start.` },
+      say: `Assalamu alaikum${KID}! I'm ${NAME}, your maths teacher. Welcome to the topic: ${t.title}. Let me show you the whole map before we start.` },
   ];
   if (TOPIC_INTRO[`${gradeId}/${t.id}`]) out.push({ kind: "idea", heading: "What this topic is about", say: TOPIC_INTRO[`${gradeId}/${t.id}`] });
   out.push({ kind: "map", items: names, at: -1, say: `This topic has ${subs.length} part${subs.length > 1 ? "s" : ""}. Let's visit each one.` });
@@ -81,7 +85,7 @@ export function topicScenes(subs: Subtopic[], t: Topic, gradeId: string, testLen
     out.push({ kind: "map", items: names, at: k, say: `Part ${k + 1}: ${st.name}.${HOOK[first.id] ? ` ${HOOK[first.id]}` : ""}` });
     out.push({ kind: "idea", heading: st.name, visual: first.visual, say: first.bigIdea });
   });
-  out.push({ kind: "turn", say: "Ready for a quick challenge from this topic?" });
+  out.push({ kind: "turn", say: `Ready for a quick challenge${KID}? Here is one from this topic.` });
   out.push({ kind: "bye", next: `Learn each subtopic, then take the ${testLen}-question topic test`,
     say: `Excellent! Now open each subtopic to learn it step by step. When you're ready, take the ${testLen}-question topic test. Bismillah!` });
   return out;
@@ -90,39 +94,15 @@ export function topicScenes(subs: Subtopic[], t: Topic, gradeId: string, testLen
 // ------------------------------------------------------------------ teacher
 function Teacher({ talking, happy }: { talking: boolean; happy: boolean }) {
   return (
-    <svg viewBox="0 0 120 120" className="h-full w-full" aria-hidden>
-      <circle cx="60" cy="60" r="58" fill="var(--t-bg)" />
-      {/* hijab */}
-      <path d="M22 112 C18 70 28 26 60 24 C92 26 102 70 98 112 Z" fill="#1D7A60" />
-      <path d="M60 24 C40 26 30 44 31 66 L89 66 C90 44 80 26 60 24 Z" fill="#26957A" />
-      {/* face */}
-      <ellipse cx="60" cy="64" rx="22" ry="25" fill="#F2C9A5" />
-      <path d="M38 56 C40 38 80 38 82 56 C76 46 44 46 38 56 Z" fill="#26957A" />
-      {/* cheeks */}
-      <circle cx="46" cy="72" r="4.5" fill="#F09A8A" opacity=".45" />
-      <circle cx="74" cy="72" r="4.5" fill="#F09A8A" opacity=".45" />
-      {/* eyes */}
-      <g className="nur-blink">
-        {happy ? <>
-          <path d="M47 62 q4 -5 8 0" stroke="#3B2A20" strokeWidth="2.6" fill="none" strokeLinecap="round" />
-          <path d="M65 62 q4 -5 8 0" stroke="#3B2A20" strokeWidth="2.6" fill="none" strokeLinecap="round" />
-        </> : <>
-          <ellipse cx="51" cy="62" rx="3.2" ry="3.8" fill="#3B2A20" />
-          <ellipse cx="69" cy="62" rx="3.2" ry="3.8" fill="#3B2A20" />
-          <circle cx="52" cy="60.6" r="1" fill="#fff" /><circle cx="70" cy="60.6" r="1" fill="#fff" />
-        </>}
-      </g>
-      {/* glasses */}
-      <g fill="none" stroke="#6B4E3D" strokeWidth="1.6" opacity=".85">
-        <circle cx="51" cy="62" r="7.5" /><circle cx="69" cy="62" r="7.5" /><path d="M58.5 61.5 h3" />
-      </g>
-      {/* mouth */}
-      {talking
-        ? <ellipse className="nur-talk" cx="60" cy="78" rx="5" ry="3.6" fill="#9C3D3D" />
-        : <path d="M53 76 q7 7 14 0" stroke="#9C3D3D" strokeWidth="2.6" fill="none" strokeLinecap="round" />}
-      {/* body */}
-      <path d="M28 120 C30 100 44 94 60 94 C76 94 90 100 92 120 Z" fill="#B07A1E" />
-    </svg>
+    <span className="relative block h-full w-full">
+      {talking && <span className="nur-ring absolute inset-0 rounded-full" style={{ boxShadow: "0 0 0 3px var(--t-ring)" }} aria-hidden />}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={PHOTO} alt={NAME} className="relative h-full w-full rounded-full border-[3px] object-cover shadow-sm" style={{ borderColor: "var(--t-ring)" }} />
+      {talking && <span className="absolute -bottom-0.5 -right-0.5 flex h-6 items-end gap-[2px] rounded-full bg-bg-surface px-1.5 py-1 shadow-sm" aria-hidden>
+        {[0, 1, 2].map((k) => <i key={k} className="nur-wave block w-[3px] rounded-full" style={{ background: "var(--t-ring)", animationDelay: `${k * 0.12}s` }} />)}
+      </span>}
+      {happy && !talking && <span className="nur-pop absolute -right-1 -top-1 text-[1.3rem]" aria-hidden>⭐</span>}
+    </span>
   );
 }
 
@@ -208,6 +188,9 @@ export function TeacherLesson({ scenes, color, scope, gens, label }: {
   scenes: Scene[]; color: string; scope: string; gens: (() => Problem)[]; label: string;
 }) {
   const { answerCorrect, markStudied } = useProgress();
+  const { user } = useAccount();
+  const first = user?.name?.trim().split(/\s+/)[0] ?? "";
+  const kid = useCallback((t: string) => t.split(KID).join(first ? `, ${first}` : ""), [first]);
   const [open, setOpen] = useState(false);
   const [i, setI] = useState(0);
   const [playing, setPlaying] = useState(false);
@@ -268,11 +251,11 @@ export function TeacherLesson({ scenes, color, scope, gens, label }: {
     if (s.kind === "bye") markStudied(`math-teach:${scope}`, "teacher lesson", 10);
     if (!autoplay) { setPlaying(false); return; }
     setPlaying(true);
-    say(s.say, () => {
+    say(kid(s.say), () => {
       if (s.kind === "turn" || s.kind === "bye") { setPlaying(false); return; }
       timer.current = setTimeout(() => go(j + 1, true), WAIT_AFTER);
     });
-  }, [hush, scenes, gens, markStudied, scope, say]);
+  }, [hush, scenes, gens, markStudied, scope, say, kid]);
 
   function start() { setOpen(true); go(0, true); }
   function toggle() { if (playing) { hush(); setPlaying(false); } else go(i, true); }
@@ -286,16 +269,16 @@ export function TeacherLesson({ scenes, color, scope, gens, label }: {
     say(msg, () => { timer.current = setTimeout(() => go(i + 1, true), right ? 900 : 1500); });
   }
 
-  const caption = sc.kind === "turn" && feedback ? feedback : sc.say;
+  const caption = sc.kind === "turn" && feedback ? feedback : kid(sc.say);
   const capParts = sentences(caption);
   const happy = sc.kind === "bye" || (sc.kind === "example" && sc.done) || turnDone === true;
 
   if (!open) return (
     <button type="button" onClick={start} className="lift flex w-full items-center gap-3 rounded-card border border-border bg-bg-surface p-3 text-left hover:border-emerald" style={{ borderLeft: `5px solid ${color}` }}>
       <style>{CSS}</style>
-      <span className="h-16 w-16 flex-none" style={{ ["--t-bg" as string]: "color-mix(in srgb, " + color + " 18%, transparent)" }}><Teacher talking={false} happy={false} /></span>
+      <span className="h-16 w-16 flex-none" style={{ ["--t-ring" as string]: color }}><Teacher talking={false} happy={false} /></span>
       <span className="flex min-w-0 flex-1 flex-col">
-        <b className="text-[1.08rem]">🎬 Watch {NAME} explain</b>
+        <b className="text-[1.08rem]">🎬 {NAME} is ready to teach you{first ? `, ${first}` : ""}</b>
         <span className="text-[0.92rem] text-fg-muted">{label} · about {minutes} min · with pictures, examples and a question for you</span>
       </span>
       <span className="btn flex-none">▶ Play</span>
@@ -306,7 +289,7 @@ export function TeacherLesson({ scenes, color, scope, gens, label }: {
     <section className="flex flex-col gap-3 rounded-card border border-border bg-bg-surface p-3 sm:p-4" style={{ borderTop: `5px solid ${color}` }} aria-label={`${NAME} lesson`}>
       <style>{CSS}</style>
       <div className="flex items-start gap-3">
-        <span className={`h-20 w-20 flex-none sm:h-24 sm:w-24 ${talking ? "nur-bob" : ""}`} style={{ ["--t-bg" as string]: "color-mix(in srgb, " + color + " 18%, transparent)" }}>
+        <span className={`h-20 w-20 flex-none sm:h-24 sm:w-24 ${talking ? "nur-bob" : ""}`} style={{ ["--t-ring" as string]: color }}>
           <Teacher talking={talking} happy={happy} />
         </span>
         <div className="relative min-w-0 flex-1 rounded-card bg-bg px-3.5 py-2.5 text-[1.02rem] leading-relaxed shadow-sm" aria-live="polite">
@@ -346,6 +329,10 @@ export function TeacherLesson({ scenes, color, scope, gens, label }: {
 }
 
 const CSS = `
+@keyframes nur-ring { 0% { transform: scale(1); opacity: .9 } 100% { transform: scale(1.18); opacity: 0 } }
+.nur-ring { animation: nur-ring 1.1s ease-out infinite; }
+@keyframes nur-wave { 0%,100% { height: 4px } 50% { height: 13px } }
+.nur-wave { height: 4px; animation: nur-wave .6s ease-in-out infinite; }
 @keyframes nur-talk { 0%,100% { transform: scaleY(.35) } 50% { transform: scaleY(1) } }
 .nur-talk { transform-origin: 60px 78px; transform-box: view-box; animation: nur-talk .22s ease-in-out infinite; }
 @keyframes nur-blink { 0%,94%,100% { transform: scaleY(1) } 97% { transform: scaleY(.1) } }
@@ -362,5 +349,5 @@ const CSS = `
   background-image: linear-gradient(color-mix(in srgb, currentColor 7%, transparent) 1px, transparent 1px),
     linear-gradient(90deg, color-mix(in srgb, currentColor 7%, transparent) 1px, transparent 1px);
   background-size: 22px 22px; }
-@media (prefers-reduced-motion: reduce) { .nur-talk,.nur-blink,.nur-bob,.nur-fade,.nur-pop,.nur-star { animation: none } }
+@media (prefers-reduced-motion: reduce) { .nur-ring,.nur-wave,.nur-talk,.nur-blink,.nur-bob,.nur-fade,.nur-pop,.nur-star { animation: none } }
 `;

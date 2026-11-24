@@ -1,0 +1,18 @@
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3056
+
+ ✓ Starting...
+ ✓ Ready in 310ms
+Error: connect ECONNREFUSED 127.0.0.1:5433
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1638:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+    at /home/claude/iman-academy/.next/server/chunks/1794.js:1:6407
+    at new c (/home/claude/iman-academy/.next/server/chunks/1794.js:1:6449)
+    at n (/home/claude/iman-academy/.next/server/chunks/1794.js:21:8420)
+    at y (/home/claude/iman-academy/.next/server/app/api/me/route.js:4:122) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5433
+}

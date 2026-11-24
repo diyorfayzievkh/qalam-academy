@@ -11,7 +11,7 @@ export default function MathHome() {
   const { studied } = useProgress();
   return (
     <>
-      <PageHeader eyebrow="Mathematics" title="Math Quest" sub="Clear lessons with pictures, endless hands-on practice, and quizzes with stars for grades 2 to 5." />
+      <PageHeader eyebrow="Mathematics" title="Math Quest" sub="Clear lessons with pictures, endless hands-on practice, and tests with stars and records for grades 2 to 5." />
       <Page>
         <div className="grid gap-3.5 sm:grid-cols-2">
           {GRADES.map((g) => {
@@ -37,8 +37,8 @@ export default function MathHome() {
           <b>How it works</b>
           <span>📖 <b>Learn</b>: a short explanation with a picture and worked examples.</span>
           <span>✏️ <b>Practice</b>: as many problems as you like, with hints. Build a streak!</span>
-          <span>⭐ <b>Quiz</b>: 10 questions. 6 right earns 1 star, 8 earns 2, all 10 earns 3 and a trophy.</span>
-          <span>🏆 <b>Tests</b>: a test for each topic and a big test for the whole grade.</span>
+          <span>⭐ <b>Tests</b>: every item has a 25-question test, every subtopic 25, every topic 30 and each grade 50. 60% earns 1 star, 80% earns 2, 100% earns 3 and a trophy.</span>
+          <span>🔁 <b>Retake</b> any test as often as you like: each retake is a new shuffled set, and every attempt is kept in your record.</span>
         </div>
       </Page>
     </>

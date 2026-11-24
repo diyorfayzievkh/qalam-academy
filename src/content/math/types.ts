@@ -53,6 +53,8 @@ export type Sub = {
   title: string;
   /** Item code from the teacher's learning plan, when there is one. */
   code?: string;
+  /** The subtopic this item belongs to (set in subtopics.ts). */
+  subtopic?: string;
   bigIdea: string;
   steps: string[];
   examples: Example[];

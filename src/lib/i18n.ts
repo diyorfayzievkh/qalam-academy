@@ -576,6 +576,7 @@ const uz: Dict = {
   "We could not send the email. Please try again later.": "Xatni yuborib bo‘lmadi. Keyinroq qayta urinib ko‘ring.",
   "Please enter a valid email.": "To‘g‘ri email kiriting.",
   "Read by a UK English female voice.": "Britaniya ingliz tilidagi ayol ovozi o‘qiydi.",
+  "Mathematics": "Matematika", "Grades 2–5: lessons, practice, quizzes and tests": "2–5-sinflar: darslar, mashqlar, testlar",
 };
 
 const ru: Dict = {
@@ -1134,6 +1135,7 @@ const ru: Dict = {
   "We could not send the email. Please try again later.": "Не удалось отправить письмо. Попробуйте позже.",
   "Please enter a valid email.": "Введите корректный email.",
   "Read by a UK English female voice.": "Читает женский голос с британским английским.",
+  "Mathematics": "Математика", "Grades 2–5: lessons, practice, quizzes and tests": "2–5 классы: уроки, практика, тесты",
 };
 
 export const DICT: Record<Exclude<Lang, "en">, Dict> = { uz, ru };

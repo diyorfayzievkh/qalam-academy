@@ -7,9 +7,9 @@ import { Page, PageHeader } from "@/components/app-shell";
 import { useProgress } from "@/components/progress";
 import { ProblemCard } from "@/components/math/problem";
 import { starsFor, Stars } from "@/components/math/progress";
-import { makeSet, Runner } from "@/components/math/runner";
+import { Runner } from "@/components/math/runner";
 import { MathVisual } from "@/components/math/visual";
-import { findSub, QUIZ_LEN } from "@/content/math";
+import { findSub, slug, TEST_LEN } from "@/content/math";
 import { rng, type Problem } from "@/content/math/types";
 
 /** One skill: learn (explanation, picture, examples), practise, then quiz. */
@@ -33,15 +33,15 @@ export default function SkillPage() {
 
   return (
     <>
-      <PageHeader eyebrow={`${g.title} · ${t.title}`} title={s.title} sub={s.code ? `Learning plan item ${s.code}` : undefined} />
+      <PageHeader eyebrow={`${g.title} · ${t.title} · ${s.subtopic}`} title={s.title} sub={s.code ? `Learning plan item ${s.code}` : undefined} />
       <Page>
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <Link href={`/math/${g.id}`} className="font-bold text-fg-muted">← {g.title} Math</Link>
+          <Link href={`/math/${g.id}/topic/${t.id}/${slug(s.subtopic ?? s.title)}`} className="font-bold text-fg-muted">← {s.subtopic}</Link>
           <Stars n={n} size="1.1rem" />
         </div>
 
         {mode === "quiz" ? (
-          <Runner scope={scope} title={`Quiz · ${s.title}`} make={() => makeSet([() => s.gen(rng)], QUIZ_LEN)} onExit={() => setMode("learn")} />
+          <Runner kind="item" grade={g.id} scope={scope} title={`${s.code ? `${s.code} · ` : ""}${s.title}`} n={TEST_LEN.item} gens={[() => s.gen(rng)]} onExit={() => setMode("learn")} />
         ) : <>
           <section className="card flex flex-col gap-3" style={{ borderTop: `5px solid ${t.color}` }}>
             <h2 className="flex items-center gap-2 text-[1.2rem]">📖 The big idea</h2>
@@ -89,9 +89,10 @@ export default function SkillPage() {
 
           <section className="card flex flex-col items-center gap-2 text-center" style={{ background: `linear-gradient(135deg, ${t.color}18, transparent)` }}>
             <span className="text-[2rem]">⭐</span>
-            <b className="text-[1.15rem]">Ready for the quiz?</b>
-            <span className="text-[0.92rem] text-fg-muted">{QUIZ_LEN} questions, no hints. 6 right = ⭐, 8 = ⭐⭐, 10 = ⭐⭐⭐</span>
-            <button type="button" className="btn" onClick={() => { setMode("quiz"); window.scrollTo({ top: 0 }); }}>Start the quiz</button>
+            <b className="text-[1.15rem]">Ready for the item test?</b>
+            <span className="text-[0.92rem] text-fg-muted">{TEST_LEN.item} questions, no hints. 60% = ⭐, 80% = ⭐⭐, 100% = ⭐⭐⭐. Retake as often as you like.</span>
+            <button type="button" className="btn" onClick={() => { setMode("quiz"); window.scrollTo({ top: 0 }); }}>Item test</button>
+            <Link href={`/math/${g.id}/topic/${t.id}/${slug(s.subtopic ?? s.title)}`} className="text-[0.9rem] font-bold text-fg-muted underline-offset-4 hover:underline">Subtopic: {s.subtopic} →</Link>
             {next && <Link href={`/math/${g.id}/${next.id}`} className="text-[0.9rem] font-bold text-emerald underline-offset-4 hover:underline">Next skill: {next.title} →</Link>}
           </section>
         </>}

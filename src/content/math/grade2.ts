@@ -1,4 +1,4 @@
-import type { Coin, Grade, Problem } from "./types";
+import type { Coin, Grade, Problem, Rng } from "./types";
 import { cents, choice, fmt, halfText } from "./util";
 
 // Grade 2, following the Descriptive Learning Plan (Checkup #2A, Part A).
@@ -10,19 +10,22 @@ export const coinValue = (c: Coin) => COIN_VALUE[c];
 const NAMES = ["Ali", "Maryam", "Yusuf", "Aisha", "Omar", "Zaynab", "Hadiya", "Bilal", "Fatima", "Ibrahim"];
 const THINGS = [["marbles", "red", "blue"], ["apples", "green", "red"], ["stickers", "star", "heart"], ["books", "story", "science"], ["dates", "soft", "dry"], ["pencils", "yellow", "green"]] as const;
 
-function halfProblem(n: number): Problem {
+// Several ways of asking the same skill, so long tests don't repeat themselves.
+const askHalf = (r: Rng, n: number) => r.pick([`What is half of ${n}?`, `Share ${n} equally into 2 groups. How many in each group?`, `${n} ÷ 2 = ?`, `Half of ${n} is ___.`, `Two friends share ${n} dates equally. How many does each get?`]);
+
+function halfProblem(n: number, r: Rng): Problem {
   const odd = n % 2 === 1;
   return {
-    prompt: `What is half of ${n}?`, visual: { type: "half", n }, kind: odd ? "half" : "number", answer: halfText(n),
+    prompt: askHalf(r, n), visual: { type: "half", n }, kind: odd ? "half" : "number", answer: halfText(n),
     hint: odd ? `${n} is odd. Take half of ${n - 1}, then add one half.` : `Share ${n} into 2 equal groups. How many in each?`,
     explain: odd ? `Half of ${n - 1} is ${(n - 1) / 2}. One is left over, and half of 1 is ½. So half of ${n} is ${halfText(n)}.` : `${n} ÷ 2 = ${n / 2}, because ${n / 2} + ${n / 2} = ${n}.`,
   };
 }
 
-function halfTensProblem(n: number): Problem {
+function halfTensProblem(n: number, r: Rng): Problem {
   const t = Math.floor(n / 10) * 10, o = n % 10, odd = o % 2 === 1;
   return {
-    prompt: `What is half of ${n}?`, visual: { type: "blocks", n }, kind: odd ? "half" : "number", answer: halfText(n),
+    prompt: askHalf(r, n), visual: { type: "blocks", n }, kind: odd ? "half" : "number", answer: halfText(n),
     hint: `Split ${n} into ${t} and ${o}. Find half of each part.`,
     explain: `Half of ${t} is ${t / 2}. Half of ${o} is ${halfText(o)}. ${t / 2} + ${halfText(o)} = ${halfText(n)}.`,
   };
@@ -160,7 +163,7 @@ export const GRADE2: Grade = {
         ],
         visual: { type: "half", n: 14, split: true },
         tip: "Know your doubles and you know your halves: double 6 is 12, so half of 12 is 6.",
-        gen: (r) => halfProblem(r.int(1, 12) * 2) },
+        gen: (r) => halfProblem(r.int(1, 12) * 2, r) },
       { id: "half-odd-25", code: "PK-3007-00", title: "Half of odd numbers up to 25",
         bigIdea: "An odd number cannot be split into two equal whole groups: one is always left over. We cut that last one in half, so each group gets a half too. Half of 7 is 3½.",
         steps: ["Take away 1 to make an even number.", "Find half of the even number.", "Add ½ for the leftover one."],
@@ -170,7 +173,7 @@ export const GRADE2: Grade = {
         ],
         visual: { type: "half", n: 7, split: true },
         tip: "You can write 3½ as 3 1/2 or 3.5. They mean the same.",
-        gen: (r) => halfProblem(r.int(0, 12) * 2 + 1) },
+        gen: (r) => halfProblem(r.int(0, 12) * 2 + 1, r) },
       { id: "half-even-tens-even", code: "PK-3049-00", title: "Half of even numbers: even digit in the tens place",
         bigIdea: "For a two-digit number, split it into tens and ones and halve each part. When the tens digit is even, its half is easy: half of 40 is 20, half of 80 is 40.",
         steps: ["Split the number into tens and ones: 48 = 40 + 8.", "Half of the tens: half of 40 is 20.", "Half of the ones: half of 8 is 4.", "Put them together: 20 + 4 = 24."],
@@ -179,7 +182,7 @@ export const GRADE2: Grade = {
           { q: "Half of 86", work: ["Half of 80 is 40, half of 6 is 3."], answer: "43" },
         ],
         visual: { type: "blocks", n: 48 },
-        gen: (r) => halfTensProblem(r.pick([2, 4, 6, 8]) * 10 + r.pick([0, 2, 4, 6, 8])) },
+        gen: (r) => halfTensProblem(r.pick([2, 4, 6, 8]) * 10 + r.pick([0, 2, 4, 6, 8]), r) },
       { id: "half-odd-tens-even", code: "PK-3051-00", title: "Half of odd numbers: even digit in the tens place",
         bigIdea: "Same idea as before: split into tens and ones and halve each part. Now the ones digit is odd, so its half has a ½. Half of 47 = half of 40 + half of 7 = 20 + 3½ = 23½.",
         steps: ["Split: 47 = 40 + 7.", "Half of 40 is 20.", "Half of 7 is 3½.", "Add: 20 + 3½ = 23½."],
@@ -188,7 +191,7 @@ export const GRADE2: Grade = {
           { q: "Half of 29", work: ["Half of 20 is 10. Half of 9 is 4½."], answer: "14½" },
         ],
         visual: { type: "blocks", n: 47 },
-        gen: (r) => halfTensProblem(r.pick([2, 4, 6, 8]) * 10 + r.pick([1, 3, 5, 7, 9])) },
+        gen: (r) => halfTensProblem(r.pick([2, 4, 6, 8]) * 10 + r.pick([1, 3, 5, 7, 9]), r) },
     ] },
     { id: "problem-solving", title: "Problem Solving and Algebraic Reasoning", color: "#7D3C98", icon: "🧩", subs: [
       { id: "wholes-parts", code: "PK-3042-00", title: "Problem solving: wholes and parts",

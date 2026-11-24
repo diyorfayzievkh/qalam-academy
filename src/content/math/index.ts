@@ -32,5 +32,5 @@ export function subtopicsOf(t: Topic): Subtopic[] {
 }
 
 /** Questions per test, as set by the teacher. */
-export const TEST_LEN = { item: 25, subtopic: 10, topic: 30, grade: 50 } as const;
+export const TEST_LEN = { item: 10, subtopic: 25, topic: 30, grade: 50 } as const;
 export type TestKind = keyof typeof TEST_LEN;

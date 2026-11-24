@@ -37,7 +37,7 @@ export default function MathHome() {
           <b>How it works</b>
           <span>📖 <b>Learn</b>: a short explanation with a picture and worked examples.</span>
           <span>✏️ <b>Practice</b>: as many problems as you like, with hints. Build a streak!</span>
-          <span>⭐ <b>Tests</b>: every item has a 25-question test, every subtopic 25, every topic 30 and each grade 50. 60% earns 1 star, 80% earns 2, 100% earns 3 and a trophy.</span>
+          <span>⭐ <b>Tests</b>: every item has a 25-question test, every subtopic 10, every topic 30 and each grade 50. 60% earns 1 star, 80% earns 2, 100% earns 3 and a trophy.</span>
           <span>🔁 <b>Retake</b> any test as often as you like: each retake is a new shuffled set, and every attempt is kept in your record.</span>
         </div>
       </Page>

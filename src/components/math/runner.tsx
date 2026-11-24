@@ -68,12 +68,13 @@ export function Runner({ kind, grade, scope, title, n, gens, onExit }: {
   const [saving, setSaving] = useState(false);
   const [took, setTook] = useState(0);
   const started = useRef(0);
+  const [round, setRound] = useState(0);
 
   const refresh = useCallback(() => { loadAttempts({ grade, scope }, Boolean(user)).then(setHistory); }, [grade, scope, user]);
   useEffect(() => { if (ready) refresh(); }, [ready, refresh]);
 
   function start() {
-    setSet(makeSet(gens, n)); setI(0); setResults([]); setAnswered(false); setPhase("run"); started.current = Date.now();
+    setSet(makeSet(gens, n)); setRound((r) => r + 1); setI(0); setResults([]); setAnswered(false); setPhase("run"); started.current = Date.now();
     window.scrollTo({ top: 0 });
   }
 
@@ -155,13 +156,14 @@ export function Runner({ kind, grade, scope, title, n, gens, onExit }: {
         <span>{KIND_LABEL[kind]}</span><span className="text-fg-muted">Question {i + 1} of {set.length} · ✓ {score}</span>
       </div>
       <div className="h-2 overflow-hidden rounded-full bg-border"><i className="block h-full rounded-full bg-emerald transition-[width]" style={{ width: `${(i / set.length) * 100}%` }} /></div>
-      <ProblemCard p={set[i]} showHint={false} onDone={(right, given) => {
+      <ProblemCard key={`${round}-${i}`} p={set[i]} showHint={false} onDone={(right, given) => {
         setAnswered(true);
         if (right) answerCorrect(`math:${scope}:q${i + 1}`);
         setResults((rs) => [...rs, { p: set[i], right, given }]);
       }} />
       <div className="flex justify-end gap-2">
         <button type="button" className="btn btn-ghost" onClick={() => setPhase("intro")}>Quit</button>
+        <button type="button" className="btn btn-ghost" title="Start again with a new set of questions" onClick={start}>🔄 New set</button>
         <button type="button" className="btn" disabled={!answered} onClick={() => {
           setAnswered(false);
           if (i + 1 >= set.length) finish(results); else setI(i + 1);

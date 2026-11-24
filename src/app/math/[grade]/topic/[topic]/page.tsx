@@ -7,6 +7,7 @@ import { Page, PageHeader } from "@/components/app-shell";
 import { useProgress } from "@/components/progress";
 import { starsFor, Stars } from "@/components/math/progress";
 import { Runner } from "@/components/math/runner";
+import { TeacherLesson, topicScenes } from "@/components/math/teacher";
 import { findGrade, subtopicsOf, TEST_LEN } from "@/content/math";
 import { TOPIC_INTRO } from "@/content/math/subtopics";
 import { rng } from "@/content/math/types";
@@ -32,6 +33,7 @@ export default function TopicPage() {
         {testing ? (
           <Runner kind="topic" grade={g.id} scope={scope} title={`${t.title} (${g.title})`} n={TEST_LEN.topic} gens={t.subs.map((s) => () => s.gen(rng))} onExit={() => setTesting(false)} />
         ) : <>
+          <TeacherLesson key={scope} scenes={topicScenes(sts, t, g.id, TEST_LEN.topic)} color={t.color} scope={scope} gens={t.subs.map((s) => () => s.gen(rng))} label="This topic" />
           <section className="card flex flex-col gap-2" style={{ borderTop: `5px solid ${t.color}` }}>
             <h2 className="text-[1.2rem]">🗺️ What this topic is about</h2>
             <p className="text-[1.05rem] leading-relaxed">{TOPIC_INTRO[`${g.id}/${t.id}`]}</p>

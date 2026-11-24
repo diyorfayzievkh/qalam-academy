@@ -8,6 +8,7 @@ import { useProgress } from "@/components/progress";
 import { starsFor, Stars } from "@/components/math/progress";
 import { Runner } from "@/components/math/runner";
 import { MathVisual } from "@/components/math/visual";
+import { subtopicScenes, TeacherLesson } from "@/components/math/teacher";
 import { findGrade, subtopicsOf, TEST_LEN } from "@/content/math";
 import { rng } from "@/content/math/types";
 
@@ -34,6 +35,7 @@ export default function SubtopicPage() {
         {testing ? (
           <Runner kind="subtopic" grade={g.id} scope={scope} title={`${st.name} (${g.title})`} n={TEST_LEN.subtopic} gens={st.subs.map((s) => () => s.gen(rng))} onExit={() => setTesting(false)} />
         ) : <>
+          <TeacherLesson key={scope} scenes={subtopicScenes(st, t, TEST_LEN.subtopic)} color={t.color} scope={scope} gens={st.subs.map((s) => () => s.gen(rng))} label="This subtopic" />
           <section className="card flex flex-col gap-2" style={{ borderTop: `5px solid ${t.color}` }}>
             <h2 className="text-[1.2rem]">🎯 What you will learn</h2>
             <ul className="flex flex-col gap-1.5">

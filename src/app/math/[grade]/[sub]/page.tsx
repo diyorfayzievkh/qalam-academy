@@ -9,6 +9,7 @@ import { ProblemCard } from "@/components/math/problem";
 import { starsFor, Stars } from "@/components/math/progress";
 import { Runner } from "@/components/math/runner";
 import { MathVisual } from "@/components/math/visual";
+import { itemScenes, TeacherLesson } from "@/components/math/teacher";
 import { findSub, slug, TEST_LEN } from "@/content/math";
 import { rng, type Problem } from "@/content/math/types";
 
@@ -43,6 +44,7 @@ export default function SkillPage() {
         {mode === "quiz" ? (
           <Runner kind="item" grade={g.id} scope={scope} title={`${s.code ? `${s.code} · ` : ""}${s.title}`} n={TEST_LEN.item} gens={[() => s.gen(rng)]} onExit={() => setMode("learn")} />
         ) : <>
+          <TeacherLesson key={scope} scenes={itemScenes(s, t, TEST_LEN.item)} color={t.color} scope={scope} gens={[() => s.gen(rng)]} label="This skill" />
           <section className="card flex flex-col gap-3" style={{ borderTop: `5px solid ${t.color}` }}>
             <h2 className="flex items-center gap-2 text-[1.2rem]">📖 The big idea</h2>
             <p className="text-[1.05rem] leading-relaxed">{s.bigIdea}</p>
